@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 534687282}
   - component: {fileID: 534687283}
   m_Layer: 0
-  m_Name: Room LIght
+  m_Name: Room Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3257,7 +3257,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4126464733238254068
 Transform:
   m_ObjectHideFlags: 0
