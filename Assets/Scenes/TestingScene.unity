@@ -365,6 +365,7 @@ GameObject:
   - component: {fileID: 693203373}
   - component: {fileID: 693203372}
   - component: {fileID: 693203374}
+  - component: {fileID: 693203375}
   m_Layer: 0
   m_Name: Grid
   m_TagString: Untagged
@@ -418,6 +419,19 @@ MonoBehaviour:
   gridSizeX: 8
   gridSizeY: 8
   roomList: []
+--- !u!114 &693203375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693203371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05f66e33367c74240a350930c4e8d163, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawner: {fileID: 693203374}
 --- !u!1001 &701689627
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -425,14 +439,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 693203373}
     m_Modifications:
-    - target: {fileID: 534687281, guid: 53f4c510760cd394b92285a7fae2908b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3273668149410885279, guid: 53f4c510760cd394b92285a7fae2908b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4126464733238254068, guid: 53f4c510760cd394b92285a7fae2908b, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -480,10 +486,6 @@ PrefabInstance:
     - target: {fileID: 4265979372632837424, guid: 53f4c510760cd394b92285a7fae2908b, type: 3}
       propertyPath: m_Name
       value: Room
-      objectReference: {fileID: 0}
-    - target: {fileID: 4265979372632837424, guid: 53f4c510760cd394b92285a7fae2908b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53f4c510760cd394b92285a7fae2908b, type: 3}
@@ -802,7 +804,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &1104765659
 RectTransform:
