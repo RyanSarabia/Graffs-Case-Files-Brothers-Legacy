@@ -58,6 +58,7 @@ public class GraphSpawner : MonoBehaviour
         curRoom.transform.position = spawnOrigin.transform.position;
         curRoom.setCoordinate(midGraph);
         curRoom.gameObject.SetActive(true);
+        curRoom.setRoomID(0);
         roomList.Add(curRoom);
         firstRoom = curRoom;
 
@@ -83,6 +84,7 @@ public class GraphSpawner : MonoBehaviour
             string oppositeDirection = GraphGameEventNames.oppositeDirection(direction);
             nextRoom.setNeighborAndOpenWalls(curRoom, oppositeDirection);
             nextRoom.gameObject.SetActive(true);
+            nextRoom.setRoomID(i+1);
             roomList.Add(nextRoom);
             takenPositions.Add(checkPos);
         }

@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class Room : MonoBehaviour
+public class Room : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private GameObject roomLight;
 
@@ -18,10 +19,16 @@ public class Room : MonoBehaviour
     [SerializeField] private Room leftNeighbor;
     [SerializeField] private Room downNeighbor;
 
+    [SerializeField] private GameObject highlight;
+    [SerializeField] private GameObject character;
+
+    private int roomID;
+    private bool characterPresent = false;
+
     // Start is called before the first frame update
     void Start()
     {
-        //roomLight.SetActive(false);
+        //roomLight.SetActive(false);        
     }
 
     // Update is called once per frame
@@ -69,6 +76,16 @@ public class Room : MonoBehaviour
         return coordinate;
     }
 
+    public void setRoomID(int id)
+    {
+        roomID = id;
+    }
+
+    public int getRoomID()
+    {
+        return roomID;
+    }
+
     public void setNeighborAndOpenWalls(Room neighbor, string localDirection)
     {
         switch (localDirection)
@@ -111,5 +128,45 @@ public class Room : MonoBehaviour
         if (rightNeighbor != null)
             neighbors.Add(rightNeighbor);
         return neighbors;
+    }
+
+    private void OnMouseEnter()
+    {
+        highlight.SetActive(true);
+    }
+
+    private void OnMouseExit()
+    {
+        highlight.SetActive(false);
+    }
+
+    public void OnMouseDown()
+    {
+        Debug.Log("any mouse click");
+        Actions.GetInstance().character(roomID);
+    }
+
+    public void showCharacter()
+    {
+        Debug.Log("Show character");
+        character.SetActive(true);
+        characterPresent = true;
+    }
+
+    public void hideCharacter()
+    {
+        character.SetActive(false);
+        characterPresent = false;
+    }
+
+    public bool getCharacterPresent()
+    {
+        return characterPresent;
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        Debug.Log("pointer click");
+        //throw new System.NotImplementedException();
     }
 }

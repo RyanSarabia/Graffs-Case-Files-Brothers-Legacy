@@ -9,6 +9,9 @@ public class GraphGameEventNames
     public const string BFS_BUTTON_CLICK = "BFS_BUTTON_CLICK";
     public const string DFS_BUTTON_CLICK = "DFS_BUTTON_CLICK";
 
+    //Archetype1 Actions
+    public const string TILE_SELECT = "TILE_SELECT";
+
     //Strings
     public const string NORTH = "NORTH";
     public const string SOUTH = "SOUTH";
