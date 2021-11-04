@@ -26,7 +26,7 @@ public class SearchTraversal : MonoBehaviour
         graphContainer.getFirstRoom().setIsLightOn(true);
         graphContainer.getFirstRoom().lightOn();
         graphContainer.getFirstRoom().showCharacter();
-        EventBroadcaster.Instance.AddObserver(GraphGameEventNames.BFS_BUTTON_CLICK, this.BFS);
+        EventBroadcaster.Instance.AddObserver(GraphGameEventNames.BFS_BUTTON_CLICK, this.BFS2);
         EventBroadcaster.Instance.AddObserver(GraphGameEventNames.DFS_BUTTON_CLICK, this.DFSrecursive);
         EventBroadcaster.Instance.AddObserver(GraphGameEventNames.PLUS_BUTTON_CLICK, this.PlusClicked);
         EventBroadcaster.Instance.AddObserver(GraphGameEventNames.MINUS_BUTTON_CLICK, this.MinusClicked);
@@ -45,7 +45,7 @@ public class SearchTraversal : MonoBehaviour
         EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.MINUS_BUTTON_CLICK);
     }
 
-    public void BFS2() 
+    public void BFS2()
     {
         Room currRoom = Actions.GetInstance().GetCurrRoom();
         searchQueue = new List<Room>();
@@ -72,11 +72,18 @@ public class SearchTraversal : MonoBehaviour
                 currQueueSize = searchQueue.Count;
                 searchQueueCtr++;
                 currRoom = searchQueue[searchQueueCtr];
-            } 
+            }
         }
-        Room lightUpRoom = searchQueue[0];
-        int n = 0;
-        StartCoroutine(lighterDelay(lightUpRoom, n));
+        if (searchQueue.Count > 0)
+        {
+            Room lightUpRoom = searchQueue[0];
+            int n = 0;
+            StartCoroutine(lighterDelay(lightUpRoom, n));
+        }
+        else
+        {
+            //Call event na walang adjacent rooms na dark
+        }
     }
 
     public void BFS()
@@ -107,6 +114,7 @@ public class SearchTraversal : MonoBehaviour
         Room lightUpRoom = searchQueue[0];
         int n = 0;
         StartCoroutine(lighterDelay(lightUpRoom, n));
+
 
     }
 
@@ -183,9 +191,16 @@ public class SearchTraversal : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
         searchQueue.RemoveAt(0);
 
-        if (searchQueue.Count > 0 && n < nRooms)
+        if (searchQueue.Count > 0 && n < energyHolder)
         {
             StartCoroutine(lighterDelay(searchQueue[0], n));
+        }
+        else
+        {
+            nEnergy = nEnergy - energyHolder;
+            energyText.SetText("Energy Left: " + nEnergy);
+            energyHolder = 1;
+            this.energyToBeUsed.SetText(energyHolder.ToString());
         }
     }
 
