@@ -56,6 +56,7 @@ public class Actions : MonoBehaviour
             //curRoom.hideCharacter();
             //prevRoom.hideCharacter();
             Debug.Log("room not lit or character present");
+            curRoom = prevRoom;
         }            
 
         if(curRoom.getIsLightOn())
