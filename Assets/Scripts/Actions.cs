@@ -9,7 +9,8 @@ public class Actions : MonoBehaviour
 
     public GraphSpawner spawner;
 
-    private List<Room> roomList;    
+    private List<Room> roomList;
+    private Room curRoom;
     private Room prevRoom;
 
     public static Actions GetInstance()
@@ -40,18 +41,18 @@ public class Actions : MonoBehaviour
     public void character(int id)
     {
         roomList = spawner.getRoomList();
-        Room room = roomList[id];
+        curRoom = roomList[id];
 
-        if (!room.getCharacterPresent())
+        if (!curRoom.getCharacterPresent())
         {
             if(prevRoom != null)
                 prevRoom.hideCharacter();
-            room.showCharacter();
+            curRoom.showCharacter();
         }
             
         else
-            room.hideCharacter();
+            curRoom.hideCharacter();
 
-        prevRoom = room;
+        prevRoom = curRoom;
     }
 }
