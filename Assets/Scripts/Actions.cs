@@ -30,6 +30,7 @@ public class Actions : MonoBehaviour
     void Start()
     {
         curRoom = spawner.getFirstRoom();
+        prevRoom = spawner.getFirstRoom();
     }
 
     // Update is called once per frame
