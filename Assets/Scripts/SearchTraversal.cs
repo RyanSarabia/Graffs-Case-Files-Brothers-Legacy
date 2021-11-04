@@ -16,6 +16,7 @@ public class SearchTraversal : MonoBehaviour
     List<Room> visited;
     Stack<Room> dfsStack;
     Room firstRoom;
+    Room currRoom;
     List<Room> roomList;
 
     // Start is called before the first frame update
@@ -27,7 +28,7 @@ public class SearchTraversal : MonoBehaviour
         graphContainer.getFirstRoom().lightOn();
         graphContainer.getFirstRoom().showCharacter();
         EventBroadcaster.Instance.AddObserver(GraphGameEventNames.BFS_BUTTON_CLICK, this.BFS2);
-        EventBroadcaster.Instance.AddObserver(GraphGameEventNames.DFS_BUTTON_CLICK, this.DFSrecursive);
+        EventBroadcaster.Instance.AddObserver(GraphGameEventNames.DFS_BUTTON_CLICK, this.DFS2);
         EventBroadcaster.Instance.AddObserver(GraphGameEventNames.PLUS_BUTTON_CLICK, this.PlusClicked);
         EventBroadcaster.Instance.AddObserver(GraphGameEventNames.MINUS_BUTTON_CLICK, this.MinusClicked);
     }
@@ -47,7 +48,7 @@ public class SearchTraversal : MonoBehaviour
 
     public void BFS2()
     {
-        Room currRoom = Actions.GetInstance().GetCurrRoom();
+        currRoom = Actions.GetInstance().GetCurrRoom();
         searchQueue = new List<Room>();
         bool hasAdjacentRooms = true;
         int searchQueueCtr = -1;
@@ -85,74 +86,56 @@ public class SearchTraversal : MonoBehaviour
             //Call event na walang adjacent rooms na dark
         }
     }
-
-    public void BFS()
+    public void DFS2()
     {
-        //Debug.Log(graphContainer.getFirstRoom());
-        firstRoom = graphContainer.getFirstRoom();
-        roomList = graphContainer.getRoomList();
-
+        currRoom = Actions.GetInstance().GetCurrRoom();
+        bool firstRun = true;
         searchQueue = new List<Room>();
-        searchQueue.Add(firstRoom);
 
-        int searchQueueCtr = 0;
-        Room curRoom = firstRoom;
-        while (searchQueue.Count < roomList.Count)
+        void recursion(Room node)
         {
-            List<Room> neighbors = curRoom.getNeighbors();
-            foreach (Room neighbor in neighbors)
+            if (firstRun)
             {
-                if (!searchQueue.Contains(neighbor))
+                firstRun = false;
+                List<Room> neighbors = node.getNeighbors();
+                foreach (Room neighbor in neighbors)
                 {
-                    searchQueue.Add(neighbor);
+                    if (!searchQueue.Contains(neighbor) && neighbor.getIsLightOn() == false)
+                    {
+                        recursion(neighbor);
+                    }
                 }
             }
-            searchQueueCtr++;
-            curRoom = searchQueue[searchQueueCtr];
-        }
-
-        Room lightUpRoom = searchQueue[0];
-        int n = 0;
-        StartCoroutine(lighterDelay(lightUpRoom, n));
-
-
-    }
-
-    public void DFS()
-    {
-        Debug.Log(graphContainer.getFirstRoom());
-        firstRoom = graphContainer.getFirstRoom();
-
-        searchQueue = new List<Room>();
-        dfsStack = new Stack<Room>();
-        dfsStack.Push(firstRoom);
-
-        while (dfsStack.Count > 0)
-        {
-            Room curRoom = dfsStack.Pop();
-
-            if (searchQueue.Contains(curRoom))
+            else
             {
-                continue;
-            }
+                searchQueue.Add(node);
 
-            searchQueue.Add(curRoom);
-
-            List<Room> neighbors = curRoom.getNeighbors();
-            foreach (Room neighbor in neighbors)
-            {
-                if (!searchQueue.Contains(neighbor))
+                List<Room> neighbors = node.getNeighbors();
+                foreach (Room neighbor in neighbors)
                 {
-                    dfsStack.Push(neighbor);
+                    if (!searchQueue.Contains(neighbor) && neighbor.getIsLightOn() == false)
+                    {
+                        recursion(neighbor);
+                    }
                 }
             }
-
+            
         }
 
-        Room lightUpRoom = searchQueue[0];
-        int n = 0;
-        StartCoroutine(lighterDelay(lightUpRoom, n));
+        recursion(currRoom);
+
+        if (searchQueue.Count > 0)
+        {
+            Room lightUpRoom = searchQueue[0];
+            int n = 0;
+            StartCoroutine(lighterDelay(lightUpRoom, n));
+        }
+        else
+        {
+            //Call event na walang adjacent rooms na dark
+        }
     }
+
 
     public void DFSrecursive()
     {
@@ -231,4 +214,6 @@ public class SearchTraversal : MonoBehaviour
             this.energyToBeUsed.SetText(energyHolder.ToString());
         }
     }
+
+
 }
