@@ -45,8 +45,37 @@ public class SearchTraversal : MonoBehaviour
     }
 
     public void BFS2() 
-    { 
-
+    {
+        Room currRoom = Actions.GetInstance().GetCurrRoom();
+        searchQueue = new List<Room>();
+        bool hasAdjacentRooms = true;
+        int searchQueueCtr = -1;
+        int currQueueSize = 0;
+        while (hasAdjacentRooms)
+        {
+            List<Room> neighbors = currRoom.getNeighbors();
+            Debug.Log(neighbors.Count);
+            foreach (Room neighbor in neighbors)
+            {
+                if (!searchQueue.Contains(neighbor) && neighbor.getIsLightOn() == false)
+                {
+                    searchQueue.Add(neighbor);
+                }
+            }
+            if (currQueueSize == searchQueue.Count)
+            {
+                hasAdjacentRooms = false;
+            }
+            else
+            {
+                currQueueSize = searchQueue.Count;
+                searchQueueCtr++;
+                currRoom = searchQueue[searchQueueCtr];
+            } 
+        }
+        Room lightUpRoom = searchQueue[0];
+        int n = 0;
+        StartCoroutine(lighterDelay(lightUpRoom, n));
     }
 
     public void BFS()
