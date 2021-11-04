@@ -25,6 +25,7 @@ public class SearchTraversal : MonoBehaviour
         this.energyToBeUsed.SetText(energyHolder.ToString());
         graphContainer.getFirstRoom().setIsLightOn(true);
         graphContainer.getFirstRoom().lightOn();
+        graphContainer.getFirstRoom().showCharacter();
         EventBroadcaster.Instance.AddObserver(GraphGameEventNames.BFS_BUTTON_CLICK, this.BFS);
         EventBroadcaster.Instance.AddObserver(GraphGameEventNames.DFS_BUTTON_CLICK, this.DFSrecursive);
         EventBroadcaster.Instance.AddObserver(GraphGameEventNames.PLUS_BUTTON_CLICK, this.PlusClicked);
