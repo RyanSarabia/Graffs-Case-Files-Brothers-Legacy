@@ -24,6 +24,7 @@ public class Room : MonoBehaviour, IPointerClickHandler
 
     private int roomID;
     private bool characterPresent = false;
+    private bool isLightOn = false;
 
     // Start is called before the first frame update
     void Start()
@@ -84,6 +85,16 @@ public class Room : MonoBehaviour, IPointerClickHandler
     public int getRoomID()
     {
         return roomID;
+    }
+
+    public void setIsLightOn(bool state)
+    {
+        isLightOn = state;
+    }
+
+    public bool getIsLightOn()
+    {
+        return isLightOn;
     }
 
     public void setNeighborAndOpenWalls(Room neighbor, string localDirection)

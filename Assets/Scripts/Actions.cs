@@ -43,16 +43,21 @@ public class Actions : MonoBehaviour
         roomList = spawner.getRoomList();
         curRoom = roomList[id];
 
-        if (!curRoom.getCharacterPresent())
+        if (!curRoom.getCharacterPresent() && curRoom.getIsLightOn())
         {
             if(prevRoom != null)
                 prevRoom.hideCharacter();
             curRoom.showCharacter();
         }
-            
-        else
-            curRoom.hideCharacter();
 
-        prevRoom = curRoom;
+        else
+        {
+            //curRoom.hideCharacter();
+            //prevRoom.hideCharacter();
+            Debug.Log("room not lit or character present");
+        }            
+
+        if(curRoom.getIsLightOn())
+            prevRoom = curRoom;
     }
 }

@@ -132,6 +132,7 @@ public class SearchTraversal : MonoBehaviour
     private IEnumerator lighterDelay(Room lightUpRoom, int n)
     {
         Debug.Log("Running Coroutine" + "energy count: " + n);
+        lightUpRoom.setIsLightOn(true);
         lightUpRoom.lightOn();
         n++;
         yield return new WaitForSeconds(1.0f);
