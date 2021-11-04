@@ -60,4 +60,9 @@ public class Actions : MonoBehaviour
         if(curRoom.getIsLightOn())
             prevRoom = curRoom;
     }
+
+    public Room GetCurrRoom()
+    {
+        return curRoom;
+    }
 }

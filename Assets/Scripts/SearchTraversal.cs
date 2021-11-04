@@ -1,23 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class SearchTraversal : MonoBehaviour
 {
     [SerializeField] GraphSpawner graphContainer;
     [SerializeField] int nRooms;
+    [SerializeField] int nEnergy = 10;
+    [SerializeField] TextMeshProUGUI energyText;
+    [SerializeField] TextMeshProUGUI energyToBeUsed;
+    private int energyHolder = 1;
+
     List<Room> searchQueue;
     List<Room> visited;
     Stack<Room> dfsStack;
-    int ctr = 0;
     Room firstRoom;
     List<Room> roomList;
 
     // Start is called before the first frame update
     void Start()
     {
+        this.energyText.SetText("Energy Left: " + nEnergy);
+        this.energyToBeUsed.SetText(energyHolder.ToString());
+        graphContainer.getFirstRoom().setIsLightOn(true);
+        graphContainer.getFirstRoom().lightOn();
         EventBroadcaster.Instance.AddObserver(GraphGameEventNames.BFS_BUTTON_CLICK, this.BFS);
         EventBroadcaster.Instance.AddObserver(GraphGameEventNames.DFS_BUTTON_CLICK, this.DFSrecursive);
+        EventBroadcaster.Instance.AddObserver(GraphGameEventNames.PLUS_BUTTON_CLICK, this.PlusClicked);
+        EventBroadcaster.Instance.AddObserver(GraphGameEventNames.MINUS_BUTTON_CLICK, this.MinusClicked);
     }
 
     // Update is called once per frame
@@ -29,13 +40,17 @@ public class SearchTraversal : MonoBehaviour
     {
         EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.BFS_BUTTON_CLICK);
         EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.DFS_BUTTON_CLICK);
+        EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.PLUS_BUTTON_CLICK);
+        EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.MINUS_BUTTON_CLICK);
+    }
+
+    public void BFS2() 
+    { 
 
     }
 
     public void BFS()
     {
-        ctr++;
-        Debug.Log(ctr);
         //Debug.Log(graphContainer.getFirstRoom());
         firstRoom = graphContainer.getFirstRoom();
         roomList = graphContainer.getRoomList();
@@ -153,5 +168,22 @@ public class SearchTraversal : MonoBehaviour
             room.lightOff();
         }
 
+    }
+    public void PlusClicked()
+    {
+        if (energyHolder < nEnergy)
+        {
+            energyHolder++;
+            this.energyToBeUsed.SetText(energyHolder.ToString());
+        }
+    }
+
+    public void MinusClicked()
+    {
+        if (energyHolder > 1)
+        {
+            energyHolder--;
+            this.energyToBeUsed.SetText(energyHolder.ToString());
+        }
     }
 }
