@@ -6,10 +6,13 @@ using TMPro;
 public class SearchTraversal : MonoBehaviour
 {
     [SerializeField] GraphSpawner graphContainer;
+    [SerializeField] EnergyBar energyBar;
     [SerializeField] int nRooms;
     [SerializeField] int nEnergy = 10;
     [SerializeField] TextMeshProUGUI energyText;
     [SerializeField] TextMeshProUGUI energyToBeUsed;
+
+
     private int energyHolder = 1;
 
     List<Room> searchQueue;
@@ -24,6 +27,7 @@ public class SearchTraversal : MonoBehaviour
     {
         this.energyText.SetText("Energy Left: " + nEnergy);
         this.energyToBeUsed.SetText(energyHolder.ToString());
+        energyBar.SetMaxEnergy(nEnergy);
         graphContainer.getFirstRoom().setIsLightOn(true);
         graphContainer.getFirstRoom().lightOn();
         graphContainer.getFirstRoom().showCharacter();
@@ -181,6 +185,7 @@ public class SearchTraversal : MonoBehaviour
         else
         {
             nEnergy = nEnergy - energyHolder;
+            energyBar.SetEnergy(nEnergy);
             energyText.SetText("Energy Left: " + nEnergy);
             energyHolder = 1;
             this.energyToBeUsed.SetText(energyHolder.ToString());
