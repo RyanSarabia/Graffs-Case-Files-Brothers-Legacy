@@ -25,7 +25,7 @@ public class SearchTraversal : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.energyText.SetText("Energy Left: " + nEnergy);
+        this.energyText.SetText("Remaining Energy: " + nEnergy);
         this.energyToBeUsed.SetText(energyHolder.ToString());
         energyBar.SetMaxEnergy(nEnergy);
         graphContainer.getFirstRoom().setIsLightOn(true);
@@ -186,7 +186,7 @@ public class SearchTraversal : MonoBehaviour
         {
             nEnergy = nEnergy - energyHolder;
             energyBar.SetEnergy(nEnergy);
-            energyText.SetText("Energy Left: " + nEnergy);
+            energyText.SetText("Remaining Energy: " + nEnergy);
             energyHolder = 1;
             this.energyToBeUsed.SetText(energyHolder.ToString());
         }
