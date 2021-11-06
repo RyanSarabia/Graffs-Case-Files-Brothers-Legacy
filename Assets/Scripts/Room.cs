@@ -20,11 +20,14 @@ public class Room : MonoBehaviour, IPointerClickHandler
     [SerializeField] private Room downNeighbor;
 
     [SerializeField] private GameObject highlight;
+    [SerializeField] private GameObject clueIcon;
     [SerializeField] private GameObject character;
 
     private int roomID;
     private bool characterPresent = false;
     private bool isLightOn = false;
+
+    [SerializeField] private bool hasClue = false;
 
     // Start is called before the first frame update
     void Start()
@@ -143,12 +146,18 @@ public class Room : MonoBehaviour, IPointerClickHandler
 
     private void OnMouseEnter()
     {
-        highlight.SetActive(true);
+        if (getRoomClueState())
+            clueIcon.SetActive(true);
+        else
+            highlight.SetActive(true);
     }
 
     private void OnMouseExit()
     {
-        highlight.SetActive(false);
+        if (getRoomClueState())
+            clueIcon.SetActive(false);
+        else
+            highlight.SetActive(false);        
     }
 
     public void OnMouseDown()
@@ -173,6 +182,16 @@ public class Room : MonoBehaviour, IPointerClickHandler
     public bool getCharacterPresent()
     {
         return characterPresent;
+    }
+
+    public void setRoomClueState(bool state)
+    {
+        hasClue = state;
+    }
+
+    public bool getRoomClueState()
+    {
+        return hasClue;
     }
 
     public void OnPointerClick(PointerEventData eventData)
