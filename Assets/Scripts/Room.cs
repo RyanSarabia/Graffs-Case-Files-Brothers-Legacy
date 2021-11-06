@@ -93,6 +93,8 @@ public class Room : MonoBehaviour, IPointerClickHandler
     public void setIsLightOn(bool state)
     {
         isLightOn = state;
+        if (state && getRoomClueState())
+            clueIcon.SetActive(true);
     }
 
     public bool getIsLightOn()
@@ -146,17 +148,17 @@ public class Room : MonoBehaviour, IPointerClickHandler
 
     private void OnMouseEnter()
     {
-        if (getRoomClueState())
-            clueIcon.SetActive(true);
-        else
+        //if (getRoomClueState())
+        //    clueIcon.SetActive(true);
+        //else
             highlight.SetActive(true);
     }
 
     private void OnMouseExit()
     {
-        if (getRoomClueState())
-            clueIcon.SetActive(false);
-        else
+        //if (getRoomClueState())
+        //    clueIcon.SetActive(false);
+        //else
             highlight.SetActive(false);        
     }
 
