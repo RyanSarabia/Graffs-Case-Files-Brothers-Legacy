@@ -13,6 +13,12 @@ public class Actions : MonoBehaviour
     private Room curRoom;
     private Room prevRoom;
 
+    [SerializeField] private int totalClues;
+    private int numClues = 0;
+    private List<int> clueRoomIDs;
+
+    [SerializeField] private GameObject victoryCard;
+
     public static Actions GetInstance()
     {
         return instance;
@@ -31,6 +37,8 @@ public class Actions : MonoBehaviour
     {
         curRoom = spawner.getFirstRoom();
         prevRoom = spawner.getFirstRoom();
+
+        clueRoomIDs = new List<int>();
     }
 
     // Update is called once per frame
@@ -66,5 +74,19 @@ public class Actions : MonoBehaviour
     public Room GetCurrRoom()
     {
         return curRoom;
+    }
+
+    public void clueFound(int id)
+    {
+        if(!clueRoomIDs.Exists(x => x == id))
+        {
+            clueRoomIDs.Add(id);
+            numClues++;
+        }
+            
+        if(numClues == totalClues)
+        {
+            victoryCard.SetActive(true);
+        }
     }
 }

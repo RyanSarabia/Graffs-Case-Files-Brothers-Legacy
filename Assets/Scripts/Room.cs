@@ -166,6 +166,10 @@ public class Room : MonoBehaviour, IPointerClickHandler
     {
         Debug.Log("any mouse click");
         Actions.GetInstance().character(roomID);
+        if (getRoomClueState())
+        {
+            Actions.GetInstance().clueFound(roomID);
+        }
     }
 
     public void showCharacter()
