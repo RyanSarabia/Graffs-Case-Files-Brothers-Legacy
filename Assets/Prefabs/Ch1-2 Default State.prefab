@@ -2340,6 +2340,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2401497683822815177}
+  - component: {fileID: 3424492870457207627}
   m_Layer: 0
   m_Name: Ch1-2 Default State
   m_TagString: Untagged
@@ -2365,3 +2366,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3424492870457207627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8682875746705213257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 781ff2239c2b2bd45b7f2cba7f069d73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pitchersPrefabCopy: {fileID: 3424492870457207627}
+  p1Object: {fileID: 2401497681956745180}
+  p2Object: {fileID: 2401497682825073783}
+  p3Object: {fileID: 2401497682502409248}

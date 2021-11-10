@@ -84,4 +84,9 @@ public class Pitcher : MonoBehaviour
     {
         waterAmount = 0;
     }
+
+    public void setWater(int water)
+    {
+        waterAmount = water;
+    }
 }

@@ -6,6 +6,9 @@ public class State_Pitchers : MonoBehaviour
 {
 
     [SerializeField] State_Pitchers pitchersPrefabCopy;
+    [SerializeField] Pitcher p1Object;
+    [SerializeField] Pitcher p2Object;
+    [SerializeField] Pitcher p3Object;
 
     private int pitcher1; // max 16
     private int pitcher2; // max 9
@@ -13,21 +16,43 @@ public class State_Pitchers : MonoBehaviour
     private readonly static int P1MAX = 16; // max 16
     private readonly static int P2MAX = 9; // max 9
     private readonly static int P3MAX = 7; // max 7
-    private List<State_Pitchers> adjacentStates;
+
+    [SerializeField] private List<State_Pitchers> adjacentStates;
 
     // Start is called before the first frame update
     void Start()
     {
-        pitcher1 = 0;
-        pitcher2 = 0;
-        pitcher3 = 0;
+        adjacentStates = new List<State_Pitchers>();
+        setCurState(0, 0, 0);
     }
 
-    void setStates(int p1, int p2, int p3)
+    public void setCurState(int p1, int p2, int p3)
     {
+        clearAdjacentNodes();
+
         pitcher1 = p1;
         pitcher2 = p2;
         pitcher3 = p3;
+
+        getAdjacentNodes();
+    }
+    void setStatesAndPitcherValues(int p1, int p2, int p3)
+    {
+        pitcher1 = p1;
+        p1Object.setWater(p1);
+
+        pitcher2 = p2;
+        p2Object.setWater(p2);
+
+        pitcher3 = p3;
+        p3Object.setWater(p3);
+
+    }
+
+    void clearAdjacentNodes()
+    {
+        //remove adjacent nodes from graph device
+        adjacentStates.Clear();
     }
 
     void getAdjacentNodes()
@@ -100,7 +125,12 @@ public class State_Pitchers : MonoBehaviour
 
     void createState(int p1, int p2, int p3)
     {
-
+        // spawn here
+        // State_Pitchers newState = GameObject.Instantiate(this.pitchersPrefabCopy, this.transform);
+        
+        // hindi to gagana hanggat wala yung mismong newState sa scene
+        // newState.setStatesAndPitcherValues(p1, p2, p3);
+        // adjacentStates.Add(newState);
     }
     private class IntWrapper
     {

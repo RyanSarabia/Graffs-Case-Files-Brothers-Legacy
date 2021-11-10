@@ -21,6 +21,7 @@ public class PitcherActionManager : MonoBehaviour
     private List<int> pitcherIDs;
     private List<Pitcher> pitcherList;
 
+    [SerializeField] private State_Pitchers stateManager;
     [SerializeField] private Sink sink;
     [SerializeField] private Pitcher p1;
     [SerializeField] private Pitcher p2;
@@ -72,6 +73,7 @@ public class PitcherActionManager : MonoBehaviour
                 }
 
                 unSelect();
+                stateManager.setCurState(p1.getWaterAmount(), p2.getWaterAmount(), p3.getWaterAmount());
             }           
         }
         else
