@@ -88,25 +88,23 @@ public class PitcherActionManager : MonoBehaviour
                         break;
                 }
 
-
-                pitcherIDs.Clear();
-                sink.unSelect();
-                p1.unSelect();
-                p2.unSelect();
-                p3.unSelect();
+                unSelect();
             }           
         }
         else
-        {
-            pitcherIDs.Clear();
+        {            
+            unSelect();
+        }
+    }
 
-            switch (id)
-            {
-                case 0: sink.unSelect(); break;
-                case 1: p1.unSelect(); break;
-                case 2: p2.unSelect(); break;
-                case 3: p3.unSelect(); break;
-            }
+    private void unSelect()
+    {
+        pitcherIDs.Clear();
+        for (int i = 0; i < obj.Count; i++) { 
+            if(i == 0)
+                ((Sink)obj[i]).unSelect();
+            else
+                ((Pitcher)obj[i]).unSelect();
         }
     }
 }
