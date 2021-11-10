@@ -240,7 +240,7 @@ MonoBehaviour:
   waterAmountText: {fileID: 2401497681885794944}
   waterCapText: {fileID: 2401497683626550305}
   highlight: {fileID: 2401497682989361668}
-  id: 3
+  id: 2
 --- !u!61 &2401497682502409255
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1017,7 +1017,7 @@ MonoBehaviour:
   waterAmountText: {fileID: 2401497683557108739}
   waterCapText: {fileID: 2401497682652803215}
   highlight: {fileID: 2401497683115337343}
-  id: 1
+  id: 0
 --- !u!61 &2401497682624641158
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2304,7 +2304,7 @@ MonoBehaviour:
   waterAmountText: {fileID: 2401497683630893687}
   waterCapText: {fileID: 2401497683020124268}
   highlight: {fileID: 2401497682567631225}
-  id: 2
+  id: 1
 --- !u!61 &2401497682825073776
 BoxCollider2D:
   m_ObjectHideFlags: 0

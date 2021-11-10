@@ -6,7 +6,7 @@ public class Sink : MonoBehaviour
 {
     [SerializeField] private GameObject highlight;
 
-    [SerializeField] private int id;
+    [SerializeField] private int id = -1;
 
     private bool selected;
     // Start is called before the first frame update

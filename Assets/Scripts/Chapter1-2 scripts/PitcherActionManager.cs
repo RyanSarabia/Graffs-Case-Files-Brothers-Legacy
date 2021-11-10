@@ -19,7 +19,7 @@ public class PitcherActionManager : MonoBehaviour
     }
 
     private List<int> pitcherIDs;
-    private List<object> obj;
+    private List<Pitcher> pitcherList;
 
     [SerializeField] private Sink sink;
     [SerializeField] private Pitcher p1;
@@ -30,11 +30,11 @@ public class PitcherActionManager : MonoBehaviour
     void Start()
     {
         pitcherIDs = new List<int>();
-        obj = new List<object>();
-        obj.Add(sink);
-        obj.Add(p1);
-        obj.Add(p2);
-        obj.Add(p3);
+        pitcherList = new List<Pitcher>();
+        
+        pitcherList.Add(p1);
+        pitcherList.Add(p2);
+        pitcherList.Add(p3);
     }
 
     // Update is called once per frame
@@ -46,46 +46,29 @@ public class PitcherActionManager : MonoBehaviour
     public void interact(int id)
     {
         int excess;
+        int firstSelect;
 
         if (!pitcherIDs.Exists(x => x == id))
         {
             pitcherIDs.Add(id);
 
             if(pitcherIDs.Count > 1)
-            {
-                switch (pitcherIDs[0])
+            {                
+                firstSelect = pitcherIDs[0];
+
+                if(firstSelect == -1) // if first click is sink
+                   pitcherList[id].fillWater(100);
+                else
                 {
-                    case 0: _ = ((Pitcher)obj[id]).fillWater(100); break;
-                    case 1: 
-                    if (id == 0)                        
-                        ((Pitcher)obj[1]).emptyPitcher();
+                    if(id == -1) //if you click sink second
+                        pitcherList[firstSelect].emptyPitcher();
                     else
                     {
-                        excess = ((Pitcher)obj[id]).fillWater(((Pitcher)obj[1]).getWaterAmount());
-                        ((Pitcher)obj[1]).emptyPitcher();
-                        _ = ((Pitcher)obj[1]).fillWater(excess);
-                    }                              
-                    break;
-                    case 2:
-                    if (id == 0)
-                        ((Pitcher)obj[2]).emptyPitcher();
-                    else
-                    {
-                        excess = ((Pitcher)obj[id]).fillWater(((Pitcher)obj[2]).getWaterAmount());
-                        ((Pitcher)obj[2]).emptyPitcher();
-                        _ = ((Pitcher)obj[2]).fillWater(excess);
+                        excess = pitcherList[id].fillWater(pitcherList[firstSelect].getWaterAmount());
+                        pitcherList[firstSelect].emptyPitcher();
+                        _ = pitcherList[firstSelect].fillWater(excess);
                     }
-                    break;
-                    case 3:
-                        if (id == 0)
-                            ((Pitcher)obj[3]).emptyPitcher();
-                        else
-                        {
-                            excess = ((Pitcher)obj[id]).fillWater(((Pitcher)obj[3]).getWaterAmount());
-                            ((Pitcher)obj[3]).emptyPitcher();
-                            _ = ((Pitcher)obj[3]).fillWater(excess);
-                        }
-                        break;
+                        
                 }
 
                 unSelect();
@@ -100,11 +83,8 @@ public class PitcherActionManager : MonoBehaviour
     private void unSelect()
     {
         pitcherIDs.Clear();
-        for (int i = 0; i < obj.Count; i++) { 
-            if(i == 0)
-                ((Sink)obj[i]).unSelect();
-            else
-                ((Pitcher)obj[i]).unSelect();
-        }
+        sink.unSelect();
+        foreach (Pitcher pitcher in pitcherList)
+            pitcher.unSelect();
     }
 }
