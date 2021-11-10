@@ -24,6 +24,7 @@ public class PitcherActionManager : MonoBehaviour
     [SerializeField] private Sink sink;
     [SerializeField] private Pitcher p1;
     [SerializeField] private Pitcher p2;
+    [SerializeField] private Pitcher p3;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +34,7 @@ public class PitcherActionManager : MonoBehaviour
         obj.Add(sink);
         obj.Add(p1);
         obj.Add(p2);
+        obj.Add(p3);
     }
 
     // Update is called once per frame
@@ -74,6 +76,16 @@ public class PitcherActionManager : MonoBehaviour
                         _ = ((Pitcher)obj[2]).fillWater(excess);
                     }
                     break;
+                    case 3:
+                        if (id == 0)
+                            ((Pitcher)obj[3]).emptyPitcher();
+                        else
+                        {
+                            excess = ((Pitcher)obj[id]).fillWater(((Pitcher)obj[3]).getWaterAmount());
+                            ((Pitcher)obj[3]).emptyPitcher();
+                            _ = ((Pitcher)obj[3]).fillWater(excess);
+                        }
+                        break;
                 }
 
 
@@ -81,6 +93,7 @@ public class PitcherActionManager : MonoBehaviour
                 sink.unSelect();
                 p1.unSelect();
                 p2.unSelect();
+                p3.unSelect();
             }           
         }
         else
@@ -92,6 +105,7 @@ public class PitcherActionManager : MonoBehaviour
                 case 0: sink.unSelect(); break;
                 case 1: p1.unSelect(); break;
                 case 2: p2.unSelect(); break;
+                case 3: p3.unSelect(); break;
             }
         }
     }
