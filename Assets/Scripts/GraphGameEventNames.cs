@@ -10,6 +10,7 @@ public class GraphGameEventNames
     public const string DFS_BUTTON_CLICK = "DFS_BUTTON_CLICK";
     public const string PLUS_BUTTON_CLICK = "PLUS_BUTTON_CLICK";
     public const string MINUS_BUTTON_CLICK = "MINUS_BUTTON_CLICK";
+    public const string WATER_CHANGED = "WATER_CHANGED";
 
     //Archetype1 Actions
     public const string TILE_SELECT = "TILE_SELECT";

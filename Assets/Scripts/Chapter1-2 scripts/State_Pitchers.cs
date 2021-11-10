@@ -22,31 +22,34 @@ public class State_Pitchers : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         adjacentStates = new List<State_Pitchers>();
         setCurState(0, 0, 0);
+        EventBroadcaster.Instance.AddObserver(GraphGameEventNames.WATER_CHANGED, this.setStatesAndPitcherValues);
+    }
+
+    private void OnDestroy()
+    {
+        EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.WATER_CHANGED);
     }
 
     public void setCurState(int p1, int p2, int p3)
     {
-        clearAdjacentNodes();
-
+        
         pitcher1 = p1;
         pitcher2 = p2;
         pitcher3 = p3;
+
+    }
+    public void setStatesAndPitcherValues()
+    {
+        clearAdjacentNodes();
+        p1Object.setWater(PitcherActionManager.GetInstance().p1.getWaterAmount());
+        p2Object.setWater(PitcherActionManager.GetInstance().p2.getWaterAmount());
+        p3Object.setWater(PitcherActionManager.GetInstance().p3.getWaterAmount());
+        setCurState(p1Object.getWaterAmount(), p2Object.getWaterAmount(), p3Object.getWaterAmount());
 
         getAdjacentNodes();
-    }
-    void setStatesAndPitcherValues(int p1, int p2, int p3)
-    {
-        pitcher1 = p1;
-        p1Object.setWater(p1);
-
-        pitcher2 = p2;
-        p2Object.setWater(p2);
-
-        pitcher3 = p3;
-        p3Object.setWater(p3);
-
     }
 
     void clearAdjacentNodes()
@@ -128,11 +131,11 @@ public class State_Pitchers : MonoBehaviour
         // spawn here
         //State_Pitchers newState = GameObject.Instantiate(this.pitchersPrefabCopy, this.transform);
 
-        // State_Pitchers newState = new State_Pitchers(); //pangtest ko lang tong line na to pero mali to
+        State_Pitchers newState = new State_Pitchers(); //pangtest ko lang tong line na to pero mali to
         
         // hindi to gagana hanggat wala yung mismong newState sa scene
         // newState.setStatesAndPitcherValues(p1, p2, p3);
-        // adjacentStates.Add(newState);
+        adjacentStates.Add(newState);
     }
     private class IntWrapper
     {

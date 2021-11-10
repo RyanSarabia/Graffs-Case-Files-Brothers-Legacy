@@ -23,9 +23,9 @@ public class PitcherActionManager : MonoBehaviour
 
     [SerializeField] private State_Pitchers stateManager;
     [SerializeField] private Sink sink;
-    [SerializeField] private Pitcher p1;
-    [SerializeField] private Pitcher p2;
-    [SerializeField] private Pitcher p3;
+    [SerializeField] public Pitcher p1;
+    [SerializeField] public Pitcher p2;
+    [SerializeField] public Pitcher p3;
 
     // Start is called before the first frame update
     void Start()
@@ -74,6 +74,7 @@ public class PitcherActionManager : MonoBehaviour
 
                 unSelect();
                 stateManager.setCurState(p1.getWaterAmount(), p2.getWaterAmount(), p3.getWaterAmount());
+                EventBroadcaster.Instance.PostEvent(GraphGameEventNames.WATER_CHANGED);
             }           
         }
         else
