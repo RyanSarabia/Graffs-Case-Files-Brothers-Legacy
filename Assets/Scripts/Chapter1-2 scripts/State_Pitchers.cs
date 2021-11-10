@@ -126,7 +126,9 @@ public class State_Pitchers : MonoBehaviour
     void createState(int p1, int p2, int p3)
     {
         // spawn here
-        // State_Pitchers newState = GameObject.Instantiate(this.pitchersPrefabCopy, this.transform);
+        //State_Pitchers newState = GameObject.Instantiate(this.pitchersPrefabCopy, this.transform);
+
+        // State_Pitchers newState = new State_Pitchers(); //pangtest ko lang tong line na to pero mali to
         
         // hindi to gagana hanggat wala yung mismong newState sa scene
         // newState.setStatesAndPitcherValues(p1, p2, p3);
@@ -168,11 +170,12 @@ public class State_Pitchers : MonoBehaviour
         }
 
         int space = destMax - destVar.val;
-        if(space >= srcVar.val)
+        if (space >= srcVar.val)
         {
             destVar.val = destVar.val + srcVar.val;
             srcVar.val = 0;
-        } else
+        }
+        else
         {
             destVar.val = destMax;
             srcVar.val = srcVar.val - space;
@@ -184,6 +187,6 @@ public class State_Pitchers : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

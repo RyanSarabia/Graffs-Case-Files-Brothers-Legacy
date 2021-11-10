@@ -250,7 +250,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 781ff2239c2b2bd45b7f2cba7f069d73, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d4a6967eb5e37843ad6682dc96e8754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1570511072 stripped
@@ -654,6 +654,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3424492870457207627, guid: 2f39a125f4d26a541931e28a26bc8749, type: 3}
+      propertyPath: pitchersPrefabCopy
+      value: 
+      objectReference: {fileID: 3424492870457207627, guid: 2f39a125f4d26a541931e28a26bc8749, type: 3}
     - target: {fileID: 8682875746705213257, guid: 2f39a125f4d26a541931e28a26bc8749, type: 3}
       propertyPath: m_Name
       value: Interactables
