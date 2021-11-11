@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class State_Pitchers : MonoBehaviour
 {
-
-    [SerializeField] State_Pitchers pitchersPrefabCopy;
+    [SerializeField] AdjacentStateHolder pitchersPrefabCopy;
     [SerializeField] Pitcher p1Object;
     [SerializeField] Pitcher p2Object;
     [SerializeField] Pitcher p3Object;
@@ -17,18 +17,21 @@ public class State_Pitchers : MonoBehaviour
     private readonly static int P2MAX = 9; // max 9
     private readonly static int P3MAX = 7; // max 7
 
-    [SerializeField] private List<State_Pitchers> adjacentStates;
+    [SerializeField] private List<AdjacentStateHolder> adjacentStates;
+    [SerializeField] private GameObject adjacentContainer;
+    //[SerializeField] private ScrollView adjacentScrollView;
 
     // Start is called before the first frame update
     void Start()
     {
         
-        adjacentStates = new List<State_Pitchers>();
+        adjacentStates = new List<AdjacentStateHolder>();
         setCurState(0, 0, 0);
         EventBroadcaster.Instance.AddObserver(GraphGameEventNames.WATER_CHANGED, this.setStatesAndPitcherValues);
+        getAdjacentNodes();
     }
 
-    private void OnDestroy()
+    private void OnApplicationQuit()
     {
         EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.WATER_CHANGED);
     }
@@ -48,13 +51,18 @@ public class State_Pitchers : MonoBehaviour
         p2Object.setWater(PitcherActionManager.GetInstance().p2.getWaterAmount());
         p3Object.setWater(PitcherActionManager.GetInstance().p3.getWaterAmount());
         setCurState(p1Object.getWaterAmount(), p2Object.getWaterAmount(), p3Object.getWaterAmount());
-
         getAdjacentNodes();
+
     }
 
     void clearAdjacentNodes()
     {
         //remove adjacent nodes from graph device
+        
+        foreach (AdjacentStateHolder adjacent_state_holder in adjacentStates)
+        {
+            Destroy(adjacent_state_holder.gameObject);
+        }
         adjacentStates.Clear();
     }
 
@@ -129,10 +137,11 @@ public class State_Pitchers : MonoBehaviour
     void createState(int p1, int p2, int p3)
     {
         // spawn here
-        //State_Pitchers newState = GameObject.Instantiate(this.pitchersPrefabCopy, this.transform);
+        AdjacentStateHolder newState = GameObject.Instantiate(this.pitchersPrefabCopy, this.transform);
+        newState.setCurState(p1, p2, p3);
+        newState.transform.parent = adjacentContainer.transform;
 
-        State_Pitchers newState = new State_Pitchers(); //pangtest ko lang tong line na to pero mali to
-        
+        //State_Pitchers newState = new State_Pitchers(); //pangtest ko lang tong line na to pero mali to
         // hindi to gagana hanggat wala yung mismong newState sa scene
         // newState.setStatesAndPitcherValues(p1, p2, p3);
         adjacentStates.Add(newState);

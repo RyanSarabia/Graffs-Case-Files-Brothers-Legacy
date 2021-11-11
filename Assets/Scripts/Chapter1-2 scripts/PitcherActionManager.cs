@@ -78,7 +78,7 @@ public class PitcherActionManager : MonoBehaviour
             }           
         }
         else
-        {            
+        {
             unSelect();
         }
     }
