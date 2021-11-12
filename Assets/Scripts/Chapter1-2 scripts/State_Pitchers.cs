@@ -139,7 +139,7 @@ public class State_Pitchers : MonoBehaviour
         // spawn here
         AdjacentStateHolder newState = GameObject.Instantiate(this.pitchersPrefabCopy, this.transform);
         newState.setCurState(p1, p2, p3);
-        newState.transform.parent = adjacentContainer.transform;
+        newState.transform.SetParent(adjacentContainer.transform);
 
         //State_Pitchers newState = new State_Pitchers(); //pangtest ko lang tong line na to pero mali to
         // hindi to gagana hanggat wala yung mismong newState sa scene

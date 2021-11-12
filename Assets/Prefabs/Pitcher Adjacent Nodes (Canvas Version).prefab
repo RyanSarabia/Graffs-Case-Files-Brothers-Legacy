@@ -1122,6 +1122,7 @@ GameObject:
   - component: {fileID: 4439402352846381268}
   - component: {fileID: 2375176789062382636}
   - component: {fileID: 7147889761712478604}
+  - component: {fileID: 1127978190505412744}
   m_Layer: 5
   m_Name: Pitcher Adjacent Nodes (Canvas Version)
   m_TagString: Untagged
@@ -1228,6 +1229,32 @@ MonoBehaviour:
   p1Object: {fileID: 6047632295288311881}
   p2Object: {fileID: 841152778188963945}
   p3Object: {fileID: 9121760043289412269}
+--- !u!61 &1127978190505412744
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6809774621170218042}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0049934387, y: -0.07738806}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.1283684, y: 0.8951516}
+  m_EdgeRadius: 0
 --- !u!1 &6953221639256959091
 GameObject:
   m_ObjectHideFlags: 0
