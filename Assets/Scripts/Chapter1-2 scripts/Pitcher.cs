@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class Pitcher : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class Pitcher : MonoBehaviour
     [SerializeField] private int waterCap;
     [SerializeField] TextMeshProUGUI waterAmountText;
     [SerializeField] TextMeshProUGUI waterCapText;
+    [SerializeField] private Slider slider;
 
     [SerializeField] private GameObject highlight;
 
@@ -25,6 +27,11 @@ public class Pitcher : MonoBehaviour
     {
         this.waterAmountText.SetText(waterAmount.ToString());
         this.waterCapText.SetText(waterCap.ToString());
+        if (slider)
+        {
+            slider.maxValue = waterCap;
+            slider.value = waterAmount;
+        }
     }
 
     public int getCap()
