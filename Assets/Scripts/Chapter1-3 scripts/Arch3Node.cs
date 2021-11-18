@@ -5,7 +5,7 @@ using UnityEngine;
 public class Arch3Node : MonoBehaviour
 {
     [SerializeField] List<Arch3Edge> edges;
-
+    //[SerializeField] bool locked = true;
 
     public void revealEdges()
     {
@@ -14,6 +14,12 @@ public class Arch3Node : MonoBehaviour
         {
             edge.reveal();
         }
+    }
+
+    public void unlock()
+    {
+        this.GetComponent<SpriteRenderer>().enabled = true;
+        this.GetComponent<CircleCollider2D>().enabled = true;
     }
 
     public void addEdge(Arch3Edge newEdge)

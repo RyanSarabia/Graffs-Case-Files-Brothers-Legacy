@@ -15,6 +15,8 @@ public class Arch3Edge : MonoBehaviour
     {
         // set textfield active
         this.weightText.gameObject.SetActive(true);
+        nodeA.unlock();
+        nodeB.unlock();
     }
 
     // Start is called before the first frame update
