@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 3026066427844422074}
   - component: {fileID: 5006388425258822918}
   - component: {fileID: 3276296197776931220}
+  - component: {fileID: 6527543117571059776}
   - component: {fileID: 1772947473248054913}
   m_Layer: 0
   m_Name: Graph Nodes
@@ -185,6 +186,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 5511035689026653894}
+--- !u!114 &6527543117571059776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4607948181591527921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0976016401d56174392fc8156a4dbf27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  edges: []
 --- !u!58 &1772947473248054913
 CircleCollider2D:
   m_ObjectHideFlags: 0

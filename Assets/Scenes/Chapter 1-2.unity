@@ -1072,9 +1072,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Graph Device
-
-'
+  m_Text: Graph Device
 --- !u!222 &1016059935
 CanvasRenderer:
   m_ObjectHideFlags: 0

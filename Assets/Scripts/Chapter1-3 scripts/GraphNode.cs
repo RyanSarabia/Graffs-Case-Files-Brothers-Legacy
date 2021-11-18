@@ -7,9 +7,14 @@ public class GraphNode : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] GameObject highlight;
     private bool selected = false;
+    private bool isClickSource = false;
     void Start()
     {
-        
+        EventBroadcaster.Instance.AddObserver(GraphGameEventNames.ARCH3_NODECLICKED, this.handleMouseDown);
+    }
+    private void OnDestroy()
+    {
+        EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.ARCH3_NODECLICKED);
     }
 
     // Update is called once per frame
@@ -18,13 +23,46 @@ public class GraphNode : MonoBehaviour
         
     }
 
-    //private void OnMouseDown()
-    //{
-    //    selected = true;
-    //    highlight.SetActive(true);
-    //    //PitcherActionManager.GetInstance().interact(id);
-    //}
+    private void OnMouseDown()
+    {
+        isClickSource = true;
+        EventBroadcaster.Instance.PostEvent(GraphGameEventNames.ARCH3_NODECLICKED);
+    }
 
+    private void handleMouseDown()
+    {
+        if (selected)
+        {
+            unSelect();
+            if (isClickSource)
+            {
+                Arch3Manager.GetInstance().closeActionsMenu();
+            }
+        }
+        else if (!selected && isClickSource)
+        {
+            select();
+            Arch3Manager.GetInstance().openActionsMenu(this);
+        }
+        isClickSource = false;
+        
+        //if (selected || !isClickSource)
+        //{
+        //    unSelect();
+        //}
+        //else if (isClickSource)
+        //{
+        //    isClickSource = false;
+        //    select();
+        //    Arch3Manager.GetInstance().openActionsMenu(this);
+        //}
+    }
+
+    public void select()
+    {
+        selected = true;
+        highlight.SetActive(true);
+    }
     public void unSelect()
     {
         selected = false;

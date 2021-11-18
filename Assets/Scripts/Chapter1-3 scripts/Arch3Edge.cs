@@ -9,18 +9,20 @@ public class Arch3Edge : MonoBehaviour
     [SerializeField] Arch3Node nodeB;
     [SerializeField] int weight;
     [SerializeField] TextMeshProUGUI weightText;
+    bool addedEdgesToNodes;
 
-    void reveal()
+    public void reveal()
     {
         // set textfield active
-        this.weightText.enabled = true;
+        this.weightText.gameObject.SetActive(true);
     }
 
     // Start is called before the first frame update
     void Start()
     {
         this.weightText.SetText(weight.ToString());
-        this.weightText.enabled = false;
+        this.weightText.gameObject.SetActive(false);
+        addedEdgesToNodes = false;
     }
 
     Arch3Node getNeighbor(Arch3Node source)
@@ -38,6 +40,11 @@ public class Arch3Edge : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (!addedEdgesToNodes)
+        {
+            addedEdgesToNodes = true;
+            nodeA.addEdge(this);
+            nodeB.addEdge(this);
+        }
     }
 }
