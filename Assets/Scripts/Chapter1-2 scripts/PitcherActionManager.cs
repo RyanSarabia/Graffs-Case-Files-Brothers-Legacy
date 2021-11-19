@@ -30,7 +30,7 @@ public class PitcherActionManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        EventBroadcaster.Instance.AddObserver(GraphGameEventNames.GRAPH_DEVICE_CLICKED, this.GraphDeviceClicked);
+        EventBroadcaster.Instance.AddObserver(GraphGameEventNames.GRAPH_DEVICE_CONFIRMED, this.GraphDeviceConfirmed);
         pitcherIDs = new List<int>();
         pitcherList = new List<Pitcher>();
         
@@ -41,7 +41,7 @@ public class PitcherActionManager : MonoBehaviour
 
     private void OnDestroy()
     {
-        EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.GRAPH_DEVICE_CLICKED);
+        EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.GRAPH_DEVICE_CONFIRMED);
     }
 
     // Update is called once per frame
@@ -50,7 +50,7 @@ public class PitcherActionManager : MonoBehaviour
         
     }
 
-    private void GraphDeviceClicked(Parameters parameters)
+    private void GraphDeviceConfirmed(Parameters parameters)
     {
         p1.setWater(parameters.GetIntExtra("Pitcher 1 Value", 0));
         p2.setWater(parameters.GetIntExtra("Pitcher 2 Value", 0));

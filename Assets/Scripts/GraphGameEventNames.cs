@@ -13,6 +13,8 @@ public class GraphGameEventNames
     public const string WATER_CHANGED = "WATER_CHANGED";
     public const string ADJACENT_LISTED = "ADJACENT_LISTED";
     public const string GRAPH_DEVICE_CLICKED = "GRAPH_DEVICE_CLICKED";
+    public const string GRAPH_DEVICE_CONFIRM_OCCURRED = "GRAPH_DEVICE_CONFIRM_OCCURRED";
+    public const string GRAPH_DEVICE_CONFIRMED = "GRAPH_DEVICE_CONFIRMED";
     public const string ARCH3_NODECLICKED = "ARCH3_NODECLICKED";
 
     //Archetype1 Actions
