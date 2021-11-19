@@ -172,6 +172,7 @@ public class SearchTraversal : MonoBehaviour
     private IEnumerator lighterDelay(Room lightUpRoom, int n)
     {
         Debug.Log("Running Coroutine" + "energy count: " + n);
+        Actions.GetInstance().setMidLightUp(true);
         lightUpRoom.setIsLightOn(true);
         lightUpRoom.lightOn();
         n++;
@@ -184,6 +185,7 @@ public class SearchTraversal : MonoBehaviour
         }
         else
         {
+            Actions.GetInstance().setMidLightUp(false);
             nEnergy = nEnergy - energyHolder;
             energyBar.SetEnergy(nEnergy);
             energyText.SetText("Remaining Energy: " + nEnergy);

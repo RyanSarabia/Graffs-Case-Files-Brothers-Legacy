@@ -22,6 +22,9 @@ public class Actions : MonoBehaviour
     [SerializeField] TextMeshProUGUI clueNumText;
     [SerializeField] TextMeshProUGUI clueTotalText;
 
+    private bool midLightingUp;
+
+
     public static Actions GetInstance()
     {
         return instance;
@@ -94,5 +97,15 @@ public class Actions : MonoBehaviour
         {
             victoryCard.SetActive(true);
         }
+    }
+
+    public void setMidLightUp(bool state)
+    {
+        midLightingUp = state;
+    }
+
+    public bool getMidLightUp()
+    {
+        return midLightingUp;
     }
 }
