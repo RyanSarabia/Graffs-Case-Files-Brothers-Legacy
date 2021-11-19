@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Actions : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class Actions : MonoBehaviour
     private List<int> clueRoomIDs;
 
     [SerializeField] private GameObject victoryCard;
+    [SerializeField] TextMeshProUGUI clueNumText;
+    [SerializeField] TextMeshProUGUI clueTotalText;
 
     public static Actions GetInstance()
     {
@@ -39,12 +42,15 @@ public class Actions : MonoBehaviour
         prevRoom = spawner.getFirstRoom();
 
         clueRoomIDs = new List<int>();
+
+        this.clueTotalText.SetText(totalClues.ToString());
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        this.clueNumText.SetText(numClues.ToString());
+    
     }
 
     public void character(int id)
