@@ -15,6 +15,11 @@ public class Culprit : MonoBehaviour
         stepsTaken = 0;
     }
 
+    public void move(int steps)
+    {
+        
+    }
+
     // Update is called once per frame
     void Update()
     {
