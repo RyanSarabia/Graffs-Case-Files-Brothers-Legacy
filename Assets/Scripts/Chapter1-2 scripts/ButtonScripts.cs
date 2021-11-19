@@ -23,9 +23,9 @@ public class ButtonScripts : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void OnDestroy()
     {
-        
+        EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.GRAPH_DEVICE_CLICKED);
     }
 
     private void GraphDeviceClicked()
