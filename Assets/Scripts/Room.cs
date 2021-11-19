@@ -29,6 +29,8 @@ public class Room : MonoBehaviour, IPointerClickHandler
 
     [SerializeField] private bool hasClue = false;
 
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -100,7 +102,7 @@ public class Room : MonoBehaviour, IPointerClickHandler
     public bool getIsLightOn()
     {
         return isLightOn;
-    }
+    }    
 
     public void setNeighborAndOpenWalls(Room neighbor, string localDirection)
     {
@@ -165,11 +167,15 @@ public class Room : MonoBehaviour, IPointerClickHandler
     public void OnMouseDown()
     {
         Debug.Log("any mouse click");
-        Actions.GetInstance().character(roomID);
-        if (getRoomClueState())
+        if (!Actions.GetInstance().getMidLightUp())
         {
-            Actions.GetInstance().clueFound(roomID);
+            Actions.GetInstance().character(roomID);
+            if (getRoomClueState())
+            {
+                Actions.GetInstance().clueFound(roomID);
+            }
         }
+        
     }
 
     public void showCharacter()
