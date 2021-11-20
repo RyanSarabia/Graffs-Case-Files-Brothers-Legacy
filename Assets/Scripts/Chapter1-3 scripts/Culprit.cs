@@ -5,6 +5,7 @@ using UnityEngine;
 public class Culprit : MonoBehaviour
 {
     [SerializeField] Arch3Node source;
+    [SerializeField] Arch3Node goal;
     [SerializeField] Arch3Edge path;
     [SerializeField] int stepsTaken;
     // [SerializedField] Slider maybeslider;

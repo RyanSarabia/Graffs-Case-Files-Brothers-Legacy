@@ -1232,6 +1232,10 @@ PrefabInstance:
       value: Culprit
       objectReference: {fileID: 0}
     - target: {fileID: 6838455003825778537, guid: 42f3c2499801afa44a25933dface55c6, type: 3}
+      propertyPath: goal
+      value: 
+      objectReference: {fileID: 688131157}
+    - target: {fileID: 6838455003825778537, guid: 42f3c2499801afa44a25933dface55c6, type: 3}
       propertyPath: path
       value: 
       objectReference: {fileID: 1547256708}
