@@ -9,7 +9,6 @@ public class Arch3Edge : MonoBehaviour
     [SerializeField] Arch3Node nodeB;
     [SerializeField] int weight;
     [SerializeField] TextMeshProUGUI weightText;
-    bool addedEdgesToNodes;
 
     public void reveal()
     {
@@ -24,7 +23,8 @@ public class Arch3Edge : MonoBehaviour
     {
         this.weightText.SetText(weight.ToString());
         this.weightText.gameObject.SetActive(false);
-        addedEdgesToNodes = false;
+        nodeA.addEdge(this);
+        nodeB.addEdge(this);
     }
 
     Arch3Node getNeighbor(Arch3Node source)
@@ -42,11 +42,10 @@ public class Arch3Edge : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!addedEdgesToNodes)
-        {
-            addedEdgesToNodes = true;
-            nodeA.addEdge(this);
-            nodeB.addEdge(this);
-        }
+    }
+
+    public int GetWeight()
+    {
+        return weight;
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Arch3Node : MonoBehaviour
 {
-    [SerializeField] List<Arch3Edge> edges;
+    [SerializeField] List<Arch3Edge> edges = new List<Arch3Edge>();
     //[SerializeField] bool locked = true;
 
     public void revealEdges()
@@ -30,7 +30,6 @@ public class Arch3Node : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        edges = new List<Arch3Edge>();
     }
 
     // Update is called once per frame
