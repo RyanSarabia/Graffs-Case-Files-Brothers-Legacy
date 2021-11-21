@@ -27,6 +27,9 @@ public class PitcherActionManager : MonoBehaviour
     [SerializeField] public Pitcher p2;
     [SerializeField] public Pitcher p3;
 
+    [SerializeField] private int targetAmount;
+    [SerializeField] private GameObject victoryCard;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -103,5 +106,18 @@ public class PitcherActionManager : MonoBehaviour
         sink.unSelect();
         foreach (Pitcher pitcher in pitcherList)
             pitcher.unSelect();
+    }
+
+    public void finalCheck()
+    {
+        int num;
+        foreach(Pitcher pitcher in pitcherList)
+        {
+            num = pitcher.getWaterAmount();
+            if(num == targetAmount)
+            {
+                victoryCard.SetActive(true);
+            }
+        }
     }
 }
