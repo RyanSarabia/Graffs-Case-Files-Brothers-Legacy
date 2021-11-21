@@ -93,31 +93,29 @@ public class Arch3Manager : MonoBehaviour
 
     public int weightOfNodes()
     {
-        bool adjacentFlag = false;
+        bool adjacentFlag = true;
         int weight = 0;
         if (!selection.Exists(x => x == curSelectedNode))
         {
             selection.Add(curSelectedNode);
 
             if (selection.Count > 1)
-            {
-                foreach (Arch3Edge edge in selection[0].getEdge())
-                {                    
-                    if (curSelectedNode == edge.getNeighbor(selection[0]))
-                    {
-                        weight = edge.GetWeight();
-                        //Debug.Log("Edge" + edge.ToString());
-                        //Debug.Log("nodeA: " + selection[0].ToString() + "nodeA: " + curSelectedNode.ToString() + "Weight: " + edge.GetWeight().ToString());
-                        adjacentFlag = true;
-                    }
+            {                
+                try
+                {
+                    weight = selection[0].getNeighbors()[curSelectedNode];                    
                 }
+                catch(KeyNotFoundException)
+                {
+                    adjacentFlag = false;
+                }                
 
                 if (!adjacentFlag)
                 {
                     Debug.Log("These nodes arent adjacent boi");
                     weight = -1;
                 }
-                adjacentFlag = false;
+                adjacentFlag = true;
                 selection.RemoveAt(0);                
             }            
         }

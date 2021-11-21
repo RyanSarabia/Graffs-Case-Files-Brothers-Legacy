@@ -5,6 +5,7 @@ using UnityEngine;
 public class Arch3Node : MonoBehaviour
 {
     [SerializeField] List<Arch3Edge> edges = new List<Arch3Edge>();
+    private Dictionary<Arch3Node, int> neighbors = new Dictionary<Arch3Node, int>();
     //[SerializeField] bool locked = true;
 
     public void revealEdges()
@@ -32,9 +33,18 @@ public class Arch3Node : MonoBehaviour
         return edges;
     }
 
+    public Dictionary<Arch3Node, int> getNeighbors()
+    {       
+        return neighbors;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+        foreach (var edge in edges)
+        {
+            neighbors.Add(edge.getNeighbor(this), edge.GetWeight());
+        }
     }
 
     // Update is called once per frame
