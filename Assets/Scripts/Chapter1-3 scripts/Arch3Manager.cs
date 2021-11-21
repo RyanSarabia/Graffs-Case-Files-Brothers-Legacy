@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Arch3Manager : MonoBehaviour
 {
@@ -10,6 +11,14 @@ public class Arch3Manager : MonoBehaviour
     [SerializeField] private Culprit culprit;
     private static Arch3Manager instance;
     private List<Arch3Node> selection;
+    [SerializeField] private TextMeshProUGUI stepCountText;
+    private int stepCount = 0;
+
+    [SerializeField] private Arch3Node finalNode;
+    [SerializeField] private Arch3Edge finalEdge;
+    private int finalEdgeWeight;
+
+    [SerializeField] private GameObject victoryCard;
     public static Arch3Manager GetInstance()
     {
         return instance;
@@ -38,6 +47,7 @@ public class Arch3Manager : MonoBehaviour
         //EventBroadcaster.Instance.AddObserver(GraphGameEventNames.ARCH3_NODECLICKED, this.NodeClicked);
         selection = new List<Arch3Node>();
         selection.Add(startingNode);
+        finalEdgeWeight = finalEdge.GetWeight();
     }
     private void OnDestroy()
     {
@@ -70,7 +80,15 @@ public class Arch3Manager : MonoBehaviour
        
         int weight = weightOfNodes();
         if(weight > 0)
+        {
             culprit.move(weight);
+            stepCount += weight;
+        }
+        if(curSelectedNode == finalNode && stepCount <= finalEdgeWeight)
+        {
+            victoryCard.SetActive(true);
+        }
+            
     }
 
     public int weightOfNodes()
@@ -110,6 +128,6 @@ public class Arch3Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        stepCountText.SetText(stepCount.ToString() + " Steps Taken");
     }
 }
