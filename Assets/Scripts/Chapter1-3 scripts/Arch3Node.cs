@@ -27,6 +27,11 @@ public class Arch3Node : MonoBehaviour
         edges.Add(newEdge);
     }
 
+    public List<Arch3Edge> getEdge()
+    {
+        return edges;
+    }
+
     // Start is called before the first frame update
     void Start()
     {

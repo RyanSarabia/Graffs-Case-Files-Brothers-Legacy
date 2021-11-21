@@ -6,6 +6,7 @@ public class GraphNode : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] GameObject highlight;
+    [SerializeField] Arch3Node node;
     private bool selected = false;
     private bool isClickSource = false;
     void Start()

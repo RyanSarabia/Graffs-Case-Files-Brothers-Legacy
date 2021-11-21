@@ -27,7 +27,7 @@ public class Arch3Edge : MonoBehaviour
         nodeB.addEdge(this);
     }
 
-    Arch3Node getNeighbor(Arch3Node source)
+    public Arch3Node getNeighbor(Arch3Node source)
     {
         if (ReferenceEquals(source, nodeA))
         {
