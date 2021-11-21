@@ -325,6 +325,10 @@ PrefabInstance:
       propertyPath: nodeB
       value: 
       objectReference: {fileID: 1990071400}
+    - target: {fileID: 6189675861376172836, guid: 25133931ee337874298707ba3b62c017, type: 3}
+      propertyPath: weight
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25133931ee337874298707ba3b62c017, type: 3}
 --- !u!224 &38437752 stripped
@@ -832,6 +836,10 @@ PrefabInstance:
       propertyPath: nodeB
       value: 
       objectReference: {fileID: 1942253172}
+    - target: {fileID: 6189675861376172836, guid: 25133931ee337874298707ba3b62c017, type: 3}
+      propertyPath: weight
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25133931ee337874298707ba3b62c017, type: 3}
 --- !u!224 &365811085 stripped
@@ -1419,6 +1427,10 @@ PrefabInstance:
       propertyPath: nodeB
       value: 
       objectReference: {fileID: 1896183252}
+    - target: {fileID: 6189675861376172836, guid: 25133931ee337874298707ba3b62c017, type: 3}
+      propertyPath: weight
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25133931ee337874298707ba3b62c017, type: 3}
 --- !u!224 &669526248 stripped
@@ -2020,6 +2032,10 @@ PrefabInstance:
       propertyPath: nodeB
       value: 
       objectReference: {fileID: 1896183252}
+    - target: {fileID: 6189675861376172836, guid: 25133931ee337874298707ba3b62c017, type: 3}
+      propertyPath: weight
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25133931ee337874298707ba3b62c017, type: 3}
 --- !u!224 &932234625 stripped
@@ -2372,6 +2388,10 @@ PrefabInstance:
       propertyPath: nodeB
       value: 
       objectReference: {fileID: 2013716835}
+    - target: {fileID: 6189675861376172836, guid: 25133931ee337874298707ba3b62c017, type: 3}
+      propertyPath: weight
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25133931ee337874298707ba3b62c017, type: 3}
 --- !u!224 &1053992126 stripped
@@ -2625,6 +2645,10 @@ PrefabInstance:
       propertyPath: nodeB
       value: 
       objectReference: {fileID: 1604140948}
+    - target: {fileID: 6189675861376172836, guid: 25133931ee337874298707ba3b62c017, type: 3}
+      propertyPath: weight
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25133931ee337874298707ba3b62c017, type: 3}
 --- !u!224 &1142021048 stripped
@@ -2815,6 +2839,10 @@ PrefabInstance:
       propertyPath: nodeB
       value: 
       objectReference: {fileID: 1768059642}
+    - target: {fileID: 6189675861376172836, guid: 25133931ee337874298707ba3b62c017, type: 3}
+      propertyPath: weight
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25133931ee337874298707ba3b62c017, type: 3}
 --- !u!224 &1279926825 stripped
@@ -3443,6 +3471,10 @@ PrefabInstance:
       propertyPath: nodeB
       value: 
       objectReference: {fileID: 2058818384}
+    - target: {fileID: 6189675861376172836, guid: 25133931ee337874298707ba3b62c017, type: 3}
+      propertyPath: weight
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25133931ee337874298707ba3b62c017, type: 3}
 --- !u!224 &1488351222 stripped
@@ -3691,8 +3723,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 24422232}
-  culprit: {fileID: 718336743}
   startingNode: {fileID: 1942253172}
+  culprit: {fileID: 718336743}
   scanBtn: {fileID: 244930934}
   moveBtn: {fileID: 1541730372}
 --- !u!4 &1563472839
@@ -3835,6 +3867,10 @@ PrefabInstance:
       propertyPath: nodeB
       value: 
       objectReference: {fileID: 2013716835}
+    - target: {fileID: 6189675861376172836, guid: 25133931ee337874298707ba3b62c017, type: 3}
+      propertyPath: weight
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25133931ee337874298707ba3b62c017, type: 3}
 --- !u!224 &1686322378 stripped
@@ -3945,6 +3981,10 @@ PrefabInstance:
       propertyPath: nodeB
       value: 
       objectReference: {fileID: 2013716835}
+    - target: {fileID: 6189675861376172836, guid: 25133931ee337874298707ba3b62c017, type: 3}
+      propertyPath: weight
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25133931ee337874298707ba3b62c017, type: 3}
 --- !u!224 &1758845228 stripped
@@ -4413,6 +4453,10 @@ PrefabInstance:
       propertyPath: nodeB
       value: 
       objectReference: {fileID: 1896183252}
+    - target: {fileID: 6189675861376172836, guid: 25133931ee337874298707ba3b62c017, type: 3}
+      propertyPath: weight
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25133931ee337874298707ba3b62c017, type: 3}
 --- !u!224 &1876034568 stripped
@@ -4969,6 +5013,10 @@ PrefabInstance:
       propertyPath: nodeB
       value: 
       objectReference: {fileID: 2013716835}
+    - target: {fileID: 6189675861376172836, guid: 25133931ee337874298707ba3b62c017, type: 3}
+      propertyPath: weight
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25133931ee337874298707ba3b62c017, type: 3}
 --- !u!224 &2042956052 stripped
@@ -5147,6 +5195,10 @@ PrefabInstance:
       propertyPath: nodeB
       value: 
       objectReference: {fileID: 2007129729}
+    - target: {fileID: 6189675861376172836, guid: 25133931ee337874298707ba3b62c017, type: 3}
+      propertyPath: weight
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25133931ee337874298707ba3b62c017, type: 3}
 --- !u!224 &2101826277 stripped
@@ -5337,5 +5389,9 @@ PrefabInstance:
       propertyPath: nodeB
       value: 
       objectReference: {fileID: 1293719292}
+    - target: {fileID: 6189675861376172836, guid: 25133931ee337874298707ba3b62c017, type: 3}
+      propertyPath: weight
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25133931ee337874298707ba3b62c017, type: 3}
