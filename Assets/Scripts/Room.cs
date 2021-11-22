@@ -23,9 +23,9 @@ public class Room : MonoBehaviour, IPointerClickHandler
     [SerializeField] private GameObject clueIcon;
     [SerializeField] private GameObject character;
 
-    private int roomID;
-    private bool characterPresent = false;
-    private bool isLightOn = false;
+    [SerializeField]private int roomID;
+    [SerializeField]private bool characterPresent = false;
+    [SerializeField]private bool isLightOn = false;
 
     [SerializeField] private bool hasClue = false;
 

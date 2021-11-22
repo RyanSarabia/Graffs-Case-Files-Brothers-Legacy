@@ -31,7 +31,8 @@ public class GraphSpawner : MonoBehaviour
     [SerializeField] private int numberOfRooms = 10;
     [SerializeField] private int gridSizeX = 8, gridSizeY = 8;
     [SerializeField] private List<Room> roomList;
-    private Room firstRoom;
+    [SerializeField] private bool usePrefabMap = false;
+    [SerializeField]private Room firstRoom;
 
     List<Vector2> takenPositions = new List<Vector2>();
 
@@ -43,7 +44,19 @@ public class GraphSpawner : MonoBehaviour
             numberOfRooms = Mathf.RoundToInt((gridSizeX) * (gridSizeY));
         }
 
-        CreateRooms();
+        if (!usePrefabMap)
+            CreateRooms();
+        else
+        {
+            int i =0;
+            foreach(Room room in roomList)
+            {
+                
+                room.setRoomID(i);
+                i++;
+            }
+        }
+    
         //foreach (var item in takenPositions)
         //{
         //    Debug.Log(item);

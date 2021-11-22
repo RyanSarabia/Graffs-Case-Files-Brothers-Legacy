@@ -8,7 +8,7 @@ public class SearchTraversal : MonoBehaviour
     [SerializeField] GraphSpawner graphContainer;
     [SerializeField] EnergyBar energyBar;
     [SerializeField] int nRooms;
-    [SerializeField] int nEnergy = 10;
+    [SerializeField] int nEnergy = 15;
     [SerializeField] TextMeshProUGUI energyText;
     [SerializeField] TextMeshProUGUI energyToBeUsed;
 
