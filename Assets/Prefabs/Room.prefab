@@ -3486,10 +3486,12 @@ MonoBehaviour:
   highlight: {fileID: 4600076520722749957}
   clueIcon: {fileID: 8244317210098090780}
   character: {fileID: 8531800064524356812}
+  hintSprite: {fileID: 0}
   roomID: 0
   characterPresent: 0
   isLightOn: 0
   hasClue: 0
+  collider: {fileID: 3798071696557545590}
 --- !u!61 &3798071696557545590
 BoxCollider2D:
   m_ObjectHideFlags: 0

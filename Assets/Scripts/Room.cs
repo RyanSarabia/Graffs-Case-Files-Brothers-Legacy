@@ -30,18 +30,24 @@ public class Room : MonoBehaviour, IPointerClickHandler
 
     [SerializeField] private bool hasClue = false;
 
-    
+    [SerializeField] private BoxCollider2D collider;
 
     // Start is called before the first frame update
     void Start()
     {
-        //roomLight.SetActive(false);        
+        //roomLight.SetActive(false);
+        collider = GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (isLightOn)
+        {
+            collider.enabled = true;
+        }
+        else
+            collider.enabled = false;
     }
 
 
