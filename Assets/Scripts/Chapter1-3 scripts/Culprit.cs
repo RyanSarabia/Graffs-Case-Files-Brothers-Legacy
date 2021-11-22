@@ -20,13 +20,14 @@ public class Culprit : MonoBehaviour
         reset();
     }
 
-    void reset()
+    public void reset()
     {
         stepsTaken = 0;
         stepsToTake = 0;
         shouldMove = false;
         lerpPercent = 0.0f;
         endVal = (float)path.GetWeight();
+        transform.position = new Vector3(source.transform.position.x, source.transform.position.y + 0.3f, 0);
     }
 
     public void move(int steps)
@@ -61,6 +62,8 @@ public class Culprit : MonoBehaviour
                 shouldMove = false;
             }
         }
+        if (hasEscaped())
+            Arch3Manager.GetInstance().retry();
     }
 
     public bool hasEscaped()

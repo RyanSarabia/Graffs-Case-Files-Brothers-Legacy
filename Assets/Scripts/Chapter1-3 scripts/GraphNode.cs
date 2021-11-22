@@ -26,8 +26,12 @@ public class GraphNode : MonoBehaviour
 
     private void OnMouseDown()
     {
-        isClickSource = true;
-        EventBroadcaster.Instance.PostEvent(GraphGameEventNames.ARCH3_NODECLICKED);
+        if (!Arch3Manager.GetInstance().getPanelFocus())
+        {
+            isClickSource = true;
+            EventBroadcaster.Instance.PostEvent(GraphGameEventNames.ARCH3_NODECLICKED);
+        }
+        
     }
 
     private void handleMouseDown()

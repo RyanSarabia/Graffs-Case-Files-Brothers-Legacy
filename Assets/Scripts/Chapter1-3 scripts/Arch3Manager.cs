@@ -19,6 +19,9 @@ public class Arch3Manager : MonoBehaviour
     private int finalEdgeWeight;
 
     [SerializeField] private GameObject victoryCard;
+    [SerializeField] private GameObject retryCard;
+    [SerializeField] private GameObject clickBlocker;
+    private bool panelFocus = false;
     public static Arch3Manager GetInstance()
     {
         return instance;
@@ -87,7 +90,9 @@ public class Arch3Manager : MonoBehaviour
         if(curSelectedNode == finalNode && stepCount <= finalEdgeWeight)
         {
             victoryCard.SetActive(true);
-        }
+            panelFocus = true;
+            clickBlocker.gameObject.SetActive(true);
+        }      
             
     }
 
@@ -121,6 +126,29 @@ public class Arch3Manager : MonoBehaviour
         }
 
         return weight;
+    }
+
+    public void resetToStart()
+    {
+        selection.Clear();
+        selection.Add(startingNode);
+        player.gameObject.transform.position = new Vector3(startingNode.transform.position.x, startingNode.transform.position.y + 0.3f, 0);
+        stepCount = 0;
+        culprit.reset();
+        panelFocus = false;
+        clickBlocker.gameObject.SetActive(false);
+    }
+
+    public void retry()
+    {
+        retryCard.SetActive(true);
+        panelFocus = true;
+        clickBlocker.gameObject.SetActive(true);
+    }
+
+    public bool getPanelFocus()
+    {
+        return panelFocus;
     }
 
     // Update is called once per frame
