@@ -47,19 +47,15 @@ public class Arch3Manager : MonoBehaviour
         moveBtn.onClick.AddListener(clickMoveBtn);
         moveBtn.onClick.AddListener(clickScanBtn);
         startingNode.revealEdges();
-        //EventBroadcaster.Instance.AddObserver(GraphGameEventNames.ARCH3_NODECLICKED, this.NodeClicked);
+        startingNode.disableClick();
         selection = new List<Arch3Node>();
         selection.Add(startingNode);
         finalEdgeWeight = finalEdge.GetWeight();
     }
-    private void OnDestroy()
-    {
-        //EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.GRAPH_DEVICE_CLICKED);
-    }
 
     public void openActionsMenu(GraphNode selectedNode)
     {
-        scanBtn.gameObject.SetActive(true);
+        //scanBtn.gameObject.SetActive(true);
         moveBtn.gameObject.SetActive(true);
 
         curSelectedNode = selectedNode.GetComponent<Arch3Node>();
@@ -67,7 +63,7 @@ public class Arch3Manager : MonoBehaviour
 
     public void closeActionsMenu()
     {
-        scanBtn.gameObject.SetActive(false);
+        //scanBtn.gameObject.SetActive(false);
         moveBtn.gameObject.SetActive(false);
 
         curSelectedNode = null;
@@ -75,7 +71,9 @@ public class Arch3Manager : MonoBehaviour
 
     void clickScanBtn()
     {
+        EventBroadcaster.Instance.PostEvent(GraphGameEventNames.ARCH3_LOCKNODES);
         curSelectedNode.revealEdges();
+        curSelectedNode.disableClick();
     }
     void clickMoveBtn()
     {

@@ -20,7 +20,13 @@ public class Arch3Node : MonoBehaviour
     public void unlock()
     {
         this.GetComponent<SpriteRenderer>().enabled = true;
+        this.GetComponent<SpriteRenderer>().color = Color.cyan;
         this.GetComponent<CircleCollider2D>().enabled = true;
+    }
+    public void disableClick()
+    {
+        this.GetComponent<SpriteRenderer>().color = Color.white;
+        this.GetComponent<CircleCollider2D>().enabled = false;
     }
 
     public void addEdge(Arch3Edge newEdge)
@@ -41,10 +47,16 @@ public class Arch3Node : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        EventBroadcaster.Instance.AddObserver(GraphGameEventNames.ARCH3_LOCKNODES, this.disableClick);
         foreach (var edge in edges)
         {
             neighbors.Add(edge.getNeighbor(this), edge.GetWeight());
         }
+    }
+
+    private void OnDestroy()
+    {
+        EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.ARCH3_LOCKNODES);
     }
 
     // Update is called once per frame

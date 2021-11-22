@@ -51,16 +51,6 @@ public class GraphNode : MonoBehaviour
         }
         isClickSource = false;
         
-        //if (selected || !isClickSource)
-        //{
-        //    unSelect();
-        //}
-        //else if (isClickSource)
-        //{
-        //    isClickSource = false;
-        //    select();
-        //    Arch3Manager.GetInstance().openActionsMenu(this);
-        //}
     }
 
     public void select()
