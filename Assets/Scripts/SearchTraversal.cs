@@ -40,6 +40,7 @@ public class SearchTraversal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        energyText.SetText("Remaining Energy: " + nEnergy);
     }
 
     private void OnDestroy()
@@ -48,6 +49,11 @@ public class SearchTraversal : MonoBehaviour
         EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.DFS_BUTTON_CLICK);
         EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.PLUS_BUTTON_CLICK);
         EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.MINUS_BUTTON_CLICK);
+    }
+
+    public void addEnergy(int num)
+    {
+        nEnergy += num;
     }
 
     public void BFS2()
@@ -188,7 +194,7 @@ public class SearchTraversal : MonoBehaviour
             Actions.GetInstance().setMidLightUp(false);
             nEnergy = nEnergy - energyHolder;
             energyBar.SetEnergy(nEnergy);
-            energyText.SetText("Remaining Energy: " + nEnergy);
+            
             energyHolder = 1;
             this.energyToBeUsed.SetText(energyHolder.ToString());
         }

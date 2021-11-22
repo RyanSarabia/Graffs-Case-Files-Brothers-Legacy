@@ -23,12 +23,15 @@ public class Room : MonoBehaviour, IPointerClickHandler
     [SerializeField] private GameObject clueIcon;
     [SerializeField] private GameObject character;
     [SerializeField] private GameObject hintSprite;
+    [SerializeField] private GameObject pickUpSprite;
 
     [SerializeField]private int roomID;
     [SerializeField]private bool characterPresent = false;
     [SerializeField]private bool isLightOn = false;
 
     [SerializeField] private bool hasClue = false;
+    [SerializeField] private bool hasPickUp = false;
+    [SerializeField] private int pickUpAmount;
 
     [SerializeField] private BoxCollider2D collider;
 
@@ -104,6 +107,8 @@ public class Room : MonoBehaviour, IPointerClickHandler
         isLightOn = state;
         if (state && getRoomClueState())
             clueIcon.SetActive(true);
+        else if (state && getRoomPickUpState())
+            pickUpSprite.SetActive(true);
     }
 
     public bool getIsLightOn()
@@ -181,6 +186,11 @@ public class Room : MonoBehaviour, IPointerClickHandler
             {
                 Actions.GetInstance().clueFound(roomID);
             }
+            if (getRoomPickUpState())
+            {
+                Debug.Log("pickup");
+                Actions.GetInstance().pickUpGet(roomID, pickUpAmount);
+            }
         }
         
     }
@@ -207,6 +217,10 @@ public class Room : MonoBehaviour, IPointerClickHandler
     {
         this.hintSprite = hint;
     }
+    public void SetPickUpObject(GameObject PickUp)
+    {
+        this.pickUpSprite = PickUp;
+    }
 
     public void SetCharacterHintOn()
     {
@@ -226,6 +240,21 @@ public class Room : MonoBehaviour, IPointerClickHandler
     public bool getRoomClueState()
     {
         return hasClue;
+    }
+
+    public void setRoomPickUpState(bool state)
+    {
+        hasPickUp = state;
+    }
+
+    public bool getRoomPickUpState()
+    {
+        return hasPickUp;
+    }
+
+    public int getRoomPickUpAmount()
+    {
+        return pickUpAmount;
     }
 
     public void OnPointerClick(PointerEventData eventData)

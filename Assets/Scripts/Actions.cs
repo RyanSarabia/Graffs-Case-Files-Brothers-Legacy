@@ -17,10 +17,13 @@ public class Actions : MonoBehaviour
     [SerializeField] private int totalClues;
     private int numClues = 0;
     private List<int> clueRoomIDs;
+    private List<int> pickUpRoomIDs;
 
     [SerializeField] private GameObject victoryCard;
     [SerializeField] TextMeshProUGUI clueNumText;
     [SerializeField] TextMeshProUGUI clueTotalText;
+
+    [SerializeField] SearchTraversal traversalManager;
 
     private bool midLightingUp;
 
@@ -45,6 +48,7 @@ public class Actions : MonoBehaviour
         prevRoom = spawner.getFirstRoom();
 
         clueRoomIDs = new List<int>();
+        pickUpRoomIDs = new List<int>();
 
         this.clueTotalText.SetText(totalClues.ToString());
     }
@@ -106,6 +110,16 @@ public class Actions : MonoBehaviour
         if(numClues == totalClues)
         {
             victoryCard.SetActive(true);
+        }
+    }
+
+    public void pickUpGet(int id, int amount)
+    {
+        if (!pickUpRoomIDs.Exists(x => x == id))
+        {
+            Debug.Log("action get");
+            pickUpRoomIDs.Add(id);
+            traversalManager.addEnergy(amount);
         }
     }
 

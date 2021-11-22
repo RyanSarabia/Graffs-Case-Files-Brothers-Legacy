@@ -34,6 +34,7 @@ public class GraphSpawner : MonoBehaviour
     [SerializeField] private bool usePrefabMap = false;
     [SerializeField]private Room firstRoom;
     [SerializeField] private GameObject hintSprite;
+    [SerializeField] private GameObject pickupSprite;
 
     List<Vector2> takenPositions = new List<Vector2>();
 
@@ -53,11 +54,12 @@ public class GraphSpawner : MonoBehaviour
             foreach(Room room in roomList)
             {
 
-                //GameObject hintSpriteTemp = GameObject.Instantiate(this.hintSprite, room.transform);
+                //GameObject hintSpriteTemp = GameObject.Instantiate(this.pickupSprite, room.transform);
                 //hintSpriteTemp.transform.SetParent(room.transform);
                 //hintSpriteTemp.transform.position = new Vector3(room.transform.position.x, room.transform.position.y + 1.55f, 0);
                 //hintSpriteTemp.SetActive(false);
-                //room.SetHintObject(hintSpriteTemp);
+                ////room.SetHintObject(hintSpriteTemp);
+                //room.SetPickUpObject(hintSpriteTemp);
                 room.setRoomID(i);
                 i++;
             }
