@@ -931,9 +931,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Submit
-
-'
+  m_Text: Submit
 --- !u!222 &664695062
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1293,7 +1291,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2059746023}
   m_HandleRect: {fileID: 2059746022}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -2152,7 +2150,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 34.9, y: 13}
+  m_AnchoredPosition: {x: 34.899994, y: 13}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1512941918
@@ -2833,12 +2831,24 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 512112581894156947, guid: 9d065ab5577431e40a49e87f0b174ae3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.1167252
+      objectReference: {fileID: 0}
+    - target: {fileID: 512112581894156947, guid: 9d065ab5577431e40a49e87f0b174ae3, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.1167252
+      objectReference: {fileID: 0}
+    - target: {fileID: 512112581894156947, guid: 9d065ab5577431e40a49e87f0b174ae3, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.1167252
+      objectReference: {fileID: 0}
+    - target: {fileID: 512112581894156947, guid: 9d065ab5577431e40a49e87f0b174ae3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.351
+      value: -1.41
       objectReference: {fileID: 0}
     - target: {fileID: 512112581894156947, guid: 9d065ab5577431e40a49e87f0b174ae3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.07
+      value: -0.149
       objectReference: {fileID: 0}
     - target: {fileID: 512112581894156947, guid: 9d065ab5577431e40a49e87f0b174ae3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3561,7 +3571,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2401497683822815177, guid: 2f39a125f4d26a541931e28a26bc8749, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.07171269
+      value: -0.19628732
       objectReference: {fileID: 0}
     - target: {fileID: 2401497683822815177, guid: 2f39a125f4d26a541931e28a26bc8749, type: 3}
       propertyPath: m_LocalPosition.z
