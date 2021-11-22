@@ -58,6 +58,7 @@ public class Actions : MonoBehaviour
 
     public void character(int id)
     {
+        curRoom.SetCharacterHintOff();
         roomList = spawner.getRoomList();
         curRoom = roomList[id];
 
@@ -74,7 +75,16 @@ public class Actions : MonoBehaviour
             //prevRoom.hideCharacter();
             Debug.Log("room not lit or character present");
             curRoom = prevRoom;
-        }            
+        }
+        
+        foreach (Room room in curRoom.getNeighbors())
+        {
+            if (room.getRoomClueState())
+            {
+                if(!clueRoomIDs.Exists(x => x == room.getRoomID()))
+                    curRoom.SetCharacterHintOn();
+            }
+        }
 
         if(curRoom.getIsLightOn())
             prevRoom = curRoom;

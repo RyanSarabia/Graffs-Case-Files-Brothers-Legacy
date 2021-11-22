@@ -22,6 +22,7 @@ public class Room : MonoBehaviour, IPointerClickHandler
     [SerializeField] private GameObject highlight;
     [SerializeField] private GameObject clueIcon;
     [SerializeField] private GameObject character;
+    [SerializeField] private GameObject hintSprite;
 
     [SerializeField]private int roomID;
     [SerializeField]private bool characterPresent = false;
@@ -194,6 +195,21 @@ public class Room : MonoBehaviour, IPointerClickHandler
     public bool getCharacterPresent()
     {
         return characterPresent;
+    }
+
+    public void SetHintObject(GameObject hint)
+    {
+        this.hintSprite = hint;
+    }
+
+    public void SetCharacterHintOn()
+    {
+        this.hintSprite.SetActive(true);
+    }
+
+    public void SetCharacterHintOff()
+    {
+        this.hintSprite.SetActive(false);
     }
 
     public void setRoomClueState(bool state)
