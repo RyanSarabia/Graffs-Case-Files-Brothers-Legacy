@@ -120,6 +120,7 @@ public class Actions : MonoBehaviour
             Debug.Log("action get");
             pickUpRoomIDs.Add(id);
             traversalManager.addEnergy(amount);
+            curRoom.setPickUpSprite(false);
         }
     }
 
