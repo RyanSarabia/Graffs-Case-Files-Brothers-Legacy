@@ -251,6 +251,10 @@ public class Room : MonoBehaviour, IPointerClickHandler
         hasPickUp = state;
     }
 
+    public GameObject GetPickupSprite()
+    {
+        return pickUpSprite;
+    }
     public bool getRoomPickUpState()
     {
         return hasPickUp;

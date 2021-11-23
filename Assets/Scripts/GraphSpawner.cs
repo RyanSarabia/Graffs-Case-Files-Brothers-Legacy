@@ -58,8 +58,9 @@ public class GraphSpawner : MonoBehaviour
                 //hintSpriteTemp.transform.SetParent(room.transform);
                 //hintSpriteTemp.transform.position = new Vector3(room.transform.position.x, room.transform.position.y + 1.55f, 0);
                 //hintSpriteTemp.SetActive(false);
-                ////room.SetHintObject(hintSpriteTemp);
+                //room.SetHintObject(hintSpriteTemp);
                 //room.SetPickUpObject(hintSpriteTemp);
+                //room.GetPickupSprite().transform.position = new Vector3(room.transform.position.x, room.transform.position.y + 0.5f, 0);
                 room.setRoomID(i);
                 i++;
             }
