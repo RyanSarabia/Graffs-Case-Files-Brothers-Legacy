@@ -25,8 +25,8 @@ public class Pitcher : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.waterAmountText.SetText(waterAmount.ToString());
-        this.waterCapText.SetText(waterCap.ToString());
+        this.waterAmountText.SetText(waterAmount.ToString() + " L");
+        this.waterCapText.SetText(waterCap.ToString() + " L");
         if (slider)
         {
             slider.maxValue = waterCap;
