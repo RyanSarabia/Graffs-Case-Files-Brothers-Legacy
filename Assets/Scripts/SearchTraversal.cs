@@ -60,30 +60,30 @@ public class SearchTraversal : MonoBehaviour
     {
         currRoom = Actions.GetInstance().GetCurrRoom();
         searchQueue = new List<Room>();
-        bool hasAdjacentRooms = true;
-        int searchQueueCtr = -1;
+        bool allNeightborsSearched = false;
+        int searchQueueCtr = 0;
         int currQueueSize = 0;
-        while (hasAdjacentRooms)
+        while (!allNeightborsSearched)
         {
             List<Room> neighbors = currRoom.getNeighbors();
-            Debug.Log(neighbors.Count);
+            
             foreach (Room neighbor in neighbors)
             {
                 if (!searchQueue.Contains(neighbor) && neighbor.getIsLightOn() == false)
                 {
+                    Debug.Log(searchQueue.Count);
                     searchQueue.Add(neighbor);
                 }
             }
-            if (currQueueSize == searchQueue.Count)
-            {
-                hasAdjacentRooms = false;
-            }
+            if (searchQueueCtr >= searchQueue.Count)
+                allNeightborsSearched = true;
             else
             {
-                currQueueSize = searchQueue.Count;
-                searchQueueCtr++;
                 currRoom = searchQueue[searchQueueCtr];
+                searchQueueCtr++;
             }
+         
+
         }
         if (searchQueue.Count > 0)
         {
