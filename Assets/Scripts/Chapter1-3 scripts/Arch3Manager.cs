@@ -128,6 +128,8 @@ public class Arch3Manager : MonoBehaviour
 
     public void resetToStart()
     {
+        EventBroadcaster.Instance.PostEvent(GraphGameEventNames.ARCH3_LOCKNODES);
+
         selection.Clear();
         selection.Add(startingNode);
         player.gameObject.transform.position = new Vector3(startingNode.transform.position.x, startingNode.transform.position.y + 0.3f, 0);
@@ -135,6 +137,10 @@ public class Arch3Manager : MonoBehaviour
         culprit.reset();
         panelFocus = false;
         clickBlocker.gameObject.SetActive(false);
+
+        curSelectedNode = startingNode;
+        curSelectedNode.revealEdges();
+        curSelectedNode.disableClick();
     }
 
     public void retry()

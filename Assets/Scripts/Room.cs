@@ -33,7 +33,7 @@ public class Room : MonoBehaviour, IPointerClickHandler
     [SerializeField] private bool hasPickUp = false;
     [SerializeField] private int pickUpAmount;
 
-    [SerializeField] private BoxCollider2D collider;
+    [SerializeField] private new BoxCollider2D collider;
 
     // Start is called before the first frame update
     void Start()
@@ -109,6 +109,10 @@ public class Room : MonoBehaviour, IPointerClickHandler
             clueIcon.SetActive(true);
         else if (state && getRoomPickUpState())
             pickUpSprite.SetActive(true);
+    }
+    public void setPickUpSprite(bool state)
+    {        
+        pickUpSprite.SetActive(state);
     }
 
     public bool getIsLightOn()
