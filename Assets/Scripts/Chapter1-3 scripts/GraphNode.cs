@@ -12,10 +12,12 @@ public class GraphNode : MonoBehaviour
     void Start()
     {
         EventBroadcaster.Instance.AddObserver(GraphGameEventNames.ARCH3_NODECLICKED, this.handleMouseDown);
+        EventBroadcaster.Instance.AddObserver(GraphGameEventNames.ARCH3_LOCKNODES, this.unSelect);
     }
     private void OnDestroy()
     {
         EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.ARCH3_NODECLICKED);
+        EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.ARCH3_LOCKNODES);
     }
 
     // Update is called once per frame

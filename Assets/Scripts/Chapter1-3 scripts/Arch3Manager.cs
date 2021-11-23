@@ -40,6 +40,8 @@ public class Arch3Manager : MonoBehaviour
 
     Arch3Node curSelectedNode;
 
+    [SerializeField] private Arch3Node testNode;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,6 +53,7 @@ public class Arch3Manager : MonoBehaviour
         selection = new List<Arch3Node>();
         selection.Add(startingNode);
         finalEdgeWeight = finalEdge.GetWeight();
+       
     }
 
     public void openActionsMenu(GraphNode selectedNode)
@@ -58,7 +61,7 @@ public class Arch3Manager : MonoBehaviour
         //scanBtn.gameObject.SetActive(true);
         moveBtn.gameObject.SetActive(true);
 
-        curSelectedNode = selectedNode.GetComponent<Arch3Node>();
+        curSelectedNode = selectedNode.GetComponent<Arch3Node>();       
     }
 
     public void closeActionsMenu()
@@ -80,10 +83,12 @@ public class Arch3Manager : MonoBehaviour
         player.gameObject.transform.position = new Vector3(curSelectedNode.transform.position.x, curSelectedNode.transform.position.y + 0.3f, 0);
        
         int weight = weightOfNodes();
+        Debug.Log(weight.ToString());
         if(weight > 0)
         {
             culprit.move(weight);
             stepCount += weight;
+            
         }
         if(curSelectedNode == finalNode && stepCount <= finalEdgeWeight)
         {

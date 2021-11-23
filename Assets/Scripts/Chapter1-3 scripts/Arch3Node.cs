@@ -6,6 +6,8 @@ public class Arch3Node : MonoBehaviour
 {
     [SerializeField] List<Arch3Edge> edges = new List<Arch3Edge>();
     private Dictionary<Arch3Node, int> neighbors = new Dictionary<Arch3Node, int>();
+    [SerializeField] List<Arch3Node> nNodes = new List<Arch3Node>();
+    [SerializeField] List<int> weights = new List<int>();
     //[SerializeField] bool locked = true;
 
     public void revealEdges()
@@ -51,13 +53,16 @@ public class Arch3Node : MonoBehaviour
         foreach (var edge in edges)
         {
             neighbors.Add(edge.getNeighbor(this), edge.GetWeight());
-        }
+            nNodes.Add(edge.getNeighbor(this));
+            weights.Add(edge.GetWeight());
+        }      
+        
     }
 
     private void OnDestroy()
     {
         EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.ARCH3_LOCKNODES);
-    }
+    }   
 
     // Update is called once per frame
     void Update()

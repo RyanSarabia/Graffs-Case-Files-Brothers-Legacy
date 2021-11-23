@@ -18,13 +18,19 @@ public class Arch3Edge : MonoBehaviour
         nodeB.unlock();
     }
 
+    private void Awake()
+    {
+        nodeA.addEdge(this);
+        nodeB.addEdge(this);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         this.weightText.SetText(weight.ToString());
         this.weightText.gameObject.SetActive(false);
-        nodeA.addEdge(this);
-        nodeB.addEdge(this);
+        //nodeA.addEdge(this);
+        //nodeB.addEdge(this);
     }
 
     public Arch3Node getNeighbor(Arch3Node source)
