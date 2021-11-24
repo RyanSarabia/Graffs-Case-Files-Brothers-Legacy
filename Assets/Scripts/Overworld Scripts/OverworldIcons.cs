@@ -8,6 +8,7 @@ public class OverworldIcons : MonoBehaviour
     [SerializeField] private bool mainIconEnabled = true;
     [SerializeField] private bool exclamationEnabled = true;
     [SerializeField] private UnityEngine.UI.RawImage mainIcon;
+    [SerializeField] private UnityEngine.UI.RawImage nodeBase;
     [SerializeField] private UnityEngine.UI.RawImage exclamationPoint;
     [SerializeField] private int id;    
 
@@ -24,6 +25,15 @@ public class OverworldIcons : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnMouseEnter()
+    {
+        nodeBase.color = Color.yellow;
+    }
+    private void OnMouseExit()
+    {
+        nodeBase.color = Color.white;
     }
 
     private void OnMouseDown()
