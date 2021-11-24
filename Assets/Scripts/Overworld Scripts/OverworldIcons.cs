@@ -9,6 +9,7 @@ public class OverworldIcons : MonoBehaviour
     [SerializeField] private bool exclamationEnabled = true;
     [SerializeField] private UnityEngine.UI.RawImage mainIcon;
     [SerializeField] private UnityEngine.UI.RawImage exclamationPoint;
+    [SerializeField] private int id;    
 
     void Start()
     {
@@ -23,5 +24,10 @@ public class OverworldIcons : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnMouseDown()
+    {
+        SceneLoader.GetInstance().loadScene(id);
     }
 }
