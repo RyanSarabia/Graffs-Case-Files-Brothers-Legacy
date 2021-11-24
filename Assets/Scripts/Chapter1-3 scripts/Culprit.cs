@@ -14,6 +14,11 @@ public class Culprit : MonoBehaviour
     private float lerpPercent = 0.0f;
     private float endVal;
 
+    private void Awake()
+    {
+        path.setCulpritPath();
+    }
+
     // Start is called before the first frame update
     void Start()
     {

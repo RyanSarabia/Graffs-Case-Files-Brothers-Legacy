@@ -10,12 +10,19 @@ public class Arch3Edge : MonoBehaviour
     [SerializeField] int weight;
     [SerializeField] TextMeshProUGUI weightText;
 
+    bool isCulpritPath = false;
+
     public void reveal()
     {
         // set textfield active
         this.weightText.gameObject.SetActive(true);
         nodeA.unlock();
         nodeB.unlock();
+    }
+
+    public void setCulpritPath()
+    {
+        isCulpritPath = true;
     }
 
     private void Awake()
@@ -28,7 +35,10 @@ public class Arch3Edge : MonoBehaviour
     void Start()
     {
         this.weightText.SetText(weight.ToString());
-        this.weightText.gameObject.SetActive(false);
+        if (!isCulpritPath)
+        {
+            this.weightText.gameObject.SetActive(false);
+        }
         //nodeA.addEdge(this);
         //nodeB.addEdge(this);
     }
