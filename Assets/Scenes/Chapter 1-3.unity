@@ -327,7 +327,7 @@ PrefabInstance:
       objectReference: {fileID: 1990071400}
     - target: {fileID: 6189675861376172836, guid: 25133931ee337874298707ba3b62c017, type: 3}
       propertyPath: weight
-      value: 2
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25133931ee337874298707ba3b62c017, type: 3}
@@ -506,6 +506,10 @@ PrefabInstance:
       propertyPath: nodeB
       value: 
       objectReference: {fileID: 1569353828}
+    - target: {fileID: 6189675861376172836, guid: 25133931ee337874298707ba3b62c017, type: 3}
+      propertyPath: weight
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25133931ee337874298707ba3b62c017, type: 3}
 --- !u!224 &172084436 stripped
@@ -1064,7 +1068,7 @@ PrefabInstance:
       objectReference: {fileID: 1942253172}
     - target: {fileID: 6189675861376172836, guid: 25133931ee337874298707ba3b62c017, type: 3}
       propertyPath: weight
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25133931ee337874298707ba3b62c017, type: 3}
@@ -1233,6 +1237,10 @@ PrefabInstance:
       propertyPath: nodeB
       value: 
       objectReference: {fileID: 1569353828}
+    - target: {fileID: 6189675861376172836, guid: 25133931ee337874298707ba3b62c017, type: 3}
+      propertyPath: weight
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25133931ee337874298707ba3b62c017, type: 3}
 --- !u!224 &411802634 stripped
@@ -1343,6 +1351,10 @@ PrefabInstance:
       propertyPath: nodeB
       value: 
       objectReference: {fileID: 900874530}
+    - target: {fileID: 6189675861376172836, guid: 25133931ee337874298707ba3b62c017, type: 3}
+      propertyPath: weight
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25133931ee337874298707ba3b62c017, type: 3}
 --- !u!224 &470076549 stripped
@@ -2089,6 +2101,10 @@ PrefabInstance:
       propertyPath: nodeB
       value: 
       objectReference: {fileID: 900874530}
+    - target: {fileID: 6189675861376172836, guid: 25133931ee337874298707ba3b62c017, type: 3}
+      propertyPath: weight
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25133931ee337874298707ba3b62c017, type: 3}
 --- !u!224 &697825432 stripped
@@ -2573,6 +2589,10 @@ PrefabInstance:
       propertyPath: nodeB
       value: 
       objectReference: {fileID: 963656697}
+    - target: {fileID: 6189675861376172836, guid: 25133931ee337874298707ba3b62c017, type: 3}
+      propertyPath: weight
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25133931ee337874298707ba3b62c017, type: 3}
 --- !u!224 &834389471 stripped
@@ -2701,7 +2721,7 @@ PrefabInstance:
       objectReference: {fileID: 1896183252}
     - target: {fileID: 6189675861376172836, guid: 25133931ee337874298707ba3b62c017, type: 3}
       propertyPath: weight
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25133931ee337874298707ba3b62c017, type: 3}
@@ -3326,7 +3346,7 @@ PrefabInstance:
       objectReference: {fileID: 2013716835}
     - target: {fileID: 6189675861376172836, guid: 25133931ee337874298707ba3b62c017, type: 3}
       propertyPath: weight
-      value: 4
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25133931ee337874298707ba3b62c017, type: 3}
@@ -3583,7 +3603,7 @@ PrefabInstance:
       objectReference: {fileID: 1604140948}
     - target: {fileID: 6189675861376172836, guid: 25133931ee337874298707ba3b62c017, type: 3}
       propertyPath: weight
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25133931ee337874298707ba3b62c017, type: 3}
@@ -4249,6 +4269,10 @@ PrefabInstance:
       propertyPath: nodeB
       value: 
       objectReference: {fileID: 1293719292}
+    - target: {fileID: 6189675861376172836, guid: 25133931ee337874298707ba3b62c017, type: 3}
+      propertyPath: weight
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25133931ee337874298707ba3b62c017, type: 3}
 --- !u!224 &1376598429 stripped
@@ -4544,7 +4568,7 @@ PrefabInstance:
       objectReference: {fileID: 2058818384}
     - target: {fileID: 6189675861376172836, guid: 25133931ee337874298707ba3b62c017, type: 3}
       propertyPath: weight
-      value: 3
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25133931ee337874298707ba3b62c017, type: 3}
@@ -5185,7 +5209,7 @@ PrefabInstance:
       objectReference: {fileID: 2013716835}
     - target: {fileID: 6189675861376172836, guid: 25133931ee337874298707ba3b62c017, type: 3}
       propertyPath: weight
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25133931ee337874298707ba3b62c017, type: 3}
@@ -5575,7 +5599,7 @@ PrefabInstance:
       objectReference: {fileID: 2013716835}
     - target: {fileID: 6189675861376172836, guid: 25133931ee337874298707ba3b62c017, type: 3}
       propertyPath: weight
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25133931ee337874298707ba3b62c017, type: 3}
@@ -5705,7 +5729,7 @@ PrefabInstance:
       objectReference: {fileID: 2058818384}
     - target: {fileID: 6189675861376172836, guid: 25133931ee337874298707ba3b62c017, type: 3}
       propertyPath: weight
-      value: 8
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25133931ee337874298707ba3b62c017, type: 3}
@@ -6205,6 +6229,10 @@ PrefabInstance:
       propertyPath: nodeB
       value: 
       objectReference: {fileID: 1016866103}
+    - target: {fileID: 6189675861376172836, guid: 25133931ee337874298707ba3b62c017, type: 3}
+      propertyPath: weight
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25133931ee337874298707ba3b62c017, type: 3}
 --- !u!224 &1875736773 stripped
@@ -6317,7 +6345,7 @@ PrefabInstance:
       objectReference: {fileID: 1896183252}
     - target: {fileID: 6189675861376172836, guid: 25133931ee337874298707ba3b62c017, type: 3}
       propertyPath: weight
-      value: 2
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25133931ee337874298707ba3b62c017, type: 3}
@@ -7032,7 +7060,7 @@ PrefabInstance:
       objectReference: {fileID: 2013716835}
     - target: {fileID: 6189675861376172836, guid: 25133931ee337874298707ba3b62c017, type: 3}
       propertyPath: weight
-      value: 3
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25133931ee337874298707ba3b62c017, type: 3}
@@ -7214,7 +7242,7 @@ PrefabInstance:
       objectReference: {fileID: 2007129729}
     - target: {fileID: 6189675861376172836, guid: 25133931ee337874298707ba3b62c017, type: 3}
       propertyPath: weight
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25133931ee337874298707ba3b62c017, type: 3}
@@ -7514,7 +7542,7 @@ PrefabInstance:
       objectReference: {fileID: 1293719292}
     - target: {fileID: 6189675861376172836, guid: 25133931ee337874298707ba3b62c017, type: 3}
       propertyPath: weight
-      value: 50
+      value: 22
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25133931ee337874298707ba3b62c017, type: 3}
