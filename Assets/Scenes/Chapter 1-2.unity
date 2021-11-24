@@ -4127,7 +4127,7 @@ MonoBehaviour:
   p1: {fileID: 640256916}
   p2: {fileID: 1633063484}
   p3: {fileID: 805681198}
-  targetAmount: 9
+  targetAmount: 8
   victoryCard: {fileID: 1636576212}
   clickBlocker: {fileID: 222456924}
 --- !u!4 &2048682983
