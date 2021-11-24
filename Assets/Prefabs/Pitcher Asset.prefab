@@ -784,6 +784,7 @@ MonoBehaviour:
   slider: {fileID: 7471949136939412943}
   highlight: {fileID: 323705126111429275}
   id: 1
+  collider: {fileID: 251461130498993285}
 --- !u!61 &251461130498993285
 BoxCollider2D:
   m_ObjectHideFlags: 0

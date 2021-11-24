@@ -29,6 +29,7 @@ public class PitcherActionManager : MonoBehaviour
 
     [SerializeField] private int targetAmount;
     [SerializeField] private GameObject victoryCard;
+    [SerializeField] private GameObject clickBlocker;
 
     // Start is called before the first frame update
     void Start()
@@ -116,8 +117,19 @@ public class PitcherActionManager : MonoBehaviour
             num = pitcher.getWaterAmount();
             if(num == targetAmount)
             {
+                gameEnd();
                 victoryCard.SetActive(true);
             }
         }
+    }
+
+    public void gameEnd()
+    {
+        foreach (Pitcher pitcher in pitcherList)
+        {
+            pitcher.colliderOff();            
+        }
+        sink.colliderOff();
+        clickBlocker.SetActive(true);
     }
 }

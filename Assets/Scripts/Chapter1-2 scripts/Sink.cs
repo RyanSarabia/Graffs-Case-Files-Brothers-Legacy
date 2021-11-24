@@ -7,12 +7,13 @@ public class Sink : MonoBehaviour
     [SerializeField] private GameObject highlight;
 
     [SerializeField] private int id = -1;
+    private new BoxCollider2D collider;
 
     private bool selected;
     // Start is called before the first frame update
     void Start()
     {
-        
+        collider = GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
@@ -44,5 +45,10 @@ public class Sink : MonoBehaviour
     {
         if (!selected)
             highlight.SetActive(false);
+    }
+
+    public void colliderOff()
+    {
+        collider.enabled = false;
     }
 }

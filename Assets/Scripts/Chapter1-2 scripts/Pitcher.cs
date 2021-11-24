@@ -16,10 +16,12 @@ public class Pitcher : MonoBehaviour
     [SerializeField] private GameObject highlight;
 
     [SerializeField] private int id;
+
+    private new BoxCollider2D collider;
     private bool selected;
     void Start()
     {
-        
+        collider = GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
@@ -95,5 +97,9 @@ public class Pitcher : MonoBehaviour
     public void setWater(int water)
     {
         waterAmount = water;
+    }
+    public void colliderOff()
+    {
+        collider.enabled = false;
     }
 }
