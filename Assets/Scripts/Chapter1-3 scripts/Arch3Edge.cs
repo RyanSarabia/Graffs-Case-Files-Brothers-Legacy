@@ -35,10 +35,10 @@ public class Arch3Edge : MonoBehaviour
     void Start()
     {
         this.weightText.SetText(weight.ToString());
-        if (!isCulpritPath)
-        {
-            this.weightText.gameObject.SetActive(false);
-        }
+        //if (!isCulpritPath)
+        //{
+        //    this.weightText.gameObject.SetActive(false);
+        //}
         //nodeA.addEdge(this);
         //nodeB.addEdge(this);
     }
