@@ -46,7 +46,7 @@ public class Arch3Manager : MonoBehaviour
     void Start()
     {
         scanBtn.onClick.AddListener(clickScanBtn);
-        moveBtn.onClick.AddListener(clickMoveBtn);
+        //moveBtn.onClick.AddListener(clickMoveBtn);
         moveBtn.onClick.AddListener(clickScanBtn);
         startingNode.revealEdges();
         startingNode.disableClick();
@@ -72,14 +72,15 @@ public class Arch3Manager : MonoBehaviour
         curSelectedNode = null;
     }
 
-    void clickScanBtn()
+    public void clickScanBtn()
     {
         EventBroadcaster.Instance.PostEvent(GraphGameEventNames.ARCH3_LOCKNODES);
         curSelectedNode.revealEdges();
         curSelectedNode.disableClick();
     }
-    void clickMoveBtn()
+    public void clickMoveBtn(GraphNode selectedNode)
     {
+        curSelectedNode = selectedNode.GetComponent<Arch3Node>();
         player.gameObject.transform.position = new Vector3(curSelectedNode.transform.position.x, curSelectedNode.transform.position.y + 0.3f, 0);
        
         int weight = weightOfNodes();

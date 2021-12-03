@@ -49,7 +49,8 @@ public class GraphNode : MonoBehaviour
         else if (!selected && isClickSource)
         {
             select();
-            Arch3Manager.GetInstance().openActionsMenu(this);
+            Arch3Manager.GetInstance().clickMoveBtn(this);
+            Arch3Manager.GetInstance().clickScanBtn();
         }
         isClickSource = false;
         
