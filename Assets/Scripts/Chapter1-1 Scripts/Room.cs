@@ -125,6 +125,10 @@ public class Room : MonoBehaviour, IPointerClickHandler
     {        
         pickUpSprite.SetActive(state);
     }
+    public void setClueSprite(bool state)
+    {
+        clueIcon.SetActive(state);
+    }
 
     public bool getIsLightOn()
     {
@@ -176,25 +180,20 @@ public class Room : MonoBehaviour, IPointerClickHandler
     }
 
     private void OnMouseEnter()
-    {
-        //if (getRoomClueState())
-        //    clueIcon.SetActive(true);
-        //else
+    {        
+        if (!EventSystem.current.IsPointerOverGameObject())
             highlight.SetActive(true);
     }
 
     private void OnMouseExit()
-    {
-        //if (getRoomClueState())
-        //    clueIcon.SetActive(false);
-        //else
-            highlight.SetActive(false);        
+    {        
+        highlight.SetActive(false);        
     }
 
     public void OnMouseDown()
     {
         Debug.Log("any mouse click");
-        if (!Actions.GetInstance().getMidLightUp())
+        if (!Actions.GetInstance().getMidLightUp() && !EventSystem.current.IsPointerOverGameObject())
         {
             Actions.GetInstance().character(roomID);
             if (getRoomClueState())
@@ -261,7 +260,6 @@ public class Room : MonoBehaviour, IPointerClickHandler
     {
         hasPickUp = state;
     }
-
     public GameObject GetPickupSprite()
     {
         return pickUpSprite;

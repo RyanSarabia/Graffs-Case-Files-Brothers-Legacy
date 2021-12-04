@@ -103,6 +103,7 @@ public class Actions : MonoBehaviour
     {
         if(!clueRoomIDs.Exists(x => x == id))
         {
+            curRoom.setClueSprite(false);
             clueRoomIDs.Add(id);
             numClues++;
         }
