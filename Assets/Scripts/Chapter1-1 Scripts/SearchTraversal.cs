@@ -11,13 +11,13 @@ public class SearchTraversal : MonoBehaviour
     [SerializeField] int nEnergy = 15;
     [SerializeField] TextMeshProUGUI energyText;
     [SerializeField] TextMeshProUGUI energyToBeUsed;
-
+    private bool hasChosenLight = false;
 
     private int energyHolder = 1;
+    private int preLightCounter = 0;
 
-    List<Room> searchQueue;
-    List<Room> visited;
-    Stack<Room> dfsStack;
+    List<Room> searchQueue = new List<Room>();
+
     Room firstRoom;
     Room currRoom;
     List<Room> roomList;
@@ -35,6 +35,7 @@ public class SearchTraversal : MonoBehaviour
         EventBroadcaster.Instance.AddObserver(GraphGameEventNames.DFS_BUTTON_CLICK, this.DFS2);
         EventBroadcaster.Instance.AddObserver(GraphGameEventNames.PLUS_BUTTON_CLICK, this.PlusClicked);
         EventBroadcaster.Instance.AddObserver(GraphGameEventNames.MINUS_BUTTON_CLICK, this.MinusClicked);
+        EventBroadcaster.Instance.AddObserver(GraphGameEventNames.ARCH1_CONFIRM_BUTTON_CLICK, this.confirmLighting);
     }
 
     // Update is called once per frame
@@ -49,15 +50,26 @@ public class SearchTraversal : MonoBehaviour
         EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.DFS_BUTTON_CLICK);
         EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.PLUS_BUTTON_CLICK);
         EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.MINUS_BUTTON_CLICK);
+        EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.ARCH1_CONFIRM_BUTTON_CLICK);
     }
 
     public void addEnergy(int num)
     {
         nEnergy += num;
+        
     }
 
     public void BFS2()
     {
+        if (searchQueue.Count > 0)
+        {
+            while (searchQueue.Count > 0)
+            {
+                searchQueue[0].preLightOff();
+                searchQueue.RemoveAt(0);
+            }
+        }
+        this.hasChosenLight = true;
         currRoom = Actions.GetInstance().GetCurrRoom();
         searchQueue = new List<Room>();
         bool allNeightborsSearched = false;
@@ -87,8 +99,12 @@ public class SearchTraversal : MonoBehaviour
         if (searchQueue.Count > 0)
         {
             Room lightUpRoom = searchQueue[0];
-            int n = 0;
-            StartCoroutine(lighterDelay(lightUpRoom, n));
+            preLightCounter = 0;
+            //StartCoroutine(lighterDelay(lightUpRoom, n));
+            for(preLightCounter = 0; preLightCounter < energyHolder; preLightCounter++)
+            {
+                searchQueue[preLightCounter].preLightOn();
+            }
         }
         else
         {
@@ -97,6 +113,15 @@ public class SearchTraversal : MonoBehaviour
     }
     public void DFS2()
     {
+        if (searchQueue.Count > 0)
+        {
+            while (searchQueue.Count > 0)
+            {
+                searchQueue[0].preLightOff();
+                searchQueue.RemoveAt(0);
+            }
+        }
+        this.hasChosenLight = true;
         currRoom = Actions.GetInstance().GetCurrRoom();
         bool firstRun = true;
         searchQueue = new List<Room>();
@@ -136,8 +161,12 @@ public class SearchTraversal : MonoBehaviour
         if (searchQueue.Count > 0)
         {
             Room lightUpRoom = searchQueue[0];
-            int n = 0;
-            StartCoroutine(lighterDelay(lightUpRoom, n));
+            preLightCounter = 0;
+            //StartCoroutine(lighterDelay(lightUpRoom, n));
+            for (preLightCounter = 0; preLightCounter < energyHolder; preLightCounter++)
+            {
+                searchQueue[preLightCounter].preLightOn();
+            }
         }
         else
         {
@@ -146,32 +175,47 @@ public class SearchTraversal : MonoBehaviour
     }
 
 
-    public void DFSrecursive()
+    //public void DFSrecursive()
+    //{
+    //    Debug.Log(graphContainer.getFirstRoom());
+    //    firstRoom = graphContainer.getFirstRoom();
+
+    //    searchQueue = new List<Room>();
+
+    //    void recursion(Room node)
+    //    {
+    //        searchQueue.Add(node);
+
+    //        List<Room> neighbors = node.getNeighbors();
+    //        foreach (Room neighbor in neighbors)
+    //        {
+    //            if (!searchQueue.Contains(neighbor))
+    //            {
+    //                recursion(neighbor);
+    //            }
+    //        }
+    //    }
+
+    //    recursion(firstRoom);
+
+    //    Room lightUpRoom = searchQueue[0];
+    //    int n = 0;
+    //    StartCoroutine(lighterDelay(lightUpRoom, n));
+    //}
+
+    public void confirmLighting()
     {
-        Debug.Log(graphContainer.getFirstRoom());
-        firstRoom = graphContainer.getFirstRoom();
-
-        searchQueue = new List<Room>();
-
-        void recursion(Room node)
+        if (searchQueue.Count > 0)
         {
-            searchQueue.Add(node);
-
-            List<Room> neighbors = node.getNeighbors();
-            foreach (Room neighbor in neighbors)
+            for (int i = 0; i < preLightCounter; i++)
             {
-                if (!searchQueue.Contains(neighbor))
-                {
-                    recursion(neighbor);
-                }
+                searchQueue[i].preLightOff();
             }
+            this.hasChosenLight = false;
+            StartCoroutine(lighterDelay(searchQueue[0], 0));
+            
         }
-
-        recursion(firstRoom);
-
-        Room lightUpRoom = searchQueue[0];
-        int n = 0;
-        StartCoroutine(lighterDelay(lightUpRoom, n));
+        this.preLightCounter = 0;
     }
 
     private IEnumerator lighterDelay(Room lightUpRoom, int n)
@@ -217,7 +261,13 @@ public class SearchTraversal : MonoBehaviour
         {
             energyHolder++;
             this.energyToBeUsed.SetText(energyHolder.ToString());
+            if (hasChosenLight)
+            {
+                searchQueue[preLightCounter].preLightOn();
+                preLightCounter++;
+            }
         }
+        
     }
 
     public void MinusClicked()
@@ -226,7 +276,13 @@ public class SearchTraversal : MonoBehaviour
         {
             energyHolder--;
             this.energyToBeUsed.SetText(energyHolder.ToString());
+            if (hasChosenLight)
+            {
+                searchQueue[preLightCounter - 1].preLightOff();
+                preLightCounter--;
+            }
         }
+        
     }
 
 
