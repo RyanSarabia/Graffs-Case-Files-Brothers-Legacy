@@ -62,7 +62,6 @@ public class SearchTraversal : MonoBehaviour
         searchQueue = new List<Room>();
         bool allNeightborsSearched = false;
         int searchQueueCtr = 0;
-        int currQueueSize = 0;
         while (!allNeightborsSearched)
         {
             List<Room> neighbors = currRoom.getNeighbors();

@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 public class Room : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private GameObject roomLight;
+    [SerializeField] private GameObject preLight;
 
     [SerializeField] private Wall upWall;
     [SerializeField] private Wall downWall;
@@ -81,6 +82,16 @@ public class Room : MonoBehaviour, IPointerClickHandler
     public void lightOff()
     {
         roomLight.SetActive(false);
+    }
+
+    public void preLightOn()
+    {
+        this.preLight.SetActive(true);
+    }
+
+    public void preLightOff()
+    {
+        this.preLight.SetActive(false);
     }
 
     public void setCoordinate(Vector2 newCoor)

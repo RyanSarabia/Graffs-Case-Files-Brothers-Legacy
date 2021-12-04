@@ -26,4 +26,9 @@ public class LightButton : MonoBehaviour
         EventBroadcaster.Instance.PostEvent(GraphGameEventNames.DFS_BUTTON_CLICK);
 
     }
+
+    public void onConfirmButtonClicked()
+    {
+        EventBroadcaster.Instance.PostEvent(GraphGameEventNames.ARCH1_CONFIRM_BUTTON_CLICK);
+    }
 }
