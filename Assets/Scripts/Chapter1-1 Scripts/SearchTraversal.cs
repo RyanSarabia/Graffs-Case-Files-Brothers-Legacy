@@ -36,6 +36,7 @@ public class SearchTraversal : MonoBehaviour
         EventBroadcaster.Instance.AddObserver(GraphGameEventNames.PLUS_BUTTON_CLICK, this.PlusClicked);
         EventBroadcaster.Instance.AddObserver(GraphGameEventNames.MINUS_BUTTON_CLICK, this.MinusClicked);
         EventBroadcaster.Instance.AddObserver(GraphGameEventNames.ARCH1_CONFIRM_BUTTON_CLICK, this.confirmLighting);
+        EventBroadcaster.Instance.AddObserver(GraphGameEventNames.ARCH1_PLAYER_MOVED, this.PlayerMoved);
     }
 
     // Update is called once per frame
@@ -51,6 +52,7 @@ public class SearchTraversal : MonoBehaviour
         EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.PLUS_BUTTON_CLICK);
         EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.MINUS_BUTTON_CLICK);
         EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.ARCH1_CONFIRM_BUTTON_CLICK);
+        EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.ARCH1_PLAYER_MOVED);
     }
 
     public void addEnergy(int num)
@@ -103,7 +105,10 @@ public class SearchTraversal : MonoBehaviour
             //StartCoroutine(lighterDelay(lightUpRoom, n));
             for(preLightCounter = 0; preLightCounter < energyHolder; preLightCounter++)
             {
-                searchQueue[preLightCounter].preLightOn();
+                if (preLightCounter < searchQueue.Count)
+                    searchQueue[preLightCounter].preLightOn();
+                else
+                    break;
             }
         }
         else
@@ -165,7 +170,10 @@ public class SearchTraversal : MonoBehaviour
             //StartCoroutine(lighterDelay(lightUpRoom, n));
             for (preLightCounter = 0; preLightCounter < energyHolder; preLightCounter++)
             {
-                searchQueue[preLightCounter].preLightOn();
+                if (preLightCounter < searchQueue.Count)
+                    searchQueue[preLightCounter].preLightOn();
+                else
+                    break;
             }
         }
         else
@@ -218,6 +226,17 @@ public class SearchTraversal : MonoBehaviour
         this.preLightCounter = 0;
     }
 
+    private void PlayerMoved()
+    {
+        this.hasChosenLight = false;
+        foreach(Room room in searchQueue)
+        {
+            room.preLightOff();
+        }
+        this.searchQueue.Clear();
+
+    }
+
     private IEnumerator lighterDelay(Room lightUpRoom, int n)
     {
         Debug.Log("Running Coroutine" + "energy count: " + n);
@@ -261,7 +280,7 @@ public class SearchTraversal : MonoBehaviour
         {
             energyHolder++;
             this.energyToBeUsed.SetText(energyHolder.ToString());
-            if (hasChosenLight)
+            if (hasChosenLight && searchQueue.Count >= energyHolder)
             {
                 searchQueue[preLightCounter].preLightOn();
                 preLightCounter++;
@@ -276,7 +295,7 @@ public class SearchTraversal : MonoBehaviour
         {
             energyHolder--;
             this.energyToBeUsed.SetText(energyHolder.ToString());
-            if (hasChosenLight)
+            if (hasChosenLight && searchQueue.Count > energyHolder)
             {
                 searchQueue[preLightCounter - 1].preLightOff();
                 preLightCounter--;

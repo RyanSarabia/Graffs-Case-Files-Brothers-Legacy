@@ -68,6 +68,7 @@ public class Actions : MonoBehaviour
 
         if (!curRoom.getCharacterPresent() && curRoom.getIsLightOn())
         {
+            EventBroadcaster.Instance.PostEvent(GraphGameEventNames.ARCH1_PLAYER_MOVED);
             if(prevRoom != null)
                 prevRoom.hideCharacter();
             curRoom.showCharacter();
