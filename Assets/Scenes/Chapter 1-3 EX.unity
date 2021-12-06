@@ -4712,6 +4712,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6189675861376172835, guid: 25133931ee337874298707ba3b62c017, type: 3}
   m_PrefabInstance: {fileID: 1488351221}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1488351223 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6189675861376172836, guid: 25133931ee337874298707ba3b62c017, type: 3}
+  m_PrefabInstance: {fileID: 1488351221}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22b0d7ba25d631243b224cb68191d402, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1511539282
 GameObject:
   m_ObjectHideFlags: 0
@@ -5069,9 +5080,12 @@ MonoBehaviour:
   scanBtn: {fileID: 244930934}
   moveBtn: {fileID: 1541730372}
   turnCountText: {fileID: 1730852200}
-  varEdges: []
-  edgeTurnChange: 
-  edgeWeightChange: 
+  varEdges:
+  - {fileID: 1488351223}
+  - {fileID: 1987150317}
+  - {fileID: 1987150317}
+  edgeTurnChange: 030000000200000003000000
+  edgeWeightChange: fbffffff06000000f8ffffff
 --- !u!4 &1563472839
 Transform:
   m_ObjectHideFlags: 0
@@ -6989,6 +7003,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1984270718}
   m_CullTransparentMesh: 1
+--- !u!114 &1987150317 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6189675861376172836, guid: 25133931ee337874298707ba3b62c017, type: 3}
+  m_PrefabInstance: {fileID: 1279926824}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22b0d7ba25d631243b224cb68191d402, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1990071396 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3026066427844422074, guid: fccad1c44b0274a4c84f88db1c282fab, type: 3}

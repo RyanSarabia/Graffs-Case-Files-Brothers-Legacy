@@ -34,7 +34,7 @@ public class Arch3Edge : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.weightText.SetText(weight.ToString());
+        //this.weightText.SetText(weight.ToString());
         //if (!isCulpritPath)
         //{
         //    this.weightText.gameObject.SetActive(false);
@@ -58,10 +58,16 @@ public class Arch3Edge : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        this.weightText.SetText(weight.ToString());
     }
 
     public int GetWeight()
     {
         return weight;
+    }
+
+    public void addWeight(int num)
+    {
+        weight += num;
     }
 }

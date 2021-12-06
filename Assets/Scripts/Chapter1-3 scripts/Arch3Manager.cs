@@ -22,6 +22,16 @@ public class Arch3Manager : MonoBehaviour
     [SerializeField] private GameObject retryCard;
     [SerializeField] private GameObject clickBlocker;
     private bool panelFocus = false;
+
+    [SerializeField] Button scanBtn;
+    [SerializeField] Button moveBtn;
+
+    [SerializeField] private TextMeshProUGUI turnCountText;
+    private int turnCount = 1;
+
+    [SerializeField] private List<Arch3Edge> varEdges = new List<Arch3Edge>();
+    [SerializeField] private List<int> edgeTurnChange = new List<int>();
+    [SerializeField] private List<int> edgeWeightChange = new List<int>();    
     public static Arch3Manager GetInstance()
     {
         return instance;
@@ -35,12 +45,11 @@ public class Arch3Manager : MonoBehaviour
             GameObject.Destroy(gameObject);
     }
 
-    [SerializeField] Button scanBtn;
-    [SerializeField] Button moveBtn;
+    
 
     Arch3Node curSelectedNode;
 
-    [SerializeField] private Arch3Node testNode;
+    //[SerializeField] private Arch3Node testNode;
 
     // Start is called before the first frame update
     void Start()
@@ -89,7 +98,16 @@ public class Arch3Manager : MonoBehaviour
         {
             culprit.move(weight);
             stepCount += weight;
-            
+
+            turnCount++;
+
+            for (int i = 0; i < edgeTurnChange.Count; i++)
+            {
+                if(edgeTurnChange[i] == turnCount)
+                {
+                    varEdges[i].addWeight(edgeWeightChange[i]);
+                }
+            }            
         }
         if(curSelectedNode == finalNode && stepCount <= finalEdgeWeight)
         {
@@ -112,7 +130,7 @@ public class Arch3Manager : MonoBehaviour
             {                
                 try
                 {
-                    weight = selection[0].getNeighbors()[curSelectedNode];                    
+                    weight = selection[0].getNeighbors()[curSelectedNode].GetWeight();                    
                 }
                 catch(KeyNotFoundException)
                 {
@@ -165,5 +183,6 @@ public class Arch3Manager : MonoBehaviour
     void Update()
     {
         stepCountText.SetText(stepCount.ToString() + " Steps Taken");
+        turnCountText.SetText("Turn " + turnCount.ToString());
     }
 }
