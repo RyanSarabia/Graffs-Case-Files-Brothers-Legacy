@@ -62,7 +62,7 @@ public class Arch3Manager : MonoBehaviour
         selection = new List<Arch3Node>();
         selection.Add(startingNode);
         finalEdgeWeight = finalEdge.GetWeight();
-       
+        player.gameObject.transform.position = new Vector3(startingNode.transform.position.x, startingNode.transform.position.y + 0.3f, 0);
     }
 
     public void openActionsMenu(GraphNode selectedNode)
