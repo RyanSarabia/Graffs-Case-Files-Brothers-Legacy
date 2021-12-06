@@ -28,7 +28,7 @@ public class BridgeGameManager : MonoBehaviour
 
     private int totalSpeed;
 
-    [SerializeField] private int targetTime;
+    [SerializeField] private int targetTime = 15;
     [SerializeField] private GameObject victoryCard;
     [SerializeField] private GameObject retryCard;
     [SerializeField] private GameObject clickBlocker;
@@ -52,6 +52,15 @@ public class BridgeGameManager : MonoBehaviour
     public bool getPanelFocus()
     {
         return panelFocus;
+    }
+
+    public int getTargetTime()
+    {
+        return targetTime;
+    }
+    public int getCurrentTime()
+    {
+        return totalSpeed;
     }
 
     public void leftSelectNPC(int id, bool ready)
@@ -106,13 +115,13 @@ public class BridgeGameManager : MonoBehaviour
         else
             totalSpeed += selectedNPC[0].getSpeed();
 
-        if (totalSpeed == 15)
+        if (totalSpeed == targetTime)
         {
             victoryCard.SetActive(true);
             panelFocus = true;
             clickBlocker.gameObject.SetActive(true);
         }            
-        else if (totalSpeed > 15)
+        else if (totalSpeed > targetTime)
         {
             retryCard.SetActive(true);
             panelFocus = true;

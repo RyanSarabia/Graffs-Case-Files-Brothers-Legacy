@@ -960,6 +960,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4772237198696631493, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 68331e2a756a07740b84775d2cd9bdb8, type: 3}
+    - target: {fileID: 4772237198696631493, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
@@ -986,11 +990,11 @@ PrefabInstance:
     - target: {fileID: 4916665492272227106, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
       propertyPath: backSprite
       value: 
-      objectReference: {fileID: 21300000, guid: 05c13364120d7354fb189e545cca7a4d, type: 3}
+      objectReference: {fileID: 21300000, guid: 68331e2a756a07740b84775d2cd9bdb8, type: 3}
     - target: {fileID: 4916665492272227106, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
       propertyPath: frontSprite
       value: 
-      objectReference: {fileID: 21300000, guid: cd178f2d119ddae47bc2659eeac4562d, type: 3}
+      objectReference: {fileID: 21300000, guid: 94bb0bbda2d1f5947857271c25b70a74, type: 3}
     - target: {fileID: 4916665492272227106, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
       propertyPath: leftIdlePosition
       value: 
@@ -1009,7 +1013,7 @@ PrefabInstance:
       objectReference: {fileID: 992421523}
     - target: {fileID: 7150682215038523054, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
       propertyPath: m_Name
-      value: npc
+      value: oldie_8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
@@ -2239,7 +2243,7 @@ PrefabInstance:
       objectReference: {fileID: 992421523}
     - target: {fileID: 7150682215038523054, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
       propertyPath: m_Name
-      value: npc
+      value: man_2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
@@ -2917,7 +2921,7 @@ PrefabInstance:
     - target: {fileID: 4772237198696631493, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 68331e2a756a07740b84775d2cd9bdb8, type: 3}
+      objectReference: {fileID: 21300000, guid: 1516911395788d6429566ecc2923978f, type: 3}
     - target: {fileID: 4772237198696631493, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -2945,11 +2949,11 @@ PrefabInstance:
     - target: {fileID: 4916665492272227106, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
       propertyPath: backSprite
       value: 
-      objectReference: {fileID: 21300000, guid: 68331e2a756a07740b84775d2cd9bdb8, type: 3}
+      objectReference: {fileID: 21300000, guid: 1516911395788d6429566ecc2923978f, type: 3}
     - target: {fileID: 4916665492272227106, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
       propertyPath: frontSprite
       value: 
-      objectReference: {fileID: 21300000, guid: 94bb0bbda2d1f5947857271c25b70a74, type: 3}
+      objectReference: {fileID: 21300000, guid: 318bfc3d02a9065468779e2ea35f62ff, type: 3}
     - target: {fileID: 4916665492272227106, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
       propertyPath: leftIdlePosition
       value: 
@@ -2968,7 +2972,7 @@ PrefabInstance:
       objectReference: {fileID: 992421523}
     - target: {fileID: 7150682215038523054, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
       propertyPath: m_Name
-      value: npc
+      value: woman_5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
@@ -3551,6 +3555,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1920622306}
   - component: {fileID: 1920622305}
+  - component: {fileID: 1920622307}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3576,8 +3581,7 @@ MonoBehaviour:
   - {fileID: 568838497}
   - {fileID: 1369934051}
   - {fileID: 890525650}
-  - {fileID: 0}
-  targetTime: 0
+  targetTime: 15
   victoryCard: {fileID: 1646881501}
   retryCard: {fileID: 1425655655}
   clickBlocker: {fileID: 1277516447}
@@ -3596,6 +3600,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1920622307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1920622304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f7cb5ac6493a2c4e8322e98f9b1b04f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  child_1: {fileID: 2079327487}
+  man_2: {fileID: 568838497}
+  woman_5: {fileID: 1369934051}
+  oldie_8: {fileID: 890525650}
+  bridgeGM: {fileID: 1920622305}
 --- !u!1 &1951499424
 GameObject:
   m_ObjectHideFlags: 0
@@ -3918,6 +3939,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4772237198696631493, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 276a5c689c49fb64daa5339d64e3c8c4, type: 3}
+    - target: {fileID: 4772237198696631493, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
@@ -3944,11 +3969,11 @@ PrefabInstance:
     - target: {fileID: 4916665492272227106, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
       propertyPath: backSprite
       value: 
-      objectReference: {fileID: 21300000, guid: 05c13364120d7354fb189e545cca7a4d, type: 3}
+      objectReference: {fileID: 21300000, guid: 276a5c689c49fb64daa5339d64e3c8c4, type: 3}
     - target: {fileID: 4916665492272227106, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
       propertyPath: frontSprite
       value: 
-      objectReference: {fileID: 21300000, guid: cd178f2d119ddae47bc2659eeac4562d, type: 3}
+      objectReference: {fileID: 21300000, guid: 95f275f4440959d4c98473efa2a6166b, type: 3}
     - target: {fileID: 4916665492272227106, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
       propertyPath: leftIdlePosition
       value: 
@@ -3967,7 +3992,7 @@ PrefabInstance:
       objectReference: {fileID: 992421523}
     - target: {fileID: 7150682215038523054, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
       propertyPath: m_Name
-      value: npc
+      value: child_1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
