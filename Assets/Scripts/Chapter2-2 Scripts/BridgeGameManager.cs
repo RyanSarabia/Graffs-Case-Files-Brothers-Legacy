@@ -123,16 +123,16 @@ public class BridgeGameManager : MonoBehaviour
 
             foreach (var npc in selectedNPC)
             {
-                npc.cross();
+                //npc.cross();
                 npc.setReady(false);
                 if (npc.isLeftSide())
                 {
-                    npc.setIsLeftSide(false);
+                    npc.crossToRight();
                     lanternAtLeft = false;
                 }
                 else
                 {
-                    npc.setIsLeftSide(true);
+                    npc.crossToLeft();
                     lanternAtLeft = true;
                 }
             }

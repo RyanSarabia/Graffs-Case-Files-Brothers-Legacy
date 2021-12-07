@@ -138,6 +138,19 @@ public class NPC : MonoBehaviour
         }
     }
 
+    public void crossToRight()
+    {        
+        this.transform.position = new Vector2(rightIdlePosition.transform.position.x, rightIdlePosition.transform.position.y);
+        renderer.sprite = frontSprite;
+        leftSide = false;
+    }
+    public void crossToLeft()
+    {               
+        this.transform.position = new Vector2(leftIdlePosition.transform.position.x, leftIdlePosition.transform.position.y);
+        renderer.sprite = backSprite;
+        leftSide = true;
+    }
+
     private void OnMouseEnter()
     {
         this.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, .5f);
