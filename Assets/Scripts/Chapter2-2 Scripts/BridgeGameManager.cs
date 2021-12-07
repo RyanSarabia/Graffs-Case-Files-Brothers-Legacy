@@ -109,42 +109,63 @@ public class BridgeGameManager : MonoBehaviour
     }
 
     public void sendNPC()
-    {
-        if (selectedNPC.Count > 1)
-            totalSpeed += Mathf.Max(selectedNPC[0].getSpeed(), selectedNPC[1].getSpeed());
+    {      
+        if (selectedNPC[0].isLeftSide() && selectedNPC.Count < 2)
+        {
+            Debug.Log("You are only sending one at the left");
+        }
         else
-            totalSpeed += selectedNPC[0].getSpeed();
-
-        if (totalSpeed == targetTime)
         {
-            victoryCard.SetActive(true);
-            panelFocus = true;
-            clickBlocker.gameObject.SetActive(true);
-        }            
-        else if (totalSpeed > targetTime)
-        {
-            retryCard.SetActive(true);
-            panelFocus = true;
-            clickBlocker.gameObject.SetActive(true);
-        }
-           
-
-        foreach(var npc in selectedNPC)
-        {           
-            npc.cross();
-            npc.setReady(false);
-            if (npc.isLeftSide())
-            {                
-                npc.setIsLeftSide(false);
-                lanternAtLeft = false;
-            }
+            if (selectedNPC.Count > 1)
+                totalSpeed += Mathf.Max(selectedNPC[0].getSpeed(), selectedNPC[1].getSpeed());
             else
-            {                
-                npc.setIsLeftSide(true);
-                lanternAtLeft = true;
-            }            
+                totalSpeed += selectedNPC[0].getSpeed();         
+
+            foreach (var npc in selectedNPC)
+            {
+                npc.cross();
+                npc.setReady(false);
+                if (npc.isLeftSide())
+                {
+                    npc.setIsLeftSide(false);
+                    lanternAtLeft = false;
+                }
+                else
+                {
+                    npc.setIsLeftSide(true);
+                    lanternAtLeft = true;
+                }
+            }
+
+            selectedNPC.Clear();
+
+            if (numAtLeft() == 0 && totalSpeed == targetTime)
+            {
+                victoryCard.SetActive(true);
+                panelFocus = true;
+                clickBlocker.gameObject.SetActive(true);
+            }
+            else if (totalSpeed > targetTime)
+            {
+                retryCard.SetActive(true);
+                panelFocus = true;
+                clickBlocker.gameObject.SetActive(true);
+            }
+        }
+    }
+
+    private int numAtLeft()
+    {
+        int num = 0;
+
+        foreach(var npc in NPC)
+        {
+            if (npc.isLeftSide())
+            {
+                num++;
+            }
         }
 
-        selectedNPC.Clear();
+        return num;
     }
 }
