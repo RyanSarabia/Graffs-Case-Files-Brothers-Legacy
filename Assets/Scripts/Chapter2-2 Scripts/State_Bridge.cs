@@ -4,22 +4,23 @@ using UnityEngine;
 
 public class State_Bridge : MonoBehaviour
 {
-
+    [SerializeField] private AdjacentStateBridge bridgePrefabCopy;
     [SerializeField] private NPC child_1;
     [SerializeField] private NPC man_2;
     [SerializeField] private NPC woman_5;
     [SerializeField] private NPC oldie_8;
     [SerializeField] private BridgeGameManager bridgeGM;
-    private int timeTotal;
-    private bool isLanternLeft;
 
     private List<NPC> leftSide = new List<NPC>();
     private List<NPC> rightSide = new List<NPC>();
 
+    [SerializeField] private List<AdjacentStateBridge> adjacentStates = new List<AdjacentStateBridge>();
+    [SerializeField] private GameObject adjacentContainer;
+
     // Start is called before the first frame update
     void Start()
     {
-        setCurState(0, false, "c,m", "w,o");
+        setCurState(0, true, "c,m,w,o", "");
         getAdjacentNodes();
     }
 
@@ -27,8 +28,8 @@ public class State_Bridge : MonoBehaviour
     {
         leftSide.Clear();
         rightSide.Clear();
-        this.timeTotal = timeTotal;
-        this.isLanternLeft = isLanternLeft;
+        bridgeGM.setTotalTime(timeTotal);
+        bridgeGM.setLanternPosition(isLanternLeft);
         string[] leftChars = left.Split(',', System.StringSplitOptions.RemoveEmptyEntries);
         string[] rightChars = right.Split(',', System.StringSplitOptions.RemoveEmptyEntries);
 
@@ -36,10 +37,10 @@ public class State_Bridge : MonoBehaviour
         {
             switch (letter)
             {
-                case "c": leftSide.Add(child_1); break;
-                case "m": leftSide.Add(man_2); break;
-                case "w": leftSide.Add(woman_5); break;
-                case "o": leftSide.Add(oldie_8); break;
+                case "c": leftSide.Add(child_1); child_1.crossToLeft(); break;
+                case "m": leftSide.Add(man_2); man_2.crossToLeft(); break;
+                case "w": leftSide.Add(woman_5); woman_5.crossToLeft(); break;
+                case "o": leftSide.Add(oldie_8); oldie_8.crossToLeft(); break;
             }
         }
 
@@ -47,10 +48,10 @@ public class State_Bridge : MonoBehaviour
         {
             switch (letter)
             {
-                case "c": rightSide.Add(child_1); break;
-                case "m": rightSide.Add(man_2); break;
-                case "w": rightSide.Add(woman_5); break;
-                case "o": rightSide.Add(oldie_8); break;
+                case "c": rightSide.Add(child_1); child_1.crossToRight(); break;
+                case "m": rightSide.Add(man_2); man_2.crossToRight(); break;
+                case "w": rightSide.Add(woman_5); woman_5.crossToRight(); break;
+                case "o": rightSide.Add(oldie_8); oldie_8.crossToRight(); break;
             }
         }
         
@@ -60,7 +61,7 @@ public class State_Bridge : MonoBehaviour
 
     void getAdjacentNodes()
     {
-        bool isLeftActive = isLanternLeft;
+        bool isLeftActive = bridgeGM.getLanternPosition();
         List<NPC> activeList;
         string strLeft = "";
         string strRight = "";
@@ -69,42 +70,53 @@ public class State_Bridge : MonoBehaviour
         {
             activeList = leftSide;
             strRight = generateStrSide(rightSide);
+
+            string tempLeft;
+            string tempRight;
+
+            for (int i = 0; i < activeList.Count; i++)
+            {
+                string iNPC = "," + idToString(activeList[i].getID());
+
+                for (int j = i + 1; j < activeList.Count; j++)
+                {
+                    tempLeft = generateRemStr(leftSide, i, j);
+                    tempRight = new string(strRight);
+
+                    string jNPC = "," + idToString(activeList[j].getID());
+                    tempRight += iNPC + jNPC;
+
+                    //placeholder function!!!
+                    //createState(timeTotal, isLeftActive, tempLeft, tempRight);
+
+                    Debug.Log(i + "," + j + ": " + tempLeft + "||" + tempRight);
+                }
+            }
         }
         else
         {
             activeList = rightSide;
             strLeft = generateStrSide(leftSide);
-        }
 
-        string tempLeft;
-        string tempRight;
+            string tempLeft;
+            string tempRight;
 
-        for (int i = 0; i < activeList.Count; i++)
-        {
-            string iNPC = "," + idToString(activeList[i].getID());
-
-            for (int j = i + 1; j < activeList.Count; j++)
+            for (int i = 0; i < activeList.Count; i++)
             {
+                string iNPC = "," + idToString(activeList[i].getID());
+
                 tempLeft = new string(strLeft);
-                tempRight = new string(strRight);
+                tempRight = generateRemStr(rightSide, i);
+                //string jNPC = "," + idToString(activeList[j].getID());
 
-                string jNPC = "," + idToString(activeList[j].getID());
-
-                if (isLeftActive)
-                {
-                    tempLeft = generateRemStr(leftSide, i, j);
-                    tempRight += iNPC + jNPC;
-                } else
-                {
-                    tempRight = generateRemStr(rightSide, i, j);
-                    tempLeft += iNPC + jNPC;
-                }
+                tempLeft += iNPC;
 
                 //placeholder function!!!
-                //setCurState(timeTotal, isLeftActive, strLeft, strRight);
+                //createState(timeTotal, isLeftActive, tempLeft, tempRight);
 
-                Debug.Log(i + "," + j + ": " + tempLeft + "||"+ tempRight);
+                Debug.Log(i + ": " + tempLeft + "||" + tempRight);
             }
+
         }
     }
 
@@ -112,6 +124,13 @@ public class State_Bridge : MonoBehaviour
     {
         List<NPC> remList = new List<NPC>(npcs);
         remList.RemoveAt(j);
+        remList.RemoveAt(i);
+        return generateStrSide(remList);
+    }
+
+    string generateRemStr(List<NPC> npcs, int i)
+    {
+        List<NPC> remList = new List<NPC>(npcs);
         remList.RemoveAt(i);
         return generateStrSide(remList);
     }
@@ -151,12 +170,19 @@ public class State_Bridge : MonoBehaviour
             default: return null;
         }
     }
-    // scratch
-    // c m w o
 
-    // cm, cw, co, mw, mo, wo
+    void createState(int timeTotal, bool isLanternLeft, string left, string right)
+    {
+        // spawn here
+        AdjacentStateBridge newState = GameObject.Instantiate(this.bridgePrefabCopy, this.transform);
+        newState.setCurState(timeTotal, isLanternLeft, left, right);
+        newState.transform.SetParent(adjacentContainer.transform);
 
-
+        //State_Pitchers newState = new State_Pitchers(); //pangtest ko lang tong line na to pero mali to
+        // hindi to gagana hanggat wala yung mismong newState sa scene
+        // newState.setStatesAndPitcherValues(p1, p2, p3);
+        adjacentStates.Add(newState);
+    }
 
     // Update is called once per frame
     void Update()

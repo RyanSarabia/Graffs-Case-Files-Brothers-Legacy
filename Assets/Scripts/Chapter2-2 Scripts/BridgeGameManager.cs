@@ -168,4 +168,13 @@ public class BridgeGameManager : MonoBehaviour
 
         return num;
     }
+
+    public void setLanternPosition(bool isLeft)
+    {
+        this.lanternAtLeft = isLeft;
+    }
+    public void setTotalTime(int time)
+    {
+        this.totalSpeed = time;
+    }
 }

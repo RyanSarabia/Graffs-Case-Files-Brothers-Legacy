@@ -22,12 +22,13 @@ public class NPC : MonoBehaviour
     private Vector2 prevPos;
 
     private new BoxCollider2D collider;
-    private new SpriteRenderer renderer;
+    //private new SpriteRenderer renderer;
+
     // Start is called before the first frame update
     void Start()
     {
         collider = GetComponent<BoxCollider2D>();
-        renderer = GetComponent<SpriteRenderer>();
+        //renderer = GetComponent<SpriteRenderer>();
         speedText.SetText(speed.ToString());
         prevPos = leftIdlePosition.transform.position;
     }
@@ -129,25 +130,25 @@ public class NPC : MonoBehaviour
         if (leftSide)
         {
             this.transform.position = new Vector2(rightIdlePosition.transform.position.x, rightIdlePosition.transform.position.y);
-            renderer.sprite = frontSprite;
+            this.GetComponent<SpriteRenderer>().sprite = frontSprite;
         }
         else
         {
             this.transform.position = new Vector2(leftIdlePosition.transform.position.x, leftIdlePosition.transform.position.y);
-            renderer.sprite = backSprite;
+            this.GetComponent<SpriteRenderer>().sprite = backSprite;
         }
     }
 
     public void crossToRight()
     {        
         this.transform.position = new Vector2(rightIdlePosition.transform.position.x, rightIdlePosition.transform.position.y);
-        renderer.sprite = frontSprite;
+        this.GetComponent<SpriteRenderer>().sprite = frontSprite;
         leftSide = false;
     }
     public void crossToLeft()
     {               
         this.transform.position = new Vector2(leftIdlePosition.transform.position.x, leftIdlePosition.transform.position.y);
-        renderer.sprite = backSprite;
+        this.GetComponent<SpriteRenderer>().sprite = backSprite;
         leftSide = true;
     }
 
