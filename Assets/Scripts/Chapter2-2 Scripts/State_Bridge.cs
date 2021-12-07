@@ -20,8 +20,14 @@ public class State_Bridge : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        EventBroadcaster.Instance.AddObserver(GraphGameEventNames.NPCS_MOVED, getAdjacentNodes);
         setCurState(0, true, "c,m,w,o", "");
         getAdjacentNodes();
+    }
+
+    private void OnDestroy()
+    {
+        EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.NPCS_MOVED);
     }
 
     void setCurState(int timeTotal, bool isLanternLeft, string left, string right)
@@ -87,7 +93,7 @@ public class State_Bridge : MonoBehaviour
                     tempRight += iNPC + jNPC;
 
                     //placeholder function!!!
-                    //createState(timeTotal, isLeftActive, tempLeft, tempRight);
+                    createState(bridgeGM.getCurrentTime(), isLeftActive, tempLeft, tempRight);
 
                     Debug.Log(i + "," + j + ": " + tempLeft + "||" + tempRight);
                 }
@@ -107,12 +113,11 @@ public class State_Bridge : MonoBehaviour
 
                 tempLeft = new string(strLeft);
                 tempRight = generateRemStr(rightSide, i);
-                //string jNPC = "," + idToString(activeList[j].getID());
 
                 tempLeft += iNPC;
 
                 //placeholder function!!!
-                //createState(timeTotal, isLeftActive, tempLeft, tempRight);
+                createState(bridgeGM.getCurrentTime(), isLeftActive, tempLeft, tempRight);
 
                 Debug.Log(i + ": " + tempLeft + "||" + tempRight);
             }
@@ -177,6 +182,7 @@ public class State_Bridge : MonoBehaviour
         AdjacentStateBridge newState = GameObject.Instantiate(this.bridgePrefabCopy, this.transform);
         newState.setCurState(timeTotal, isLanternLeft, left, right);
         newState.transform.SetParent(adjacentContainer.transform);
+        newState.transform.position = new Vector3(newState.transform.position.x, newState.transform.position.y, 0);
 
         //State_Pitchers newState = new State_Pitchers(); //pangtest ko lang tong line na to pero mali to
         // hindi to gagana hanggat wala yung mismong newState sa scene

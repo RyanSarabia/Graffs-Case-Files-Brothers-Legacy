@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class AdjacentStateBridge : MonoBehaviour
 {
@@ -8,6 +10,10 @@ public class AdjacentStateBridge : MonoBehaviour
     [SerializeField] private NPC man_2;
     [SerializeField] private NPC woman_5;
     [SerializeField] private NPC oldie_8;
+    [SerializeField] private TextMeshProUGUI timeCounter;
+    [SerializeField] Image hoverImage;
+    [SerializeField] Image highlightImage;
+    Parameters parameters;
 
     private int timeTotal;
     private bool isLanternLeft;
@@ -17,7 +23,6 @@ public class AdjacentStateBridge : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -31,6 +36,8 @@ public class AdjacentStateBridge : MonoBehaviour
         leftSide.Clear();
         rightSide.Clear();
         this.timeTotal = timeTotal;
+        timeCounter.SetText("Time Left: " + (BridgeGameManager.targetTime - timeTotal) + " min");
+
         this.isLanternLeft = isLanternLeft;
         string[] leftChars = left.Split(',', System.StringSplitOptions.RemoveEmptyEntries);
         string[] rightChars = right.Split(',', System.StringSplitOptions.RemoveEmptyEntries);
@@ -39,10 +46,10 @@ public class AdjacentStateBridge : MonoBehaviour
         {
             switch (letter)
             {
-                case "c": leftSide.Add(child_1); break;
-                case "m": leftSide.Add(man_2); break;
-                case "w": leftSide.Add(woman_5); break;
-                case "o": leftSide.Add(oldie_8); break;
+                case "c": leftSide.Add(child_1); child_1.crossToLeft(); break;
+                case "m": leftSide.Add(man_2); man_2.crossToLeft(); break;
+                case "w": leftSide.Add(woman_5); woman_5.crossToLeft(); break;
+                case "o": leftSide.Add(oldie_8); oldie_8.crossToLeft(); break;
             }
         }
 
@@ -50,14 +57,24 @@ public class AdjacentStateBridge : MonoBehaviour
         {
             switch (letter)
             {
-                case "c": rightSide.Add(child_1); break;
-                case "m": rightSide.Add(man_2); break;
-                case "w": rightSide.Add(woman_5); break;
-                case "o": rightSide.Add(oldie_8); break;
+                case "c": rightSide.Add(child_1); child_1.crossToRight(); break;
+                case "m": rightSide.Add(man_2); man_2.crossToRight(); break;
+                case "w": rightSide.Add(woman_5); woman_5.crossToRight(); break;
+                case "o": rightSide.Add(oldie_8); oldie_8.crossToRight(); break;
             }
         }
 
         Debug.Log(leftSide);
         Debug.Log(rightSide);
+    }
+
+    private void OnMouseEnter()
+    {
+        this.hoverImage.gameObject.SetActive(true);
+    }
+
+    private void OnMouseExit()
+    {
+        this.hoverImage.gameObject.SetActive(false);
     }
 }

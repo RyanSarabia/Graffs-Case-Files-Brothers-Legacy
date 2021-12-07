@@ -28,7 +28,7 @@ public class BridgeGameManager : MonoBehaviour
 
     private int totalSpeed;
 
-    [SerializeField] private int targetTime = 15;
+    [SerializeField] public static int targetTime = 15;
     [SerializeField] private GameObject victoryCard;
     [SerializeField] private GameObject retryCard;
     [SerializeField] private GameObject clickBlocker;
@@ -42,7 +42,7 @@ public class BridgeGameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timeCounter.SetText("Time Taken: " + totalSpeed + " min");
+        timeCounter.SetText("Time Left: " + (targetTime - totalSpeed) + " min");
     }
 
     public bool getLanternPosition()
@@ -152,6 +152,8 @@ public class BridgeGameManager : MonoBehaviour
                 clickBlocker.gameObject.SetActive(true);
             }
         }
+
+        EventBroadcaster.Instance.PostEvent(GraphGameEventNames.NPCS_MOVED);
     }
 
     private int numAtLeft()

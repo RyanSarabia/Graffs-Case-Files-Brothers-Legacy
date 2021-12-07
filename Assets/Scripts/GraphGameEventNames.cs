@@ -19,6 +19,7 @@ public class GraphGameEventNames
     public const string GRAPH_DEVICE_CONFIRMED = "GRAPH_DEVICE_CONFIRMED";
     public const string ARCH3_NODECLICKED = "ARCH3_NODECLICKED";
     public const string ARCH3_LOCKNODES = "ARCH3_LOCKNODES";
+    public const string NPCS_MOVED = "NPCS_MOVED";
 
     //Archetype1 Actions
     public const string TILE_SELECT = "TILE_SELECT";
