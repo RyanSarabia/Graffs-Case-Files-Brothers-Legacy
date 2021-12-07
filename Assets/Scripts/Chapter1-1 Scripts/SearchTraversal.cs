@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class SearchTraversal : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class SearchTraversal : MonoBehaviour
     [SerializeField] int nEnergy = 15;
     [SerializeField] TextMeshProUGUI energyText;
     [SerializeField] TextMeshProUGUI energyToBeUsed;
+    [SerializeField] private Button bfsButton;
+    [SerializeField] private Button dfsButton;
+    [SerializeField] private Button confirmButton;
     private bool hasChosenLight = false;
 
     private int energyHolder = 1;
@@ -25,6 +29,7 @@ public class SearchTraversal : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        DisableConfirmButton();
         this.energyText.SetText("Remaining Energy: " + nEnergy);
         this.energyToBeUsed.SetText(energyHolder.ToString());
         energyBar.SetMaxEnergy(nEnergy);
@@ -100,6 +105,9 @@ public class SearchTraversal : MonoBehaviour
         }
         if (searchQueue.Count > 0)
         {
+            DisableBFSButton();
+            EnableDFSButton();
+            EnableConfirmButton();
             Room lightUpRoom = searchQueue[0];
             preLightCounter = 0;
             //StartCoroutine(lighterDelay(lightUpRoom, n));
@@ -165,6 +173,9 @@ public class SearchTraversal : MonoBehaviour
 
         if (searchQueue.Count > 0)
         {
+            DisableDFSButton();
+            EnableBFSButton();
+            EnableConfirmButton();
             Room lightUpRoom = searchQueue[0];
             preLightCounter = 0;
             //StartCoroutine(lighterDelay(lightUpRoom, n));
@@ -221,7 +232,9 @@ public class SearchTraversal : MonoBehaviour
             }
             this.hasChosenLight = false;
             StartCoroutine(lighterDelay(searchQueue[0], 0));
-            
+            DisableConfirmButton();
+            EnableBFSButton();
+            EnableDFSButton();
         }
         this.preLightCounter = 0;
     }
@@ -234,7 +247,8 @@ public class SearchTraversal : MonoBehaviour
             room.preLightOff();
         }
         this.searchQueue.Clear();
-
+        EnableBFSButton();
+        EnableDFSButton();
     }
 
     private IEnumerator lighterDelay(Room lightUpRoom, int n)
@@ -304,5 +318,29 @@ public class SearchTraversal : MonoBehaviour
         
     }
 
+    private void EnableDFSButton()
+    {
+        this.dfsButton.interactable = true;
+    }
+    private void EnableBFSButton()
+    {
+        this.bfsButton.interactable = true;
+    }
+    private void EnableConfirmButton()
+    {
+        this.confirmButton.interactable = true;
+    }
 
+    private void DisableDFSButton()
+    {
+        this.dfsButton.interactable = false;
+    }
+    private void DisableBFSButton()
+    {
+        this.bfsButton.interactable = false;
+    }
+    private void DisableConfirmButton()
+    {
+        this.confirmButton.interactable = false;
+    }
 }
