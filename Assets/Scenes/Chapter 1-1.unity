@@ -2993,6 +2993,9 @@ MonoBehaviour:
   nEnergy: 18
   energyText: {fileID: 114227814}
   energyToBeUsed: {fileID: 1766471821}
+  bfsButton: {fileID: 776952947}
+  dfsButton: {fileID: 1647913278}
+  confirmButton: {fileID: 1986492681}
 --- !u!1 &1406851104
 GameObject:
   m_ObjectHideFlags: 0
