@@ -30,7 +30,7 @@ public class State_Bridge : MonoBehaviour
         EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.NPCS_MOVED);
     }
 
-    void setCurState(int timeTotal, bool isLanternLeft, string left, string right)
+    private void setCurState(int timeTotal, bool isLanternLeft, string left, string right)
     {
         leftSide.Clear();
         rightSide.Clear();
@@ -65,7 +65,7 @@ public class State_Bridge : MonoBehaviour
         Debug.Log(rightSide);
     }
 
-    void getAdjacentNodes()
+    private void getAdjacentNodes()
     {
         bool isLeftActive = bridgeGM.getLanternPosition();
         List<NPC> activeList;
@@ -125,7 +125,7 @@ public class State_Bridge : MonoBehaviour
         }
     }
 
-    string generateRemStr(List<NPC> npcs, int i, int j)
+    private string generateRemStr(List<NPC> npcs, int i, int j)
     {
         List<NPC> remList = new List<NPC>(npcs);
         remList.RemoveAt(j);
@@ -133,14 +133,14 @@ public class State_Bridge : MonoBehaviour
         return generateStrSide(remList);
     }
 
-    string generateRemStr(List<NPC> npcs, int i)
+    private string generateRemStr(List<NPC> npcs, int i)
     {
         List<NPC> remList = new List<NPC>(npcs);
         remList.RemoveAt(i);
         return generateStrSide(remList);
     }
 
-    string generateStrSide(List<NPC> npcs)
+    private string generateStrSide(List<NPC> npcs)
     {
         string result = "";
 
@@ -164,7 +164,7 @@ public class State_Bridge : MonoBehaviour
         }
     }
 
-    string idToString(int i)
+    public static string idToString(int i)
     {
         switch (i)
         {
@@ -176,7 +176,7 @@ public class State_Bridge : MonoBehaviour
         }
     }
 
-    void createState(int timeTotal, bool isLanternLeft, string left, string right)
+    private void createState(int timeTotal, bool isLanternLeft, string left, string right)
     {
         // spawn here
         AdjacentStateBridge newState = GameObject.Instantiate(this.bridgePrefabCopy, this.transform);
