@@ -179,7 +179,7 @@ public class State_Bridge : MonoBehaviour
     private void createState(int timeTotal, bool isLanternLeft, string left, string right)
     {
         // spawn here
-        AdjacentStateBridge newState = GameObject.Instantiate(this.bridgePrefabCopy, this.transform);
+        AdjacentStateBridge newState = GameObject.Instantiate(this.bridgePrefabCopy);
         newState.setCurState(timeTotal, isLanternLeft, left, right);
         newState.transform.SetParent(adjacentContainer.transform);
         newState.transform.position = new Vector3(newState.transform.position.x, newState.transform.position.y, 0);
