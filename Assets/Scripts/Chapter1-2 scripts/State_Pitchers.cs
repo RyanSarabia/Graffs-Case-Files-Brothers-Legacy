@@ -137,7 +137,7 @@ public class State_Pitchers : MonoBehaviour
     void createState(int p1, int p2, int p3)
     {
         // spawn here
-        AdjacentStateHolder newState = GameObject.Instantiate(this.pitchersPrefabCopy, this.transform);
+        AdjacentStateHolder newState = GameObject.Instantiate(this.pitchersPrefabCopy);
         newState.setCurState(p1, p2, p3);
         newState.transform.SetParent(adjacentContainer.transform);
 
