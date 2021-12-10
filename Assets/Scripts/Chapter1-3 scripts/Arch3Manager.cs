@@ -65,7 +65,7 @@ public class Arch3Manager : MonoBehaviour
         player.gameObject.transform.position = new Vector3(startingNode.transform.position.x, startingNode.transform.position.y + 0.3f, 0);
     }
 
-    public void openActionsMenu(GraphNode selectedNode)
+    public void openActionsMenu(GraphNodeTemp selectedNode)
     {
         //scanBtn.gameObject.SetActive(true);
         moveBtn.gameObject.SetActive(true);
@@ -87,7 +87,7 @@ public class Arch3Manager : MonoBehaviour
         curSelectedNode.revealEdges();
         curSelectedNode.disableClick();
     }
-    public void clickMoveBtn(GraphNode selectedNode)
+    public void clickMoveBtn(GraphNodeTemp selectedNode)
     {
         curSelectedNode = selectedNode.GetComponent<Arch3Node>();
         player.gameObject.transform.position = new Vector3(curSelectedNode.transform.position.x, curSelectedNode.transform.position.y + 0.3f, 0);
