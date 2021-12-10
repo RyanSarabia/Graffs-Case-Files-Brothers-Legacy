@@ -39,6 +39,7 @@ public class ButtonScripts : MonoBehaviour
         mainCam.depth = 2;
         graphDeviceCam.gameObject.SetActive(false);
         confirmButton.gameObject.SetActive(false);
+        EventBroadcaster.Instance.PostEvent(GraphGameEventNames.GRAPH_DEVICE_RETURN_CLICKED);
     }
 
     private void ActivateConfirmButton()

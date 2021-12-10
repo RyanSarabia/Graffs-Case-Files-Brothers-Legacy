@@ -11,12 +11,14 @@ public class AdjacentStateHolder : MonoBehaviour
     [SerializeField] Pitcher p3Object;
     [SerializeField] Image hoverImage;
     [SerializeField] Image highlightImage;
+    [SerializeField] GameObject arrowHead;
     Parameters parameters;
     // Start is called before the first frame update
     void Start()
     {
         EventBroadcaster.Instance.AddObserver(GraphGameEventNames.GRAPH_DEVICE_CONFIRM_OCCURRED, ConfirmEventOccurred);
         EventBroadcaster.Instance.AddObserver(GraphGameEventNames.GRAPH_DEVICE_CLICKED, DisableHighlight);
+        EventBroadcaster.Instance.AddObserver(GraphGameEventNames.GRAPH_DEVICE_RETURN_CLICKED, DisableHighlight);
     }
 
 
@@ -32,6 +34,7 @@ public class AdjacentStateHolder : MonoBehaviour
     {
         
         EventBroadcaster.Instance.PostEvent(GraphGameEventNames.GRAPH_DEVICE_CLICKED);
+        this.arrowHead.GetComponent<SpriteRenderer>().color = Color.yellow;
         this.highlightImage.gameObject.SetActive(true);
         parameters = new Parameters();
         parameters.PutExtra("Pitcher 1 Value", p1Object.getWaterAmount());
@@ -54,6 +57,8 @@ public class AdjacentStateHolder : MonoBehaviour
     {
         if (this.highlightImage!= null)
         this.highlightImage.gameObject.SetActive(false);
+        if (this.arrowHead != null)
+            this.arrowHead.GetComponent<SpriteRenderer>().color = Color.white;
     }
 
     private void ConfirmEventOccurred()
@@ -67,6 +72,7 @@ public class AdjacentStateHolder : MonoBehaviour
     {
         EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.GRAPH_DEVICE_CONFIRM_OCCURRED);
         EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.GRAPH_DEVICE_CLICKED);
+        EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.GRAPH_DEVICE_RETURN_CLICKED);
     }
 
 

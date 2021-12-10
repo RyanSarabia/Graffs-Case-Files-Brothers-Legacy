@@ -26,6 +26,7 @@ public class PitcherActionManager : MonoBehaviour
     [SerializeField] public Pitcher p1;
     [SerializeField] public Pitcher p2;
     [SerializeField] public Pitcher p3;
+    [SerializeField] private GameObject arrowButt;
 
     [SerializeField] private int targetAmount;
     [SerializeField] private GameObject victoryCard;
@@ -35,6 +36,8 @@ public class PitcherActionManager : MonoBehaviour
     void Start()
     {
         EventBroadcaster.Instance.AddObserver(GraphGameEventNames.GRAPH_DEVICE_CONFIRMED, this.GraphDeviceConfirmed);
+        EventBroadcaster.Instance.AddObserver(GraphGameEventNames.GRAPH_DEVICE_CLICKED, this.ToggleArrowButtHighlight);
+        EventBroadcaster.Instance.AddObserver(GraphGameEventNames.GRAPH_DEVICE_RETURN_CLICKED, DisableArrowButtHighlight);
         pitcherIDs = new List<int>();
         pitcherList = new List<Pitcher>();
         
@@ -46,6 +49,8 @@ public class PitcherActionManager : MonoBehaviour
     private void OnDestroy()
     {
         EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.GRAPH_DEVICE_CONFIRMED);
+        EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.GRAPH_DEVICE_CLICKED);
+        EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.GRAPH_DEVICE_RETURN_CLICKED);
     }
 
     // Update is called once per frame
@@ -56,6 +61,7 @@ public class PitcherActionManager : MonoBehaviour
 
     private void GraphDeviceConfirmed(Parameters parameters)
     {
+        this.arrowButt.GetComponent<SpriteRenderer>().color = Color.white;
         p1.setWater(parameters.GetIntExtra("Pitcher 1 Value", 0));
         p2.setWater(parameters.GetIntExtra("Pitcher 2 Value", 0));
         p3.setWater(parameters.GetIntExtra("Pitcher 3 Value", 0));
@@ -131,5 +137,14 @@ public class PitcherActionManager : MonoBehaviour
         }
         sink.colliderOff();
         clickBlocker.SetActive(true);
+    }
+
+    private void ToggleArrowButtHighlight()
+    {
+        this.arrowButt.GetComponent<SpriteRenderer>().color = Color.yellow;
+    }
+    private void DisableArrowButtHighlight()
+    {
+        this.arrowButt.GetComponent<SpriteRenderer>().color = Color.white;
     }
 }

@@ -1476,6 +1476,7 @@ MonoBehaviour:
   p3Object: {fileID: 8272590711300055418}
   hoverImage: {fileID: 1837889021650314478}
   highlightImage: {fileID: 6636870227321604322}
+  arrowHead: {fileID: 1983718999}
 --- !u!61 &1127978190505412744
 BoxCollider2D:
   m_ObjectHideFlags: 0

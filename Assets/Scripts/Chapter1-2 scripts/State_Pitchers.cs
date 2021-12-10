@@ -10,6 +10,7 @@ public class State_Pitchers : MonoBehaviour
     [SerializeField] Pitcher p2Object;
     [SerializeField] Pitcher p3Object;
 
+
     private int pitcher1; // max 16
     private int pitcher2; // max 9
     private int pitcher3; // max 7
