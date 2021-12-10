@@ -7,6 +7,7 @@ public class Arch3Player : MonoBehaviour
     [SerializeField] private Arch3Node startNode;
     [SerializeField] private Arch3Node curNode;
     private Arch3Node nextNode;
+    private Animator animator;
 
     private bool shouldMove = false;
     private float lerpPercent = 0.0f;
@@ -14,6 +15,7 @@ public class Arch3Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         reset();
     }
 
@@ -26,6 +28,7 @@ public class Arch3Player : MonoBehaviour
     {
         nextNode = next;
         lerpPercent = 0.0f;
+        animator.Play("MainCharacter_Running");
         shouldMove = true;
     }
 
@@ -47,6 +50,7 @@ public class Arch3Player : MonoBehaviour
             //stop if reached distance
             if (lerpPercent >= 1)
             {
+                animator.Play("Idle");
                 this.curNode = this.nextNode;
                 shouldMove = false;
             }
