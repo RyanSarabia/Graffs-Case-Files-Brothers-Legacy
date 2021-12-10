@@ -220,7 +220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd607795f5c9a144699922028d94e41c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startNode: {fileID: 0}
+  startNode: {fileID: 1942253172}
   curNode: {fileID: 0}
 --- !u!1001 &38437751
 PrefabInstance:

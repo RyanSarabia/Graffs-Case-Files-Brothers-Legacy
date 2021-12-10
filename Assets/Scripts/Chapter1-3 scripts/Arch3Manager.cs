@@ -90,12 +90,13 @@ public class Arch3Manager : MonoBehaviour
     public void clickMoveBtn(GraphNode selectedNode)
     {
         curSelectedNode = selectedNode.GetComponent<Arch3Node>();
-        player.gameObject.transform.position = new Vector3(curSelectedNode.transform.position.x, curSelectedNode.transform.position.y + 0.3f, 0);
+        //player.gameObject.transform.position = new Vector3(curSelectedNode.transform.position.x, curSelectedNode.transform.position.y + 0.3f, 0);
        
         int weight = weightOfNodes();
         Debug.Log(weight.ToString());
         if(weight > 0)
         {
+            player.move(weight, curSelectedNode);
             culprit.move(weight);
             stepCount += weight;
 
