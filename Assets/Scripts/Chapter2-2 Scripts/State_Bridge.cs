@@ -20,7 +20,7 @@ public class State_Bridge : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        EventBroadcaster.Instance.AddObserver(GraphGameEventNames.NPCS_MOVED, getAdjacentNodes);
+        EventBroadcaster.Instance.AddObserver(GraphGameEventNames.NPCS_MOVED, ClearAndGetAdjacent);
         setCurState(0, true, "c,m,w,o", "");
         getAdjacentNodes();
     }
@@ -64,7 +64,11 @@ public class State_Bridge : MonoBehaviour
         Debug.Log(leftSide);
         Debug.Log(rightSide);
     }
-
+    private void ClearAndGetAdjacent()
+    {
+        clearAdjacentNodes();
+        getAdjacentNodes();
+    }
     private void getAdjacentNodes()
     {
         bool isLeftActive = bridgeGM.getLanternPosition();
@@ -124,6 +128,17 @@ public class State_Bridge : MonoBehaviour
 
         }
     }
+    void clearAdjacentNodes()
+    {
+        //remove adjacent nodes from graph device
+
+        foreach (AdjacentStateBridge adjacent_state_bridge in adjacentStates)
+        {
+            Destroy(adjacent_state_bridge.gameObject);
+        }
+        adjacentStates.Clear();
+    }
+
 
     private string generateRemStr(List<NPC> npcs, int i, int j)
     {

@@ -23,6 +23,9 @@ public class AdjacentStateBridge : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        EventBroadcaster.Instance.AddObserver(GraphGameEventNames.GRAPH_DEVICE_CONFIRM_OCCURRED_CH2, ConfirmEventOccurred);
+        EventBroadcaster.Instance.AddObserver(GraphGameEventNames.GRAPH_DEVICE_CLICKED_CH2, DisableHighlight);
     }
 
     // Update is called once per frame
@@ -66,6 +69,10 @@ public class AdjacentStateBridge : MonoBehaviour
 
         Debug.Log(leftSide);
         Debug.Log(rightSide);
+        this.child_1.GetComponent<BoxCollider2D>().enabled = false;
+        this.woman_5.GetComponent<BoxCollider2D>().enabled = false;
+        this.man_2.GetComponent<BoxCollider2D>().enabled = false;
+        this.oldie_8.GetComponent<BoxCollider2D>().enabled = false;
     }
 
     private void OnMouseEnter()
@@ -76,5 +83,40 @@ public class AdjacentStateBridge : MonoBehaviour
     private void OnMouseExit()
     {
         this.hoverImage.gameObject.SetActive(false);
+    }
+
+    private void OnMouseDown()
+    {
+
+        EventBroadcaster.Instance.PostEvent(GraphGameEventNames.GRAPH_DEVICE_CLICKED_CH2);
+        DisableHighlight();
+        this.highlightImage.gameObject.SetActive(true);
+        parameters = new Parameters();
+        parameters.PutExtra("Child Left State", child_1.isLeftSide());
+        parameters.PutExtra("Woman Left State", woman_5.isLeftSide());
+        parameters.PutExtra("Man Left State", man_2.isLeftSide());
+        parameters.PutExtra("Oldie Left State", oldie_8.isLeftSide());
+        parameters.PutExtra("Lantern Position", this.isLanternLeft);
+        parameters.PutExtra("Time Left", this.timeTotal);
+
+    }
+
+    private void ConfirmEventOccurred()
+    {
+        //this.highlightImage.gameObject.SetActive(false);
+        if (parameters != null)
+            EventBroadcaster.Instance.PostEvent(GraphGameEventNames.GRAPH_DEVICE_CONFIRMED_CH2, parameters);
+    }
+
+    private void DisableHighlight()
+    {
+        if (this.highlightImage != null)
+            this.highlightImage.gameObject.SetActive(false);
+    }
+
+    private void OnApplicationQuit()
+    {
+        EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.GRAPH_DEVICE_CONFIRM_OCCURRED_CH2);
+        EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.GRAPH_DEVICE_CLICKED_CH2);
     }
 }

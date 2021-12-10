@@ -15,8 +15,11 @@ public class GraphGameEventNames
     public const string WATER_CHANGED = "WATER_CHANGED";
     public const string ADJACENT_LISTED = "ADJACENT_LISTED";
     public const string GRAPH_DEVICE_CLICKED = "GRAPH_DEVICE_CLICKED";
+    public const string GRAPH_DEVICE_CLICKED_CH2 = "GRAPH_DEVICE_CLICKED_CH2";
     public const string GRAPH_DEVICE_CONFIRM_OCCURRED = "GRAPH_DEVICE_CONFIRM_OCCURRED";
+    public const string GRAPH_DEVICE_CONFIRM_OCCURRED_CH2 = "GRAPH_DEVICE_CONFIRM_OCCURRED_CH2";
     public const string GRAPH_DEVICE_CONFIRMED = "GRAPH_DEVICE_CONFIRMED";
+    public const string GRAPH_DEVICE_CONFIRMED_CH2 = "GRAPH_DEVICE_CONFIRMED_CH2";
     public const string ARCH3_NODECLICKED = "ARCH3_NODECLICKED";
     public const string ARCH3_LOCKNODES = "ARCH3_LOCKNODES";
     public const string NPCS_MOVED = "NPCS_MOVED";

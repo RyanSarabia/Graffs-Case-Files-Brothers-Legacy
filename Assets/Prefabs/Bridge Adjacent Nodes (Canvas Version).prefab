@@ -1629,7 +1629,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3258909432517033337, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
       propertyPath: m_PresetInfoIsWorld
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3758659436579864814, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3758659436579864814, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
@@ -1789,6 +1793,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3758659436579864814, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3758659436579864814, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 0.99
       objectReference: {fileID: 0}
@@ -1946,6 +1954,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3758659436579864814, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3758659436579864814, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 0.78
       objectReference: {fileID: 0}
@@ -2101,6 +2113,10 @@ PrefabInstance:
     - target: {fileID: 3080575580534845530, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3758659436579864814, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4772237198696631493, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
       propertyPath: m_Color.b
