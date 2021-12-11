@@ -3024,6 +3024,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2495420622542491769, guid: 2f39a125f4d26a541931e28a26bc8749, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2604014348470159586, guid: 2f39a125f4d26a541931e28a26bc8749, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -3060,6 +3064,18 @@ PrefabInstance:
       propertyPath: adjacentNodesContainer
       value: 
       objectReference: {fileID: 635923538}
+    - target: {fileID: 4224087588270806425, guid: 2f39a125f4d26a541931e28a26bc8749, type: 3}
+      propertyPath: m_Color.b
+      value: 0.6415094
+      objectReference: {fileID: 0}
+    - target: {fileID: 4224087588270806425, guid: 2f39a125f4d26a541931e28a26bc8749, type: 3}
+      propertyPath: m_Color.g
+      value: 0.6415094
+      objectReference: {fileID: 0}
+    - target: {fileID: 4224087588270806425, guid: 2f39a125f4d26a541931e28a26bc8749, type: 3}
+      propertyPath: m_Color.r
+      value: 0.6415094
+      objectReference: {fileID: 0}
     - target: {fileID: 4511013610649278090, guid: 2f39a125f4d26a541931e28a26bc8749, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
