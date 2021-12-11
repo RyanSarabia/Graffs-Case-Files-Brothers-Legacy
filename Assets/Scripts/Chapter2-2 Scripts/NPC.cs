@@ -36,23 +36,23 @@ public class NPC : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (BridgeGameManager.GetInstance().getLanternPosition())
-        {
-            if (leftSide)
-                collider.enabled = true;
-            else
-                collider.enabled = false;
-        }
-        else
-        {
-            if (leftSide)
-                collider.enabled = false;
-            else
-                collider.enabled = true;
-        }
+        //if (BridgeGameManager.GetInstance().getIsLanternLeft())
+        //{
+        //    if (leftSide)
+        //        collider.enabled = true;
+        //    else
+        //        collider.enabled = false;
+        //}
+        //else
+        //{
+        //    if (leftSide)
+        //        collider.enabled = false;
+        //    else
+        //        collider.enabled = true;
+        //}
 
-        if (BridgeGameManager.GetInstance().getPanelFocus())
-            collider.enabled = false;
+        //if (BridgeGameManager.GetInstance().getPanelFocus())
+        //    collider.enabled = false;
     }
     public bool isLeftSide()
     {
@@ -129,13 +129,11 @@ public class NPC : MonoBehaviour
     {
         if (leftSide)
         {
-            this.transform.position = new Vector2(rightIdlePosition.transform.position.x, rightIdlePosition.transform.position.y);
-            this.GetComponent<SpriteRenderer>().sprite = frontSprite;
+            crossToRight();
         }
         else
         {
-            this.transform.position = new Vector2(leftIdlePosition.transform.position.x, leftIdlePosition.transform.position.y);
-            this.GetComponent<SpriteRenderer>().sprite = backSprite;
+            crossToLeft();
         }
     }
 

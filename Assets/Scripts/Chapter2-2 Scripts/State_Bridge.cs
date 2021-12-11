@@ -1,41 +1,63 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class State_Bridge : MonoBehaviour
 {
-    [SerializeField] private AdjacentStateBridge bridgePrefabCopy;
+    [SerializeField] private State_Bridge bridgePrefabCopy;
+
+    [SerializeField] private bool isLanternLeft = true;
+    [SerializeField] private int timeElapsed;
+
+    [SerializeField] private TextMeshProUGUI timeCounter;
     [SerializeField] private NPC child_1;
     [SerializeField] private NPC man_2;
     [SerializeField] private NPC woman_5;
     [SerializeField] private NPC oldie_8;
-    [SerializeField] private BridgeGameManager bridgeGM;
 
-    private List<NPC> leftSide = new List<NPC>();
-    private List<NPC> rightSide = new List<NPC>();
+    private string strLeft;
+    private string strRight;
 
-    [SerializeField] private List<AdjacentStateBridge> adjacentStates = new List<AdjacentStateBridge>();
-    [SerializeField] private GameObject adjacentContainer;
+    [SerializeField] private List<NPC> leftSide = new List<NPC>();
+    [SerializeField] private List<NPC> rightSide = new List<NPC>();
+
+    private int nChildNodes;
 
     // Start is called before the first frame update
     void Start()
     {
-        EventBroadcaster.Instance.AddObserver(GraphGameEventNames.NPCS_MOVED, ClearAndGetAdjacent);
-        setCurState(0, true, "c,m,w,o", "");
-        getAdjacentNodes();
+        //EventBroadcaster.Instance.AddObserver(GraphGameEventNames.NPCS_MOVED, ClearAndGetAdjacent);
+        //setCurState(0, true, "c,m,w,o", "");
     }
 
     private void OnDestroy()
     {
-        EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.NPCS_MOVED);
+        //EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.NPCS_MOVED);
     }
 
-    private void setCurState(int timeTotal, bool isLanternLeft, string left, string right)
+    public void connectToGameObjects(TextMeshProUGUI timeCounter, NPC child, NPC man, NPC woman, NPC oldie) 
     {
+        this.timeCounter = timeCounter;
+        this.child_1 = child;
+        this.man_2 = man;
+        this.woman_5 = woman;
+        this.oldie_8 = oldie;
+    }
+
+    public void setCurState(int timeElapsed, bool isLanternLeft, string left, string right)
+    {
+        Debug.Log(isLanternLeft);
+        this.timeElapsed = timeElapsed;
+        timeCounter.SetText("Time Left: " + (BridgeGameManager.targetTime - timeElapsed) + " min/s");
+        
+        this.isLanternLeft = isLanternLeft;
+
+        this.strLeft = left;
+        this.strRight = right;
+
         leftSide.Clear();
         rightSide.Clear();
-        bridgeGM.setTotalTime(timeTotal);
-        bridgeGM.setLanternPosition(isLanternLeft);
         string[] leftChars = left.Split(',', System.StringSplitOptions.RemoveEmptyEntries);
         string[] rightChars = right.Split(',', System.StringSplitOptions.RemoveEmptyEntries);
 
@@ -64,14 +86,11 @@ public class State_Bridge : MonoBehaviour
         Debug.Log(leftSide);
         Debug.Log(rightSide);
     }
-    private void ClearAndGetAdjacent()
+
+    public void getAdjacentNodes(GameObject adjacentContainer, List<State_Bridge> adjacentStates)
     {
-        clearAdjacentNodes();
-        getAdjacentNodes();
-    }
-    private void getAdjacentNodes()
-    {
-        bool isLeftActive = bridgeGM.getLanternPosition();
+        bool isLeftActive = this.isLanternLeft;
+        Debug.Log("Test: "+isLeftActive);
         List<NPC> activeList;
         string strLeft = "";
         string strRight = "";
@@ -96,8 +115,15 @@ public class State_Bridge : MonoBehaviour
                     string jNPC = "," + idToString(activeList[j].getID());
                     tempRight += iNPC + jNPC;
 
+                    //calculate time increase
+                    int addedTime = activeList[i].getSpeed();
+                    if(activeList[j].getSpeed() > addedTime)
+                    {
+                        addedTime = activeList[j].getSpeed();
+                    }
+
                     //placeholder function!!!
-                    createState(bridgeGM.getCurrentTime(), isLeftActive, tempLeft, tempRight);
+                    createState(this.timeElapsed + addedTime, isLeftActive, tempLeft, tempRight, adjacentContainer, adjacentStates);
 
                     Debug.Log(i + "," + j + ": " + tempLeft + "||" + tempRight);
                 }
@@ -120,25 +146,34 @@ public class State_Bridge : MonoBehaviour
 
                 tempLeft += iNPC;
 
+                //calculate time increase
+                int addedTime = activeList[i].getSpeed();
+
                 //placeholder function!!!
-                createState(bridgeGM.getCurrentTime(), isLeftActive, tempLeft, tempRight);
+                createState(this.timeElapsed + addedTime, isLeftActive, tempLeft, tempRight, adjacentContainer, adjacentStates);
 
                 Debug.Log(i + ": " + tempLeft + "||" + tempRight);
             }
 
         }
+
+        this.nChildNodes = adjacentStates.Count;
     }
-    void clearAdjacentNodes()
+
+    private void createState(int timeTotal, bool isLanternLeft, string left, string right, GameObject adjacentContainer, List<State_Bridge> adjacentStates)
     {
-        //remove adjacent nodes from graph device
+        // spawn here
+        State_Bridge newState = GameObject.Instantiate(this.bridgePrefabCopy);
+        newState.setCurState(timeTotal, isLanternLeft, left, right);
+        newState.transform.SetParent(adjacentContainer.transform);
+        newState.transform.position = new Vector3(newState.transform.position.x, newState.transform.position.y, 0);
 
-        foreach (AdjacentStateBridge adjacent_state_bridge in adjacentStates)
-        {
-            Destroy(adjacent_state_bridge.gameObject);
-        }
-        adjacentStates.Clear();
+        //State_Pitchers newState = new State_Pitchers(); //pangtest ko lang tong line na to pero mali to
+        // hindi to gagana hanggat wala yung mismong newState sa scene
+        // newState.setStatesAndPitcherValues(p1, p2, p3);
+        adjacentStates.Add(newState);
+        newState.GetComponent<AdjacentStateManager>().SetIndex(adjacentStates.FindIndex(x => x == newState));
     }
-
 
     private string generateRemStr(List<NPC> npcs, int i, int j)
     {
@@ -191,24 +226,16 @@ public class State_Bridge : MonoBehaviour
         }
     }
 
-    private void createState(int timeTotal, bool isLanternLeft, string left, string right)
-    {
-        // spawn here
-        AdjacentStateBridge newState = GameObject.Instantiate(this.bridgePrefabCopy);
-        newState.setCurState(timeTotal, isLanternLeft, left, right);
-        newState.transform.SetParent(adjacentContainer.transform);
-        newState.transform.position = new Vector3(newState.transform.position.x, newState.transform.position.y, 0);
+    // -------------- getter funcs --------------
 
-        //State_Pitchers newState = new State_Pitchers(); //pangtest ko lang tong line na to pero mali to
-        // hindi to gagana hanggat wala yung mismong newState sa scene
-        // newState.setStatesAndPitcherValues(p1, p2, p3);
-        adjacentStates.Add(newState);
+    public int getTimeElapsed()
+    {
+        return this.timeElapsed;
     }
 
-    // Update is called once per frame
-    void Update()
+    public bool getIsLanternLeft()
     {
-        
+        return this.isLanternLeft;
     }
 
 }
