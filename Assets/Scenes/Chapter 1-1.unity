@@ -4434,5 +4434,17 @@ PrefabInstance:
       propertyPath: traversalManager
       value: 
       objectReference: {fileID: 1374130735}
+    - target: {fileID: 5511816223030727692, guid: 294fb058042fb664e8453f7c52fb9479, type: 3}
+      propertyPath: hasUpWall
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5511816223030727692, guid: 294fb058042fb664e8453f7c52fb9479, type: 3}
+      propertyPath: hasLeftWall
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7223878558825427816, guid: 294fb058042fb664e8453f7c52fb9479, type: 3}
+      propertyPath: hasUpWall
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 294fb058042fb664e8453f7c52fb9479, type: 3}

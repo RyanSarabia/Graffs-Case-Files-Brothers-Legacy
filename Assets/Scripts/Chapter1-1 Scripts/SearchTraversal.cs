@@ -89,8 +89,27 @@ public class SearchTraversal : MonoBehaviour
             {
                 if (!searchQueue.Contains(neighbor) && neighbor.getIsLightOn() == false)
                 {
-                    Debug.Log(searchQueue.Count);
-                    searchQueue.Add(neighbor);
+                    if (currRoom.getNeighbor(GraphGameEventNames.DIRECTION_UP) == neighbor && !currRoom.getWall(GraphGameEventNames.DIRECTION_UP))
+                    {
+                        Debug.Log(searchQueue.Count);
+                        searchQueue.Add(neighbor);
+                    }
+                    else if (currRoom.getNeighbor(GraphGameEventNames.DIRECTION_DOWN) == neighbor && !currRoom.getWall(GraphGameEventNames.DIRECTION_DOWN))
+                    {
+                        Debug.Log(searchQueue.Count);
+                        searchQueue.Add(neighbor);
+                    }
+                    else if (currRoom.getNeighbor(GraphGameEventNames.DIRECTION_LEFT) == neighbor && !currRoom.getWall(GraphGameEventNames.DIRECTION_LEFT))
+                    {
+                        Debug.Log(searchQueue.Count);
+                        searchQueue.Add(neighbor);
+                    }
+                    else if (currRoom.getNeighbor(GraphGameEventNames.DIRECTION_RIGHT) == neighbor && !currRoom.getWall(GraphGameEventNames.DIRECTION_RIGHT))
+                    {
+                        Debug.Log(searchQueue.Count);
+                        searchQueue.Add(neighbor);
+                    }
+
                 }
             }
             if (searchQueueCtr >= searchQueue.Count)
@@ -149,7 +168,14 @@ public class SearchTraversal : MonoBehaviour
                 {
                     if (!searchQueue.Contains(neighbor) && neighbor.getIsLightOn() == false)
                     {
-                        recursion(neighbor);
+                        if (node.getNeighbor(GraphGameEventNames.DIRECTION_UP) == neighbor && !node.getWall(GraphGameEventNames.DIRECTION_UP))
+                            recursion(neighbor);
+                        else if (node.getNeighbor(GraphGameEventNames.DIRECTION_DOWN) == neighbor && !node.getWall(GraphGameEventNames.DIRECTION_DOWN))
+                            recursion(neighbor);
+                        else if (node.getNeighbor(GraphGameEventNames.DIRECTION_RIGHT) == neighbor && !node.getWall(GraphGameEventNames.DIRECTION_RIGHT))
+                            recursion(neighbor);
+                        else if (node.getNeighbor(GraphGameEventNames.DIRECTION_LEFT) == neighbor && !node.getWall(GraphGameEventNames.DIRECTION_LEFT))
+                            recursion(neighbor);
                     }
                 }
             }
@@ -162,7 +188,14 @@ public class SearchTraversal : MonoBehaviour
                 {
                     if (!searchQueue.Contains(neighbor) && neighbor.getIsLightOn() == false)
                     {
-                        recursion(neighbor);
+                        if (node.getNeighbor(GraphGameEventNames.DIRECTION_UP) == neighbor && !node.getWall(GraphGameEventNames.DIRECTION_UP))
+                            recursion(neighbor);
+                        else if (node.getNeighbor(GraphGameEventNames.DIRECTION_DOWN) == neighbor && !node.getWall(GraphGameEventNames.DIRECTION_DOWN))
+                            recursion(neighbor);
+                        else if (node.getNeighbor(GraphGameEventNames.DIRECTION_RIGHT) == neighbor && !node.getWall(GraphGameEventNames.DIRECTION_RIGHT))
+                            recursion(neighbor);
+                        else if (node.getNeighbor(GraphGameEventNames.DIRECTION_LEFT) == neighbor && !node.getWall(GraphGameEventNames.DIRECTION_LEFT))
+                            recursion(neighbor);
                     }
                 }
             }
