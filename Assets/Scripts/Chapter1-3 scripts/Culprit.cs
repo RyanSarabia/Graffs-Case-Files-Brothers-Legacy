@@ -45,7 +45,7 @@ public class Culprit : MonoBehaviour
     }
 
     // Update is called once per frame  
-    void Update()
+    void FixedUpdate()
     {
         if (shouldMove)
         {

@@ -22,6 +22,7 @@ public class Arch3Player : MonoBehaviour
     void reset()
     {
         curNode = startNode;
+        animator.Play("Idle");
         // move character sprite back
     }
     public void move(int steps, Arch3Node next)
@@ -32,13 +33,14 @@ public class Arch3Player : MonoBehaviour
         shouldMove = true;
     }
 
+
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (shouldMove)
         {
             // move position
-            lerpPercent += 0.01f;
+            lerpPercent += 0.05f;
             Vector2 cur = this.curNode.gameObject.transform.position;
             Vector2 next = this.nextNode.gameObject.transform.position;
 
