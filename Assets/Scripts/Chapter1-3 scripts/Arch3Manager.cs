@@ -21,17 +21,16 @@ public class Arch3Manager : MonoBehaviour
     [SerializeField] private GameObject victoryCard;
     [SerializeField] private GameObject retryCard;
     [SerializeField] private GameObject clickBlocker;
-    private bool panelFocus = false;
-
-    [SerializeField] Button scanBtn;
-    [SerializeField] Button moveBtn;
+    private bool panelFocus = false;   
 
     [SerializeField] private TextMeshProUGUI turnCountText;
     private int turnCount = 1;
 
     [SerializeField] private List<Arch3Edge> varEdges = new List<Arch3Edge>();
     [SerializeField] private List<int> edgeTurnChange = new List<int>();
-    [SerializeField] private List<int> edgeWeightChange = new List<int>();    
+    [SerializeField] private List<int> edgeWeightChange = new List<int>();
+
+    private bool waitForAnimation;
     public static Arch3Manager GetInstance()
     {
         return instance;
@@ -48,15 +47,11 @@ public class Arch3Manager : MonoBehaviour
     
 
     Arch3Node curSelectedNode;
-
-    //[SerializeField] private Arch3Node testNode;
+   
 
     // Start is called before the first frame update
     void Start()
-    {
-        scanBtn.onClick.AddListener(clickScanBtn);
-        //moveBtn.onClick.AddListener(clickMoveBtn);
-        moveBtn.onClick.AddListener(clickScanBtn);
+    {      
         startingNode.revealEdges();
         startingNode.disableClick();
         selection = new List<Arch3Node>();
@@ -65,19 +60,24 @@ public class Arch3Manager : MonoBehaviour
         player.gameObject.transform.position = new Vector3(startingNode.transform.position.x, startingNode.transform.position.y + 0.3f, 0);
     }
 
+    public void setWait(bool state)
+    {
+        waitForAnimation = state;
+    }
+    public void setStepCount(int num)
+    {
+        stepCount = num;
+    }
+
     public void openActionsMenu(GraphNode selectedNode)
     {
-        //scanBtn.gameObject.SetActive(true);
-        moveBtn.gameObject.SetActive(true);
-
+        //scanBtn.gameObject.SetActive(true);      
         curSelectedNode = selectedNode.GetComponent<Arch3Node>();       
     }
 
     public void closeActionsMenu()
     {
-        //scanBtn.gameObject.SetActive(false);
-        moveBtn.gameObject.SetActive(false);
-
+        //scanBtn.gameObject.SetActive(false);    
         curSelectedNode = null;
     }
 
@@ -89,34 +89,49 @@ public class Arch3Manager : MonoBehaviour
     }
     public void clickMoveBtn(GraphNode selectedNode)
     {
-        curSelectedNode = selectedNode.GetComponent<Arch3Node>();
-        //player.gameObject.transform.position = new Vector3(curSelectedNode.transform.position.x, curSelectedNode.transform.position.y + 0.3f, 0);
+        if (!waitForAnimation)
+        {       
+            curSelectedNode = selectedNode.GetComponent<Arch3Node>();
+            //player.gameObject.transform.position = new Vector3(curSelectedNode.transform.position.x, curSelectedNode.transform.position.y + 0.3f, 0);
        
-        int weight = weightOfNodes();
-        Debug.Log(weight.ToString());
-        if(weight > 0)
-        {
-            player.move(weight, curSelectedNode);
-            culprit.move(weight);
-            stepCount += weight;
-
-            turnCount++;
-
-            for (int i = 0; i < edgeTurnChange.Count; i++)
+            int weight = weightOfNodes();
+            Debug.Log(weight.ToString());
+            if(weight > 0)
             {
-                if(edgeTurnChange[i] == turnCount)
+                player.move(weight, curSelectedNode);
+
+                
+                culprit.move(weight);
+
+                stepCount += weight;
+
+                turnCount++;
+
+                for (int i = 0; i < edgeTurnChange.Count; i++)
                 {
-                    varEdges[i].addWeight(edgeWeightChange[i]);
-                }
-            }            
+                    if(edgeTurnChange[i] == turnCount)
+                    {
+                        varEdges[i].addWeight(edgeWeightChange[i]);
+                    }
+                }            
+            }
+            if(curSelectedNode == finalNode && stepCount <= finalEdgeWeight)
+            {
+                victoryCard.SetActive(true);
+                panelFocus = true;
+                clickBlocker.gameObject.SetActive(true);
+            }
         }
-        if(curSelectedNode == finalNode && stepCount <= finalEdgeWeight)
-        {
-            victoryCard.SetActive(true);
-            panelFocus = true;
-            clickBlocker.gameObject.SetActive(true);
-        }      
-            
+    }
+
+    public Arch3Node getCurNode()
+    {
+        return curSelectedNode;
+    }
+
+    public void setCulprit(Culprit var)
+    {
+        culprit = var;
     }
 
     public int weightOfNodes()
@@ -149,23 +164,6 @@ public class Arch3Manager : MonoBehaviour
         }
 
         return weight;
-    }
-
-    public void resetToStart()
-    {
-        EventBroadcaster.Instance.PostEvent(GraphGameEventNames.ARCH3_LOCKNODES);
-
-        selection.Clear();
-        selection.Add(startingNode);
-        player.gameObject.transform.position = new Vector3(startingNode.transform.position.x, startingNode.transform.position.y + 0.3f, 0);
-        stepCount = 0;
-        culprit.reset();
-        panelFocus = false;
-        clickBlocker.gameObject.SetActive(false);
-
-        curSelectedNode = startingNode;
-        curSelectedNode.revealEdges();
-        curSelectedNode.disableClick();
     }
 
     public void retry()

@@ -41,6 +41,7 @@ public class Culprit : MonoBehaviour
         {
             stepsToTake += steps;
             shouldMove = true;
+            Arch3Manager.GetInstance().setWait(true);
         }
     }
 
@@ -65,7 +66,10 @@ public class Culprit : MonoBehaviour
             if (stepsToTake == 0 || hasEscaped())
             {
                 shouldMove = false;
+                Arch3Manager.GetInstance().setWait(false);
             }
+           
+           
         }
         if (hasEscaped())
             Arch3Manager.GetInstance().retry();
