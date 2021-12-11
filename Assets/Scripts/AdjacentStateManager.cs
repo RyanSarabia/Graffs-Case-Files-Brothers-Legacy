@@ -10,6 +10,7 @@ public class AdjacentStateManager : MonoBehaviour
     [SerializeField] Image highlightImage;
     [SerializeField] GameObject arrowHead;
     [SerializeField] int index;
+    private Parameters parameters;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +42,14 @@ public class AdjacentStateManager : MonoBehaviour
         this.highlightImage.gameObject.SetActive(true);
         this.arrowHead.GetComponent<SpriteRenderer>().color = Color.yellow;
 
+        parameters.PutExtra("State Index", this.index);
+    }
+
+    private void ConfirmEventOccurred()
+    {
+        //this.highlightImage.gameObject.SetActive(false);
+        if (parameters != null)
+            EventBroadcaster.Instance.PostEvent(GraphGameEventNames.GRAPH_DEVICE_CONFIRMED, parameters);
     }
 
     private void DisableHighlight()
