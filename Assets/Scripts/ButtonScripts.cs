@@ -56,5 +56,9 @@ public class ButtonScripts : MonoBehaviour
         confirmButton.gameObject.SetActive(false);
     }
 
+    private void Arch2TimelineNodeClicked(int index)
+    {
+        EventBroadcaster.Instance.PostEvent(GraphGameEventNames.GRAPH_DEVICE_CONFIRM_OCCURRED);
+    }
     
 }
