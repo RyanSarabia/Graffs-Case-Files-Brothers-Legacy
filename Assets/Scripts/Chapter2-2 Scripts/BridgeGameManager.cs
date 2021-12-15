@@ -262,9 +262,9 @@ public class BridgeGameManager : MonoBehaviour
         adjacentList.Clear();
     }
 
-    public void GetNode( int index)
+    public State_Bridge GetPreviousNode(int index)
     {
-
+        return prevStates[index];
     }
 
 }

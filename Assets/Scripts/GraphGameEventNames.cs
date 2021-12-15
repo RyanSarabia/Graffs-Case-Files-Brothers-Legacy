@@ -21,6 +21,7 @@ public class GraphGameEventNames
     public const string GRAPH_DEVICE_CONFIRMED = "GRAPH_DEVICE_CONFIRMED";
     public const string GRAPH_DEVICE_CONFIRMED_CH2 = "GRAPH_DEVICE_CONFIRMED_CH2";
     public const string GRAPH_DEVICE_RETURN_CLICKED = "GRAPH_DEVICE_RETURN_CLICKED";
+    public const string CAMERA_3_CALLED = "CAMERA_3_CALLED";
     public const string ARCH3_NODECLICKED = "ARCH3_NODECLICKED";
     public const string ARCH3_LOCKNODES = "ARCH3_LOCKNODES";
     public const string NPCS_MOVED = "NPCS_MOVED";

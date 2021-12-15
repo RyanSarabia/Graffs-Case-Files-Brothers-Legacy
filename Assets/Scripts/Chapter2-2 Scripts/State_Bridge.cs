@@ -238,4 +238,17 @@ public class State_Bridge : MonoBehaviour
         return this.isLanternLeft;
     }
 
+    public string getStrLeft()
+    {
+        return strLeft;
+    }
+    public string getStrRight()
+    {
+        return strRight;
+    }
+
+    public int getChildNodes()
+    {
+        return nChildNodes;
+    }
 }
