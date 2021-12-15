@@ -9,6 +9,7 @@ public class ButtonScripts : MonoBehaviour
     [SerializeField] private Button graphDeviceButton;
     [SerializeField] private Button returnToDefaultButton;
     [SerializeField] private Button confirmButton;
+    [SerializeField] private Button revertButton;
 
     [SerializeField] private Camera mainCam;
     [SerializeField] private Camera graphDeviceCam;

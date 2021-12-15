@@ -1005,7 +1005,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &2375176789062382636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1102,6 +1102,8 @@ MonoBehaviour:
   man_2: {fileID: 35062615437064652}
   woman_5: {fileID: 9047653532332451288}
   oldie_8: {fileID: 8626287672897792015}
+  leftSide: []
+  rightSide: []
 --- !u!1 &7098360017140460226
 GameObject:
   m_ObjectHideFlags: 0
