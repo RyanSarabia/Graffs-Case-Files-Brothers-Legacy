@@ -5,6 +5,7 @@ using TMPro;
 
 public class BridgeGameManager : MonoBehaviour
 {
+    // --------------------------- Singleton --------------------
     private static BridgeGameManager instance;
     public static BridgeGameManager GetInstance()
     {
@@ -19,49 +20,57 @@ public class BridgeGameManager : MonoBehaviour
             GameObject.Destroy(gameObject);
     }
 
-    [SerializeField] private TextMeshProUGUI timeCounter;
-    [SerializeField] private List<NPC> NPC = new List<NPC>();    
 
-    private List<NPC> selectedNPC = new List<NPC>();
+    // --------------------------- GM stuff ----------------------
 
-    private bool lanternAtLeft = true;
-
-    private int totalSpeed;
-
+    // static
     [SerializeField] public static int targetTime = 15;
+
+    // UI stuff
     [SerializeField] private GameObject victoryCard;
     [SerializeField] private GameObject retryCard;
     [SerializeField] private GameObject clickBlocker;
+    [SerializeField] private TextMeshProUGUI timeCounter;
+    [SerializeField] private GameObject adjacentContainer;
     private bool panelFocus;
+
+    // GM variables
+    [SerializeField] private NPC child;
+    [SerializeField] private NPC man;
+    [SerializeField] private NPC woman;
+    [SerializeField] private NPC oldie;
+    [SerializeField] private List<NPC> NPC = new List<NPC>();
+    private List<NPC> selectedNPC = new List<NPC>();
+
+    [SerializeField] private GameObject StateBridge_container;
+    [SerializeField] private State_Bridge StateBridge_template;
+    [SerializeField] private List<State_Bridge> prevStates = new List<State_Bridge>();
+    [SerializeField] private List<State_Bridge> adjacentList = new List<State_Bridge>();
+    private State_Bridge curState;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        NPC.Add(child);
+        NPC.Add(man);
+        NPC.Add(woman);
+        NPC.Add(oldie);
+        curState = newState();
+        curState.setCurState(0, true, "c,m,w,o", "");
+        clearAdjacentNodes();
+        curState.getAdjacentNodes(adjacentContainer, adjacentList);
     }
 
     // Update is called once per frame
     void Update()
     {
-        timeCounter.SetText("Time Left: " + (targetTime - totalSpeed) + " min");
     }
 
-    public bool getLanternPosition()
-    {
-        return lanternAtLeft;
-    }
     public bool getPanelFocus()
     {
         return panelFocus;
     }
 
-    public int getTargetTime()
-    {
-        return targetTime;
-    }
-    public int getCurrentTime()
-    {
-        return totalSpeed;
-    }
 
     public void leftSelectNPC(int id, bool ready)
     {
@@ -109,7 +118,10 @@ public class BridgeGameManager : MonoBehaviour
     }
 
     public void sendNPC()
-    {      
+    {
+        int tempTimeElapsed = curState.getTimeElapsed();
+        bool isLanternLeft = curState.getIsLanternLeft();
+
         if (selectedNPC[0].isLeftSide() && selectedNPC.Count < 2)
         {
             Debug.Log("You are only sending one at the left");
@@ -117,35 +129,34 @@ public class BridgeGameManager : MonoBehaviour
         else
         {
             if (selectedNPC.Count > 1)
-                totalSpeed += Mathf.Max(selectedNPC[0].getSpeed(), selectedNPC[1].getSpeed());
+                tempTimeElapsed += Mathf.Max(selectedNPC[0].getSpeed(), selectedNPC[1].getSpeed());
             else
-                totalSpeed += selectedNPC[0].getSpeed();         
+                tempTimeElapsed += selectedNPC[0].getSpeed();         
 
             foreach (var npc in selectedNPC)
             {
-                //npc.cross();
                 npc.setReady(false);
-                if (npc.isLeftSide())
-                {
-                    npc.crossToRight();
-                    lanternAtLeft = false;
-                }
-                else
-                {
-                    npc.crossToLeft();
-                    lanternAtLeft = true;
-                }
+                npc.cross();
             }
 
             selectedNPC.Clear();
 
-            if (numAtLeft() == 0 && totalSpeed == targetTime)
+            State_Bridge prevState = curState;
+            //prevState.connectToGameObjects() to prevNodes;
+            prevStates.Add(prevState);
+
+            curState = newState();
+            curState.setCurState(tempTimeElapsed, !isLanternLeft, getLeftString(), getRightString());
+            clearAdjacentNodes();
+            curState.getAdjacentNodes(adjacentContainer, adjacentList);
+
+            if (numAtLeft() == 0 && curState.getTimeElapsed() == targetTime)
             {
                 victoryCard.SetActive(true);
                 panelFocus = true;
                 clickBlocker.gameObject.SetActive(true);
             }
-            else if (totalSpeed > targetTime)
+            else if (curState.getTimeElapsed() > targetTime)
             {
                 retryCard.SetActive(true);
                 panelFocus = true;
@@ -154,6 +165,15 @@ public class BridgeGameManager : MonoBehaviour
         }
 
         EventBroadcaster.Instance.PostEvent(GraphGameEventNames.NPCS_MOVED);
+    }
+
+    private State_Bridge newState()
+    {
+        State_Bridge newState = GameObject.Instantiate(StateBridge_template);
+        newState.transform.SetParent(StateBridge_container.transform);
+        newState.transform.position = new Vector3(newState.transform.position.x, newState.transform.position.y, 0);
+        newState.connectToGameObjects(timeCounter, child, man, woman, oldie);
+        return newState;
     }
 
     private int numAtLeft()
@@ -171,12 +191,80 @@ public class BridgeGameManager : MonoBehaviour
         return num;
     }
 
-    public void setLanternPosition(bool isLeft)
+    public string getRightString()
     {
-        this.lanternAtLeft = isLeft;
+        string result = "";
+
+        foreach(NPC npc in NPC)
+        {
+            if (!npc.isLeftSide())
+            {
+                switch (npc.getID())
+                {
+                    case 0: result += ",c"; break;
+                    case 1: result += ",m"; break;
+                    case 2: result += ",w"; break;
+                    case 3: result += ",o"; break;
+                }
+            }
+        }
+
+        if (result.Length > 1)
+        {
+            return result.Substring(1);
+        }
+        else
+        {
+            return "";
+        }
     }
-    public void setTotalTime(int time)
+    public string getLeftString()
     {
-        this.totalSpeed = time;
+        string result = "";
+
+        foreach (NPC npc in NPC)
+        {
+            if (npc.isLeftSide())
+            {
+                switch (npc.getID())
+                {
+                    case 0: result += ",c"; break;
+                    case 1: result += ",m"; break;
+                    case 2: result += ",w"; break;
+                    case 3: result += ",o"; break;
+                }
+            }
+        }
+
+        if (result.Length > 1)
+        {
+            return result.Substring(1);
+        }
+        else
+        {
+            return "";
+        }
     }
+
+    public bool getIsLanternLeft()
+    {
+        return curState.getIsLanternLeft();
+    }
+
+    void clearAdjacentNodes()
+    {
+        //remove adjacent nodes from graph device
+
+        foreach (State_Bridge adjacent_state in adjacentList)
+        {
+            Destroy(adjacent_state.gameObject);
+        }
+        adjacentList.Clear();
+    }
+
+    public State_Bridge GetPreviousNode(int index)
+    {
+        return prevStates[index];
+    }
+
 }

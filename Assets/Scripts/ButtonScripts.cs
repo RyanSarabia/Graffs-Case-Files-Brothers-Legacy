@@ -9,6 +9,7 @@ public class ButtonScripts : MonoBehaviour
     [SerializeField] private Button graphDeviceButton;
     [SerializeField] private Button returnToDefaultButton;
     [SerializeField] private Button confirmButton;
+    [SerializeField] private Button revertButton;
 
     [SerializeField] private Camera mainCam;
     [SerializeField] private Camera graphDeviceCam;
@@ -55,5 +56,9 @@ public class ButtonScripts : MonoBehaviour
         confirmButton.gameObject.SetActive(false);
     }
 
+    private void Arch2TimelineNodeClicked(int index)
+    {
+        EventBroadcaster.Instance.PostEvent(GraphGameEventNames.GRAPH_DEVICE_CONFIRM_OCCURRED);
+    }
     
 }
