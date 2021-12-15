@@ -24,6 +24,7 @@ public class Room : MonoBehaviour, IPointerClickHandler
     [SerializeField] private bool hasRightWall = false;
     [SerializeField] private bool hasLeftWall = false;
     [SerializeField] private bool hasDownWall = false;
+    [SerializeField] private bool hasWall = false;
 
     [SerializeField] private GameObject highlight;
     [SerializeField] private GameObject clueIcon;
@@ -180,6 +181,11 @@ public class Room : MonoBehaviour, IPointerClickHandler
             case GraphGameEventNames.DIRECTION_RIGHT: return hasRightWall;
             default: return false;
         }
+    }
+
+    public bool getHasWall()
+    {
+        return hasWall;
     }
 
     public List<Room> getNeighbors()
