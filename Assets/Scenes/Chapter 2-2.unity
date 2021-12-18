@@ -5146,8 +5146,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: You can visit 0 nodes from here
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1d3c27cbd4b620144978c775ea7f143c, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 1de59ab2cefb20548992cf5a6d2fa774, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5438,8 +5438,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Time Left: 45 min'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9b955845665ecbb42922a4bea628450a, type: 2}
+  m_sharedMaterial: {fileID: 3742743900307016031, guid: 9b955845665ecbb42922a4bea628450a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
