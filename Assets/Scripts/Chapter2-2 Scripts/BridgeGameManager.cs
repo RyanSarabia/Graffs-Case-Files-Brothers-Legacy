@@ -26,6 +26,7 @@ public class BridgeGameManager : MonoBehaviour
     // static
     [SerializeField] public static int targetTime = 15;
     [SerializeField] private AdjacentStateManager adjacentStatePrefab;
+    [SerializeField] private TimelineNode timelineNodePrefab;
 
     // UI stuff
     [SerializeField] private GameObject victoryCard;
@@ -47,6 +48,8 @@ public class BridgeGameManager : MonoBehaviour
     //[SerializeField] private State_Bridge StateBridge_template;
     [SerializeField] private List<AdjacentStateManager> adjacentList = new List<AdjacentStateManager>();
     [SerializeField] private List<State_Bridge> prevStates = new List<State_Bridge>();
+    [SerializeField] private List<TimelineNode> timelineNodes = new List<TimelineNode>();
+    [SerializeField] private TimelineNode curTimelineNode;
     private State_Bridge curState;
 
     // Start is called before the first frame update
@@ -56,6 +59,8 @@ public class BridgeGameManager : MonoBehaviour
         NPC.Add(man);
         NPC.Add(woman);
         NPC.Add(oldie);
+
+        timelineNodes.Add(curTimelineNode);
         curState = newState();
         curState.setCurState(0, true, "c,m,w,o", "");
         clearAdjacentNodes();
@@ -66,12 +71,6 @@ public class BridgeGameManager : MonoBehaviour
     void Update()
     {
     }
-
-    public bool getPanelFocus()
-    {
-        return panelFocus;
-    }
-
 
     public void leftSelectNPC(int id, bool ready)
     {
@@ -142,10 +141,10 @@ public class BridgeGameManager : MonoBehaviour
 
             selectedNPC.Clear();
 
-            State_Bridge prevState = curState;
-            //prevState.connectToGameObjects() to prevNodes;
-            prevStates.Add(prevState);
-
+            //State_Bridge prevState = curState;
+            ////prevState.connectToGameObjects() to prevNodes;
+            //prevStates.Add(prevState);
+            addPreviousNode();
             curState = newState();
             curState.setCurState(tempTimeElapsed, !isLanternLeft, getLeftString(), getRightString());
             clearAdjacentNodes();
@@ -170,17 +169,58 @@ public class BridgeGameManager : MonoBehaviour
 
     private State_Bridge newState()
     {
-        //State_Bridge newState = GameObject.Instantiate(StateBridge_template);
-        //newState.transform.SetParent(StateBridge_container.transform);
-        //newState.transform.position = new Vector3(newState.transform.position.x, newState.transform.position.y, 0);
-        //newState.connectToGameObjects(timeCounter, child, man, woman, oldie);
-
         State_Bridge newState = new State_Bridge();
         newState.connectToGameObjects(timeCounter, child, man, woman, oldie);
         return newState;
     }
 
-    private int numAtLeft()
+    private void addPreviousNode()
+    {
+        State_Bridge prevState = curState;
+        prevStates.Add(prevState);
+
+        TimelineNode newNode = GameObject.Instantiate(timelineNodePrefab, curTimelineNode.transform.parent);
+        newNode.transform.position = timelineNodes[0].transform.position;
+
+        // append prev to prevprev
+        if (timelineNodes.Count > 1)
+        {
+            newNode.transform.position = timelineNodes[timelineNodes.Count - 2].getNextSpawnPoint().position;
+        }
+
+        // append cur to prev
+        curTimelineNode.transform.position = newNode.getNextSpawnPoint().position;
+
+        //add to list
+        timelineNodes.Insert(timelineNodes.Count-1, newNode);
+
+        // set index
+        curTimelineNode.setIndex(timelineNodes.Count);
+        newNode.setIndex(timelineNodes.Count-1);
+
+        // set state
+        newNode.setState(prevState);
+    }
+
+    void clearAdjacentNodes()
+    {
+        //remove adjacent nodes from graph device
+
+        foreach (AdjacentStateManager adjacent_state in adjacentList)
+        {
+            Destroy(adjacent_state.gameObject);
+        }
+        adjacentList.Clear();
+    }
+
+
+    // --------------------------- Getters & Setters ----------------------
+    public bool getPanelFocus()
+    {
+        return panelFocus;
+    }
+
+    public int numAtLeft()
     {
         int num = 0;
 
@@ -253,17 +293,6 @@ public class BridgeGameManager : MonoBehaviour
     public bool getIsLanternLeft()
     {
         return curState.getIsLanternLeft();
-    }
-
-    void clearAdjacentNodes()
-    {
-        //remove adjacent nodes from graph device
-
-        foreach (AdjacentStateManager adjacent_state in adjacentList)
-        {
-            Destroy(adjacent_state.gameObject);
-        }
-        adjacentList.Clear();
     }
 
     public State_Bridge GetPreviousNode(int index)

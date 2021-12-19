@@ -10,35 +10,78 @@ public class ButtonScripts : MonoBehaviour
     [SerializeField] private Button returnToDefaultButton;
     [SerializeField] private Button confirmButton;
     [SerializeField] private Button revertButton;
+    [SerializeField] private Button cam2MainBtn;
+    [SerializeField] private Button cam3MainBtn;
+    [SerializeField] private Button cam3Timeline;
+    [SerializeField] private Button cam4MainBtn;
+    [SerializeField] private Button cam4Timeline;
 
     [SerializeField] private Camera mainCam;
-    [SerializeField] private Camera graphDeviceCam;
+    [SerializeField] private Camera cam2;
+    [SerializeField] private Camera cam3;
+    [SerializeField] private Camera cam4;
 
     // Start is called before the first frame update
     void Start()
     {
         EventBroadcaster.Instance.AddObserver(GraphGameEventNames.GRAPH_DEVICE_CLICKED, ActivateConfirmButton);
+        EventBroadcaster.Instance.AddObserver(GraphGameEventNames.TIMELINE_PREVNODE_CLICKED, TimelinePrevNodeClicked);
+        EventBroadcaster.Instance.AddObserver(GraphGameEventNames.TIMELINE_CURNODE_CLICKED, TimelineCurNodeClicked);
         graphDeviceButton.onClick.AddListener(GraphDeviceClicked);
         returnToDefaultButton.onClick.AddListener(ReturnClicked);
         confirmButton.onClick.AddListener(ConfirmClicked);
+
+        cam2MainBtn.onClick.AddListener(NavbarMainClicked);
+        cam3MainBtn.onClick.AddListener(NavbarMainClicked);
+        cam3Timeline.onClick.AddListener(NavbarTimelineClicked);
+        // wala pang cam 4 navbar
+        //cam4MainBtn.onClick.AddListener(NavbarMainClicked);
+        //cam4Timeline.onClick.AddListener(NavbarTimelineClicked);
     }
 
     // Update is called once per frame
     void OnDestroy()
     {
         EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.GRAPH_DEVICE_CLICKED);
+        EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.TIMELINE_PREVNODE_CLICKED);
+        EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.TIMELINE_CURNODE_CLICKED);
     }
 
     private void GraphDeviceClicked()
     {
         mainCam.depth = 0;
-        graphDeviceCam.gameObject.SetActive(true);
+        cam2.gameObject.SetActive(true);
+    }
+
+    public void TimelinePrevNodeClicked()
+    {
+        cam2.gameObject.SetActive(false);
+        cam3.gameObject.SetActive(true);
+    }
+    public void TimelineCurNodeClicked()
+    {
+        cam2.gameObject.SetActive(false);
+        cam4.gameObject.SetActive(true);
+    }
+
+    public void NavbarMainClicked()
+    {
+        cam2.gameObject.SetActive(false);
+        cam3.gameObject.SetActive(false);
+        cam4.gameObject.SetActive(false);
+        mainCam.depth = 2;
+    }
+    public void NavbarTimelineClicked()
+    {
+        cam3.gameObject.SetActive(false);
+        cam4.gameObject.SetActive(false);
+        cam2.gameObject.SetActive(true);
     }
 
     private void ReturnClicked()
     {
         mainCam.depth = 2;
-        graphDeviceCam.gameObject.SetActive(false);
+        cam4.gameObject.SetActive(false);
         confirmButton.gameObject.SetActive(false);
         EventBroadcaster.Instance.PostEvent(GraphGameEventNames.GRAPH_DEVICE_RETURN_CLICKED);
     }
@@ -52,13 +95,7 @@ public class ButtonScripts : MonoBehaviour
     {
         EventBroadcaster.Instance.PostEvent(GraphGameEventNames.GRAPH_DEVICE_CONFIRM_OCCURRED);
         mainCam.depth = 2;
-        graphDeviceCam.gameObject.SetActive(false);
+        cam4.gameObject.SetActive(false);
         confirmButton.gameObject.SetActive(false);
     }
-
-    private void Arch2TimelineNodeClicked(int index)
-    {
-        EventBroadcaster.Instance.PostEvent(GraphGameEventNames.GRAPH_DEVICE_CONFIRM_OCCURRED);
-    }
-    
 }
