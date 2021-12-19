@@ -2,15 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class AdjacentStateManager : MonoBehaviour
 {
+    [SerializeField] private TextMeshProUGUI timeCounter;
+    [SerializeField] private NPC child;
+    [SerializeField] private NPC man;
+    [SerializeField] private NPC woman;
+    [SerializeField] private NPC oldie;
 
     [SerializeField] Image hoverImage;
     [SerializeField] Image highlightImage;
     [SerializeField] GameObject arrowHead;
     [SerializeField] int index;
+    private State_Bridge state = new State_Bridge();
     private Parameters parameters;
+
+    void Awake()
+    {
+        state.connectToGameObjects(timeCounter, child, man, woman, oldie);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +35,11 @@ public class AdjacentStateManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public State_Bridge getState()
+    {
+        return state;
     }
 
     private void OnMouseEnter()

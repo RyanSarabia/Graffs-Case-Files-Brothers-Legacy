@@ -1473,8 +1473,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7694282636878053493}
+  - component: {fileID: 9184653959891109236}
   m_Layer: 5
-  m_Name: Node
+  m_Name: TimelineNode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1506,6 +1507,26 @@ RectTransform:
   m_AnchoredPosition: {x: -252, y: 14}
   m_SizeDelta: {x: 96.59, y: 99.59}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &9184653959891109236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8888311196759400456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ddf93b8f278ce3498b1f2b2ebfe08b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curNodeHighlight: {fileID: 0}
+  branchArrow: {fileID: 0}
+  nextSpawn: {fileID: 0}
+  youAreHere: {fileID: 0}
+  indexText: {fileID: 0}
+  branchText: {fileID: 0}
+  state: {fileID: 0}
+  isCurNode: 0
 --- !u!1 &8899992508710336400
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class State_Bridge : MonoBehaviour
+public class State_Bridge 
 {
-    [SerializeField] private State_Bridge bridgePrefabCopy;
+    //[SerializeField] private AdjacentStateManager bridgePrefabCopy;
 
     [SerializeField] private bool isLanternLeft = true;
     [SerializeField] private int timeElapsed;
@@ -36,9 +36,9 @@ public class State_Bridge : MonoBehaviour
         //EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.NPCS_MOVED);
     }
 
-    public void connectToGameObjects(TextMeshProUGUI timeCounter, NPC child, NPC man, NPC woman, NPC oldie) 
+    public void connectToGameObjects(TextMeshProUGUI newTimeCounter, NPC child, NPC man, NPC woman, NPC oldie) 
     {
-        this.timeCounter = timeCounter;
+        this.timeCounter = newTimeCounter;
         this.child_1 = child;
         this.man_2 = man;
         this.woman_5 = woman;
@@ -87,7 +87,7 @@ public class State_Bridge : MonoBehaviour
         Debug.Log(rightSide);
     }
 
-    public void getAdjacentNodes(GameObject adjacentContainer, List<State_Bridge> adjacentStates)
+    public void generateAdjacentNodes(GameObject adjacentContainer, List<AdjacentStateManager> adjacentStates, AdjacentStateManager prefabCopy)
     {
         bool isLeftActive = this.isLanternLeft;
         Debug.Log("Test: "+isLeftActive);
@@ -123,7 +123,7 @@ public class State_Bridge : MonoBehaviour
                     }
 
                     //placeholder function!!!
-                    createState(this.timeElapsed + addedTime, isLeftActive, tempLeft, tempRight, adjacentContainer, adjacentStates);
+                    createState(this.timeElapsed + addedTime, isLeftActive, tempLeft, tempRight, adjacentContainer, adjacentStates, prefabCopy);
 
                     Debug.Log(i + "," + j + ": " + tempLeft + "||" + tempRight);
                 }
@@ -150,7 +150,7 @@ public class State_Bridge : MonoBehaviour
                 int addedTime = activeList[i].getSpeed();
 
                 //placeholder function!!!
-                createState(this.timeElapsed + addedTime, isLeftActive, tempLeft, tempRight, adjacentContainer, adjacentStates);
+                createState(this.timeElapsed + addedTime, isLeftActive, tempLeft, tempRight, adjacentContainer, adjacentStates, prefabCopy);
 
                 Debug.Log(i + ": " + tempLeft + "||" + tempRight);
             }
@@ -160,17 +160,18 @@ public class State_Bridge : MonoBehaviour
         this.nChildNodes = adjacentStates.Count;
     }
 
-    private void createState(int timeTotal, bool isLanternLeft, string left, string right, GameObject adjacentContainer, List<State_Bridge> adjacentStates)
+    private void createState(int timeTotal, bool isLanternLeft, string left, string right, GameObject adjacentContainer, List<AdjacentStateManager> adjacentStates, AdjacentStateManager prefabCopy)
     {
         // spawn here
-        State_Bridge newState = GameObject.Instantiate(this.bridgePrefabCopy);
-        newState.setCurState(timeTotal, isLanternLeft, left, right);
+        AdjacentStateManager newState = GameObject.Instantiate(prefabCopy);
         newState.transform.SetParent(adjacentContainer.transform);
         newState.transform.position = new Vector3(newState.transform.position.x, newState.transform.position.y, 0);
+        newState.getState().setCurState(timeTotal, isLanternLeft, left, right);
 
         //State_Pitchers newState = new State_Pitchers(); //pangtest ko lang tong line na to pero mali to
         // hindi to gagana hanggat wala yung mismong newState sa scene
         // newState.setStatesAndPitcherValues(p1, p2, p3);
+        newState.SetIndex(adjacentStates.Count);
         adjacentStates.Add(newState);
         newState.GetComponent<AdjacentStateManager>().SetIndex(adjacentStates.FindIndex(x => x == newState));
     }

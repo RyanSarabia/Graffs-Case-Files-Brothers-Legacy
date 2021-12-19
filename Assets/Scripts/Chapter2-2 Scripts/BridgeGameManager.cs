@@ -25,6 +25,7 @@ public class BridgeGameManager : MonoBehaviour
 
     // static
     [SerializeField] public static int targetTime = 15;
+    [SerializeField] private AdjacentStateManager adjacentStatePrefab;
 
     // UI stuff
     [SerializeField] private GameObject victoryCard;
@@ -42,10 +43,10 @@ public class BridgeGameManager : MonoBehaviour
     [SerializeField] private List<NPC> NPC = new List<NPC>();
     private List<NPC> selectedNPC = new List<NPC>();
 
-    [SerializeField] private GameObject StateBridge_container;
-    [SerializeField] private State_Bridge StateBridge_template;
+    //[SerializeField] private GameObject StateBridge_container;
+    //[SerializeField] private State_Bridge StateBridge_template;
+    [SerializeField] private List<AdjacentStateManager> adjacentList = new List<AdjacentStateManager>();
     [SerializeField] private List<State_Bridge> prevStates = new List<State_Bridge>();
-    [SerializeField] private List<State_Bridge> adjacentList = new List<State_Bridge>();
     private State_Bridge curState;
 
     // Start is called before the first frame update
@@ -58,7 +59,7 @@ public class BridgeGameManager : MonoBehaviour
         curState = newState();
         curState.setCurState(0, true, "c,m,w,o", "");
         clearAdjacentNodes();
-        curState.getAdjacentNodes(adjacentContainer, adjacentList);
+        curState.generateAdjacentNodes(adjacentContainer, adjacentList, adjacentStatePrefab);
     }
 
     // Update is called once per frame
@@ -148,7 +149,7 @@ public class BridgeGameManager : MonoBehaviour
             curState = newState();
             curState.setCurState(tempTimeElapsed, !isLanternLeft, getLeftString(), getRightString());
             clearAdjacentNodes();
-            curState.getAdjacentNodes(adjacentContainer, adjacentList);
+            curState.generateAdjacentNodes(adjacentContainer, adjacentList, adjacentStatePrefab);
 
             if (numAtLeft() == 0 && curState.getTimeElapsed() == targetTime)
             {
@@ -169,9 +170,12 @@ public class BridgeGameManager : MonoBehaviour
 
     private State_Bridge newState()
     {
-        State_Bridge newState = GameObject.Instantiate(StateBridge_template);
-        newState.transform.SetParent(StateBridge_container.transform);
-        newState.transform.position = new Vector3(newState.transform.position.x, newState.transform.position.y, 0);
+        //State_Bridge newState = GameObject.Instantiate(StateBridge_template);
+        //newState.transform.SetParent(StateBridge_container.transform);
+        //newState.transform.position = new Vector3(newState.transform.position.x, newState.transform.position.y, 0);
+        //newState.connectToGameObjects(timeCounter, child, man, woman, oldie);
+
+        State_Bridge newState = new State_Bridge();
         newState.connectToGameObjects(timeCounter, child, man, woman, oldie);
         return newState;
     }
@@ -255,7 +259,7 @@ public class BridgeGameManager : MonoBehaviour
     {
         //remove adjacent nodes from graph device
 
-        foreach (State_Bridge adjacent_state in adjacentList)
+        foreach (AdjacentStateManager adjacent_state in adjacentList)
         {
             Destroy(adjacent_state.gameObject);
         }
