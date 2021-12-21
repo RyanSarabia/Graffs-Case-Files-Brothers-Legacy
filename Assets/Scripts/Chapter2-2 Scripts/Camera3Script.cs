@@ -13,18 +13,18 @@ public class Camera3Script : MonoBehaviour
 
     void Start()
     {
-        EventBroadcaster.Instance.AddObserver(GraphGameEventNames.CAMERA_3_CALLED, SetCameraState);
+        EventBroadcaster.Instance.AddObserver(GraphGameEventNames.TIMELINE_PREVNODE_CLICKED, SetCameraState);
     }
 
     private void OnApplicationQuit()
     {
-        EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.CAMERA_3_CALLED);
+        EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.TIMELINE_PREVNODE_CLICKED);
 
     }
 
     private void SetCameraState(Parameters parameters)
     {
-        SetState(BridgeGameManager.GetInstance().GetPreviousNode(parameters.GetIntExtra("Previous node index", 0)));
+        SetState(BridgeGameManager.GetInstance().GetPreviousNode(parameters.GetIntExtra(TimelineNode.TIMELINE_NODE_INDEX, 0)));
         setSiblingCount(cam3Prefab.getChildNodes());
         setSiblingText();
     }

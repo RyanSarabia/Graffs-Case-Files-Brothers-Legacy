@@ -55,27 +55,29 @@ public class ButtonScripts : MonoBehaviour
 
     public void TimelinePrevNodeClicked()
     {
-        cam2.gameObject.SetActive(false);
-        cam3.gameObject.SetActive(true);
+        SetAllCamZero();
+        cam2On();
     }
     public void TimelineCurNodeClicked()
     {
-        cam2.gameObject.SetActive(false);
-        cam4.gameObject.SetActive(true);
+        SetAllCamZero();
+        cam4On();
+
     }
 
     public void NavbarMainClicked()
     {
-        cam2.gameObject.SetActive(false);
-        cam3.gameObject.SetActive(false);
-        cam4.gameObject.SetActive(false);
-        mainCam.depth = 2;
+        SetAllCamZero();
+        mainCamOn();
+        //cam2.gameObject.SetActive(false);
+        //cam3.gameObject.SetActive(false);
+        //cam4.gameObject.SetActive(false);
+        //mainCam.depth = 2;
     }
     public void NavbarTimelineClicked()
     {
-        cam3.gameObject.SetActive(false);
-        cam4.gameObject.SetActive(false);
-        cam2.gameObject.SetActive(true);
+        SetAllCamZero();
+        cam2On();
     }
 
     private void ReturnClicked()
@@ -93,22 +95,24 @@ public class ButtonScripts : MonoBehaviour
     private void ConfirmClicked()
     {
         EventBroadcaster.Instance.PostEvent(GraphGameEventNames.GRAPH_DEVICE_CONFIRM_OCCURRED);
-        mainCam.depth = 2;
+        SetAllCamZero();
+        mainCamOn();
         cam4.gameObject.SetActive(false);
         confirmButton.gameObject.SetActive(false);
     }
 
     private void SetAllCamZero()
     {
-        mainCam.depth = 0;
-        cam2.depth = 0;
-        cam3.depth = 0;
-        cam4.depth = 0;
+        mainCam.depth = -1;
+        cam2.depth = -1;
+        cam3.depth = -1;
+        cam4.depth = -1;
         mainCam.gameObject.SetActive(false);
         cam2.gameObject.SetActive(false);
         cam3.gameObject.SetActive(false);
         cam4.gameObject.SetActive(false);
     }
+
 
     private void mainCamOn()
     {
