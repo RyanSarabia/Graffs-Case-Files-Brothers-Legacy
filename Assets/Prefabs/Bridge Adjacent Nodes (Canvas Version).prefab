@@ -1003,7 +1003,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &2375176789062382636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1635,7 +1635,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3758659436579864814, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3758659436579864814, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
@@ -1796,7 +1796,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3758659436579864814, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3758659436579864814, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
@@ -1957,7 +1957,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3758659436579864814, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3758659436579864814, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
@@ -2118,7 +2118,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3758659436579864814, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4772237198696631493, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
       propertyPath: m_Color.b

@@ -42,6 +42,13 @@ public class AdjacentStateManager : MonoBehaviour
         return state;
     }
 
+    public void SetState(State_Bridge state)
+    {
+        this.state = state;
+        this.state.connectToGameObjects(timeCounter, child, man, woman, oldie);
+        this.state.updateObjectsToState();
+        //this.DisableNPCs();
+    }
     private void OnMouseEnter()
     {
         this.hoverImage.gameObject.SetActive(true);
@@ -92,5 +99,13 @@ public class AdjacentStateManager : MonoBehaviour
     public void SetIndex(int index)
     {
         this.index = index;
+    }
+
+    public void DisableNPCs()
+    {
+        this.child.DisableCollider();
+        this.man.DisableCollider();
+        this.woman.DisableCollider();
+        this.oldie.DisableCollider();
     }
 }

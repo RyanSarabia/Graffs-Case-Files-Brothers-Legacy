@@ -27,6 +27,7 @@ public class ButtonScripts : MonoBehaviour
         EventBroadcaster.Instance.AddObserver(GraphGameEventNames.GRAPH_DEVICE_CLICKED, ActivateConfirmButton);
         EventBroadcaster.Instance.AddObserver(GraphGameEventNames.TIMELINE_PREVNODE_CLICKED, TimelinePrevNodeClicked);
         EventBroadcaster.Instance.AddObserver(GraphGameEventNames.TIMELINE_CURNODE_CLICKED, TimelineCurNodeClicked);
+        EventBroadcaster.Instance.AddObserver(GraphGameEventNames.CAM3_TO_CAM4, cam3ToCam4);
         graphDeviceButton.onClick.AddListener(GraphDeviceClicked);
         returnToDefaultButton.onClick.AddListener(ReturnClicked);
         confirmButton.onClick.AddListener(ConfirmClicked);
@@ -53,10 +54,10 @@ public class ButtonScripts : MonoBehaviour
         cam2On();
     }
 
-    public void TimelinePrevNodeClicked()
+    public void TimelinePrevNodeClicked(Parameters parameters)
     {
         SetAllCamZero();
-        cam2On();
+        cam3On();
     }
     public void TimelineCurNodeClicked()
     {
@@ -80,11 +81,18 @@ public class ButtonScripts : MonoBehaviour
         cam2On();
     }
 
+    private void cam3ToCam4()
+    {
+        SetAllCamZero();
+        cam4On();
+    }
+
     private void ReturnClicked()
     {
         SetAllCamZero();
         mainCamOn();
         EventBroadcaster.Instance.PostEvent(GraphGameEventNames.GRAPH_DEVICE_RETURN_CLICKED);
+        
     }
 
     private void ActivateConfirmButton()
@@ -112,6 +120,7 @@ public class ButtonScripts : MonoBehaviour
         cam3.gameObject.SetActive(false);
         cam4.gameObject.SetActive(false);
     }
+
 
 
     private void mainCamOn()

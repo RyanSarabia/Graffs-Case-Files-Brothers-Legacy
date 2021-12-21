@@ -88,6 +88,42 @@ public class State_Bridge
         Debug.Log(rightSide);
     }
 
+    public void updateObjectsToState()
+    {
+        Debug.Log(isLanternLeft);
+        timeCounter.SetText("Time Left: " + (BridgeGameManager.targetTime - timeElapsed) + " min/s");
+
+        leftSide.Clear();
+        rightSide.Clear();
+        string[] leftChars = this.strLeft.Split(',', System.StringSplitOptions.RemoveEmptyEntries);
+        string[] rightChars = this.strRight.Split(',', System.StringSplitOptions.RemoveEmptyEntries);
+
+        foreach (var letter in leftChars)
+        {
+            switch (letter)
+            {
+                case "c": leftSide.Add(child_1); child_1.crossToLeft(); break;
+                case "m": leftSide.Add(man_2); man_2.crossToLeft(); break;
+                case "w": leftSide.Add(woman_5); woman_5.crossToLeft(); break;
+                case "o": leftSide.Add(oldie_8); oldie_8.crossToLeft(); break;
+            }
+        }
+
+        foreach (var letter in rightChars)
+        {
+            switch (letter)
+            {
+                case "c": rightSide.Add(child_1); child_1.crossToRight(); break;
+                case "m": rightSide.Add(man_2); man_2.crossToRight(); break;
+                case "w": rightSide.Add(woman_5); woman_5.crossToRight(); break;
+                case "o": rightSide.Add(oldie_8); oldie_8.crossToRight(); break;
+            }
+        }
+
+        Debug.Log(leftSide);
+        Debug.Log(rightSide);
+    }
+
     public void generateAdjacentNodes(GameObject adjacentContainer, List<AdjacentStateManager> adjacentStates, AdjacentStateManager prefabCopy)
     {
         bool isLeftActive = this.isLanternLeft;

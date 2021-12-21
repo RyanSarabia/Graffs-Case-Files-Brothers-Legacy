@@ -8,24 +8,34 @@ public class Camera3Script : MonoBehaviour
 {
 
     [SerializeField] TextMeshProUGUI siblingCountText;
-    [SerializeField] State_Bridge cam3Prefab;
+    [SerializeField] AdjacentStateManager cam3AdjacentManager;
+    [SerializeField] Button leftArrow;
+    [SerializeField] Button rightArrow;
+    [SerializeField] GameObject leftArrowGroup;
+    private int prevStateIndex;
     private int siblingCount;
 
     void Start()
     {
-        EventBroadcaster.Instance.AddObserver(GraphGameEventNames.TIMELINE_PREVNODE_CLICKED, SetCameraState);
+        EventBroadcaster.Instance.AddObserver(GraphGameEventNames.TIMELINE_PREVNODE_CLICKED, this.SetCameraState);
+        leftArrow.onClick.AddListener(LeftArrowClicked);
+        rightArrow.onClick.AddListener(RightArrowClicked);
     }
 
     private void OnApplicationQuit()
     {
         EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.TIMELINE_PREVNODE_CLICKED);
-
     }
 
-    private void SetCameraState(Parameters parameters)
+    public void SetCameraState(Parameters parameters)
     {
-        SetState(BridgeGameManager.GetInstance().GetPreviousNode(parameters.GetIntExtra(TimelineNode.TIMELINE_NODE_INDEX, 0)));
-        setSiblingCount(cam3Prefab.getChildNodes());
+        
+        State_Bridge prevState;
+        prevState = BridgeGameManager.GetInstance().GetPreviousNode(parameters.GetIntExtra("TIMELINE_NODE_INDEX", 0));
+        this.prevStateIndex = parameters.GetIntExtra("TIMELINE_NODE_INDEX", 0);
+        ToggleLeftArrowGroup();
+        SetState(prevState);
+        setSiblingCount(prevState.getChildNodes());
         setSiblingText();
     }
     public void setSiblingCount(int count)
@@ -39,6 +49,48 @@ public class Camera3Script : MonoBehaviour
 
     private void SetState(State_Bridge state)
     {
-        this.cam3Prefab.setCurState(state.getTimeElapsed(), state.getIsLanternLeft(), state.getStrLeft(), state.getStrRight());
+        this.cam3AdjacentManager.SetState(state);
+        //this.cam3Prefab.setCurState(state.getTimeElapsed(), state.getIsLanternLeft(), state.getStrLeft(), state.getStrRight());
     }
+
+    private void RightArrowClicked()
+    {
+        State_Bridge prevState;
+        prevStateIndex++;
+        if (BridgeGameManager.GetInstance().GetPrevStatesCount() == prevStateIndex)
+        {
+            EventBroadcaster.Instance.PostEvent(GraphGameEventNames.CAM3_TO_CAM4);
+        }
+        else
+        {
+            ToggleLeftArrowGroup();
+            prevState = BridgeGameManager.GetInstance().GetPreviousNode(prevStateIndex);
+            SetState(prevState);
+            setSiblingCount(prevState.getChildNodes());
+            setSiblingText();
+        }
+        
+    }
+
+    private void LeftArrowClicked()
+    {
+        State_Bridge prevState;
+        prevStateIndex--;
+        ToggleLeftArrowGroup();
+        prevState = BridgeGameManager.GetInstance().GetPreviousNode(prevStateIndex);
+        SetState(prevState);
+        setSiblingCount(prevState.getChildNodes());
+        setSiblingText();
+
+    }
+
+    private void ToggleLeftArrowGroup()
+    {
+        if (prevStateIndex == 0)
+            this.leftArrowGroup.SetActive(false);
+        else
+            this.leftArrowGroup.SetActive(true);
+
+    }
+
 }

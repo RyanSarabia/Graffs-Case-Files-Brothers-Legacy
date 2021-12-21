@@ -101,12 +101,12 @@ public class NPC : MonoBehaviour
         {
             if (!readyToLeave)
             {
-                this.transform.position = new Vector2(leftReadyPosition.transform.position.x, leftReadyPosition.transform.position.y);
+                this.transform.position = new Vector3(leftReadyPosition.transform.position.x, leftReadyPosition.transform.position.y);
                 readyToLeave = true;
             }
             else
             {
-                this.transform.position = new Vector2(leftIdlePosition.transform.position.x, leftIdlePosition.transform.position.y);
+                this.transform.position = new Vector3(leftIdlePosition.transform.position.x, leftIdlePosition.transform.position.y);
                 readyToLeave = false;
             }            
         }
@@ -114,12 +114,12 @@ public class NPC : MonoBehaviour
         {
             if (!readyToLeave)
             {
-                this.transform.position = new Vector2(rightReadyPosition.transform.position.x, rightReadyPosition.transform.position.y);
+                this.transform.position = new Vector3(rightReadyPosition.transform.position.x, rightReadyPosition.transform.position.y);
                 readyToLeave = true;
             }
             else
             {
-                this.transform.position = new Vector2(rightIdlePosition.transform.position.x, rightIdlePosition.transform.position.y);
+                this.transform.position = new Vector3(rightIdlePosition.transform.position.x, rightIdlePosition.transform.position.y);
                 readyToLeave = false;
             }            
         }
@@ -139,13 +139,13 @@ public class NPC : MonoBehaviour
 
     public void crossToRight()
     {        
-        this.transform.position = new Vector2(rightIdlePosition.transform.position.x, rightIdlePosition.transform.position.y);
+        this.transform.position = new Vector3(rightIdlePosition.transform.position.x, rightIdlePosition.transform.position.y);
         this.GetComponent<SpriteRenderer>().sprite = frontSprite;
         leftSide = false;
     }
     public void crossToLeft()
     {               
-        this.transform.position = new Vector2(leftIdlePosition.transform.position.x, leftIdlePosition.transform.position.y);
+        this.transform.position = new Vector3(leftIdlePosition.transform.position.x, leftIdlePosition.transform.position.y);
         this.GetComponent<SpriteRenderer>().sprite = backSprite;
         leftSide = true;
     }
@@ -158,5 +158,10 @@ public class NPC : MonoBehaviour
     private void OnMouseExit()
     {
         this.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
+    }
+
+    public void DisableCollider()
+    {
+        this.GetComponent<BoxCollider2D>().enabled = false;
     }
 }

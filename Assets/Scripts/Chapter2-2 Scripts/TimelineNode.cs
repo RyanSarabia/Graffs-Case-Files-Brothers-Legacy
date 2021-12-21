@@ -64,7 +64,7 @@ public class TimelineNode : MonoBehaviour
         whiteNodeCircle.onClick.AddListener(() => {
             Parameters parameters = new Parameters();
             parameters.PutExtra(TIMELINE_NODE_INDEX, index - 1);
-            EventBroadcaster.Instance.PostEvent(GraphGameEventNames.TIMELINE_PREVNODE_CLICKED);
+            EventBroadcaster.Instance.PostEvent(GraphGameEventNames.TIMELINE_PREVNODE_CLICKED, parameters);
         });
         curNodeHighlight.onClick.AddListener(() => {
             EventBroadcaster.Instance.PostEvent(GraphGameEventNames.TIMELINE_CURNODE_CLICKED);

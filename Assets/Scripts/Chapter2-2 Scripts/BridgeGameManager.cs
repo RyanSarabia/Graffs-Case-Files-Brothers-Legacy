@@ -300,4 +300,8 @@ public class BridgeGameManager : MonoBehaviour
         return prevStates[index];
     }
 
+    public int GetPrevStatesCount()
+    {
+        return prevStates.Count;
+    }
 }
