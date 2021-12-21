@@ -11,6 +11,7 @@ public class Camera3Script : MonoBehaviour
     [SerializeField] AdjacentStateManager cam3AdjacentManager;
     [SerializeField] Button leftArrow;
     [SerializeField] Button rightArrow;
+    [SerializeField] private Button revertButton;
     [SerializeField] GameObject leftArrowGroup;
     private int prevStateIndex;
     private int siblingCount;
@@ -20,6 +21,7 @@ public class Camera3Script : MonoBehaviour
         EventBroadcaster.Instance.AddObserver(GraphGameEventNames.TIMELINE_PREVNODE_CLICKED, this.SetCameraState);
         leftArrow.onClick.AddListener(LeftArrowClicked);
         rightArrow.onClick.AddListener(RightArrowClicked);
+        revertButton.onClick.AddListener(RevertButtonClicked);
     }
 
     private void OnApplicationQuit()
@@ -91,6 +93,13 @@ public class Camera3Script : MonoBehaviour
         else
             this.leftArrowGroup.SetActive(true);
 
+    }
+
+    private void RevertButtonClicked()
+    {
+        Parameters parameters = new Parameters();
+        parameters.PutExtra("CAM3_PREVSTATE_INDEX", prevStateIndex);
+        EventBroadcaster.Instance.PostEvent(GraphGameEventNames.CAM3_TO_MAINCAM, parameters);
     }
 
 }

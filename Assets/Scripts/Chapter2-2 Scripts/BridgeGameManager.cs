@@ -46,6 +46,7 @@ public class BridgeGameManager : MonoBehaviour
 
     //[SerializeField] private GameObject StateBridge_container;
     //[SerializeField] private State_Bridge StateBridge_template;
+    [SerializeField] private AdjacentStateManager cam4CurrState;
     [SerializeField] private List<AdjacentStateManager> adjacentList = new List<AdjacentStateManager>();
     [SerializeField] private List<State_Bridge> prevStates = new List<State_Bridge>();
     [SerializeField] private List<TimelineNode> timelineNodes = new List<TimelineNode>();
@@ -65,6 +66,13 @@ public class BridgeGameManager : MonoBehaviour
         curState.setCurState(0, true, "c,m,w,o", "");
         clearAdjacentNodes();
         curState.generateAdjacentNodes(adjacentContainer, adjacentList, adjacentStatePrefab);
+        UpdateCam4State(curState);
+        EventBroadcaster.Instance.AddObserver(GraphGameEventNames.CAM3_TO_MAINCAM, UpdateCam4StateFromCam3);
+    }
+
+    private void OnDestroy()
+    {
+        EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.CAM3_TO_MAINCAM);
     }
 
     // Update is called once per frame
@@ -149,6 +157,7 @@ public class BridgeGameManager : MonoBehaviour
             curState.setCurState(tempTimeElapsed, !isLanternLeft, getLeftString(), getRightString());
             clearAdjacentNodes();
             curState.generateAdjacentNodes(adjacentContainer, adjacentList, adjacentStatePrefab);
+            UpdateCam4State(curState);
 
             if (numAtLeft() == 0 && curState.getTimeElapsed() == targetTime)
             {
@@ -213,8 +222,26 @@ public class BridgeGameManager : MonoBehaviour
         adjacentList.Clear();
     }
 
+    private void UpdateCam4StateFromCam3(Parameters parameters)
+    {
+        Debug.Log(parameters.GetIntExtra("CAM3_PREVSTATE_INDEX", 0));
+        UpdateCam4State(GetPreviousNode(parameters.GetIntExtra("CAM3_PREVSTATE_INDEX", 0)));
+        SetState(GetPreviousNode(parameters.GetIntExtra("CAM3_PREVSTATE_INDEX", 0)));
+    }
+    private void UpdateCam4State(State_Bridge state)
+    {
+        this.cam4CurrState.SetState(state);
+    }
 
     // --------------------------- Getters & Setters ----------------------
+
+    public void SetState(State_Bridge state)
+    {
+        this.curState = state;
+        this.curState.connectToGameObjects(timeCounter, child, man, woman, oldie);
+        this.curState.updateObjectsToState();
+        //this.DisableNPCs();
+    }
     public bool getPanelFocus()
     {
         return panelFocus;
@@ -304,4 +331,5 @@ public class BridgeGameManager : MonoBehaviour
     {
         return prevStates.Count;
     }
+
 }

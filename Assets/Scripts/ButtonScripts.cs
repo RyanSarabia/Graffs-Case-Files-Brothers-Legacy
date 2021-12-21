@@ -9,7 +9,6 @@ public class ButtonScripts : MonoBehaviour
     [SerializeField] private Button graphDeviceButton;
     [SerializeField] private Button returnToDefaultButton;
     [SerializeField] private Button confirmButton;
-    [SerializeField] private Button revertButton;
     [SerializeField] private Button cam2MainBtn;
     [SerializeField] private Button cam3MainBtn;
     [SerializeField] private Button cam3Timeline;
@@ -28,6 +27,7 @@ public class ButtonScripts : MonoBehaviour
         EventBroadcaster.Instance.AddObserver(GraphGameEventNames.TIMELINE_PREVNODE_CLICKED, TimelinePrevNodeClicked);
         EventBroadcaster.Instance.AddObserver(GraphGameEventNames.TIMELINE_CURNODE_CLICKED, TimelineCurNodeClicked);
         EventBroadcaster.Instance.AddObserver(GraphGameEventNames.CAM3_TO_CAM4, cam3ToCam4);
+        EventBroadcaster.Instance.AddObserver(GraphGameEventNames.CAM3_TO_MAINCAM, cam3ToMainCam);
         graphDeviceButton.onClick.AddListener(GraphDeviceClicked);
         returnToDefaultButton.onClick.AddListener(ReturnClicked);
         confirmButton.onClick.AddListener(ConfirmClicked);
@@ -85,6 +85,12 @@ public class ButtonScripts : MonoBehaviour
     {
         SetAllCamZero();
         cam4On();
+    }
+
+    private void cam3ToMainCam(Parameters parameters)
+    {
+        SetAllCamZero();
+        mainCamOn();
     }
 
     private void ReturnClicked()
@@ -146,4 +152,5 @@ public class ButtonScripts : MonoBehaviour
         cam4.depth = 99;
         cam4.gameObject.SetActive(true);
     }
+
 }
