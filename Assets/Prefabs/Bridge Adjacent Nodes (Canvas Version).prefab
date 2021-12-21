@@ -70,9 +70,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -277429059
-  m_SortingLayer: 2
-  m_SortingOrder: 1
+  m_SortingLayerID: 884648697
+  m_SortingLayer: 1
+  m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: 08bc623f14747a3438709d6a0f25dde6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1663,15 +1663,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4772237198696631493, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
       propertyPath: m_SortingLayer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4772237198696631493, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
-      propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4772237198696631493, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772237198696631493, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
       propertyPath: m_SortingLayerID
-      value: -277429059
+      value: 884648697
       objectReference: {fileID: 0}
     - target: {fileID: 4916665492272227106, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
       propertyPath: ID
@@ -1824,15 +1824,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4772237198696631493, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
       propertyPath: m_SortingLayer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4772237198696631493, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
-      propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4772237198696631493, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772237198696631493, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
       propertyPath: m_SortingLayerID
-      value: -277429059
+      value: 884648697
       objectReference: {fileID: 0}
     - target: {fileID: 4916665492272227106, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
       propertyPath: ID
@@ -1985,15 +1985,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4772237198696631493, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
       propertyPath: m_SortingLayer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4772237198696631493, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
-      propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4772237198696631493, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772237198696631493, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
       propertyPath: m_SortingLayerID
-      value: -277429059
+      value: 884648697
       objectReference: {fileID: 0}
     - target: {fileID: 4916665492272227106, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
       propertyPath: ID
@@ -2134,15 +2134,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4772237198696631493, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
       propertyPath: m_SortingLayer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4772237198696631493, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
-      propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4772237198696631493, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772237198696631493, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
       propertyPath: m_SortingLayerID
-      value: -277429059
+      value: 884648697
       objectReference: {fileID: 0}
     - target: {fileID: 4916665492272227106, guid: 6bf04beac07af1d4488bf8fa2162c75f, type: 3}
       propertyPath: ID

@@ -193,8 +193,8 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: -277429059
-  m_SortingOrder: 10
+  m_SortingLayerID: 884648697
+  m_SortingOrder: 7
   m_TargetDisplay: 0
 --- !u!114 &3258909432517033337
 MonoBehaviour:
@@ -311,7 +311,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 884648697
   m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: 05c13364120d7354fb189e545cca7a4d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
