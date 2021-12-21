@@ -10,13 +10,14 @@ public class TimelineNode : MonoBehaviour
 
     // UI
     [SerializeField] private Button curNodeHighlight;
+    [SerializeField] private TextMeshProUGUI curIndexText;
     [SerializeField] private GameObject youAreHere;
     [SerializeField] private GameObject questionMark;
 
     [SerializeField] private Button whiteNodeCircle;
+    [SerializeField] private TextMeshProUGUI prevIndexText;
     [SerializeField] private GameObject branchBox;
     [SerializeField] private GameObject branchArrow;
-    [SerializeField] private TextMeshProUGUI indexText;
     [SerializeField] private TextMeshProUGUI branchText;
     
     [SerializeField] private GameObject nextSpawn;
@@ -30,6 +31,7 @@ public class TimelineNode : MonoBehaviour
     {
         if (isCurNode)
         {
+            setIndex(1);
             curNodeHighlight.gameObject.SetActive(true);
             youAreHere.SetActive(true);
             questionMark.SetActive(true);
@@ -46,6 +48,7 @@ public class TimelineNode : MonoBehaviour
         state = newState;
         int n = state.getChildNodes();
         branchText.text = n.ToString() + " other\nbranches";
+        this.gameObject.SetActive(true);
     }
 
     public Transform getNextSpawnPoint()
@@ -55,7 +58,8 @@ public class TimelineNode : MonoBehaviour
 
     public void setIndex(int index)
     {
-        indexText.text = index.ToString();
+        curIndexText.text = index.ToString();
+        prevIndexText.text = index.ToString();
 
         whiteNodeCircle.onClick.AddListener(() => {
             Parameters parameters = new Parameters();
