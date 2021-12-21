@@ -1530,7 +1530,7 @@ Camera:
   field of view: 60
   orthographic: 1
   orthographic size: 7.29
-  m_Depth: 2
+  m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -1838,7 +1838,7 @@ Camera:
   field of view: 60
   orthographic: 1
   orthographic size: 7.29
-  m_Depth: 2
+  m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -2201,6 +2201,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4439402352846381268, guid: bfc9a89d588c519469f0c7dbfb9eed26, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5943252853705788480, guid: bfc9a89d588c519469f0c7dbfb9eed26, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4985,7 +4989,7 @@ Camera:
   field of view: 60
   orthographic: 1
   orthographic size: 5
-  m_Depth: 2
+  m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -5839,7 +5843,7 @@ Camera:
   field of view: 60
   orthographic: 1
   orthographic size: 7.29
-  m_Depth: 1
+  m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295

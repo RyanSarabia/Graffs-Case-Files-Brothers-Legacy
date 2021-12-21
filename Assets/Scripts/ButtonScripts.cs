@@ -49,8 +49,8 @@ public class ButtonScripts : MonoBehaviour
 
     private void GraphDeviceClicked()
     {
-        mainCam.depth = 0;
-        cam2.gameObject.SetActive(true);
+        SetAllCamZero();
+        cam2On();
     }
 
     public void TimelinePrevNodeClicked()
@@ -80,9 +80,8 @@ public class ButtonScripts : MonoBehaviour
 
     private void ReturnClicked()
     {
-        mainCam.depth = 2;
-        cam4.gameObject.SetActive(false);
-        confirmButton.gameObject.SetActive(false);
+        SetAllCamZero();
+        mainCamOn();
         EventBroadcaster.Instance.PostEvent(GraphGameEventNames.GRAPH_DEVICE_RETURN_CLICKED);
     }
 
@@ -97,5 +96,41 @@ public class ButtonScripts : MonoBehaviour
         mainCam.depth = 2;
         cam4.gameObject.SetActive(false);
         confirmButton.gameObject.SetActive(false);
+    }
+
+    private void SetAllCamZero()
+    {
+        mainCam.depth = 0;
+        cam2.depth = 0;
+        cam3.depth = 0;
+        cam4.depth = 0;
+        mainCam.gameObject.SetActive(false);
+        cam2.gameObject.SetActive(false);
+        cam3.gameObject.SetActive(false);
+        cam4.gameObject.SetActive(false);
+    }
+
+    private void mainCamOn()
+    {
+        mainCam.depth = 99;
+        mainCam.gameObject.SetActive(true);
+    }
+
+    private void cam2On()
+    {
+        cam2.depth = 99;
+        cam2.gameObject.SetActive(true);
+    }
+
+    private void cam3On()
+    {
+        cam3.depth = 99;
+        cam3.gameObject.SetActive(true);
+    }
+
+    private void cam4On()
+    {
+        cam4.depth = 99;
+        cam4.gameObject.SetActive(true);
     }
 }
