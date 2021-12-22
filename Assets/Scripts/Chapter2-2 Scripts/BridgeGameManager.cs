@@ -35,6 +35,7 @@ public class BridgeGameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI timeCounter;
     [SerializeField] private GameObject adjacentContainer;
     private bool panelFocus;
+    private Vector3 timelineStartPosition;
 
     // GM variables
     [SerializeField] private NPC child;
@@ -64,10 +65,10 @@ public class BridgeGameManager : MonoBehaviour
         timelineNodes.Add(curTimelineNode);
         curState = newState();
         curState.setCurState(0, true, "c,m,w,o", "");
-        clearAdjacentNodes();
-        curState.generateAdjacentNodes(adjacentContainer, adjacentList, adjacentStatePrefab);
-        UpdateCam4State(curState);
+        this.SetState(curState);
         EventBroadcaster.Instance.AddObserver(GraphGameEventNames.CAM3_TO_MAINCAM, UpdateCam4StateFromCam3);
+
+        timelineStartPosition = new Vector3(curTimelineNode.transform.position.x, curTimelineNode.transform.position.y, curTimelineNode.transform.position.z);
     }
 
     private void OnDestroy()
@@ -155,9 +156,8 @@ public class BridgeGameManager : MonoBehaviour
             addPreviousNode();
             curState = newState();
             curState.setCurState(tempTimeElapsed, !isLanternLeft, getLeftString(), getRightString());
-            clearAdjacentNodes();
-            curState.generateAdjacentNodes(adjacentContainer, adjacentList, adjacentStatePrefab);
-            UpdateCam4State(curState);
+
+            this.SetState(curState);
 
             if (numAtLeft() == 0 && curState.getTimeElapsed() == targetTime)
             {
@@ -222,11 +222,27 @@ public class BridgeGameManager : MonoBehaviour
         adjacentList.Clear();
     }
 
+    // this is the revert function
     private void UpdateCam4StateFromCam3(Parameters parameters)
     {
         Debug.Log(parameters.GetIntExtra("CAM3_PREVSTATE_INDEX", 0));
-        UpdateCam4State(GetPreviousNode(parameters.GetIntExtra("CAM3_PREVSTATE_INDEX", 0)));
-        SetState(GetPreviousNode(parameters.GetIntExtra("CAM3_PREVSTATE_INDEX", 0)));
+        int prevIndex = parameters.GetIntExtra("CAM3_PREVSTATE_INDEX", 0);
+        this.SetState(GetPreviousNode(prevIndex));
+        
+        while (!timelineNodes[prevIndex].Equals(curTimelineNode))
+        {
+            TimelineNode tempNode = timelineNodes[prevIndex];
+            timelineNodes.RemoveAt(prevIndex);
+            prevStates.RemoveAt(prevIndex);
+            Destroy(tempNode.gameObject);
+        }
+
+        // append cur to prev
+        if (prevIndex > 0)
+            curTimelineNode.transform.position = timelineNodes[prevIndex - 1].getNextSpawnPoint().position;
+        else
+            curTimelineNode.transform.position = timelineStartPosition;
+        curTimelineNode.setIndex(prevIndex + 1);
     }
     private void UpdateCam4State(State_Bridge state)
     {
@@ -240,6 +256,10 @@ public class BridgeGameManager : MonoBehaviour
         this.curState = state;
         this.curState.connectToGameObjects(timeCounter, child, man, woman, oldie);
         this.curState.updateObjectsToState();
+
+        clearAdjacentNodes();
+        this.curState.generateAdjacentNodes(adjacentContainer, adjacentList, adjacentStatePrefab);
+        UpdateCam4State(curState);
         //this.DisableNPCs();
     }
     public bool getPanelFocus()
