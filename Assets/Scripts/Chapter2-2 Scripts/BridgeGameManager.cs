@@ -67,6 +67,7 @@ public class BridgeGameManager : MonoBehaviour
         curState.setCurState(0, true, "c,m,w,o", "");
         this.SetState(curState);
         EventBroadcaster.Instance.AddObserver(GraphGameEventNames.CAM3_TO_MAINCAM, UpdateCam4StateFromCam3);
+        EventBroadcaster.Instance.AddObserver(GraphGameEventNames.GRAPH_DEVICE_CONFIRMED, SetStateFromCam4);
 
         timelineStartPosition = new Vector3(curTimelineNode.transform.position.x, curTimelineNode.transform.position.y, curTimelineNode.transform.position.z);
     }
@@ -256,11 +257,20 @@ public class BridgeGameManager : MonoBehaviour
         this.curState = state;
         this.curState.connectToGameObjects(timeCounter, child, man, woman, oldie);
         this.curState.updateObjectsToState();
-
+        foreach(NPC npc in NPC)
+        {
+            npc.UpdateCollider();
+        }
         clearAdjacentNodes();
         this.curState.generateAdjacentNodes(adjacentContainer, adjacentList, adjacentStatePrefab);
         UpdateCam4State(curState);
         //this.DisableNPCs();
+    }
+
+    public void SetStateFromCam4(Parameters parameters)
+    {
+        Debug.Log("STATE INDEX = " + parameters.GetIntExtra("State Index", 0));
+        this.SetState(adjacentList[parameters.GetIntExtra("State Index", 0)].GetState());
     }
     public bool getPanelFocus()
     {
@@ -344,7 +354,12 @@ public class BridgeGameManager : MonoBehaviour
 
     public State_Bridge GetPreviousNode(int index)
     {
-        return prevStates[index];
+        if (index == -1)
+        {
+            return prevStates[prevStates.Count - 1];
+        }
+        else
+            return prevStates[index];
     }
 
     public int GetPrevStatesCount()

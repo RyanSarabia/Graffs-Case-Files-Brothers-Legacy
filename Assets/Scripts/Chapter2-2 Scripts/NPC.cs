@@ -21,7 +21,7 @@ public class NPC : MonoBehaviour
     [SerializeField] private GameObject rightReadyPosition;
     private Vector2 prevPos;
 
-    private new BoxCollider2D collider;
+    [SerializeField] private BoxCollider2D collider;
     //private new SpriteRenderer renderer;
 
     // Start is called before the first frame update
@@ -51,8 +51,8 @@ public class NPC : MonoBehaviour
         //        collider.enabled = true;
         //}
 
-        //if (BridgeGameManager.GetInstance().getPanelFocus())
-        //    collider.enabled = false;
+        if (BridgeGameManager.GetInstance().getPanelFocus())
+            collider.enabled = false;
     }
     public bool isLeftSide()
     {
@@ -127,6 +127,8 @@ public class NPC : MonoBehaviour
 
     public void cross()
     {
+
+
         if (leftSide)
         {
             crossToRight();
@@ -134,6 +136,25 @@ public class NPC : MonoBehaviour
         else
         {
             crossToLeft();
+        }
+
+    }
+
+    public void UpdateCollider()
+    {
+        if (BridgeGameManager.GetInstance().getIsLanternLeft())
+        {
+            if (leftSide)
+                collider.enabled = true;
+            else
+                collider.enabled = false;
+        }
+        else
+        {
+            if (leftSide)
+                collider.enabled = false;
+            else
+                collider.enabled = true;
         }
     }
 

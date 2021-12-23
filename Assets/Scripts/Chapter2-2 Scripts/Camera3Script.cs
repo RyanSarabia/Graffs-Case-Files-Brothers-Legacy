@@ -11,8 +11,11 @@ public class Camera3Script : MonoBehaviour
     [SerializeField] AdjacentStateManager cam3AdjacentManager;
     [SerializeField] Button leftArrow;
     [SerializeField] Button rightArrow;
+    [SerializeField] Button cam4LeftArrow;
     [SerializeField] private Button revertButton;
     [SerializeField] GameObject leftArrowGroup;
+    
+
     private int prevStateIndex;
     private int siblingCount;
 
@@ -22,6 +25,7 @@ public class Camera3Script : MonoBehaviour
         leftArrow.onClick.AddListener(LeftArrowClicked);
         rightArrow.onClick.AddListener(RightArrowClicked);
         revertButton.onClick.AddListener(RevertButtonClicked);
+        cam4LeftArrow.onClick.AddListener(ReturnToCam3FromCam4);
     }
 
     private void OnApplicationQuit()
@@ -71,12 +75,12 @@ public class Camera3Script : MonoBehaviour
             setSiblingCount(prevState.getChildNodes());
             setSiblingText();
         }
-        
     }
 
     private void LeftArrowClicked()
     {
         State_Bridge prevState;
+
         prevStateIndex--;
         ToggleLeftArrowGroup();
         prevState = BridgeGameManager.GetInstance().GetPreviousNode(prevStateIndex);
@@ -92,14 +96,28 @@ public class Camera3Script : MonoBehaviour
             this.leftArrowGroup.SetActive(false);
         else
             this.leftArrowGroup.SetActive(true);
-
     }
+
+
 
     private void RevertButtonClicked()
     {
         Parameters parameters = new Parameters();
         parameters.PutExtra("CAM3_PREVSTATE_INDEX", prevStateIndex);
         EventBroadcaster.Instance.PostEvent(GraphGameEventNames.CAM3_TO_MAINCAM, parameters);
+    }
+
+    private void ReturnToCam3FromCam4()
+    {
+        State_Bridge prevState;
+        prevStateIndex = BridgeGameManager.GetInstance().GetPrevStatesCount()-1;
+        ToggleLeftArrowGroup();
+        prevState = BridgeGameManager.GetInstance().GetPreviousNode(-1);
+        SetState(prevState);
+        setSiblingCount(prevState.getChildNodes());
+        setSiblingText();
+
+        EventBroadcaster.Instance.PostEvent(GraphGameEventNames.CAM4_TO_CAM3);
     }
 
 }

@@ -14,6 +14,7 @@ public class ButtonScripts : MonoBehaviour
     [SerializeField] private Button cam3Timeline;
     [SerializeField] private Button cam4MainBtn;
     [SerializeField] private Button cam4Timeline;
+    [SerializeField] GameObject cam4LeftArrowGroup;
 
     [SerializeField] private Camera mainCam;
     [SerializeField] private Camera cam2;
@@ -26,11 +27,15 @@ public class ButtonScripts : MonoBehaviour
         EventBroadcaster.Instance.AddObserver(GraphGameEventNames.GRAPH_DEVICE_CLICKED, ActivateConfirmButton);
         EventBroadcaster.Instance.AddObserver(GraphGameEventNames.TIMELINE_PREVNODE_CLICKED, TimelinePrevNodeClicked);
         EventBroadcaster.Instance.AddObserver(GraphGameEventNames.TIMELINE_CURNODE_CLICKED, TimelineCurNodeClicked);
+        EventBroadcaster.Instance.AddObserver(GraphGameEventNames.GRAPH_DEVICE_CONFIRMED, cam4ToMainCam);
+        EventBroadcaster.Instance.AddObserver(GraphGameEventNames.CAM4_TO_CAM3, cam4ToCam3);
         EventBroadcaster.Instance.AddObserver(GraphGameEventNames.CAM3_TO_CAM4, cam3ToCam4);
         EventBroadcaster.Instance.AddObserver(GraphGameEventNames.CAM3_TO_MAINCAM, cam3ToMainCam);
         graphDeviceButton.onClick.AddListener(GraphDeviceClicked);
         returnToDefaultButton.onClick.AddListener(ReturnClicked);
         confirmButton.onClick.AddListener(ConfirmClicked);
+        cam4MainBtn.onClick.AddListener(NavbarMainClicked);
+        cam4Timeline.onClick.AddListener(NavbarTimelineClicked);
 
         cam2MainBtn.onClick.AddListener(NavbarMainClicked);
         cam3MainBtn.onClick.AddListener(NavbarMainClicked);
@@ -46,6 +51,10 @@ public class ButtonScripts : MonoBehaviour
         EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.GRAPH_DEVICE_CLICKED);
         EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.TIMELINE_PREVNODE_CLICKED);
         EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.TIMELINE_CURNODE_CLICKED);
+        EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.CAM4_TO_CAM3);
+        EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.CAM3_TO_CAM4);
+        EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.CAM3_TO_MAINCAM);
+        EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.GRAPH_DEVICE_CONFIRMED);
     }
 
     private void GraphDeviceClicked()
@@ -53,6 +62,7 @@ public class ButtonScripts : MonoBehaviour
         SetAllCamZero();
         cam2On();
     }
+
 
     public void TimelinePrevNodeClicked(Parameters parameters)
     {
@@ -87,6 +97,18 @@ public class ButtonScripts : MonoBehaviour
         cam4On();
     }
 
+    private void cam4ToCam3()
+    {
+        SetAllCamZero();
+        cam3On();
+    }
+
+    private void cam4ToMainCam(Parameters parameters)
+    {
+        SetAllCamZero();
+        mainCamOn();
+    }
+
     private void cam3ToMainCam(Parameters parameters)
     {
         SetAllCamZero();
@@ -113,6 +135,17 @@ public class ButtonScripts : MonoBehaviour
         mainCamOn();
         cam4.gameObject.SetActive(false);
         confirmButton.gameObject.SetActive(false);
+    }
+
+    private void ToggleCam4LeftArrowGroup()
+    {
+        if (BridgeGameManager.GetInstance().GetPrevStatesCount() < 1)
+        {
+            this.cam4LeftArrowGroup.SetActive(false);
+
+        }
+        else
+            this.cam4LeftArrowGroup.SetActive(true);
     }
 
     private void SetAllCamZero()
@@ -151,6 +184,7 @@ public class ButtonScripts : MonoBehaviour
     {
         cam4.depth = 99;
         cam4.gameObject.SetActive(true);
+        ToggleCam4LeftArrowGroup();
     }
 
 }

@@ -48,7 +48,7 @@ public class State_Bridge
 
     public void setCurState(int timeElapsed, bool isLanternLeft, string left, string right)
     {
-        Debug.Log(isLanternLeft);
+        //Debug.Log(isLanternLeft);
         this.timeElapsed = timeElapsed;
         timeCounter.SetText("Time Left: " + (BridgeGameManager.targetTime - timeElapsed) + " min/s");
         
@@ -84,13 +84,13 @@ public class State_Bridge
             }
         }
         
-        Debug.Log(leftSide);
-        Debug.Log(rightSide);
+        //Debug.Log(leftSide);
+        //Debug.Log(rightSide);
     }
 
     public void updateObjectsToState()
     {
-        Debug.Log(isLanternLeft);
+        //Debug.Log(isLanternLeft);
         timeCounter.SetText("Time Left: " + (BridgeGameManager.targetTime - timeElapsed) + " min/s");
 
         leftSide.Clear();
@@ -120,14 +120,14 @@ public class State_Bridge
             }
         }
 
-        Debug.Log(leftSide);
-        Debug.Log(rightSide);
+        //Debug.Log(leftSide);
+        //Debug.Log(rightSide);
     }
 
     public void generateAdjacentNodes(GameObject adjacentContainer, List<AdjacentStateManager> adjacentStates, AdjacentStateManager prefabCopy)
     {
         bool isLeftActive = this.isLanternLeft;
-        Debug.Log("Test: "+isLeftActive);
+        //Debug.Log("Test: "+isLeftActive);
         List<NPC> activeList;
         string strLeft = "";
         string strRight = "";
@@ -160,9 +160,9 @@ public class State_Bridge
                     }
 
                     //placeholder function!!!
-                    createState(this.timeElapsed + addedTime, isLeftActive, tempLeft, tempRight, adjacentContainer, adjacentStates, prefabCopy);
+                    createState(this.timeElapsed + addedTime, !isLeftActive, tempLeft, tempRight, adjacentContainer, adjacentStates, prefabCopy);
 
-                    Debug.Log(i + "," + j + ": " + tempLeft + "||" + tempRight);
+                    //Debug.Log(i + "," + j + ": " + tempLeft + "||" + tempRight);
                 }
             }
         }
@@ -187,9 +187,9 @@ public class State_Bridge
                 int addedTime = activeList[i].getSpeed();
 
                 //placeholder function!!!
-                createState(this.timeElapsed + addedTime, isLeftActive, tempLeft, tempRight, adjacentContainer, adjacentStates, prefabCopy);
+                createState(this.timeElapsed + addedTime, !isLeftActive, tempLeft, tempRight, adjacentContainer, adjacentStates, prefabCopy);
 
-                Debug.Log(i + ": " + tempLeft + "||" + tempRight);
+                //Debug.Log(i + ": " + tempLeft + "||" + tempRight);
             }
 
         }
@@ -208,9 +208,10 @@ public class State_Bridge
         //State_Pitchers newState = new State_Pitchers(); //pangtest ko lang tong line na to pero mali to
         // hindi to gagana hanggat wala yung mismong newState sa scene
         // newState.setStatesAndPitcherValues(p1, p2, p3);
-        newState.SetIndex(adjacentStates.Count);
+        
         adjacentStates.Add(newState);
-        newState.GetComponent<AdjacentStateManager>().SetIndex(adjacentStates.FindIndex(x => x == newState));
+        newState.SetIndex(adjacentStates.Count - 1);
+        //newState.GetComponent<AdjacentStateManager>().SetIndex(adjacentStates.FindIndex(x => x == newState));
     }
 
     private string generateRemStr(List<NPC> npcs, int i, int j)

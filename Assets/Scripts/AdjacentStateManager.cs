@@ -17,7 +17,7 @@ public class AdjacentStateManager : MonoBehaviour
     [SerializeField] GameObject arrowHead;
     [SerializeField] int index;
     private State_Bridge state = new State_Bridge();
-    private Parameters parameters;
+    Parameters parameters;
 
     void Awake()
     {
@@ -28,14 +28,9 @@ public class AdjacentStateManager : MonoBehaviour
     void Start()
     {
         EventBroadcaster.Instance.AddObserver(GraphGameEventNames.GRAPH_DEVICE_CLICKED, DisableHighlight);
-        //EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.GRAPH_DEVICE_CONFIRM_OCCURRED);
+        EventBroadcaster.Instance.AddObserver(GraphGameEventNames.GRAPH_DEVICE_CONFIRM_OCCURRED, ConfirmEventOccurred);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public State_Bridge getState()
     {
@@ -61,12 +56,13 @@ public class AdjacentStateManager : MonoBehaviour
 
     private void OnMouseDown()
     {
-
+        
         EventBroadcaster.Instance.PostEvent(GraphGameEventNames.GRAPH_DEVICE_CLICKED);
         DisableHighlight();
         this.highlightImage.gameObject.SetActive(true);
         this.arrowHead.GetComponent<SpriteRenderer>().color = Color.yellow;
-
+        Debug.Log("ADJ INDEX = " + this.index);
+        parameters = new Parameters();
         parameters.PutExtra("State Index", this.index);
     }
 
@@ -79,10 +75,16 @@ public class AdjacentStateManager : MonoBehaviour
 
     private void DisableHighlight()
     {
+        PurgeParameters();
         if (this.highlightImage != null)
             this.highlightImage.gameObject.SetActive(false);
         if (this.arrowHead != null)
             this.arrowHead.GetComponent<SpriteRenderer>().color = Color.white;
+    }
+
+    private void PurgeParameters()
+    {
+        this.parameters = null;
     }
 
     private void OnApplicationQuit()
@@ -94,6 +96,11 @@ public class AdjacentStateManager : MonoBehaviour
     public int GetIndex()
     {
         return index;
+    }
+
+    public State_Bridge GetState()
+    {
+        return state;
     }
 
     public void SetIndex(int index)

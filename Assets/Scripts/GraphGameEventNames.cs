@@ -23,6 +23,7 @@ public class GraphGameEventNames
     public const string GRAPH_DEVICE_RETURN_CLICKED = "GRAPH_DEVICE_RETURN_CLICKED";
     public const string CAMERA_3_CALLED = "CAMERA_3_CALLED";
     public const string CAM3_TO_CAM4 = "CAM3_TO_CAM4";
+    public const string CAM4_TO_CAM3 = "CAM4_TO_CAM3";
     public const string CAM3_TO_MAINCAM = "CAM3_TO_MAINCAM";
     public const string ARCH3_NODECLICKED = "ARCH3_NODECLICKED";
     public const string ARCH3_LOCKNODES = "ARCH3_LOCKNODES";
