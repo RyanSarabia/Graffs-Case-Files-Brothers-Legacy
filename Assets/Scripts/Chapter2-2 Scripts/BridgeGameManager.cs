@@ -34,6 +34,7 @@ public class BridgeGameManager : MonoBehaviour
     [SerializeField] private GameObject clickBlocker;
     [SerializeField] private TextMeshProUGUI timeCounter;
     [SerializeField] private GameObject adjacentContainer;
+    [SerializeField] private TextMeshProUGUI goText;
     private bool panelFocus;
     private Vector3 timelineStartPosition;
 
@@ -52,11 +53,14 @@ public class BridgeGameManager : MonoBehaviour
     [SerializeField] private List<State_Bridge> prevStates = new List<State_Bridge>();
     [SerializeField] private List<TimelineNode> timelineNodes = new List<TimelineNode>();
     [SerializeField] private TimelineNode curTimelineNode;
+    
     private State_Bridge curState;
 
     // Start is called before the first frame update
     void Start()
     {
+        SetGoTextRed();
+
         NPC.Add(child);
         NPC.Add(man);
         NPC.Add(woman);
@@ -90,6 +94,10 @@ public class BridgeGameManager : MonoBehaviour
             {               
                 selectedNPC.Add(NPC[id]);
                 NPC[id].move();
+                if (selectedNPC.Count == 2)
+                {
+                    SetGoTextGreen();
+                }
             }
             else
             {
@@ -98,7 +106,8 @@ public class BridgeGameManager : MonoBehaviour
             }
         }
         else
-        {            
+        {
+            SetGoTextRed();
             selectedNPC.Remove(NPC[id]);
             NPC[id].move();
         }
@@ -113,6 +122,10 @@ public class BridgeGameManager : MonoBehaviour
             {                
                 selectedNPC.Add(NPC[id]);
                 NPC[id].move();
+                if (selectedNPC.Count == 1)
+                {
+                    SetGoTextGreen();
+                }
             }
             else
             {
@@ -121,7 +134,8 @@ public class BridgeGameManager : MonoBehaviour
             }            
         }
         else
-        {            
+        {
+            SetGoTextRed();
             selectedNPC.Clear();
             NPC[id].move();
         }        
@@ -175,6 +189,7 @@ public class BridgeGameManager : MonoBehaviour
         }
 
         EventBroadcaster.Instance.PostEvent(GraphGameEventNames.NPCS_MOVED);
+        SetGoTextRed();
     }
 
     private State_Bridge newState()
@@ -365,6 +380,16 @@ public class BridgeGameManager : MonoBehaviour
     public int GetPrevStatesCount()
     {
         return prevStates.Count;
+    }
+
+    public void SetGoTextRed()
+    {
+        this.goText.color = new Color(0.3301887f, 0, 0);
+    }
+
+    public void SetGoTextGreen()
+    {
+        this.goText.color = new Color(0.3789885f, 1.0f, 0.3537736f);
     }
 
 }
