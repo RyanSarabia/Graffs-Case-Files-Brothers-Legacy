@@ -15,6 +15,7 @@ public class Actions : MonoBehaviour
     private Room prevRoom;
 
     [SerializeField] private int totalClues;
+    [SerializeField] private int wallCount = 0;
     private int numClues = 0;
     private List<int> clueRoomIDs;
     private List<int> pickUpRoomIDs;
@@ -134,5 +135,37 @@ public class Actions : MonoBehaviour
     public bool getMidLightUp()
     {
         return midLightingUp;
+    }
+
+    public int getWallCount()
+    {
+        return wallCount;
+    }
+
+    public void setWallCount(int wallCount)
+    {
+        this.wallCount = wallCount;
+    }
+
+    public void AddWallToRoom(Room roomToAddWall)
+    {
+        if(getWallCount() < 3)
+        {
+            roomToAddWall.ToggleHasWall();
+            setWallCount(getWallCount() + 1);
+        }
+        else
+        {
+            Debug.Log("Max walls reached");
+            //Max walls reached
+        }
+        EventBroadcaster.Instance.PostEvent(GraphGameEventNames.ARCH1_WALLS_EVENT);
+    }
+
+    public void RemoveWallFromRoom(Room roomToRemoveWall)
+    {
+        roomToRemoveWall.ToggleHasWall();
+        setWallCount(getWallCount() - 1);
+        EventBroadcaster.Instance.PostEvent(GraphGameEventNames.ARCH1_WALLS_EVENT);
     }
 }

@@ -12,6 +12,7 @@ public class GraphGameEventNames
     public const string MINUS_BUTTON_CLICK = "MINUS_BUTTON_CLICK";
     public const string ARCH1_CONFIRM_BUTTON_CLICK = "ARCH1_CONFIRM_BUTTON_CLICK";
     public const string ARCH1_PLAYER_MOVED = "ARCH1_PLAYER_MOVED";
+    public const string ARCH1_WALLS_EVENT = "ARCH1_WALLS_EVENT";
     public const string WATER_CHANGED = "WATER_CHANGED";
     public const string ADJACENT_LISTED = "ADJACENT_LISTED";
     public const string GRAPH_DEVICE_CLICKED = "GRAPH_DEVICE_CLICKED";

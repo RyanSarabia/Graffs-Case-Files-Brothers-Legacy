@@ -47,17 +47,18 @@ public class Room : MonoBehaviour, IPointerClickHandler
     {
         //roomLight.SetActive(false);
         collider = GetComponent<BoxCollider2D>();
+        collider.enabled = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isLightOn)
-        {
-            collider.enabled = true;
-        }
-        else
-            collider.enabled = false;
+        //if (isLightOn)
+        //{
+        //    collider.enabled = true;
+        //}
+        //else
+        //    collider.enabled = false;
     }
 
 
@@ -171,21 +172,26 @@ public class Room : MonoBehaviour, IPointerClickHandler
         }
     }
 
-    public bool getWall(string localDirection)
-    {
-        switch (localDirection)
-        {
-            case GraphGameEventNames.DIRECTION_UP: return hasUpWall;
-            case GraphGameEventNames.DIRECTION_DOWN: return hasDownWall;
-            case GraphGameEventNames.DIRECTION_LEFT: return hasLeftWall;
-            case GraphGameEventNames.DIRECTION_RIGHT: return hasRightWall;
-            default: return false;
-        }
-    }
+    //public bool getWall(string localDirection)
+    //{
+    //    switch (localDirection)
+    //    {
+    //        case GraphGameEventNames.DIRECTION_UP: return hasUpWall;
+    //        case GraphGameEventNames.DIRECTION_DOWN: return hasDownWall;
+    //        case GraphGameEventNames.DIRECTION_LEFT: return hasLeftWall;
+    //        case GraphGameEventNames.DIRECTION_RIGHT: return hasRightWall;
+    //        default: return false;
+    //    }
+    //}
 
     public bool getHasWall()
     {
         return hasWall;
+    }
+
+    public void ToggleHasWall()
+    {
+        this.hasWall = !this.hasWall;
     }
 
     public List<Room> getNeighbors()
@@ -205,7 +211,12 @@ public class Room : MonoBehaviour, IPointerClickHandler
     private void OnMouseEnter()
     {        
         if (!EventSystem.current.IsPointerOverGameObject())
-            highlight.SetActive(true);
+            if (this.getIsLightOn())
+                highlight.SetActive(true);
+        if (!this.getIsLightOn())
+        {
+            //Show translucent wall sprite
+        }
     }
 
     private void OnMouseExit()
@@ -215,21 +226,45 @@ public class Room : MonoBehaviour, IPointerClickHandler
 
     public void OnMouseDown()
     {
+        bool addedWall = false;
         Debug.Log("any mouse click");
-        if (!Actions.GetInstance().getMidLightUp() && !EventSystem.current.IsPointerOverGameObject())
-        {
-            Actions.GetInstance().character(roomID);
-            if (getRoomClueState())
+        if (this.getIsLightOn())
+        { 
+            if (!Actions.GetInstance().getMidLightUp() && !EventSystem.current.IsPointerOverGameObject())
             {
-                Actions.GetInstance().clueFound(roomID);
-            }
-            if (getRoomPickUpState())
-            {
-                Debug.Log("pickup");
-                Actions.GetInstance().pickUpGet(roomID, pickUpAmount);
+                Actions.GetInstance().character(roomID);
+                if (getRoomClueState())
+                {
+                    Actions.GetInstance().clueFound(roomID);
+                }
+                if (getRoomPickUpState())
+                {
+                    Debug.Log("pickup");
+                    Actions.GetInstance().pickUpGet(roomID, pickUpAmount);
+                }
             }
         }
-        
+        else
+        {
+            if (!Actions.GetInstance().getMidLightUp() && !EventSystem.current.IsPointerOverGameObject())
+            {
+                if (this.getHasWall() == false)
+                {
+                    Debug.Log("Wall Added");
+                    Actions.GetInstance().AddWallToRoom(this);
+                    addedWall = true;
+                }      
+            }
+        }
+        if (!Actions.GetInstance().getMidLightUp() && !EventSystem.current.IsPointerOverGameObject())
+        {
+            if (this.getHasWall() == true && !addedWall)
+            {
+                Debug.Log("Wall Removed");
+                Actions.GetInstance().RemoveWallFromRoom(this);
+            }
+        }
+
     }
 
     public void showCharacter()

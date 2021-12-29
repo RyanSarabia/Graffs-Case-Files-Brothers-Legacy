@@ -42,6 +42,7 @@ public class SearchTraversal : MonoBehaviour
         EventBroadcaster.Instance.AddObserver(GraphGameEventNames.MINUS_BUTTON_CLICK, this.MinusClicked);
         EventBroadcaster.Instance.AddObserver(GraphGameEventNames.ARCH1_CONFIRM_BUTTON_CLICK, this.confirmLighting);
         EventBroadcaster.Instance.AddObserver(GraphGameEventNames.ARCH1_PLAYER_MOVED, this.PlayerMoved);
+        EventBroadcaster.Instance.AddObserver(GraphGameEventNames.ARCH1_WALLS_EVENT, this.ResetQueueAndCounter);
     }
 
     // Update is called once per frame
@@ -58,6 +59,7 @@ public class SearchTraversal : MonoBehaviour
         EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.MINUS_BUTTON_CLICK);
         EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.ARCH1_CONFIRM_BUTTON_CLICK);
         EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.ARCH1_PLAYER_MOVED);
+        EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.ARCH1_WALLS_EVENT);
     }
 
     public void addEnergy(int num)
@@ -283,14 +285,7 @@ public class SearchTraversal : MonoBehaviour
 
     private void PlayerMoved()
     {
-        this.hasChosenLight = false;
-        foreach(Room room in searchQueue)
-        {
-            room.preLightOff();
-        }
-        this.searchQueue.Clear();
-        EnableBFSButton();
-        EnableDFSButton();
+        ResetQueueAndCounter();
     }
 
     private IEnumerator lighterDelay(Room lightUpRoom, int n)
@@ -358,6 +353,20 @@ public class SearchTraversal : MonoBehaviour
             }
         }
         
+    }
+
+    public void ResetQueueAndCounter()
+    {
+        this.hasChosenLight = false;
+        foreach (Room room in searchQueue)
+        {
+            room.preLightOff();
+        }
+        this.searchQueue.Clear();
+        EnableBFSButton();
+        EnableDFSButton();
+        this.energyHolder = 1;
+        this.energyToBeUsed.SetText(energyHolder.ToString());
     }
 
     private void EnableDFSButton()
