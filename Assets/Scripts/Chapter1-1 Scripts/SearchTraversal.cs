@@ -279,6 +279,7 @@ public class SearchTraversal : MonoBehaviour
             DisableConfirmButton();
             EnableBFSButton();
             EnableDFSButton();
+            SFXScript.GetInstance().ConfirmLightingSFX();
         }
         this.preLightCounter = 0;
     }

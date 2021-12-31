@@ -25,6 +25,7 @@ public class Actions : MonoBehaviour
     [SerializeField] TextMeshProUGUI clueTotalText;
 
     [SerializeField] SearchTraversal traversalManager;
+    private static bool firstScene = true;
 
     private bool midLightingUp;
 
@@ -52,6 +53,12 @@ public class Actions : MonoBehaviour
         pickUpRoomIDs = new List<int>();
 
         this.clueTotalText.SetText(totalClues.ToString());
+        if (firstScene)
+            firstScene = false;
+        else
+            SFXScript.GetInstance().PlayResetAnySFX();
+        
+              
     }
 
     // Update is called once per frame
@@ -108,11 +115,13 @@ public class Actions : MonoBehaviour
             curRoom.setClueSprite(false);
             clueRoomIDs.Add(id);
             numClues++;
+            SFXScript.GetInstance().ClueAcquiredSFX();
         }
             
         if(numClues == totalClues)
         {
             victoryCard.SetActive(true);
+            SFXScript.GetInstance().VictorySFX();
         }
     }
 
@@ -120,10 +129,12 @@ public class Actions : MonoBehaviour
     {
         if (!pickUpRoomIDs.Exists(x => x == id))
         {
+
             Debug.Log("action get");
             pickUpRoomIDs.Add(id);
             traversalManager.addEnergy(amount);
             curRoom.setPickUpSprite(false);
+            SFXScript.GetInstance().EnergyAcquiredSFX();
         }
     }
 
@@ -151,6 +162,7 @@ public class Actions : MonoBehaviour
     {
         if(getWallCount() < 3)
         {
+            SFXScript.GetInstance().CreateWallSFX();
             roomToAddWall.ToggleHasWall();
             setWallCount(getWallCount() + 1);
         }
