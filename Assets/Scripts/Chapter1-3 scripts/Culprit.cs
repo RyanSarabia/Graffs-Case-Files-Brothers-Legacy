@@ -13,6 +13,7 @@ public class Culprit : MonoBehaviour
     private bool shouldMove = false;
     private float lerpPercent = 0.0f;
     private float endVal;
+    bool hasCalledRetry = false;
 
     private void Awake()
     {
@@ -71,8 +72,14 @@ public class Culprit : MonoBehaviour
            
            
         }
-        if (hasEscaped())
+        
+
+        if (hasEscaped() && hasCalledRetry == false)
+        {
             Arch3Manager.GetInstance().retry();
+            hasCalledRetry = true;
+        }
+            
     }
 
     public bool hasEscaped()

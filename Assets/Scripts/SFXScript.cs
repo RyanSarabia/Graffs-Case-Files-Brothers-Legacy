@@ -7,11 +7,17 @@ public class SFXScript : MonoBehaviour
     // Start is called before the first frame update
     private static SFXScript instance;
     [SerializeField] private AudioSource audioSource;
+
+
     [SerializeField] private AudioClip createWallSound;
     [SerializeField] private AudioClip clueAcquiredSound;
     [SerializeField] private AudioClip energyAcquiredSound;
     [SerializeField] private AudioClip victorySound;
+    [SerializeField] private AudioClip defeatSound;
     [SerializeField] private AudioClip confirmLightingSound;
+
+
+    [SerializeField] private AudioClip clickArch3NodeSound;
 
     [SerializeField] private AudioClip resetAnySound;
     public static SFXScript GetInstance()
@@ -25,16 +31,6 @@ public class SFXScript : MonoBehaviour
             instance = this;
         else
             GameObject.Destroy(gameObject);
-    }
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     public void CreateWallSFX()
@@ -64,10 +60,19 @@ public class SFXScript : MonoBehaviour
         audioSource.PlayOneShot(victorySound);
     }
 
+    public void DefeatSFX()
+    {
+        audioSource.PlayOneShot(defeatSound);
+    }
     public void ConfirmLightingSFX()
     {
         audioSource.PlayOneShot(confirmLightingSound);
     }
 
+
+    public void ClickNodeArch3SFX()
+    {
+        audioSource.PlayOneShot(clickArch3NodeSound);
+    }
 
 }

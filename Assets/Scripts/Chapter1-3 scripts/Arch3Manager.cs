@@ -120,7 +120,9 @@ public class Arch3Manager : MonoBehaviour
                 victoryCard.SetActive(true);
                 panelFocus = true;
                 clickBlocker.gameObject.SetActive(true);
+                SFXScript.GetInstance().VictorySFX();
             }
+            SFXScript.GetInstance().ClickNodeArch3SFX();
         }
     }
 
@@ -168,6 +170,7 @@ public class Arch3Manager : MonoBehaviour
 
     public void retry()
     {
+        SFXScript.GetInstance().DefeatSFX();
         retryCard.SetActive(true);
         panelFocus = true;
         clickBlocker.gameObject.SetActive(true);
