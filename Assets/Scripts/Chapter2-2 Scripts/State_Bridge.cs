@@ -50,7 +50,7 @@ public class State_Bridge
     {
         //Debug.Log(isLanternLeft);
         this.timeElapsed = timeElapsed;
-        timeCounter.SetText("Time Left: " + (BridgeGameManager.targetTime - timeElapsed) + " min/s");
+        timeCounter.SetText("Time Left:\n" + (BridgeGameManager.targetTime - timeElapsed) + " min/s");
         
         this.isLanternLeft = isLanternLeft;
 
@@ -91,7 +91,7 @@ public class State_Bridge
     public void updateObjectsToState()
     {
         //Debug.Log(isLanternLeft);
-        timeCounter.SetText("Time Left: " + (BridgeGameManager.targetTime - timeElapsed) + " min/s");
+        timeCounter.SetText("Time Left:\n" + (BridgeGameManager.targetTime - timeElapsed) + " min/s");
 
         leftSide.Clear();
         rightSide.Clear();

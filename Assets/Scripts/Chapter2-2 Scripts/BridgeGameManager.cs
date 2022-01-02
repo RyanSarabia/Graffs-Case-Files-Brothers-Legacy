@@ -182,18 +182,7 @@ public class BridgeGameManager : MonoBehaviour
 
             this.SetState(curState);
 
-            if (numAtLeft() == 0 && curState.getTimeElapsed() == targetTime)
-            {
-                victoryCard.SetActive(true);
-                panelFocus = true;
-                clickBlocker.gameObject.SetActive(true);
-            }
-            else if (curState.getTimeElapsed() > targetTime)
-            {
-                retryCard.SetActive(true);
-                panelFocus = true;
-                clickBlocker.gameObject.SetActive(true);
-            }
+            checkVictoryOrFail();
         }
         SFXScript.GetInstance().ClickGoSignSFX();
         EventBroadcaster.Instance.PostEvent(GraphGameEventNames.NPCS_MOVED);
@@ -274,6 +263,24 @@ public class BridgeGameManager : MonoBehaviour
         this.cam4CurrState.SetState(state);
     }
 
+    private void checkVictoryOrFail()
+    {
+        if (numAtLeft() == 0 && curState.getTimeElapsed() == targetTime)
+        {
+            victoryCard.SetActive(true);
+            panelFocus = true;
+            clickBlocker.gameObject.SetActive(true);
+            SFXScript.GetInstance().VictorySFX();
+        }
+        else if (curState.getTimeElapsed() > targetTime)
+        {
+            retryCard.SetActive(true);
+            panelFocus = true;
+            clickBlocker.gameObject.SetActive(true);
+            SFXScript.GetInstance().DefeatSFX();
+        }
+    }
+
     // --------------------------- Getters & Setters ----------------------
 
     public void SetState(State_Bridge state)
@@ -297,6 +304,7 @@ public class BridgeGameManager : MonoBehaviour
         Debug.Log("STATE INDEX = " + parameters.GetIntExtra("State Index", 0));
         this.SetState(adjacentList[parameters.GetIntExtra("State Index", 0)].GetState());
         SFXScript.GetInstance().ClickConfirmGraphDevice();
+        checkVictoryOrFail();
     }
     public bool getPanelFocus()
     {
