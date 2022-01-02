@@ -3,8 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class State_Pitchers
+public class State_Pitchers_prototype : MonoBehaviour
 {
+    [SerializeField] AdjacentStateHolder pitchersPrefabCopy;
+    [SerializeField] Pitcher p1Object;
+    [SerializeField] Pitcher p2Object;
+    [SerializeField] Pitcher p3Object;
+
+
     private int pitcher1; // max 16
     private int pitcher2; // max 9
     private int pitcher3; // max 7
@@ -12,72 +18,78 @@ public class State_Pitchers
     private readonly static int P2MAX = 9; // max 9
     private readonly static int P3MAX = 7; // max 7
 
+    [SerializeField] private List<AdjacentStateHolder> adjacentStates;
+    [SerializeField] private GameObject adjacentContainer;
     //[SerializeField] private ScrollView adjacentScrollView;
 
     // Start is called before the first frame update
     void Start()
     {
-        //setCurState(0, 0, 0);
-        //EventBroadcaster.Instance.AddObserver(GraphGameEventNames.WATER_CHANGED, this.setStatesAndPitcherValues);
-        //getAdjacentNodes();
+        
+        adjacentStates = new List<AdjacentStateHolder>();
+        setCurState(0, 0, 0);
+        EventBroadcaster.Instance.AddObserver(GraphGameEventNames.WATER_CHANGED, this.setStatesAndPitcherValues);
+        getAdjacentNodes();
     }
 
     private void OnApplicationQuit()
     {
-        //EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.WATER_CHANGED);
+        EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.WATER_CHANGED);
     }
 
     public void setCurState(int p1, int p2, int p3)
     {
+        
         pitcher1 = p1;
         pitcher2 = p2;
         pitcher3 = p3;
+
     }
-    //public void setStatesAndPitcherValues()
-    //{
-    //    clearAdjacentNodes();
-    //    p1Object.setWater(PitcherActionManager.GetInstance().p1.getWaterAmount());
-    //    p2Object.setWater(PitcherActionManager.GetInstance().p2.getWaterAmount());
-    //    p3Object.setWater(PitcherActionManager.GetInstance().p3.getWaterAmount());
-    //    setCurState(p1Object.getWaterAmount(), p2Object.getWaterAmount(), p3Object.getWaterAmount());
-    //    getAdjacentNodes();
+    public void setStatesAndPitcherValues()
+    {
+        clearAdjacentNodes();
+        p1Object.setWater(PitcherActionManager.GetInstance().p1.getWaterAmount());
+        p2Object.setWater(PitcherActionManager.GetInstance().p2.getWaterAmount());
+        p3Object.setWater(PitcherActionManager.GetInstance().p3.getWaterAmount());
+        setCurState(p1Object.getWaterAmount(), p2Object.getWaterAmount(), p3Object.getWaterAmount());
+        getAdjacentNodes();
 
-    //}
+    }
 
-    //void clearAdjacentNodes()
-    //{
-    //    //remove adjacent nodes from graph device
+    void clearAdjacentNodes()
+    {
+        //remove adjacent nodes from graph device
         
-    //    foreach (AdjacentStateHolder adjacent_state_holder in adjacentStates)
-    //    {
-    //        Destroy(adjacent_state_holder.gameObject);
-    //    }
-    //    adjacentStates.Clear();
-    //}
+        foreach (AdjacentStateHolder adjacent_state_holder in adjacentStates)
+        {
+            Destroy(adjacent_state_holder.gameObject);
+        }
+        adjacentStates.Clear();
+    }
 
-    void generateAdjacentNodes(GameObject adjacentContainer, List<AdjacentStateManagerCh1_Pitchers> adjacentStates, AdjacentStateManagerCh1_Pitchers prefabCopy)
+    void getAdjacentNodes()
     {
         // Fill actions
         //if pitcher 1 not full
         if (pitcher1 != P1MAX)
-            createState(P1MAX, pitcher2, pitcher3, adjacentContainer, adjacentStates, prefabCopy);
+            createState(P1MAX, pitcher2, pitcher3);
         //if pitcher 2 not full
         if (pitcher2 != P2MAX)
-            createState(pitcher1, P2MAX, pitcher3, adjacentContainer, adjacentStates, prefabCopy);
+            createState(pitcher1, P2MAX, pitcher3);
         //if pitcher 3 not full
         if (pitcher3 != P3MAX)
-            createState(pitcher1, pitcher2, P3MAX, adjacentContainer, adjacentStates, prefabCopy);
+            createState(pitcher1, pitcher2, P3MAX);
 
         // empty actions
         //if pitcher 1 not empty
         if (pitcher1 != 0)
-            createState(0, pitcher2, pitcher3, adjacentContainer, adjacentStates, prefabCopy);
+            createState(0, pitcher2, pitcher3);
         //if pitcher 2 not empty
         if (pitcher2 != 0)
-            createState(pitcher1, 0, pitcher3, adjacentContainer, adjacentStates, prefabCopy);
+            createState(pitcher1, 0, pitcher3);
         //if pitcher 3 not empty
         if (pitcher3 != 0)
-            createState(pitcher1, pitcher2, 0, adjacentContainer, adjacentStates, prefabCopy);
+            createState(pitcher1, pitcher2, 0);
 
         // from pitcher1 if pitcher 1 not empty
         if (pitcher1 != 0)
@@ -85,12 +97,12 @@ public class State_Pitchers
             //if pitcher 2 not full
             if (pitcher2 != P2MAX)
             {
-                transferAndCreateState("p1", "p2", adjacentContainer, adjacentStates, prefabCopy);
+                transferAndCreateState("p1", "p2");
             }
             //if pitcher 3 not full
             if (pitcher3 != P3MAX)
             {
-                transferAndCreateState("p1", "p3", adjacentContainer, adjacentStates, prefabCopy);
+                transferAndCreateState("p1", "p3");
             }
         }
         // from pitcher2 if pitcher 2 not empty
@@ -99,12 +111,12 @@ public class State_Pitchers
             //if pitcher 1 not full
             if (pitcher1 != P1MAX)
             {
-                transferAndCreateState("p2", "p1", adjacentContainer, adjacentStates, prefabCopy);
+                transferAndCreateState("p2", "p1");
             }
             //if pitcher 3 not full
             if (pitcher3 != P3MAX)
             {
-                transferAndCreateState("p2", "p3", adjacentContainer, adjacentStates, prefabCopy);
+                transferAndCreateState("p2", "p3");
             }
         }
         // from pitcher3 if pitcher 3 not empty
@@ -113,33 +125,34 @@ public class State_Pitchers
             //if pitcher 1 not full
             if (pitcher1 != P1MAX)
             {
-                transferAndCreateState("p3", "p1", adjacentContainer, adjacentStates, prefabCopy);
+                transferAndCreateState("p3", "p1");
             }
             //if pitcher 2 not full 
             if (pitcher2 != P2MAX)
             {
-                transferAndCreateState("p3", "p2", adjacentContainer, adjacentStates, prefabCopy);
+                transferAndCreateState("p3", "p2");
             }
         }
     }
 
-    void createState(int p1, int p2, int p3, GameObject adjacentContainer, List<AdjacentStateManagerCh1_Pitchers> adjacentStates, AdjacentStateManagerCh1_Pitchers prefabCopy)
+    void createState(int p1, int p2, int p3)
     {
         // spawn here
-        AdjacentStateManagerCh1_Pitchers newState = GameObject.Instantiate(prefabCopy);
+        AdjacentStateHolder newState = GameObject.Instantiate(this.pitchersPrefabCopy);
+        newState.setCurState(p1, p2, p3);
         newState.transform.SetParent(adjacentContainer.transform);
-        newState.transform.position = new Vector3(newState.transform.position.x, newState.transform.position.y, 0);
-        newState.getState().setCurState(p1, p2, p3);
 
+        //State_Pitchers newState = new State_Pitchers(); //pangtest ko lang tong line na to pero mali to
+        // hindi to gagana hanggat wala yung mismong newState sa scene
+        // newState.setStatesAndPitcherValues(p1, p2, p3);
         adjacentStates.Add(newState);
-        newState.SetIndex(adjacentStates.Count - 1);
     }
     private class IntWrapper
     {
         public int val;
     }
 
-    void transferAndCreateState(string source, string dest, GameObject adjacentContainer, List<AdjacentStateManagerCh1_Pitchers> adjacentStates, AdjacentStateManagerCh1_Pitchers prefabCopy)
+    void transferAndCreateState(string source, string dest)
     {
 
         IntWrapper p1 = new IntWrapper();
@@ -181,7 +194,7 @@ public class State_Pitchers
             srcVar.val = srcVar.val - space;
         }
 
-        createState(p1.val, p2.val, p3.val, adjacentContainer, adjacentStates, prefabCopy);
+        createState(p1.val, p2.val, p3.val);
     }
 
     // Update is called once per frame
