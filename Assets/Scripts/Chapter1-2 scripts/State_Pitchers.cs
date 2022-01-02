@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class State_Pitchers
+public class State_Pitchers : State_Script_Interface
 {
     private int pitcher1; // max 16
     private int pitcher2; // max 9
@@ -12,20 +12,8 @@ public class State_Pitchers
     private readonly static int P2MAX = 9; // max 9
     private readonly static int P3MAX = 7; // max 7
 
+    private int nChildNodes;
     //[SerializeField] private ScrollView adjacentScrollView;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        //setCurState(0, 0, 0);
-        //EventBroadcaster.Instance.AddObserver(GraphGameEventNames.WATER_CHANGED, this.setStatesAndPitcherValues);
-        //getAdjacentNodes();
-    }
-
-    private void OnApplicationQuit()
-    {
-        //EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.WATER_CHANGED);
-    }
 
     public void setCurState(int p1, int p2, int p3)
     {
@@ -33,29 +21,8 @@ public class State_Pitchers
         pitcher2 = p2;
         pitcher3 = p3;
     }
-    //public void setStatesAndPitcherValues()
-    //{
-    //    clearAdjacentNodes();
-    //    p1Object.setWater(PitcherActionManager.GetInstance().p1.getWaterAmount());
-    //    p2Object.setWater(PitcherActionManager.GetInstance().p2.getWaterAmount());
-    //    p3Object.setWater(PitcherActionManager.GetInstance().p3.getWaterAmount());
-    //    setCurState(p1Object.getWaterAmount(), p2Object.getWaterAmount(), p3Object.getWaterAmount());
-    //    getAdjacentNodes();
 
-    //}
-
-    //void clearAdjacentNodes()
-    //{
-    //    //remove adjacent nodes from graph device
-        
-    //    foreach (AdjacentStateHolder adjacent_state_holder in adjacentStates)
-    //    {
-    //        Destroy(adjacent_state_holder.gameObject);
-    //    }
-    //    adjacentStates.Clear();
-    //}
-
-    void generateAdjacentNodes(GameObject adjacentContainer, List<AdjacentStateManagerCh1_Pitchers> adjacentStates, AdjacentStateManagerCh1_Pitchers prefabCopy)
+    public void generateAdjacentNodes(GameObject adjacentContainer, List<AdjacentStateManagerCh1_Pitchers> adjacentStates, AdjacentStateManagerCh1_Pitchers prefabCopy)
     {
         // Fill actions
         //if pitcher 1 not full
@@ -129,7 +96,7 @@ public class State_Pitchers
         AdjacentStateManagerCh1_Pitchers newState = GameObject.Instantiate(prefabCopy);
         newState.transform.SetParent(adjacentContainer.transform);
         newState.transform.position = new Vector3(newState.transform.position.x, newState.transform.position.y, 0);
-        newState.getState().setCurState(p1, p2, p3);
+        newState.GetState().setCurState(p1, p2, p3);
 
         adjacentStates.Add(newState);
         newState.SetIndex(adjacentStates.Count - 1);
@@ -184,9 +151,21 @@ public class State_Pitchers
         createState(p1.val, p2.val, p3.val, adjacentContainer, adjacentStates, prefabCopy);
     }
 
-    // Update is called once per frame
-    void Update()
+    public int getChildNodes()
     {
+        return nChildNodes;
+    }
 
+    public int getP1()
+    {
+        return pitcher1;
+    }
+    public int getP2()
+    {
+        return pitcher2;
+    }
+    public int getP3()
+    {
+        return pitcher3;
     }
 }

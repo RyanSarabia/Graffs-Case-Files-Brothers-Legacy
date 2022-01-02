@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PitcherActionManager : MonoBehaviour
 {
+    // --------------------------- Singleton --------------------
     private static PitcherActionManager instance;
     public static PitcherActionManager GetInstance()
     {
@@ -18,54 +19,73 @@ public class PitcherActionManager : MonoBehaviour
             GameObject.Destroy(gameObject);
     }
 
+    // --------------------------- GM stuff ----------------------
+
+    // static
+    [SerializeField] private static int targetAmount;
+    [SerializeField] private AdjacentStateManagerCh1_Pitchers adjacentStatePrefab;
+    [SerializeField] private TimelineNode timelineNodePrefab;
+
+    // UI stuff
+    [SerializeField] private GameObject victoryCard;
+    [SerializeField] private GameObject retryCard;
+    [SerializeField] private GameObject clickBlocker;
+    [SerializeField] private GameObject adjacentContainer;
+    private bool panelFocus;
+    private Vector3 timelineStartPosition;
+
+    // GM variables
     private List<int> pitcherIDs;
     private List<Pitcher> pitcherList;
-
-    [SerializeField] private State_Pitchers stateManager;
     [SerializeField] private Sink sink;
     [SerializeField] public Pitcher p1;
     [SerializeField] public Pitcher p2;
     [SerializeField] public Pitcher p3;
-    [SerializeField] private GameObject arrowButt;
 
-    [SerializeField] private int targetAmount;
-    [SerializeField] private GameObject victoryCard;
-    [SerializeField] private GameObject clickBlocker;
+    [SerializeField] private AdjacentStateManagerCh1_Pitchers cam4CurrState;
+    [SerializeField] private List<AdjacentStateManagerCh1_Pitchers> adjacentList = new List<AdjacentStateManagerCh1_Pitchers>();
+    [SerializeField] private List<State_Pitchers> prevStates = new List<State_Pitchers>();
+    [SerializeField] private List<TimelineNode> timelineNodes = new List<TimelineNode>();
+    [SerializeField] private TimelineNode curTimelineNode;
+
+    private static bool firstScene = true;
+    private State_Pitchers curState;
 
     // Start is called before the first frame update
     void Start()
     {
-        EventBroadcaster.Instance.AddObserver(GraphGameEventNames.GRAPH_DEVICE_CONFIRMED, this.GraphDeviceConfirmed);
-        EventBroadcaster.Instance.AddObserver(GraphGameEventNames.GRAPH_DEVICE_CLICKED, this.ToggleArrowButtHighlight);
-        EventBroadcaster.Instance.AddObserver(GraphGameEventNames.GRAPH_DEVICE_RETURN_CLICKED, DisableArrowButtHighlight);
         pitcherIDs = new List<int>();
         pitcherList = new List<Pitcher>();
         
         pitcherList.Add(p1);
         pitcherList.Add(p2);
         pitcherList.Add(p3);
+
+
+        timelineNodes.Add(curTimelineNode);
+        curState = newState();
+        curState.setCurState(0, 0, 0);
+        this.SetState(curState);
+        EventBroadcaster.Instance.AddObserver(GraphGameEventNames.CAM3_TO_MAINCAM, UpdateCam4StateFromCam3);
+        EventBroadcaster.Instance.AddObserver(GraphGameEventNames.GRAPH_DEVICE_CONFIRMED, SetStateFromCam4);
+
+        timelineStartPosition = new Vector3(curTimelineNode.transform.position.x, curTimelineNode.transform.position.y, curTimelineNode.transform.position.z);
+
+        if (firstScene)
+            firstScene = false;
+        else
+            SFXScript.GetInstance().PlayResetAnySFX();
     }
 
     private void OnDestroy()
     {
+        EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.CAM3_TO_MAINCAM);
         EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.GRAPH_DEVICE_CONFIRMED);
-        EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.GRAPH_DEVICE_CLICKED);
-        EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.GRAPH_DEVICE_RETURN_CLICKED);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    private void GraphDeviceConfirmed(Parameters parameters)
-    {
-        this.arrowButt.GetComponent<SpriteRenderer>().color = Color.white;
-        p1.setWater(parameters.GetIntExtra("Pitcher 1 Value", 0));
-        p2.setWater(parameters.GetIntExtra("Pitcher 2 Value", 0));
-        p3.setWater(parameters.GetIntExtra("Pitcher 3 Value", 0));
-        EventBroadcaster.Instance.PostEvent(GraphGameEventNames.WATER_CHANGED);
     }
 
     public void interact(int id)
@@ -97,7 +117,7 @@ public class PitcherActionManager : MonoBehaviour
                 }
 
                 unSelect();
-                stateManager.setCurState(p1.getWaterAmount(), p2.getWaterAmount(), p3.getWaterAmount());
+                curState.setCurState(p1.getWaterAmount(), p2.getWaterAmount(), p3.getWaterAmount());
                 EventBroadcaster.Instance.PostEvent(GraphGameEventNames.WATER_CHANGED);
             }           
         }
@@ -115,16 +135,98 @@ public class PitcherActionManager : MonoBehaviour
             pitcher.unSelect();
     }
 
-    public void finalCheck()
+    private State_Pitchers newState()
+    {
+        State_Pitchers newState = new State_Pitchers();
+        return newState;
+    }
+
+    private void addPreviousNode()
+    {
+        State_Pitchers prevState = curState;
+        prevStates.Add(prevState);
+
+        TimelineNode newNode = GameObject.Instantiate(timelineNodePrefab, curTimelineNode.transform.parent);
+        newNode.transform.position = timelineNodes[0].transform.position;
+
+        // append prev to prevprev
+        if (timelineNodes.Count > 1)
+        {
+            newNode.transform.position = timelineNodes[timelineNodes.Count - 2].getNextSpawnPoint().position;
+        }
+
+        // append cur to prev
+        curTimelineNode.transform.position = newNode.getNextSpawnPoint().position;
+
+        //add to list
+        timelineNodes.Insert(timelineNodes.Count - 1, newNode);
+
+        // set index
+        curTimelineNode.setIndex(timelineNodes.Count);
+        newNode.setIndex(timelineNodes.Count - 1);
+
+        // set state
+        newNode.setState(prevState);
+    }
+
+    void clearAdjacentNodes()
+    {
+        //remove adjacent nodes from graph device
+
+        foreach (AdjacentStateManagerCh1_Pitchers adjacent_state in adjacentList)
+        {
+            Destroy(adjacent_state.gameObject);
+        }
+        adjacentList.Clear();
+    }
+
+    // this is the revert function
+    private void UpdateCam4StateFromCam3(Parameters parameters)
+    {
+        Debug.Log(parameters.GetIntExtra("CAM3_PREVSTATE_INDEX", 0));
+        int prevIndex = parameters.GetIntExtra("CAM3_PREVSTATE_INDEX", 0);
+        this.SetState(GetPreviousNode(prevIndex));
+
+        while (!timelineNodes[prevIndex].Equals(curTimelineNode))
+        {
+            TimelineNode tempNode = timelineNodes[prevIndex];
+            timelineNodes.RemoveAt(prevIndex);
+            prevStates.RemoveAt(prevIndex);
+            Destroy(tempNode.gameObject);
+        }
+
+        // append cur to prev
+        if (prevIndex > 0)
+            curTimelineNode.transform.position = timelineNodes[prevIndex - 1].getNextSpawnPoint().position;
+        else
+            curTimelineNode.transform.position = timelineStartPosition;
+        curTimelineNode.setIndex(prevIndex + 1);
+        SFXScript.GetInstance().ClickConfirmGraphDevice();
+    }
+    private void UpdateCam4State(State_Pitchers state)
+    {
+        this.cam4CurrState.SetState(state);
+    }
+    private void updateObjectsToState()
+    {
+        p1.setWater(curState.getP1());
+        p2.setWater(curState.getP2());
+        p3.setWater(curState.getP3());
+    }
+
+    private void checkVictoryOrFail()
     {
         int num;
-        foreach(Pitcher pitcher in pitcherList)
+        foreach (Pitcher pitcher in pitcherList)
         {
             num = pitcher.getWaterAmount();
-            if(num == targetAmount)
+            if (num == targetAmount)
             {
                 gameEnd();
                 victoryCard.SetActive(true);
+                panelFocus = true;
+                clickBlocker.gameObject.SetActive(true);
+                SFXScript.GetInstance().VictorySFX();
             }
         }
     }
@@ -133,18 +235,49 @@ public class PitcherActionManager : MonoBehaviour
     {
         foreach (Pitcher pitcher in pitcherList)
         {
-            pitcher.colliderOff();            
+            pitcher.colliderOff();
         }
         sink.colliderOff();
         clickBlocker.SetActive(true);
     }
 
-    private void ToggleArrowButtHighlight()
+    // --------------------------- Getters & Setters ----------------------
+
+    public void SetState(State_Pitchers state)
     {
-        this.arrowButt.GetComponent<SpriteRenderer>().color = Color.yellow;
+        this.curState = state;
+        updateObjectsToState();
+        clearAdjacentNodes();
+        this.curState.generateAdjacentNodes(adjacentContainer, adjacentList, adjacentStatePrefab);
+        UpdateCam4State(curState);
     }
-    private void DisableArrowButtHighlight()
+
+    public void SetStateFromCam4(Parameters parameters)
     {
-        this.arrowButt.GetComponent<SpriteRenderer>().color = Color.white;
+        addPreviousNode();
+        Debug.Log("STATE INDEX = " + parameters.GetIntExtra("State Index", 0));
+        this.SetState(adjacentList[parameters.GetIntExtra("State Index", 0)].GetState());
+        SFXScript.GetInstance().ClickConfirmGraphDevice();
+        checkVictoryOrFail();
+    }
+
+    public bool getPanelFocus()
+    {
+        return panelFocus;
+    }
+
+    public State_Pitchers GetPreviousNode(int index)
+    {
+        if (index == -1)
+        {
+            return prevStates[prevStates.Count - 1];
+        }
+        else
+            return prevStates[index];
+    }
+
+    public int GetPrevStatesCount()
+    {
+        return prevStates.Count;
     }
 }

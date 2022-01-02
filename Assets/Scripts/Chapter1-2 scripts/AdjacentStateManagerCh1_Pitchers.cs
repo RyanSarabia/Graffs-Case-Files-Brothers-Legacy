@@ -6,12 +6,6 @@ using TMPro;
 
 public class AdjacentStateManagerCh1_Pitchers : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI timeCounter;
-    //[SerializeField] private NPC child;
-    //[SerializeField] private NPC man;
-    //[SerializeField] private NPC woman;
-    //[SerializeField] private NPC oldie;
-
     [SerializeField] private Pitcher p1Object;
     [SerializeField] private Pitcher p2Object;
     [SerializeField] private Pitcher p3Object;
@@ -25,7 +19,7 @@ public class AdjacentStateManagerCh1_Pitchers : MonoBehaviour
 
     void Awake()
     {
-        connectToGameObjects();
+
     }
 
     // Start is called before the first frame update
@@ -35,23 +29,18 @@ public class AdjacentStateManagerCh1_Pitchers : MonoBehaviour
         EventBroadcaster.Instance.AddObserver(GraphGameEventNames.GRAPH_DEVICE_CONFIRM_OCCURRED, ConfirmEventOccurred);
     }
 
-    private void connectToGameObjects()
-    {
-
-    }
-
     private void updateObjectsToState()
     {
-
+        p1Object.setWater(state.getP1());
+        p2Object.setWater(state.getP2());
+        p3Object.setWater(state.getP3());
     }
 
 
     public void SetState(State_Pitchers state)
     {
         this.state = state;
-        connectToGameObjects();
         updateObjectsToState();
-        //this.DisableNPCs();
     }
     private void OnMouseEnter()
     {
@@ -102,7 +91,7 @@ public class AdjacentStateManagerCh1_Pitchers : MonoBehaviour
         EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.GRAPH_DEVICE_CLICKED);
     }
 
-    public State_Pitchers getState()
+    public State_Pitchers GetState()
     {
         return state;
     }
@@ -115,13 +104,5 @@ public class AdjacentStateManagerCh1_Pitchers : MonoBehaviour
     public void SetIndex(int index)
     {
         this.index = index;
-    }
-
-    public void DisableNPCs()
-    {
-        //this.child.DisableCollider();
-        //this.man.DisableCollider();
-        //this.woman.DisableCollider();
-        //this.oldie.DisableCollider();
     }
 }
