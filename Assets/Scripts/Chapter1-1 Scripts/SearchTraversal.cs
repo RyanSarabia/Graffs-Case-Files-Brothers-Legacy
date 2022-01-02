@@ -10,6 +10,8 @@ public class SearchTraversal : MonoBehaviour
     [SerializeField] EnergyBar energyBar;
     [SerializeField] int nRooms;
     [SerializeField] int nEnergy = 15;
+    [SerializeField] int nLightUses = 10;
+    [SerializeField] TextMeshProUGUI lightUsesText;
     [SerializeField] TextMeshProUGUI energyText;
     [SerializeField] TextMeshProUGUI energyToBeUsed;
     [SerializeField] private Button bfsButton;
@@ -32,6 +34,7 @@ public class SearchTraversal : MonoBehaviour
         DisableConfirmButton();
         this.energyText.SetText("Remaining Energy: " + nEnergy);
         this.energyToBeUsed.SetText(energyHolder.ToString());
+        this.lightUsesText.SetText("Light Uses Left: " + nLightUses);
         energyBar.SetMaxEnergy(nEnergy);
         graphContainer.getFirstRoom().setIsLightOn(true);
         graphContainer.getFirstRoom().lightOn();
@@ -280,6 +283,7 @@ public class SearchTraversal : MonoBehaviour
             EnableBFSButton();
             EnableDFSButton();
             SFXScript.GetInstance().ConfirmLightingSFX();
+            
         }
         this.preLightCounter = 0;
     }
@@ -313,6 +317,7 @@ public class SearchTraversal : MonoBehaviour
             
             energyHolder = 1;
             this.energyToBeUsed.SetText(energyHolder.ToString());
+            DecrementLightUse();
         }
     }
 
@@ -354,6 +359,12 @@ public class SearchTraversal : MonoBehaviour
             }
         }
         
+    }
+
+    private void DecrementLightUse()
+    {
+        nLightUses--;
+        this.lightUsesText.SetText("Light Uses Left: " + nLightUses);
     }
 
     public void ResetQueueAndCounter()

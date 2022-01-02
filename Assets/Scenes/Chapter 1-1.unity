@@ -270,7 +270,7 @@ GameObject:
   - component: {fileID: 114227815}
   - component: {fileID: 114227814}
   m_Layer: 5
-  m_Name: Energy Counter
+  m_Name: Remaining Energy Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -765,7 +765,7 @@ RectTransform:
   - {fileID: 288551584}
   - {fileID: 1601266492}
   m_Father: {fileID: 1104765659}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -870,7 +870,7 @@ RectTransform:
   m_Children:
   - {fileID: 777242701}
   m_Father: {fileID: 1104765659}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1016,7 +1016,7 @@ RectTransform:
   - {fileID: 903654917}
   - {fileID: 838663212}
   m_Father: {fileID: 1104765659}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1123,7 +1123,7 @@ RectTransform:
   - {fileID: 25998317}
   - {fileID: 166657860}
   m_Father: {fileID: 1104765659}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -2250,6 +2250,7 @@ RectTransform:
   - {fileID: 1647913276}
   - {fileID: 1986492679}
   - {fileID: 114227813}
+  - {fileID: 1879529357}
   - {fileID: 384113491}
   - {fileID: 1494054968}
   - {fileID: 1766471823}
@@ -2258,7 +2259,6 @@ RectTransform:
   - {fileID: 582955562}
   - {fileID: 1366405903}
   - {fileID: 1329898895}
-  - {fileID: 1879529357}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2584,7 +2584,7 @@ RectTransform:
   m_Children:
   - {fileID: 1467750114}
   m_Father: {fileID: 1104765659}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2739,7 +2739,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1104765659}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2832,6 +2832,8 @@ MonoBehaviour:
   energyBar: {fileID: 495070785}
   nRooms: 5
   nEnergy: 18
+  nLightUses: 10
+  lightUsesText: {fileID: 1879529358}
   energyText: {fileID: 114227814}
   energyToBeUsed: {fileID: 1766471821}
   bfsButton: {fileID: 776952947}
@@ -2952,7 +2954,9 @@ MonoBehaviour:
   clueAcquiredSound: {fileID: 8300000, guid: 9f31eae91c31e864cabd9d741f58cd1a, type: 3}
   energyAcquiredSound: {fileID: 8300000, guid: 53b7944de4a1430419105b33fe7cce4d, type: 3}
   victorySound: {fileID: 8300000, guid: 8e77b8be831a50d499d5bfe3a243ddcf, type: 3}
+  defeatSound: {fileID: 0}
   confirmLightingSound: {fileID: 8300000, guid: 971ac69c5f4932a4cbbbc0878ec879bc, type: 3}
+  clickArch3NodeSound: {fileID: 0}
   resetAnySound: {fileID: 8300000, guid: c31fa610edfc03c449ade1cec5133b43, type: 3}
 --- !u!4 &1425661403
 Transform:
@@ -3314,7 +3318,7 @@ RectTransform:
   m_Children:
   - {fileID: 1406851105}
   m_Father: {fileID: 1104765659}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4105,7 +4109,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1104765659}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4124,7 +4128,7 @@ GameObject:
   - component: {fileID: 1879529359}
   - component: {fileID: 1879529358}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Light Uses Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4143,7 +4147,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1104765659}
-  m_RootOrder: 12
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4197,8 +4201,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 22
+  m_fontSizeBase: 22
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
