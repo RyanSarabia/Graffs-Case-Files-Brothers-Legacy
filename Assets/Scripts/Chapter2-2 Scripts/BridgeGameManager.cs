@@ -284,6 +284,7 @@ public class BridgeGameManager : MonoBehaviour
 
     public void SetStateFromCam4(Parameters parameters)
     {
+        addPreviousNode();
         Debug.Log("STATE INDEX = " + parameters.GetIntExtra("State Index", 0));
         this.SetState(adjacentList[parameters.GetIntExtra("State Index", 0)].GetState());
     }
