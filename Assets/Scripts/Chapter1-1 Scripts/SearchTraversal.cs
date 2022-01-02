@@ -10,12 +10,15 @@ public class SearchTraversal : MonoBehaviour
     [SerializeField] EnergyBar energyBar;
     [SerializeField] int nRooms;
     [SerializeField] int nEnergy = 15;
+    [SerializeField] int nLightUses = 10;
+    [SerializeField] TextMeshProUGUI lightUsesText;
     [SerializeField] TextMeshProUGUI energyText;
     [SerializeField] TextMeshProUGUI energyToBeUsed;
     [SerializeField] private Button bfsButton;
     [SerializeField] private Button dfsButton;
     [SerializeField] private Button confirmButton;
-    [SerializeField] private Animator briefText;
+    [SerializeField] private Animator briefTextEnergy;
+    [SerializeField] private Animator briefTextLightUses;
     private bool hasChosenLight = false;
 
     private int energyHolder = 1;
@@ -33,6 +36,7 @@ public class SearchTraversal : MonoBehaviour
         DisableConfirmButton();
         this.energyText.SetText("Remaining Energy: " + nEnergy);
         this.energyToBeUsed.SetText(energyHolder.ToString());
+        this.lightUsesText.SetText("Light Uses Left: " + nLightUses);
         energyBar.SetMaxEnergy(nEnergy);
         graphContainer.getFirstRoom().setIsLightOn(true);
         graphContainer.getFirstRoom().lightOn();
@@ -280,7 +284,8 @@ public class SearchTraversal : MonoBehaviour
             DisableConfirmButton();
             EnableBFSButton();
             EnableDFSButton();
-            SFXScript.GetInstance().ConfirmLightingSFX();
+            SFXScript.GetInstance().ConfirmLightingSFX();            
+
         }
         this.preLightCounter = 0;
     }
@@ -297,7 +302,7 @@ public class SearchTraversal : MonoBehaviour
         lightUpRoom.setIsLightOn(true);
         lightUpRoom.lightOn();
         n++;
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0.1f);
 
         if(searchQueue.Count > 0)
             searchQueue.RemoveAt(0);
@@ -314,11 +319,25 @@ public class SearchTraversal : MonoBehaviour
             
             energyHolder = 1;
             this.energyToBeUsed.SetText(energyHolder.ToString());
-
-            if(nEnergy <= 0)
+            DecrementLightUse();
+            if (nEnergy == 0)
             {
+                DisableBFSButton();
+                DisableDFSButton();
+                energyHolder = 0;
+                this.energyToBeUsed.SetText(energyHolder.ToString());
                 Debug.Log("out of energy");
-                briefText.Play("BriefText");
+                briefTextEnergy.Play("BriefText");
+
+            }
+            if (nLightUses == 0)
+            {
+                DisableBFSButton();
+                DisableDFSButton();
+                energyHolder = 0;
+                this.energyToBeUsed.SetText(energyHolder.ToString());
+                Debug.Log("out of energy");
+                briefTextLightUses.Play("BriefText");
             }
         }
     }
@@ -363,6 +382,12 @@ public class SearchTraversal : MonoBehaviour
         
     }
 
+    private void DecrementLightUse()
+    {
+        nLightUses--;
+        this.lightUsesText.SetText("Light Uses Left: " + nLightUses);
+    }
+
     public void ResetQueueAndCounter()
     {
         this.hasChosenLight = false;
@@ -370,11 +395,15 @@ public class SearchTraversal : MonoBehaviour
         {
             room.preLightOff();
         }
+        
         this.searchQueue.Clear();
-        EnableBFSButton();
-        EnableDFSButton();
-        this.energyHolder = 1;
-        this.energyToBeUsed.SetText(energyHolder.ToString());
+        if (nEnergy > 0 && nLightUses > 0)
+        {
+            EnableBFSButton();
+            EnableDFSButton();
+            this.energyHolder = 1;
+        }
+
     }
 
     private void EnableDFSButton()
