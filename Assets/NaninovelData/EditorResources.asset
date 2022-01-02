@@ -171,6 +171,12 @@ MonoBehaviour:
     - name: default
       pathPrefix: Characters/Graff
       guid: 4bd1f0d0f976b3542be655ab5cc918ae
+    - name: 2
+      pathPrefix: Characters/Graff
+      guid: 0a745d750ebeda84ba617d4509af0b00
+    - name: 3
+      pathPrefix: Characters/Graff
+      guid: 9dd5cd593426e49439b4baa5d06a721e
   - Id: Backgrounds/ef9aca4c-658e-4d89-818e-fbc23d26aa2e
     Resources:
     - name: arch2GraphDeviceBG
