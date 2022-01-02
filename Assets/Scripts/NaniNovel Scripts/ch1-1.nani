@@ -1,7 +1,7 @@
 
-@char Graff.2
-hello world
 @back arch2GraphDeviceBG
+@char Graff.2 look:right pos:30,10
+hello world
 cant do this
 help
 @stop
