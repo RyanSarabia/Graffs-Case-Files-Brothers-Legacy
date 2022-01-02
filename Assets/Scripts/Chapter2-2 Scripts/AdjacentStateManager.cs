@@ -21,6 +21,7 @@ public class AdjacentStateManager : MonoBehaviour
 
     void Awake()
     {
+        
         state.connectToGameObjects(timeCounter, child, man, woman, oldie);
     }
 

@@ -16,6 +16,10 @@ public class SFXScript : MonoBehaviour
     [SerializeField] private AudioClip defeatSound;
     [SerializeField] private AudioClip confirmLightingSound;
 
+    [SerializeField] private AudioClip selectNPCSound;
+    [SerializeField] private AudioClip clickGOSignSound;
+    [SerializeField] private AudioClip clickGraphDeviceSound;
+    [SerializeField] private AudioClip clickConfirmGraphDeviceSound;
 
     [SerializeField] private AudioClip clickArch3NodeSound;
 
@@ -69,10 +73,31 @@ public class SFXScript : MonoBehaviour
         audioSource.PlayOneShot(confirmLightingSound);
     }
 
+    public void ClickNPCArch2SFX()
+    {
+        audioSource.PlayOneShot(selectNPCSound);
+    }
+
+    public void ClickGoSignSFX()
+    {
+        audioSource.PlayOneShot(clickGOSignSound);
+    }
+
+    public void ClickGraphDevice()
+    {
+        audioSource.PlayOneShot(clickGraphDeviceSound);
+    }
+
+    public void ClickConfirmGraphDevice()
+    {
+        audioSource.PlayOneShot(clickConfirmGraphDeviceSound);
+    }
+    
 
     public void ClickNodeArch3SFX()
     {
         audioSource.PlayOneShot(clickArch3NodeSound);
     }
 
+    
 }

@@ -108,7 +108,8 @@ public class NPC : MonoBehaviour
             {
                 this.transform.position = new Vector3(leftIdlePosition.transform.position.x, leftIdlePosition.transform.position.y);
                 readyToLeave = false;
-            }            
+            }   
+            
         }
         else
         {
@@ -123,6 +124,7 @@ public class NPC : MonoBehaviour
                 readyToLeave = false;
             }            
         }
+        SFXScript.GetInstance().ClickNPCArch2SFX();
     }
 
     public void cross()

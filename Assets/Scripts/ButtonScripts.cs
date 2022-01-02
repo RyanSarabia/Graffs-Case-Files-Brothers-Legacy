@@ -61,6 +61,7 @@ public class ButtonScripts : MonoBehaviour
     {
         SetAllCamZero();
         cam2On();
+        SFXScript.GetInstance().ClickGraphDevice();
     }
 
 

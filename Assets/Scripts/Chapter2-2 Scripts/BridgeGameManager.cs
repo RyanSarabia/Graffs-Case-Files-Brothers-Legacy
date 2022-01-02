@@ -14,6 +14,7 @@ public class BridgeGameManager : MonoBehaviour
 
     private void Awake()
     {
+        EventBroadcaster.Instance.RemoveAllObservers();
         if (instance == null)
             instance = this;
         else
@@ -53,10 +54,12 @@ public class BridgeGameManager : MonoBehaviour
     [SerializeField] private List<State_Bridge> prevStates = new List<State_Bridge>();
     [SerializeField] private List<TimelineNode> timelineNodes = new List<TimelineNode>();
     [SerializeField] private TimelineNode curTimelineNode;
-    
+
+    private static bool firstScene = true;
     private State_Bridge curState;
 
     // Start is called before the first frame update
+
     void Start()
     {
         SetGoTextRed();
@@ -74,6 +77,11 @@ public class BridgeGameManager : MonoBehaviour
         EventBroadcaster.Instance.AddObserver(GraphGameEventNames.GRAPH_DEVICE_CONFIRMED, SetStateFromCam4);
 
         timelineStartPosition = new Vector3(curTimelineNode.transform.position.x, curTimelineNode.transform.position.y, curTimelineNode.transform.position.z);
+
+        if (firstScene)
+            firstScene = false;
+        else
+            SFXScript.GetInstance().PlayResetAnySFX();
     }
 
     private void OnDestroy()
@@ -187,7 +195,7 @@ public class BridgeGameManager : MonoBehaviour
                 clickBlocker.gameObject.SetActive(true);
             }
         }
-
+        SFXScript.GetInstance().ClickGoSignSFX();
         EventBroadcaster.Instance.PostEvent(GraphGameEventNames.NPCS_MOVED);
         SetGoTextRed();
     }
@@ -259,6 +267,7 @@ public class BridgeGameManager : MonoBehaviour
         else
             curTimelineNode.transform.position = timelineStartPosition;
         curTimelineNode.setIndex(prevIndex + 1);
+        SFXScript.GetInstance().ClickConfirmGraphDevice();
     }
     private void UpdateCam4State(State_Bridge state)
     {
@@ -287,6 +296,7 @@ public class BridgeGameManager : MonoBehaviour
         addPreviousNode();
         Debug.Log("STATE INDEX = " + parameters.GetIntExtra("State Index", 0));
         this.SetState(adjacentList[parameters.GetIntExtra("State Index", 0)].GetState());
+        SFXScript.GetInstance().ClickConfirmGraphDevice();
     }
     public bool getPanelFocus()
     {

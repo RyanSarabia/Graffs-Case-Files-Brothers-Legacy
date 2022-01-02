@@ -21,5 +21,6 @@ public class SignpostSend : MonoBehaviour
     private void OnMouseDown()
     {
         BridgeGameManager.GetInstance().sendNPC();
+        SFXScript.GetInstance().ClickGoSignSFX();
     }
 }
