@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 
 [System.Serializable]
-public class State_Bridge 
+public class State_Bridge: State_Script_Interface
 {
     //[SerializeField] private AdjacentStateManager bridgePrefabCopy;
 

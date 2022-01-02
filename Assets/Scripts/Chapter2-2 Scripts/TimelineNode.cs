@@ -23,7 +23,7 @@ public class TimelineNode : MonoBehaviour
     [SerializeField] private GameObject nextSpawn;
 
     // attributes
-    [SerializeField] private State_Bridge state;
+    [SerializeField] private State_Script_Interface state;
     [SerializeField] private bool isCurNode = false;
 
     // Start is called before the first frame update
@@ -43,7 +43,7 @@ public class TimelineNode : MonoBehaviour
         }
     }
 
-    public void setState(State_Bridge newState)
+    public void setState(State_Script_Interface newState)
     {
         state = newState;
         int n = state.getChildNodes();
