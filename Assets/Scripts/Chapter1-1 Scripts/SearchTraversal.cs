@@ -15,6 +15,7 @@ public class SearchTraversal : MonoBehaviour
     [SerializeField] private Button bfsButton;
     [SerializeField] private Button dfsButton;
     [SerializeField] private Button confirmButton;
+    [SerializeField] private Animator briefText;
     private bool hasChosenLight = false;
 
     private int energyHolder = 1;
@@ -313,6 +314,12 @@ public class SearchTraversal : MonoBehaviour
             
             energyHolder = 1;
             this.energyToBeUsed.SetText(energyHolder.ToString());
+
+            if(nEnergy <= 0)
+            {
+                Debug.Log("out of energy");
+                briefText.Play("BriefText");
+            }
         }
     }
 
