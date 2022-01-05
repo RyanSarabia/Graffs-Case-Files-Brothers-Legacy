@@ -1359,8 +1359,8 @@ GameObject:
   - component: {fileID: 309769204322632228}
   - component: {fileID: 4439402352846381268}
   - component: {fileID: 2375176789062382636}
-  - component: {fileID: 7147889761712478604}
   - component: {fileID: 1127978190505412744}
+  - component: {fileID: 5645795563122967680}
   m_Layer: 5
   m_Name: Pitcher Adjacent Nodes (Canvas Version)
   m_TagString: Untagged
@@ -1377,7 +1377,7 @@ RectTransform:
   m_GameObject: {fileID: 6809774621170218042}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.79539883, y: 0.79539883, z: 0.79539883}
+  m_LocalScale: {x: 3.676568, y: 3.676568, z: 3.676568}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3423247592058859972}
@@ -1459,24 +1459,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &7147889761712478604
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6809774621170218042}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50cf44a854bed224a9405bb4d5170758, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  p1Object: {fileID: 6814535180071602029}
-  p2Object: {fileID: 9181194150178669300}
-  p3Object: {fileID: 8272590711300055418}
-  hoverImage: {fileID: 1837889021650314478}
-  highlightImage: {fileID: 6636870227321604322}
-  arrowHead: {fileID: 1983718999}
 --- !u!61 &1127978190505412744
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1503,6 +1485,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.1283684, y: 0.8951516}
   m_EdgeRadius: 0
+--- !u!114 &5645795563122967680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6809774621170218042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ccd5411a4ee02143a621de74be07a20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  p1Object: {fileID: 6814535180071602029}
+  p2Object: {fileID: 9181194150178669300}
+  p3Object: {fileID: 8272590711300055418}
+  hoverImage: {fileID: 1837889021650314478}
+  highlightImage: {fileID: 6636870227321604322}
+  arrowHead: {fileID: 1983718999}
+  index: 0
 --- !u!1 &6953221639256959091
 GameObject:
   m_ObjectHideFlags: 0
@@ -2284,7 +2285,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3271822792813980386, guid: 329985f04eb07db4c988d7ab68bf8154, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.056094
+      value: -0.069
       objectReference: {fileID: 0}
     - target: {fileID: 3271822792813980386, guid: 329985f04eb07db4c988d7ab68bf8154, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2465,7 +2466,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3271822792813980386, guid: 329985f04eb07db4c988d7ab68bf8154, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.1538
+      value: -0.16670601
       objectReference: {fileID: 0}
     - target: {fileID: 3271822792813980386, guid: 329985f04eb07db4c988d7ab68bf8154, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2646,7 +2647,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3271822792813980386, guid: 329985f04eb07db4c988d7ab68bf8154, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.11082
+      value: -0.12372601
       objectReference: {fileID: 0}
     - target: {fileID: 3271822792813980386, guid: 329985f04eb07db4c988d7ab68bf8154, type: 3}
       propertyPath: m_LocalPosition.z

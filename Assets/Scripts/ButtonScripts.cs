@@ -15,11 +15,16 @@ public class ButtonScripts : MonoBehaviour
     [SerializeField] private Button cam4MainBtn;
     [SerializeField] private Button cam4Timeline;
     [SerializeField] GameObject cam4LeftArrowGroup;
+    [SerializeField] GameObject lastNode;
 
     [SerializeField] private Camera mainCam;
     [SerializeField] private Camera cam2;
     [SerializeField] private Camera cam3;
     [SerializeField] private Camera cam4;
+
+    
+
+    private int prevStatesCount;
 
     // Start is called before the first frame update
     void Start()
@@ -140,7 +145,7 @@ public class ButtonScripts : MonoBehaviour
 
     private void ToggleCam4LeftArrowGroup()
     {
-        if (BridgeGameManager.GetInstance().GetPrevStatesCount() < 1)
+        if (this.prevStatesCount < 1)
         {
             this.cam4LeftArrowGroup.SetActive(false);
 
@@ -173,12 +178,14 @@ public class ButtonScripts : MonoBehaviour
     {
         cam2.depth = 99;
         cam2.gameObject.SetActive(true);
+        cam2.transform.position = new Vector3(this.lastNode.transform.position.x - 1.05f, cam2.transform.position.y, 0);
     }
 
     private void cam3On()
     {
         cam3.depth = 99;
         cam3.gameObject.SetActive(true);
+        
     }
 
     private void cam4On()
@@ -186,6 +193,11 @@ public class ButtonScripts : MonoBehaviour
         cam4.depth = 99;
         cam4.gameObject.SetActive(true);
         ToggleCam4LeftArrowGroup();
+    }
+
+    public void SetPrevStatesCount(int prevStatesCount)
+    {
+        this.prevStatesCount = prevStatesCount;
     }
 
 }

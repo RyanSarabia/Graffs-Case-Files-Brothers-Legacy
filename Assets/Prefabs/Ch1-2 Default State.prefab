@@ -186,7 +186,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2401497683822815177}
-  - component: {fileID: 3424492870457207627}
+  - component: {fileID: 4834292453545126896}
   m_Layer: 0
   m_Name: Ch1-2 Default State
   m_TagString: Untagged
@@ -213,7 +213,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3424492870457207627
+--- !u!114 &4834292453545126896
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -222,15 +222,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 8682875746705213257}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d4a6967eb5e37843ad6682dc96e8754, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ccd5411a4ee02143a621de74be07a20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pitchersPrefabCopy: {fileID: 0}
   p1Object: {fileID: 6705902163180011772}
   p2Object: {fileID: 171211985388855139}
   p3Object: {fileID: 6737334947949587657}
-  adjacentStates: []
-  adjacentContainer: {fileID: 0}
+  hoverImage: {fileID: 0}
+  highlightImage: {fileID: 0}
+  arrowHead: {fileID: 0}
+  index: 0
 --- !u!1001 &1128625217705481902
 PrefabInstance:
   m_ObjectHideFlags: 0

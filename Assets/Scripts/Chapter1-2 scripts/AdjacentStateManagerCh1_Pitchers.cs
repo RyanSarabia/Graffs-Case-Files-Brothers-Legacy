@@ -34,6 +34,9 @@ public class AdjacentStateManagerCh1_Pitchers : MonoBehaviour
         p1Object.setWater(state.getP1());
         p2Object.setWater(state.getP2());
         p3Object.setWater(state.getP3());
+        Debug.Log("STATE P1: " + state.getP1());
+        Debug.Log("STATE P2: " + state.getP2());
+        Debug.Log("STATE P3: " + state.getP3());
     }
 
 

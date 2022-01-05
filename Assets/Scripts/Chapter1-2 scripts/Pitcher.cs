@@ -96,6 +96,7 @@ public class Pitcher : MonoBehaviour
 
     public void setWater(int water)
     {
+        Debug.Log("SUMET WATER!!! = " + water);
         waterAmount = water;
     }
     public void colliderOff()

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PitcherActionManager : MonoBehaviour
+public class PitcherActionManager : MonoBehaviour, GMInterface
 {
     // --------------------------- Singleton --------------------
     private static PitcherActionManager instance;
@@ -13,6 +13,7 @@ public class PitcherActionManager : MonoBehaviour
 
     private void Awake()
     {
+        EventBroadcaster.Instance.RemoveAllObservers();
         if (instance == null)
             instance = this;
         else
@@ -22,7 +23,7 @@ public class PitcherActionManager : MonoBehaviour
     // --------------------------- GM stuff ----------------------
 
     // static
-    [SerializeField] private static int targetAmount;
+    [SerializeField] private static int targetAmount = 8;
     [SerializeField] private AdjacentStateManagerCh1_Pitchers adjacentStatePrefab;
     [SerializeField] private TimelineNode timelineNodePrefab;
 
@@ -117,7 +118,14 @@ public class PitcherActionManager : MonoBehaviour
                 }
 
                 unSelect();
+                addPreviousNode();
+                curState = newState();
                 curState.setCurState(p1.getWaterAmount(), p2.getWaterAmount(), p3.getWaterAmount());
+
+                this.SetState(curState);
+
+                checkVictoryOrFail();
+                
                 EventBroadcaster.Instance.PostEvent(GraphGameEventNames.WATER_CHANGED);
             }           
         }
@@ -250,6 +258,7 @@ public class PitcherActionManager : MonoBehaviour
         clearAdjacentNodes();
         this.curState.generateAdjacentNodes(adjacentContainer, adjacentList, adjacentStatePrefab);
         UpdateCam4State(curState);
+        this.gameObject.GetComponent<ButtonScripts>().SetPrevStatesCount(this.GetPrevStatesCount());
     }
 
     public void SetStateFromCam4(Parameters parameters)

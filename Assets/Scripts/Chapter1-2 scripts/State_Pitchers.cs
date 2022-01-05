@@ -88,15 +88,20 @@ public class State_Pitchers : State_Script_Interface
                 transferAndCreateState("p3", "p2", adjacentContainer, adjacentStates, prefabCopy);
             }
         }
+        this.nChildNodes = adjacentStates.Count;
     }
 
     void createState(int p1, int p2, int p3, GameObject adjacentContainer, List<AdjacentStateManagerCh1_Pitchers> adjacentStates, AdjacentStateManagerCh1_Pitchers prefabCopy)
     {
+        Debug.Log("P1: " + p1);
+        Debug.Log("P2: " + p2);
+        Debug.Log("P3: " + p3);
         // spawn here
         AdjacentStateManagerCh1_Pitchers newState = GameObject.Instantiate(prefabCopy);
         newState.transform.SetParent(adjacentContainer.transform);
         newState.transform.position = new Vector3(newState.transform.position.x, newState.transform.position.y, 0);
         newState.GetState().setCurState(p1, p2, p3);
+        newState.SetState(newState.GetState());
 
         adjacentStates.Add(newState);
         newState.SetIndex(adjacentStates.Count - 1);
