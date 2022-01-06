@@ -2790,6 +2790,7 @@ GameObject:
   - component: {fileID: 999972307}
   - component: {fileID: 999972306}
   - component: {fileID: 999972310}
+  - component: {fileID: 999972311}
   m_Layer: 5
   m_Name: Camera 3 Canvas
   m_TagString: Untagged
@@ -2893,6 +2894,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c23c05c3e6ee8947badc276441182c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &999972311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999972305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa8e95642f9ff294599628d2ff0c8a46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   siblingCountText: {fileID: 1857873251}
@@ -7498,6 +7511,7 @@ MonoBehaviour:
   prevStates: []
   timelineNodes: []
   curTimelineNode: {fileID: 1744036471222526084}
+  buttonScripts: {fileID: 1920622308}
 --- !u!4 &1920622306
 Transform:
   m_ObjectHideFlags: 0

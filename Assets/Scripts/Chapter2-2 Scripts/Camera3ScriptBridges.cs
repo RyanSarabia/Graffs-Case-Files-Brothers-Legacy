@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public class Camera3Script : MonoBehaviour
+public class Camera3ScriptBridges : MonoBehaviour
 {
 
     [SerializeField] TextMeshProUGUI siblingCountText;

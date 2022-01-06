@@ -296,6 +296,7 @@ public class BridgeGameManager : MonoBehaviour
         clearAdjacentNodes();
         this.curState.generateAdjacentNodes(adjacentContainer, adjacentList, adjacentStatePrefab);
         UpdateCam4State(curState);
+        this.gameObject.GetComponent<ButtonScripts>().SetPrevStatesCount(this.GetPrevStatesCount());
         //this.DisableNPCs();
     }
 
