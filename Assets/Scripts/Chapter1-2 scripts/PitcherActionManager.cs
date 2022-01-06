@@ -93,7 +93,10 @@ public class PitcherActionManager : MonoBehaviour, GMInterface
     {
         int excess;
         int firstSelect;
-
+        bool transferSuccess = false;
+        int p1Amount = this.p1.getWaterAmount();
+        int p2Amount = this.p2.getWaterAmount();
+        int p3Amount = this.p3.getWaterAmount();
         if (!pitcherIDs.Exists(x => x == id))
         {
             pitcherIDs.Add(id);
@@ -116,17 +119,25 @@ public class PitcherActionManager : MonoBehaviour, GMInterface
                     }
                         
                 }
-
                 unSelect();
-                addPreviousNode();
-                curState = newState();
-                curState.setCurState(p1.getWaterAmount(), p2.getWaterAmount(), p3.getWaterAmount());
 
-                this.SetState(curState);
+                if (p1Amount != p1.getWaterAmount() || p2Amount != p2.getWaterAmount() || p3Amount != p3.getWaterAmount())
+                    transferSuccess = true;
+                if (transferSuccess)
+                {
+                    
+                    addPreviousNode();
+                    curState = newState();
+                    curState.setCurState(p1.getWaterAmount(), p2.getWaterAmount(), p3.getWaterAmount());
+                    this.SetState(curState);
 
-                checkVictoryOrFail();
+                    checkVictoryOrFail();
+
+                    EventBroadcaster.Instance.PostEvent(GraphGameEventNames.WATER_CHANGED);
+                }
                 
-                EventBroadcaster.Instance.PostEvent(GraphGameEventNames.WATER_CHANGED);
+
+                
             }           
         }
         else
