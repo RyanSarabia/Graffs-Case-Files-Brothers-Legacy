@@ -2,6 +2,17 @@
 @back arch2GraphDeviceBG
 @char Graff.2 look:right pos:30,10
 hello world
-cant do this
-help
+I wish to become the apprentice of the master detective!
+Fist step is to find this missing cat
+@back ch1-2BG
+Next stop, to the bakery!
+
+@char Graff.default look:right pos:60,10 dissolve:0 scale:.5
+I need to talk to the baker on what he knows about the cat
+@char Brian.1 scale:10
+It should give me the necessary clues in locating it
+hello sir!
+helloooooo
+@choice test1 button:ButtonArea
+@if 
 @stop

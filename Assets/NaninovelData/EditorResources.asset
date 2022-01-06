@@ -188,3 +188,18 @@ MonoBehaviour:
     - name: Ch1-3BG
       pathPrefix: Backgrounds/MainBackground
       guid: fdc76b211b6d9e3439632819d389a3e5
+  - Id: Unlockables
+    Resources: []
+  - Id: Characters/541a5b02-6d7c-4e62-a70c-7e412b1fdd9f
+    Resources:
+    - name: 1
+      pathPrefix: Characters/Brian
+      guid: a8efad6359a87be46abc8df7caa1ed92
+    - name: 2
+      pathPrefix: Characters/Brian
+      guid: f44424a6c571ad64ab25dc96005cdff7
+    - name: 3
+      pathPrefix: Characters/Brian
+      guid: 95a5567acdb4d5c458dabce9488fd5b0
+  - Id: Audio
+    Resources: []
