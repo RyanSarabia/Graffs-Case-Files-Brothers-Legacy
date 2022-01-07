@@ -402,6 +402,7 @@ public class SearchTraversal : MonoBehaviour
             EnableBFSButton();
             EnableDFSButton();
             this.energyHolder = 1;
+            this.energyToBeUsed.SetText(""+ energyHolder);
         }
 
     }
