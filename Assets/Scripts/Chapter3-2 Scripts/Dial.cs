@@ -78,4 +78,15 @@ public class Dial : MonoBehaviour
     {
         return state;
     }
+
+    public void setValue(int n)
+    {
+        state = n;
+        switch (n)
+        {
+            case 0: this.transform.rotation = Quaternion.Euler(0, 0, 30); break;
+            case 1: this.transform.rotation = Quaternion.Euler(0, 0, 270); break;
+            case 2: this.transform.rotation = Quaternion.Euler(0, 0, 150); break;
+        }
+    }
 }

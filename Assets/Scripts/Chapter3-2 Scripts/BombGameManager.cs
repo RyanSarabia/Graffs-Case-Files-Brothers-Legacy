@@ -82,4 +82,16 @@ public class BombGameManager : MonoBehaviour
             }
         }
     }
+    public void testSetState0()
+    {
+        activeDial.setValue(0);
+    }
+    public void testSetState1()
+    {
+        activeDial.setValue(1);
+    }
+    public void testSetState2()
+    {
+        activeDial.setValue(2);
+    }
 }
