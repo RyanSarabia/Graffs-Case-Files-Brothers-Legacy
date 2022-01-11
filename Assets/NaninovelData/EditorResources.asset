@@ -168,7 +168,7 @@ MonoBehaviour:
       guid: e76a1edf643c1874e8d7c856423064fd
   - Id: Characters/82f1f936-8de1-4ed9-918f-666d2973fcf1
     Resources:
-    - name: default
+    - name: 1
       pathPrefix: Characters/Graff
       guid: 4bd1f0d0f976b3542be655ab5cc918ae
     - name: 2
@@ -202,4 +202,6 @@ MonoBehaviour:
       pathPrefix: Characters/Brian
       guid: 95a5567acdb4d5c458dabce9488fd5b0
   - Id: Audio
+    Resources: []
+  - Id: CharacterAvatars
     Resources: []
