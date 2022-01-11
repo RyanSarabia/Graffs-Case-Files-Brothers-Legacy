@@ -134,6 +134,7 @@ public class PitcherActionManager : MonoBehaviour, GMInterface
                     checkVictoryOrFail();
 
                     EventBroadcaster.Instance.PostEvent(GraphGameEventNames.WATER_CHANGED);
+                    SFXScript.GetInstance().WaterChangeArch2SFX();
                 }
                 
 

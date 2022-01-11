@@ -15,6 +15,7 @@ public class SFXScript : MonoBehaviour
     [SerializeField] private AudioClip victorySound;
     [SerializeField] private AudioClip defeatSound;
     [SerializeField] private AudioClip confirmLightingSound;
+    [SerializeField] private AudioClip WaterChangedArch2Sound;
 
     [SerializeField] private AudioClip selectNPCSound;
     [SerializeField] private AudioClip clickGOSignSound;
@@ -97,6 +98,11 @@ public class SFXScript : MonoBehaviour
     public void ClickNodeArch3SFX()
     {
         audioSource.PlayOneShot(clickArch3NodeSound);
+    }
+
+    public void WaterChangeArch2SFX()
+    {
+        audioSource.PlayOneShot(WaterChangedArch2Sound);
     }
 
     

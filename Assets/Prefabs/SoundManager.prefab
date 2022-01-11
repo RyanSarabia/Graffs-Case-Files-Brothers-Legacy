@@ -148,6 +148,7 @@ MonoBehaviour:
   victorySound: {fileID: 8300000, guid: 8e77b8be831a50d499d5bfe3a243ddcf, type: 3}
   defeatSound: {fileID: 8300000, guid: 6c539449d76c89f44b3b4a65f54c1197, type: 3}
   confirmLightingSound: {fileID: 8300000, guid: 971ac69c5f4932a4cbbbc0878ec879bc, type: 3}
+  WaterChangedArch2Sound: {fileID: 8300000, guid: 42def7b92396f2f4fabc92dd7c72471d, type: 3}
   selectNPCSound: {fileID: 8300000, guid: fd023eb63b701bb42b30d994203b3415, type: 3}
   clickGOSignSound: {fileID: 8300000, guid: d11a3da150b3f65498d3511493abd3cd, type: 3}
   clickGraphDeviceSound: {fileID: 8300000, guid: 1e486df098bcdff47a30fd049093e507, type: 3}
