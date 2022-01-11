@@ -55,14 +55,14 @@ public class Dial : MonoBehaviour
     }
     public void rotateCW()
     {
-        this.transform.Rotate(0, 0, -60);
-        state = (state + 1) % 6;       
+        this.transform.Rotate(0, 0, -120);
+        state = (state + 1) % 3;       
     }
     public void rotateCCW()
     {
-        this.transform.Rotate(0, 0, 60);
+        this.transform.Rotate(0, 0, 120);
         if (state == 0)
-            state = 5;
+            state = 2;
         else
             state--;
     }
