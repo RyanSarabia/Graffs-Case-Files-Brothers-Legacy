@@ -8,13 +8,13 @@ public class Dial : MonoBehaviour
     [SerializeField] private GameObject highlight;
 
     [SerializeField] private int id;
-    [SerializeField] private int state = 0;
+    [SerializeField] private int state;
     [SerializeField] private Dial followCW;
     [SerializeField] private Dial followCCW;
     // Start is called before the first frame update
     void Start()
     {
-        
+        setValue(state);
     }
 
     // Update is called once per frame
