@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BombGameManager : MonoBehaviour
+public class BombGameManager : MonoBehaviour, GMInterface
 {
+    // --------------------------- Singleton --------------------
     private static BombGameManager instance;
     public static BombGameManager GetInstance()
     {
@@ -12,19 +13,43 @@ public class BombGameManager : MonoBehaviour
 
     private void Awake()
     {
+        EventBroadcaster.Instance.RemoveAllObservers();
         if (instance == null)
             instance = this;
         else
             GameObject.Destroy(gameObject);
     }
 
-    [SerializeField] private GameObject victoryCard;
-    [SerializeField] private GameObject clickBlocker;
-    private bool panelFocus;
+    // --------------------------- GM stuff ----------------------
 
+    // static
+    [SerializeField] private AdjacentStateManagerCh1_Pitchers adjacentStatePrefab;
+    [SerializeField] private TimelineNode timelineNodePrefab;
+
+    // UI stuff
+    [SerializeField] private GameObject victoryCard;
+    [SerializeField] private GameObject retryCard;
+    [SerializeField] private GameObject clickBlocker;
+    [SerializeField] private GameObject adjacentContainer;
+    [SerializeField] private GameObject CWBtn;
+    [SerializeField] private GameObject CCWBtn;
+    private bool panelFocus;
+    private Vector3 timelineStartPosition;
+
+    // GM variables
     [SerializeField] private List<Dial> dials = new List<Dial>();
     [SerializeField] private List<int> targetStates = new List<int>();
     private Dial activeDial;
+
+    [SerializeField] private AdjacentStateManagerCh1_Pitchers cam4CurrState;
+    [SerializeField] private List<AdjacentStateManagerCh1_Pitchers> adjacentList = new List<AdjacentStateManagerCh1_Pitchers>();
+    [SerializeField] private List<State_Bomb> prevStates = new List<State_Bomb>();
+    [SerializeField] private List<TimelineNode> timelineNodes = new List<TimelineNode>();
+    [SerializeField] private TimelineNode curTimelineNode;
+
+    private static bool firstScene = true;
+    private State_Pitchers curState;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,10 +65,14 @@ public class BombGameManager : MonoBehaviour
         if(activeDial != null)
             activeDial.unSelect();
         activeDial = dial;
+        CWBtn.SetActive(true);
+        CCWBtn.SetActive(true);
     }
     public void unSelect()
     {
         activeDial = null;
+        CWBtn.SetActive(false);
+        CCWBtn.SetActive(false);
     }
 
     public void rotateCW()
@@ -94,4 +123,11 @@ public class BombGameManager : MonoBehaviour
     {
         activeDial.setValue(2);
     }
+
+
+    public int GetPrevStatesCount()
+    {
+        return prevStates.Count;
+    }
+
 }
