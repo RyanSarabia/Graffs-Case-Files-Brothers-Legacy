@@ -20,7 +20,7 @@ public class State_Bomb : State_Script_Interface
         this.turnsLeft = turnsLeft;
     }
 
-    public void generateAdjacentNodes(GameObject adjacentContainer, List<AdjacentStateManagerCh1_Pitchers> adjacentStates, AdjacentStateManagerCh1_Pitchers prefabCopy)
+    public void generateAdjacentNodes(GameObject adjacentContainer, List<AdjacentStateManager_Bomb> adjacentStates, AdjacentStateManager_Bomb prefabCopy)
     {
         List<int> vals = new List<int>();
         int newTurns = turnsLeft - 1;
@@ -50,16 +50,16 @@ public class State_Bomb : State_Script_Interface
     }
 
     //CHANGE THE PARAMETER TYPES
-    void createState(int d1, int d2, int d3, int turnsLeft, GameObject adjacentContainer, List<AdjacentStateManagerCh1_Pitchers> adjacentStates, AdjacentStateManagerCh1_Pitchers prefabCopy)
+    void createState(int d1, int d2, int d3, int turnsLeft, GameObject adjacentContainer, List<AdjacentStateManager_Bomb> adjacentStates, AdjacentStateManager_Bomb prefabCopy)
     {
         Debug.Log("P1: " + d1);
         Debug.Log("P2: " + d2);
         Debug.Log("P3: " + d3);
         // spawn here
-        AdjacentStateManagerCh1_Pitchers newState = GameObject.Instantiate(prefabCopy);
+        AdjacentStateManager_Bomb newState = GameObject.Instantiate(prefabCopy);
         newState.transform.SetParent(adjacentContainer.transform);
         newState.transform.position = new Vector3(newState.transform.position.x, newState.transform.position.y, 0);
-        newState.GetState().setCurState(d1, d2, d3);
+        newState.GetState().setCurState(d1, d2, d3, turnsLeft);
         newState.SetState(newState.GetState());
 
         adjacentStates.Add(newState);
