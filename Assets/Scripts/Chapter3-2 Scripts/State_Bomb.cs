@@ -7,26 +7,50 @@ public class State_Bomb : State_Script_Interface
     private int dial1;
     private int dial2;
     private int dial3;
+    private int turnsLeft;
 
     private int nChildNodes;
 
     //CHANGE THE PARAMETER TYPES
-    public void setCurState(int d1, int d2, int d3)
+    public void setCurState(int d1, int d2, int d3, int turnsLeft)
     {
         dial1 = d1;
         dial2 = d2;
         dial3 = d3;
+        this.turnsLeft = turnsLeft;
     }
 
     public void generateAdjacentNodes(GameObject adjacentContainer, List<AdjacentStateManagerCh1_Pitchers> adjacentStates, AdjacentStateManagerCh1_Pitchers prefabCopy)
     {
+        List<int> vals = new List<int>();
+        int newTurns = turnsLeft - 1;
+        for (int i=0; i<3; i++)
+        {
+            vals.Clear();
+            vals.Add(dial1);
+            vals.Add(dial2);
+            vals.Add(dial3);
 
+            // add to current selection
+            vals[i] = (vals[i] + 1) % 3;
+            vals[(i+1)%3] = (vals[(i+1)%3] + 1) % 3;
+
+            createState(vals[0], vals[1], vals[2], newTurns, adjacentContainer, adjacentStates, prefabCopy);
+
+            // add another for '-1'
+            vals[i] = (vals[i] + 1) % 3;
+            vals[(i + 1) % 3] = (vals[(i + 1) % 3] + 1) % 3;
+            createState(vals[0], vals[1], vals[2], newTurns, adjacentContainer, adjacentStates, prefabCopy);
+        }
+
+        Debug.Log("old (1,2,3): " + dial1 + ',' + dial2 + ',' + dial3);
+        Debug.Log("new (1,2,3): " + vals[0] + ',' + vals[1] + ',' + vals[2]);
 
         this.nChildNodes = adjacentStates.Count;
     }
 
     //CHANGE THE PARAMETER TYPES
-    void createState(int d1, int d2, int d3, GameObject adjacentContainer, List<AdjacentStateManagerCh1_Pitchers> adjacentStates, AdjacentStateManagerCh1_Pitchers prefabCopy)
+    void createState(int d1, int d2, int d3, int turnsLeft, GameObject adjacentContainer, List<AdjacentStateManagerCh1_Pitchers> adjacentStates, AdjacentStateManagerCh1_Pitchers prefabCopy)
     {
         Debug.Log("P1: " + d1);
         Debug.Log("P2: " + d2);
