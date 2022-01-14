@@ -179,15 +179,18 @@ MonoBehaviour:
       guid: 9dd5cd593426e49439b4baa5d06a721e
   - Id: Backgrounds/ef9aca4c-658e-4d89-818e-fbc23d26aa2e
     Resources:
-    - name: arch2GraphDeviceBG
+    - name: def
       pathPrefix: Backgrounds/MainBackground
       guid: 6926523d9d9396f4c95dcefb2fdb8100
-    - name: ch1-2BG
+    - name: 2BG
       pathPrefix: Backgrounds/MainBackground
       guid: 70570504987e9004d8f2a26d6c7be5ee
-    - name: Ch1-3BG
+    - name: 3BG
       pathPrefix: Backgrounds/MainBackground
       guid: fdc76b211b6d9e3439632819d389a3e5
+    - name: 4BG
+      pathPrefix: Backgrounds/MainBackground
+      guid: 1146b8ffd8c0c014cb6d1f80a6880593
   - Id: Unlockables
     Resources: []
   - Id: Characters/541a5b02-6d7c-4e62-a70c-7e412b1fdd9f
