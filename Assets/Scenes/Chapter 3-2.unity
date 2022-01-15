@@ -1151,7 +1151,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -223.34006, y: 182.52362}
+  m_AnchoredPosition: {x: -223.34012, y: 182.52362}
   m_SizeDelta: {x: -446.68, y: -365.04724}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &330737082
@@ -2503,6 +2503,17 @@ Canvas:
   m_SortingLayerID: -277429059
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1039002558 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8284383944546012694, guid: 39f6941502c9c784285f018257a5d7db, type: 3}
+  m_PrefabInstance: {fileID: 8284383945897086082}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1042014280 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 353262705206857673, guid: b2ab4f873522ecb42b6ee2997b34e56d, type: 3}
@@ -5953,6 +5964,7 @@ MonoBehaviour:
   adjacentContainer: {fileID: 1044743196}
   CWBtn: {fileID: 843861383}
   CCWBtn: {fileID: 52511008}
+  turnsCounter: {fileID: 1039002558}
   dials:
   - {fileID: 795019357}
   - {fileID: 1713328736}

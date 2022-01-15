@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class BombGameManager : MonoBehaviour, GMInterface
 {
@@ -25,6 +26,9 @@ public class BombGameManager : MonoBehaviour, GMInterface
     // static
     [SerializeField] private AdjacentStateManager_Bomb adjacentStatePrefab;
     [SerializeField] private TimelineNode timelineNodePrefab;
+    public static int DIAL_LEFT = 0;
+    public static int DIAL_UP = 1;
+    public static int DIAL_DOWN = 2;
 
     // UI stuff
     [SerializeField] private GameObject victoryCard;
@@ -33,6 +37,7 @@ public class BombGameManager : MonoBehaviour, GMInterface
     [SerializeField] private GameObject adjacentContainer;
     [SerializeField] private GameObject CWBtn;
     [SerializeField] private GameObject CCWBtn;
+    [SerializeField] private TextMeshProUGUI turnsCounter;
     private bool panelFocus;
     private Vector3 timelineStartPosition;
 
@@ -40,7 +45,7 @@ public class BombGameManager : MonoBehaviour, GMInterface
     [SerializeField] private List<Dial> dials = new List<Dial>();
     [SerializeField] private List<int> targetStates = new List<int>();
     private Dial activeDial;
-    private int time = 14;
+    private int turnsLeft = 14;
 
     [SerializeField] private AdjacentStateManager_Bomb cam4CurrState;
     [SerializeField] private List<AdjacentStateManager_Bomb> adjacentList = new List<AdjacentStateManager_Bomb>();
@@ -56,7 +61,7 @@ public class BombGameManager : MonoBehaviour, GMInterface
     {
         timelineNodes.Add(curTimelineNode);
         curState = newState();
-        curState.setCurState(dials[0].getState(), dials[1].getState(), dials[2].getState(), time);
+        curState.setCurState(dials[0].getState(), dials[1].getState(), dials[2].getState(), turnsLeft);
         this.SetState(curState);
         EventBroadcaster.Instance.AddObserver(GraphGameEventNames.CAM3_TO_MAINCAM, UpdateCam4StateFromCam3);
         EventBroadcaster.Instance.AddObserver(GraphGameEventNames.GRAPH_DEVICE_CONFIRMED, SetStateFromCam4);
@@ -93,14 +98,29 @@ public class BombGameManager : MonoBehaviour, GMInterface
     {
         activeDial.rotateCW();
         activeDial.getCWFollower(true).rotateCW();
-        checkVictory();
+        afterRotate();
     }
     public void rotateCCW()
     {
         activeDial.rotateCCW();
         activeDial.getCWFollower(false).rotateCCW();
-        checkVictory();
+        afterRotate();
     }
+
+    private void afterRotate()
+    {
+        turnsLeft--;
+
+        addPreviousNode();
+        curState = newState();
+        curState.setCurState(dials[DIAL_LEFT].getState(), dials[DIAL_UP].getState(), dials[DIAL_DOWN].getState(), turnsLeft);
+        this.SetState(curState);
+
+        checkVictory();
+
+        SFXScript.GetInstance().WaterChangeArch2SFX();
+    }
+
     public void checkVictory()
     {
         int num = 0;
@@ -214,6 +234,8 @@ public class BombGameManager : MonoBehaviour, GMInterface
         dials[0].setValue(curState.getDLeft());
         dials[1].setValue(curState.getDUp());
         dials[2].setValue(curState.getDDown());
+        turnsLeft = curState.getTurnsLeft();
+        turnsCounter.SetText(""+turnsLeft);
     }
 
     // --------------------------- Getters & Setters ----------------------

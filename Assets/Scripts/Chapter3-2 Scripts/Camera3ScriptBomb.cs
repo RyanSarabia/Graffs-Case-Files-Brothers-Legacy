@@ -63,7 +63,7 @@ public class Camera3ScriptBomb : MonoBehaviour
     {
         State_Bomb prevState;
         prevStateIndex++;
-        if (PitcherActionManager.GetInstance().GetPrevStatesCount() == prevStateIndex)
+        if (BombGameManager.GetInstance().GetPrevStatesCount() == prevStateIndex)
         {
             EventBroadcaster.Instance.PostEvent(GraphGameEventNames.CAM3_TO_CAM4);
         }
@@ -110,7 +110,7 @@ public class Camera3ScriptBomb : MonoBehaviour
     private void ReturnToCam3FromCam4()
     {
         State_Bomb prevState;
-        prevStateIndex = PitcherActionManager.GetInstance().GetPrevStatesCount()-1;
+        prevStateIndex = BombGameManager.GetInstance().GetPrevStatesCount()-1;
         ToggleLeftArrowGroup();
         prevState = BombGameManager.GetInstance().GetPreviousNode(-1);
         SetState(prevState);
