@@ -6,9 +6,11 @@ using TMPro;
 
 public class AdjacentStateManager_Bomb : MonoBehaviour
 {
-    [SerializeField] private Pitcher p1Object;
-    [SerializeField] private Pitcher p2Object;
-    [SerializeField] private Pitcher p3Object;
+    [SerializeField] private Dial dialUp;
+    [SerializeField] private Dial dialLeft;
+    [SerializeField] private Dial dialDown;
+
+    [SerializeField] private TextMeshProUGUI turnsLeft;
 
     [SerializeField] Image hoverImage;
     [SerializeField] Image highlightImage;
@@ -37,6 +39,11 @@ public class AdjacentStateManager_Bomb : MonoBehaviour
         //Debug.Log("STATE P1: " + state.getP1());
         //Debug.Log("STATE P2: " + state.getP2());
         //Debug.Log("STATE P3: " + state.getP3());
+
+        dialUp.setValue(state.getDUp());
+        dialLeft.setValue(state.getDLeft());
+        dialDown.setValue(state.getDDown());
+        turnsLeft.SetText("" + state.getTurnsLeft());
     }
 
 

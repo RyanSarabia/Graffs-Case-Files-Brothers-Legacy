@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class State_Bomb : State_Script_Interface
 {
-    private int dial1;
-    private int dial2;
-    private int dial3;
+    private int dialLeft;
+    private int dialUp;
+    private int dialDown;
     private int turnsLeft;
 
     private int nChildNodes;
 
     //CHANGE THE PARAMETER TYPES
-    public void setCurState(int d1, int d2, int d3, int turnsLeft)
+    public void setCurState(int dLeft, int dUp, int dDown, int turnsLeft)
     {
-        dial1 = d1;
-        dial2 = d2;
-        dial3 = d3;
+        dialLeft = dLeft;
+        dialUp = dUp;
+        dialDown = dDown;
         this.turnsLeft = turnsLeft;
     }
 
@@ -27,9 +27,9 @@ public class State_Bomb : State_Script_Interface
         for (int i=0; i<3; i++)
         {
             vals.Clear();
-            vals.Add(dial1);
-            vals.Add(dial2);
-            vals.Add(dial3);
+            vals.Add(dialLeft);
+            vals.Add(dialUp);
+            vals.Add(dialDown);
 
             // add to current selection
             vals[i] = (vals[i] + 1) % 3;
@@ -43,23 +43,23 @@ public class State_Bomb : State_Script_Interface
             createState(vals[0], vals[1], vals[2], newTurns, adjacentContainer, adjacentStates, prefabCopy);
         }
 
-        Debug.Log("old (1,2,3): " + dial1 + ',' + dial2 + ',' + dial3);
+        Debug.Log("old (1,2,3): " + dialLeft + ',' + dialUp + ',' + dialDown);
         Debug.Log("new (1,2,3): " + vals[0] + ',' + vals[1] + ',' + vals[2]);
 
         this.nChildNodes = adjacentStates.Count;
     }
 
     //CHANGE THE PARAMETER TYPES
-    void createState(int d1, int d2, int d3, int turnsLeft, GameObject adjacentContainer, List<AdjacentStateManager_Bomb> adjacentStates, AdjacentStateManager_Bomb prefabCopy)
+    void createState(int dLeft, int dUp, int dDown, int turnsLeft, GameObject adjacentContainer, List<AdjacentStateManager_Bomb> adjacentStates, AdjacentStateManager_Bomb prefabCopy)
     {
-        Debug.Log("P1: " + d1);
-        Debug.Log("P2: " + d2);
-        Debug.Log("P3: " + d3);
+        Debug.Log("P1: " + dLeft);
+        Debug.Log("P2: " + dUp);
+        Debug.Log("P3: " + dDown);
         // spawn here
         AdjacentStateManager_Bomb newState = GameObject.Instantiate(prefabCopy);
         newState.transform.SetParent(adjacentContainer.transform);
         newState.transform.position = new Vector3(newState.transform.position.x, newState.transform.position.y, 0);
-        newState.GetState().setCurState(d1, d2, d3, turnsLeft);
+        newState.GetState().setCurState(dLeft, dUp, dDown, turnsLeft);
         newState.SetState(newState.GetState());
 
         adjacentStates.Add(newState);
@@ -71,16 +71,21 @@ public class State_Bomb : State_Script_Interface
         return nChildNodes;
     }
 
-    public int getD1()
+    public int getDLeft()
     {
-        return dial1;
+        return dialLeft;
     }
-    public int getD2()
+    public int getDUp()
     {
-        return dial2;
+        return dialUp;
     }
-    public int getD3()
+    public int getDDown()
     {
-        return dial3;
+        return dialDown;
+    }
+
+    public int getTurnsLeft()
+    {
+        return turnsLeft;
     }
 }

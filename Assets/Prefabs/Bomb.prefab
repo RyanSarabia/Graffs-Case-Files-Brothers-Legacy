@@ -443,7 +443,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5250809018954118228, guid: 17d1521cbe39f8e48a27ac6b16da7b0d, type: 3}
       propertyPath: m_Name
-      value: Dial2
+      value: DialUp
       objectReference: {fileID: 0}
     - target: {fileID: 5250809018954118228, guid: 17d1521cbe39f8e48a27ac6b16da7b0d, type: 3}
       propertyPath: m_IsActive
@@ -580,7 +580,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5250809018954118228, guid: 17d1521cbe39f8e48a27ac6b16da7b0d, type: 3}
       propertyPath: m_Name
-      value: Dial3
+      value: DialDown
       objectReference: {fileID: 0}
     - target: {fileID: 5250809018954118228, guid: 17d1521cbe39f8e48a27ac6b16da7b0d, type: 3}
       propertyPath: m_IsActive
@@ -717,7 +717,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5250809018954118228, guid: 17d1521cbe39f8e48a27ac6b16da7b0d, type: 3}
       propertyPath: m_Name
-      value: Dial
+      value: DialLeft
       objectReference: {fileID: 0}
     - target: {fileID: 5250809018954118228, guid: 17d1521cbe39f8e48a27ac6b16da7b0d, type: 3}
       propertyPath: m_IsActive

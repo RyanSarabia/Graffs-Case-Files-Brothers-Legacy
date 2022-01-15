@@ -211,9 +211,9 @@ public class BombGameManager : MonoBehaviour, GMInterface
     }
     private void updateObjectsToState()
     {
-        dials[0].setValue(curState.getD1());
-        dials[1].setValue(curState.getD2());
-        dials[2].setValue(curState.getD3());
+        dials[0].setValue(curState.getDLeft());
+        dials[1].setValue(curState.getDUp());
+        dials[2].setValue(curState.getDDown());
     }
 
     // --------------------------- Getters & Setters ----------------------
