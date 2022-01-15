@@ -3651,38 +3651,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 270075920360897928, guid: 931e3b476e9df3043aaeaeae5bf8cdc7, type: 3}
-      propertyPath: hasClue
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 775732847964066677, guid: 931e3b476e9df3043aaeaeae5bf8cdc7, type: 3}
-      propertyPath: hasPickUp
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 775732847964066677, guid: 931e3b476e9df3043aaeaeae5bf8cdc7, type: 3}
-      propertyPath: pickUpAmount
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1487750152741576067, guid: 931e3b476e9df3043aaeaeae5bf8cdc7, type: 3}
-      propertyPath: hasPickUp
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3307748458969604241, guid: 931e3b476e9df3043aaeaeae5bf8cdc7, type: 3}
-      propertyPath: hasPickUp
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3307748458969604241, guid: 931e3b476e9df3043aaeaeae5bf8cdc7, type: 3}
-      propertyPath: pickUpAmount
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3961974767627867789, guid: 931e3b476e9df3043aaeaeae5bf8cdc7, type: 3}
-      propertyPath: pickUpAmount
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4135081452397805441, guid: 931e3b476e9df3043aaeaeae5bf8cdc7, type: 3}
-      propertyPath: hasClue
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5345772899221609728, guid: 931e3b476e9df3043aaeaeae5bf8cdc7, type: 3}
       propertyPath: hintSprite
       value: 
@@ -3754,22 +3722,6 @@ PrefabInstance:
     - target: {fileID: 5345772899221609733, guid: 931e3b476e9df3043aaeaeae5bf8cdc7, type: 3}
       propertyPath: m_Name
       value: Final Grid
-      objectReference: {fileID: 0}
-    - target: {fileID: 5617896141878873241, guid: 931e3b476e9df3043aaeaeae5bf8cdc7, type: 3}
-      propertyPath: hasPickUp
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5617896141878873241, guid: 931e3b476e9df3043aaeaeae5bf8cdc7, type: 3}
-      propertyPath: pickUpAmount
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6241361743109937457, guid: 931e3b476e9df3043aaeaeae5bf8cdc7, type: 3}
-      propertyPath: hasClue
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7461954673456355253, guid: 931e3b476e9df3043aaeaeae5bf8cdc7, type: 3}
-      propertyPath: hasClue
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 931e3b476e9df3043aaeaeae5bf8cdc7, type: 3}

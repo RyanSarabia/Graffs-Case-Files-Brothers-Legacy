@@ -164,6 +164,7 @@ public class Actions : MonoBehaviour
         {
             SFXScript.GetInstance().CreateWallSFX();
             roomToAddWall.ToggleHasWall();
+            roomToAddWall.EnableWallSprite();
             setWallCount(getWallCount() + 1);
         }
         else
@@ -177,6 +178,7 @@ public class Actions : MonoBehaviour
     public void RemoveWallFromRoom(Room roomToRemoveWall)
     {
         roomToRemoveWall.ToggleHasWall();
+        roomToRemoveWall.DisableWallSprite();
         setWallCount(getWallCount() - 1);
         EventBroadcaster.Instance.PostEvent(GraphGameEventNames.ARCH1_WALLS_EVENT);
     }

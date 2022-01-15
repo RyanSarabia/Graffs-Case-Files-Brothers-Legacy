@@ -25,6 +25,7 @@ public class Room : MonoBehaviour, IPointerClickHandler
     [SerializeField] private bool hasLeftWall = false;
     [SerializeField] private bool hasDownWall = false;
     [SerializeField] private bool hasWall = false;
+    [SerializeField] private GameObject wallSprite;
 
     [SerializeField] private GameObject highlight;
     [SerializeField] private GameObject clueIcon;
@@ -336,5 +337,15 @@ public class Room : MonoBehaviour, IPointerClickHandler
     {
         Debug.Log("pointer click");
         //throw new System.NotImplementedException();
+    }
+
+    public void EnableWallSprite()
+    {
+        this.wallSprite.SetActive(true);
+    }
+
+    public void DisableWallSprite()
+    {
+        this.wallSprite.SetActive(false) ;
     }
 }

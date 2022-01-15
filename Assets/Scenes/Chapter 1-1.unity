@@ -2906,6 +2906,7 @@ MonoBehaviour:
   victorySound: {fileID: 8300000, guid: 8e77b8be831a50d499d5bfe3a243ddcf, type: 3}
   defeatSound: {fileID: 0}
   confirmLightingSound: {fileID: 8300000, guid: 971ac69c5f4932a4cbbbc0878ec879bc, type: 3}
+  WaterChangedArch2Sound: {fileID: 0}
   selectNPCSound: {fileID: 0}
   clickGOSignSound: {fileID: 0}
   clickGraphDeviceSound: {fileID: 0}
@@ -4174,14 +4175,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 17718237, guid: 294fb058042fb664e8453f7c52fb9479, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 929573240, guid: 294fb058042fb664e8453f7c52fb9479, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1847316200257329666, guid: 294fb058042fb664e8453f7c52fb9479, type: 3}
       propertyPath: m_Name
       value: Grid 12 1
@@ -4246,20 +4239,8 @@ PrefabInstance:
       propertyPath: traversalManager
       value: 
       objectReference: {fileID: 1374130735}
-    - target: {fileID: 4278668624724022916, guid: 294fb058042fb664e8453f7c52fb9479, type: 3}
+    - target: {fileID: 6386020430468186430, guid: 294fb058042fb664e8453f7c52fb9479, type: 3}
       propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5511816223030727692, guid: 294fb058042fb664e8453f7c52fb9479, type: 3}
-      propertyPath: hasUpWall
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5511816223030727692, guid: 294fb058042fb664e8453f7c52fb9479, type: 3}
-      propertyPath: hasLeftWall
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7223878558825427816, guid: 294fb058042fb664e8453f7c52fb9479, type: 3}
-      propertyPath: hasUpWall
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
