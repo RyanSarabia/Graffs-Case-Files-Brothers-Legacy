@@ -93,9 +93,19 @@ public class Camera3ScriptBomb : MonoBehaviour
     private void ToggleLeftArrowGroup()
     {
         if (prevStateIndex == 0)
+        {
             this.leftArrowGroup.SetActive(false);
+            this.leftArrow.gameObject.SetActive(false);
+
+        }
+
         else
+        {
             this.leftArrowGroup.SetActive(true);
+            this.leftArrow.gameObject.SetActive(true);
+
+        }
+
     }
 
 

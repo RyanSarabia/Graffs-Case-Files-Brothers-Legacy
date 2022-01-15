@@ -6186,6 +6186,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9082760384784868664, guid: 963b9c5d20e5fac449a107c0617e1ddc, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9082760385135680344, guid: 963b9c5d20e5fac449a107c0617e1ddc, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 1
@@ -6267,6 +6271,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ddf93b8f278ce3498b1f2b2ebfe08b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1650312804 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9082760385135680346, guid: 963b9c5d20e5fac449a107c0617e1ddc, type: 3}
+  m_PrefabInstance: {fileID: 1650312800}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1650312806 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1823411950135186897, guid: 963b9c5d20e5fac449a107c0617e1ddc, type: 3}
@@ -7266,6 +7275,7 @@ MonoBehaviour:
   cam4Timeline: {fileID: 1312371242}
   cam4LeftArrowGroup: {fileID: 1861831703}
   lastNode: {fileID: 1650312801}
+  cam2Canvas: {fileID: 1650312804}
   mainCam: {fileID: 1828621328}
   cam2: {fileID: 857216610}
   cam3: {fileID: 384140894}

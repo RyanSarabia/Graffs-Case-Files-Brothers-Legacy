@@ -16,6 +16,7 @@ public class ButtonScripts : MonoBehaviour
     [SerializeField] private Button cam4Timeline;
     [SerializeField] GameObject cam4LeftArrowGroup;
     [SerializeField] GameObject lastNode;
+    [SerializeField] GameObject cam2Canvas;
 
     [SerializeField] private Camera mainCam;
     [SerializeField] private Camera cam2;
@@ -162,8 +163,10 @@ public class ButtonScripts : MonoBehaviour
         cam4.depth = -1;
         mainCam.gameObject.SetActive(false);
         cam2.gameObject.SetActive(false);
+        cam2Canvas.SetActive(false);
         cam3.gameObject.SetActive(false);
         cam4.gameObject.SetActive(false);
+        cam4LeftArrowGroup.SetActive(false);
     }
 
 
@@ -179,13 +182,14 @@ public class ButtonScripts : MonoBehaviour
         cam2.depth = 99;
         cam2.gameObject.SetActive(true);
         cam2.transform.position = new Vector3(this.lastNode.transform.position.x - 1.05f, cam2.transform.position.y, 0);
+        cam2Canvas.SetActive(true);
     }
 
     private void cam3On()
     {
         cam3.depth = 99;
         cam3.gameObject.SetActive(true);
-        
+        cam4LeftArrowGroup.SetActive(false);
     }
 
     private void cam4On()
