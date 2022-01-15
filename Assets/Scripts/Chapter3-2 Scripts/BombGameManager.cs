@@ -45,7 +45,7 @@ public class BombGameManager : MonoBehaviour, GMInterface
     [SerializeField] private List<Dial> dials = new List<Dial>();
     [SerializeField] private List<int> targetStates = new List<int>();
     private Dial activeDial;
-    private int turnsLeft = 14;
+    [SerializeField] private int turnsLeft = 12;
 
     [SerializeField] private AdjacentStateManager_Bomb cam4CurrState;
     [SerializeField] private List<AdjacentStateManager_Bomb> adjacentList = new List<AdjacentStateManager_Bomb>();
@@ -73,12 +73,13 @@ public class BombGameManager : MonoBehaviour, GMInterface
         else
             SFXScript.GetInstance().PlayResetAnySFX();
     }
-    // Update is called once per frame
-    void Update()
+
+    void OnDestroy()
     {
         EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.CAM3_TO_MAINCAM);
         EventBroadcaster.Instance.RemoveObserver(GraphGameEventNames.GRAPH_DEVICE_CONFIRMED);
     }
+
     public void select(Dial dial)
     {
         if(activeDial != null)
@@ -140,6 +141,19 @@ public class BombGameManager : MonoBehaviour, GMInterface
             clickBlocker.gameObject.SetActive(true);
             activeDial.unSelect();
             foreach(Dial dial in dials)
+            {
+                dial.GetComponent<CircleCollider2D>().enabled = false;
+            }
+        } 
+        else if (turnsLeft <= 0)
+        {
+            retryCard.SetActive(true);
+            panelFocus = true;
+            clickBlocker.gameObject.SetActive(true);
+            if(activeDial)
+                activeDial.unSelect();
+            SFXScript.GetInstance().DefeatSFX();
+            foreach (Dial dial in dials)
             {
                 dial.GetComponent<CircleCollider2D>().enabled = false;
             }

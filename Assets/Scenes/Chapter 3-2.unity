@@ -1233,7 +1233,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -223.34012, y: 182.52362}
+  m_AnchoredPosition: {x: -223.34015, y: 182.52362}
   m_SizeDelta: {x: -446.68, y: -365.04724}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &330737082
@@ -2993,7 +2993,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 272.5, y: -155}
-  m_SizeDelta: {x: 340.14, y: 50}
+  m_SizeDelta: {x: 425.86, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1178653433
 MonoBehaviour:
@@ -3035,7 +3035,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You managed to cross in time!
+  m_text: You managed to defuse the bomb!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1d3c27cbd4b620144978c775ea7f143c, type: 2}
   m_sharedMaterial: {fileID: 7813522646372025951, guid: 1d3c27cbd4b620144978c775ea7f143c, type: 2}
@@ -3854,7 +3854,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 272.5, y: -140.155}
-  m_SizeDelta: {x: 361.88, y: 86.35}
+  m_SizeDelta: {x: 481.67, y: 86.35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1394286796
 MonoBehaviour:
@@ -3876,7 +3876,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The bridge collapsed..
+  m_text: You failed to defuse the bomb.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1d3c27cbd4b620144978c775ea7f143c, type: 2}
   m_sharedMaterial: {fileID: 7813522646372025951, guid: 1d3c27cbd4b620144978c775ea7f143c, type: 2}
@@ -3903,8 +3903,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3915,7 +3915,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: -40.08
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -6057,6 +6057,7 @@ MonoBehaviour:
   - {fileID: 1713328736}
   - {fileID: 1293174809}
   targetStates: 010000000200000000000000
+  turnsLeft: 12
   cam4CurrState: {fileID: 1454270642}
   adjacentList: []
   timelineNodes: []
@@ -6729,7 +6730,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Diffuse the bomb
 
-    within 14 turns'
+    within 12 turns'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9b955845665ecbb42922a4bea628450a, type: 2}
   m_sharedMaterial: {fileID: 3742743900307016031, guid: 9b955845665ecbb42922a4bea628450a, type: 2}

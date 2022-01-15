@@ -14,7 +14,6 @@ public class Camera3ScriptBomb : MonoBehaviour
     [SerializeField] Button cam4LeftArrow;
     [SerializeField] private Button revertButton;
     [SerializeField] GameObject leftArrowGroup;
-    
 
     private int prevStateIndex;
     private int siblingCount;
@@ -107,8 +106,6 @@ public class Camera3ScriptBomb : MonoBehaviour
         }
 
     }
-
-
 
     private void RevertButtonClicked()
     {
