@@ -6921,7 +6921,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 27d9841c2ae6c68438bbbc55b6f17b9c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7058,6 +7058,11 @@ MonoBehaviour:
   victorySound: {fileID: 8300000, guid: 8e77b8be831a50d499d5bfe3a243ddcf, type: 3}
   defeatSound: {fileID: 8300000, guid: 6c539449d76c89f44b3b4a65f54c1197, type: 3}
   confirmLightingSound: {fileID: 0}
+  WaterChangedArch2Sound: {fileID: 0}
+  selectNPCSound: {fileID: 0}
+  clickGOSignSound: {fileID: 0}
+  clickGraphDeviceSound: {fileID: 0}
+  clickConfirmGraphDeviceSound: {fileID: 0}
   clickArch3NodeSound: {fileID: 8300000, guid: 7aaf2baa50ce35545ad7cb623a61f8af, type: 3}
   resetAnySound: {fileID: 0}
 --- !u!82 &1780890394
