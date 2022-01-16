@@ -16,6 +16,9 @@ public class AdjacentStateManager : MonoBehaviour
     [SerializeField] Image highlightImage;
     [SerializeField] GameObject arrowHead;
     [SerializeField] int index;
+
+    [SerializeField] private GameObject lanternLeft;
+    [SerializeField] private GameObject lanternRight;
     private State_Bridge state = new State_Bridge();
     Parameters parameters;
 
@@ -43,6 +46,7 @@ public class AdjacentStateManager : MonoBehaviour
         this.state = state;
         this.state.connectToGameObjects(timeCounter, child, man, woman, oldie);
         this.state.updateObjectsToState();
+        this.ToggleLanterns();
         //this.DisableNPCs();
     }
     private void OnMouseEnter()
@@ -115,5 +119,20 @@ public class AdjacentStateManager : MonoBehaviour
         this.man.DisableCollider();
         this.woman.DisableCollider();
         this.oldie.DisableCollider();
+    }
+
+    public void ToggleLanterns()
+    {
+        if (state.getIsLanternLeft() == true)
+        {
+            this.lanternLeft.SetActive(true);
+            this.lanternRight.SetActive(false);
+
+        }
+        else
+        {
+            this.lanternLeft.SetActive(false);
+            this.lanternRight.SetActive(true);
+        }
     }
 }

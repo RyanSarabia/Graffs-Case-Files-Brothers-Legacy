@@ -55,6 +55,9 @@ public class BridgeGameManager : MonoBehaviour
     [SerializeField] private List<TimelineNode> timelineNodes = new List<TimelineNode>();
     [SerializeField] private TimelineNode curTimelineNode;
 
+    [SerializeField] private GameObject lanternLeft;
+    [SerializeField] private GameObject lanternRight;
+
     private static bool firstScene = true;
     private State_Bridge curState;
 
@@ -68,6 +71,8 @@ public class BridgeGameManager : MonoBehaviour
         NPC.Add(man);
         NPC.Add(woman);
         NPC.Add(oldie);
+        this.lanternLeft.SetActive(true);
+        this.lanternRight.SetActive(false);
 
         timelineNodes.Add(curTimelineNode);
         curState = newState();
@@ -188,6 +193,7 @@ public class BridgeGameManager : MonoBehaviour
         SFXScript.GetInstance().ClickGoSignSFX();
         EventBroadcaster.Instance.PostEvent(GraphGameEventNames.NPCS_MOVED);
         SetGoTextRed();
+        this.ToggleLanterns();
     }
 
     private State_Bridge newState()
@@ -297,6 +303,7 @@ public class BridgeGameManager : MonoBehaviour
         this.curState.generateAdjacentNodes(adjacentContainer, adjacentList, adjacentStatePrefab);
         UpdateCam4State(curState);
         this.gameObject.GetComponent<ButtonScripts>().SetPrevStatesCount(this.GetPrevStatesCount());
+        ToggleLanterns();
         //this.DisableNPCs();
     }
 
@@ -413,4 +420,18 @@ public class BridgeGameManager : MonoBehaviour
         this.goText.color = new Color(0.3789885f, 1.0f, 0.3537736f);
     }
 
+    private void ToggleLanterns()
+    {
+        if (curState.getIsLanternLeft() == true)
+        {
+            this.lanternLeft.SetActive(true);
+            this.lanternRight.SetActive(false);
+                
+        }
+        else
+        {
+            this.lanternLeft.SetActive(false);
+            this.lanternRight.SetActive(true);
+        }
+    }
 }

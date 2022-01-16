@@ -204,6 +204,7 @@ public class State_Bridge: State_Script_Interface
         newState.transform.SetParent(adjacentContainer.transform);
         newState.transform.position = new Vector3(newState.transform.position.x, newState.transform.position.y, 0);
         newState.getState().setCurState(timeTotal, isLanternLeft, left, right);
+        newState.ToggleLanterns();
 
         //State_Pitchers newState = new State_Pitchers(); //pangtest ko lang tong line na to pero mali to
         // hindi to gagana hanggat wala yung mismong newState sa scene
