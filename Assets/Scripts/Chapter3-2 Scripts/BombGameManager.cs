@@ -140,7 +140,8 @@ public class BombGameManager : MonoBehaviour, GMInterface
             panelFocus = true;
             clickBlocker.gameObject.SetActive(true);
             activeDial.unSelect();
-            foreach(Dial dial in dials)
+            SFXScript.GetInstance().VictorySFX();
+            foreach (Dial dial in dials)
             {
                 dial.GetComponent<CircleCollider2D>().enabled = false;
             }
