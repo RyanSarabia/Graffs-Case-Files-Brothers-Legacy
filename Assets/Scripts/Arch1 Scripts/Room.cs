@@ -49,6 +49,8 @@ public class Room : MonoBehaviour, IPointerClickHandler
         //roomLight.SetActive(false);
         collider = GetComponent<BoxCollider2D>();
         collider.enabled = true;
+        //this.pickUpSprite.transform.position = new Vector3(this.pickUpSprite.transform.position.x, this.pickUpSprite.transform.position.y - 0.45f, this.pickUpSprite.transform.position.z);
+        //this.clueIcon.transform.position = new Vector3(this.clueIcon.transform.position.x, this.clueIcon.transform.position.y - 0.45f, this.clueIcon.transform.position.z);
     }
 
     // Update is called once per frame
