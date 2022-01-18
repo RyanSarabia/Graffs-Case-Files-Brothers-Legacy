@@ -21,4 +21,11 @@ public class Scroll : MonoBehaviour
 
         img.material.mainTextureOffset = offset;
     }
+
+    private void OnDestroy()
+    {
+        Vector2 offset = new Vector2(0,0);
+
+        img.material.mainTextureOffset = offset;
+    }
 }
