@@ -19,6 +19,8 @@ public class SearchTraversal : MonoBehaviour
     [SerializeField] private Button confirmButton;
     [SerializeField] private Animator briefTextEnergy;
     [SerializeField] private Animator briefTextLightUses;
+
+    [SerializeField] private bool isChapter3;
     private bool hasChosenLight = false;
 
     private int energyHolder = 1;
@@ -140,15 +142,19 @@ public class SearchTraversal : MonoBehaviour
             EnableDFSButton();
             EnableConfirmButton();
             Room lightUpRoom = searchQueue[0];
-            preLightCounter = 0;
-            //StartCoroutine(lighterDelay(lightUpRoom, n));
-            for(preLightCounter = 0; preLightCounter < energyHolder; preLightCounter++)
+            if (!isChapter3)
             {
-                if (preLightCounter < searchQueue.Count)
-                    searchQueue[preLightCounter].preLightOn();
-                else
-                    break;
+                preLightCounter = 0;
+                //StartCoroutine(lighterDelay(lightUpRoom, n));
+                for (preLightCounter = 0; preLightCounter < energyHolder; preLightCounter++)
+                {
+                    if (preLightCounter < searchQueue.Count)
+                        searchQueue[preLightCounter].preLightOn();
+                    else
+                        break;
+                }
             }
+            
         }
         else
         {
@@ -226,15 +232,19 @@ public class SearchTraversal : MonoBehaviour
             EnableBFSButton();
             EnableConfirmButton();
             Room lightUpRoom = searchQueue[0];
-            preLightCounter = 0;
-            //StartCoroutine(lighterDelay(lightUpRoom, n));
-            for (preLightCounter = 0; preLightCounter < energyHolder; preLightCounter++)
+            if (!isChapter3)
             {
-                if (preLightCounter < searchQueue.Count)
-                    searchQueue[preLightCounter].preLightOn();
-                else
-                    break;
+                preLightCounter = 0;
+                //StartCoroutine(lighterDelay(lightUpRoom, n));
+                for (preLightCounter = 0; preLightCounter < energyHolder; preLightCounter++)
+                {
+                    if (preLightCounter < searchQueue.Count)
+                        searchQueue[preLightCounter].preLightOn();
+                    else
+                        break;
+                }
             }
+            
         }
         else
         {
@@ -360,7 +370,8 @@ public class SearchTraversal : MonoBehaviour
             this.energyToBeUsed.SetText(energyHolder.ToString());
             if (hasChosenLight && searchQueue.Count >= energyHolder)
             {
-                searchQueue[preLightCounter].preLightOn();
+                if (!isChapter3)
+                    searchQueue[preLightCounter].preLightOn();
                 preLightCounter++;
             }
         }
@@ -375,7 +386,8 @@ public class SearchTraversal : MonoBehaviour
             this.energyToBeUsed.SetText(energyHolder.ToString());
             if (hasChosenLight && searchQueue.Count > energyHolder)
             {
-                searchQueue[preLightCounter - 1].preLightOff();
+                if (!isChapter3)
+                    searchQueue[preLightCounter - 1].preLightOff();
                 preLightCounter--;
             }
         }
