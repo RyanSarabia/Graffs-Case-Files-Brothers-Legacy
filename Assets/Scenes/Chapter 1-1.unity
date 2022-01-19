@@ -1423,6 +1423,7 @@ MonoBehaviour:
   victoryCard: {fileID: 320963307}
   clueNumText: {fileID: 1557518873}
   clueTotalText: {fileID: 25998318}
+  briefTextMaxWalls: {fileID: 0}
   traversalManager: {fileID: 1374130735}
 --- !u!1001 &701689627
 PrefabInstance:
@@ -2787,8 +2788,11 @@ MonoBehaviour:
   bfsButton: {fileID: 776952947}
   dfsButton: {fileID: 1647913278}
   confirmButton: {fileID: 1986492681}
+  plusButton: {fileID: 384113493}
+  minusButton: {fileID: 1494054970}
   briefTextEnergy: {fileID: 1278207063}
   briefTextLightUses: {fileID: 435271669}
+  isChapter3: 0
 --- !u!1 &1406851104
 GameObject:
   m_ObjectHideFlags: 0

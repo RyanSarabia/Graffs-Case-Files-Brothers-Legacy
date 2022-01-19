@@ -3559,6 +3559,8 @@ MonoBehaviour:
   bfsButton: {fileID: 776952947}
   dfsButton: {fileID: 1647913278}
   confirmButton: {fileID: 1986492681}
+  plusButton: {fileID: 384113493}
+  minusButton: {fileID: 1494054970}
   briefTextEnergy: {fileID: 1278207063}
   briefTextLightUses: {fileID: 435271669}
   isChapter3: 1

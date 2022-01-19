@@ -17,6 +17,8 @@ public class SearchTraversal : MonoBehaviour
     [SerializeField] private Button bfsButton;
     [SerializeField] private Button dfsButton;
     [SerializeField] private Button confirmButton;
+    [SerializeField] private Button plusButton;
+    [SerializeField] private Button minusButton;
     [SerializeField] private Animator briefTextEnergy;
     [SerializeField] private Animator briefTextLightUses;
     
@@ -37,6 +39,7 @@ public class SearchTraversal : MonoBehaviour
     void Start()
     {
         DisableConfirmButton();
+        DisablePlusMinus();
         this.energyText.SetText("Remaining Energy: " + nEnergy);
         this.energyToBeUsed.SetText(energyHolder.ToString());
         this.lightUsesText.SetText("Light Uses Left: " + nLightUses);
@@ -141,6 +144,7 @@ public class SearchTraversal : MonoBehaviour
         {
             DisableBFSButton();
             EnableDFSButton();
+            EnablePlusMinus();
             EnableConfirmButton();
             Room lightUpRoom = searchQueue[0];
             if (!isChapter3)
@@ -231,6 +235,7 @@ public class SearchTraversal : MonoBehaviour
         {
             DisableDFSButton();
             EnableBFSButton();
+            EnablePlusMinus();
             EnableConfirmButton();
             Room lightUpRoom = searchQueue[0];
             if (!isChapter3)
@@ -295,6 +300,7 @@ public class SearchTraversal : MonoBehaviour
             DisableConfirmButton();
             EnableBFSButton();
             EnableDFSButton();
+            DisablePlusMinus();
             SFXScript.GetInstance().ConfirmLightingSFX();            
 
         }
@@ -414,6 +420,7 @@ public class SearchTraversal : MonoBehaviour
         {
             EnableBFSButton();
             EnableDFSButton();
+            DisablePlusMinus();
             this.energyHolder = 1;
             this.energyToBeUsed.SetText(""+ energyHolder);
         }
@@ -431,6 +438,18 @@ public class SearchTraversal : MonoBehaviour
     private void EnableConfirmButton()
     {
         this.confirmButton.interactable = true;
+    }
+
+    private void EnablePlusMinus()
+    {
+        this.plusButton.interactable = true;
+        this.minusButton.interactable = true;
+    }
+
+    private void DisablePlusMinus()
+    {
+        this.plusButton.interactable = false;
+        this.minusButton.interactable = false;
     }
 
     private void DisableDFSButton()
