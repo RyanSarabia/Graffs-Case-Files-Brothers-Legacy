@@ -205,10 +205,10 @@ MonoBehaviour:
       guid: ed09f63b57c2db54d93b49f7ed9c69af
     - name: office_outside
       pathPrefix: Backgrounds/MainBackground
-      guid: 7ed8f0c338d7c6c47a930f3e68683364
+      guid: 2933e3d4314eb70489a392599fbd2a67
     - name: streets
       pathPrefix: Backgrounds/MainBackground
-      guid: 09e50ae4981824f42b86c5312d691a07
+      guid: 449e8e05a247c904ba3d8c7a95933590
     - name: office_zoom
       pathPrefix: Backgrounds/MainBackground
       guid: 7643d797052b5d746bf13c986896a9a0
