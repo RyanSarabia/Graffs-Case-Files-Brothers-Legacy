@@ -3551,7 +3551,7 @@ MonoBehaviour:
   graphContainer: {fileID: 1040286163}
   energyBar: {fileID: 495070785}
   nRooms: 5
-  nEnergy: 25
+  nEnergy: 22
   nLightUses: 15
   lightUsesText: {fileID: 1879529358}
   energyText: {fileID: 114227814}
