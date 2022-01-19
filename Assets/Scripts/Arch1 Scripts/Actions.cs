@@ -23,6 +23,7 @@ public class Actions : MonoBehaviour
     [SerializeField] private GameObject victoryCard;
     [SerializeField] TextMeshProUGUI clueNumText;
     [SerializeField] TextMeshProUGUI clueTotalText;
+    [SerializeField] private Animator briefTextMaxWalls;
 
     [SerializeField] SearchTraversal traversalManager;
     private static bool firstScene = true;
@@ -169,6 +170,7 @@ public class Actions : MonoBehaviour
         }
         else
         {
+            briefTextMaxWalls.Play("BriefText");
             Debug.Log("Max walls reached");
             //Max walls reached
         }

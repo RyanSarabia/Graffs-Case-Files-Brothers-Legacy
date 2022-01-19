@@ -19,6 +19,7 @@ public class SearchTraversal : MonoBehaviour
     [SerializeField] private Button confirmButton;
     [SerializeField] private Animator briefTextEnergy;
     [SerializeField] private Animator briefTextLightUses;
+    
 
     [SerializeField] private bool isChapter3;
     private bool hasChosenLight = false;
