@@ -14,11 +14,10 @@ public class OverworldIcons : MonoBehaviour
 
     void Start()
     {
-        if (!mainIconEnabled)
-            mainIcon.gameObject.SetActive(false);
-        if (!exclamationEnabled)
-            exclamationPoint.gameObject.SetActive(false);
-
+        //if (!mainIconEnabled)
+        //    mainIcon.gameObject.SetActive(false);
+        //if (!exclamationEnabled)
+        //    exclamationPoint.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -38,6 +37,6 @@ public class OverworldIcons : MonoBehaviour
 
     private void OnMouseDown()
     {
-        SceneLoader.GetInstance().loadScene(id);
+        //SceneLoader.GetInstance().loadScene(id);
     }
 }
