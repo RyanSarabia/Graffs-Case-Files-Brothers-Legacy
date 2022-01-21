@@ -554,9 +554,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 464316677}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82407842e6303bf4895428c7b01ef5f8, type: 3}
+  m_Script: {fileID: 11500000, guid: 088df4be96371e54f8ea6171a4489821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxVector: {x: 8.85, y: 5, z: -10}
+  minVector: {x: -8.85, y: -5, z: -10}
   mainCamera: {fileID: 464316679}
 --- !u!1001 &606800403
 PrefabInstance:
