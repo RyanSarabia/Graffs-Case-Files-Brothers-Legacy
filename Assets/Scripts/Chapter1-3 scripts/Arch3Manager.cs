@@ -30,6 +30,8 @@ public class Arch3Manager : MonoBehaviour
     [SerializeField] private List<int> edgeTurnChange = new List<int>();
     [SerializeField] private List<int> edgeWeightChange = new List<int>();
 
+    [SerializeField] private bool repeatingChange = false;
+
     private bool waitForAnimation;
     public static Arch3Manager GetInstance()
     {
@@ -42,12 +44,9 @@ public class Arch3Manager : MonoBehaviour
             instance = this;
         else
             GameObject.Destroy(gameObject);
-    }
+    }    
 
-    
-
-    Arch3Node curSelectedNode;
-   
+    Arch3Node curSelectedNode;   
 
     // Start is called before the first frame update
     void Start()
@@ -115,7 +114,7 @@ public class Arch3Manager : MonoBehaviour
                     }
                 }            
             }
-            if(curSelectedNode == finalNode && stepCount <= finalEdgeWeight)
+            if(curSelectedNode == finalNode && stepCount < finalEdgeWeight)
             {
                 victoryCard.SetActive(true);
                 panelFocus = true;
@@ -123,6 +122,9 @@ public class Arch3Manager : MonoBehaviour
                 SFXScript.GetInstance().VictorySFX();
             }
             SFXScript.GetInstance().ClickNodeArch3SFX();
+
+            if (repeatingChange)
+                RepeatingChange.GetInstance().changeInit(turnCount);
         }
     }
 
