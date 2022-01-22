@@ -8,12 +8,15 @@ public class Culprit : MonoBehaviour
     [SerializeField] Arch3Node goal;
     [SerializeField] Arch3Edge path;
 
+    [SerializeField] private bool shouldAnimate;
+
     private int stepsTaken;
     private int stepsToTake;
     private bool shouldMove = false;
     private float lerpPercent = 0.0f;
     private float endVal;
     bool hasCalledRetry = false;
+    Animator animator;
 
     private void Awake()
     {
@@ -44,6 +47,14 @@ public class Culprit : MonoBehaviour
             shouldMove = true;
             Arch3Manager.GetInstance().setWait(true);
         }
+
+        if (shouldAnimate)
+        {
+            if (animator = this.GetComponent<Animator>())
+            {
+                animator.Play("CulpritMove");
+            }
+        }
     }
 
     // Update is called once per frame  
@@ -68,6 +79,10 @@ public class Culprit : MonoBehaviour
             {
                 shouldMove = false;
                 Arch3Manager.GetInstance().setWait(false);
+                if (animator = this.GetComponent<Animator>())
+                {
+                    this.GetComponent<Animator>().Play("Idle");
+                }
             }
            
            
