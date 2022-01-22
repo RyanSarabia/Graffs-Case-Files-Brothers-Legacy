@@ -14,7 +14,7 @@ public class OverlayCanvas : MonoBehaviour
 
     public void openModal(Parameters par)
     {
-        this.gameObject.SetActive(true);
+        //this.gameObject.SetActive(true);
     }
 
     // Update is called once per frame

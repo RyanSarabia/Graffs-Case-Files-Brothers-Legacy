@@ -37,7 +37,7 @@ public class OverworldIcons : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        nodeBase.color = Color.yellow;
+        nodeBase.color = Color.cyan;
     }
     private void OnMouseExit()
     {
