@@ -182,7 +182,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 884648697
   m_SortingLayer: 1
-  m_SortingOrder: 2
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: a8efad6359a87be46abc8df7caa1ed92, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4279,6 +4279,11 @@ MonoBehaviour:
   victorySound: {fileID: 8300000, guid: 8e77b8be831a50d499d5bfe3a243ddcf, type: 3}
   defeatSound: {fileID: 8300000, guid: 6c539449d76c89f44b3b4a65f54c1197, type: 3}
   confirmLightingSound: {fileID: 0}
+  WaterChangedArch2Sound: {fileID: 0}
+  selectNPCSound: {fileID: 0}
+  clickGOSignSound: {fileID: 0}
+  clickGraphDeviceSound: {fileID: 0}
+  clickConfirmGraphDeviceSound: {fileID: 0}
   clickArch3NodeSound: {fileID: 8300000, guid: 7aaf2baa50ce35545ad7cb623a61f8af, type: 3}
   resetAnySound: {fileID: 0}
 --- !u!82 &1808761706
@@ -5560,6 +5565,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1960971555}
+    - target: {fileID: 8314050158310648125, guid: da39608f64d43f042ab521c9cbc2a1a0, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8314050158310648125, guid: da39608f64d43f042ab521c9cbc2a1a0, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8314050158310648125, guid: da39608f64d43f042ab521c9cbc2a1a0, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8314050158348973777, guid: da39608f64d43f042ab521c9cbc2a1a0, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
