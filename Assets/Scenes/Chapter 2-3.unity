@@ -2302,7 +2302,7 @@ MonoBehaviour:
   culprits:
   - {fileID: 1420457185}
   nodeCheckPoints:
-  - {fileID: 163778025}
+  - {fileID: 1822759202}
   anim: {fileID: 1794437088}
   animation:
   - 2-3 Cam to the right
@@ -2873,7 +2873,7 @@ PrefabInstance:
     - target: {fileID: 6838455003825778537, guid: 42f3c2499801afa44a25933dface55c6, type: 3}
       propertyPath: goal
       value: 
-      objectReference: {fileID: 1822759202}
+      objectReference: {fileID: 163778025}
     - target: {fileID: 6838455003825778537, guid: 42f3c2499801afa44a25933dface55c6, type: 3}
       propertyPath: path
       value: 
@@ -3597,7 +3597,7 @@ PrefabInstance:
     - target: {fileID: 6838455003825778537, guid: 42f3c2499801afa44a25933dface55c6, type: 3}
       propertyPath: goal
       value: 
-      objectReference: {fileID: 1708616422}
+      objectReference: {fileID: 961465415}
     - target: {fileID: 6838455003825778537, guid: 42f3c2499801afa44a25933dface55c6, type: 3}
       propertyPath: path
       value: 
