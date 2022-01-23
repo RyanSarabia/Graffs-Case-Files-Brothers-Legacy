@@ -689,6 +689,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: mapNode (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 5006388425258822918, guid: fccad1c44b0274a4c84f88db1c282fab, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fccad1c44b0274a4c84f88db1c282fab, type: 3}
 --- !u!224 &157928388 stripped
@@ -1526,7 +1530,7 @@ PrefabInstance:
       objectReference: {fileID: 688131157}
     - target: {fileID: 6189675861376172836, guid: 25133931ee337874298707ba3b62c017, type: 3}
       propertyPath: weight
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25133931ee337874298707ba3b62c017, type: 3}
@@ -1935,7 +1939,7 @@ PrefabInstance:
       objectReference: {fileID: 2013716835}
     - target: {fileID: 6189675861376172836, guid: 25133931ee337874298707ba3b62c017, type: 3}
       propertyPath: weight
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25133931ee337874298707ba3b62c017, type: 3}
@@ -7958,6 +7962,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: mapNode (25)
       objectReference: {fileID: 0}
+    - target: {fileID: 5006388425258822918, guid: fccad1c44b0274a4c84f88db1c282fab, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fccad1c44b0274a4c84f88db1c282fab, type: 3}
 --- !u!114 &1420457185 stripped
@@ -8375,7 +8383,7 @@ MonoBehaviour:
   startingNode: {fileID: 1545382998}
   culprit: {fileID: 718336743}
   stepCountText: {fileID: 1142363168}
-  finalNode: {fileID: 961465415}
+  finalNode: {fileID: 1708616422}
   finalEdge: {fileID: 1211901543}
   victoryCard: {fileID: 1816722194}
   retryCard: {fileID: 1120068504}

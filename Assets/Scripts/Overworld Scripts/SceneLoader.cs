@@ -42,7 +42,7 @@ public class SceneLoader : MonoBehaviour
 
     public void returnToOverworld()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("OverworldMap");
     }
 
     public void reloadScene()
