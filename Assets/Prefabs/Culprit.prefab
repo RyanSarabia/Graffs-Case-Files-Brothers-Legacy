@@ -132,4 +132,5 @@ MonoBehaviour:
   source: {fileID: 0}
   goal: {fileID: 0}
   path: {fileID: 0}
+  square: {fileID: 1001764635432644715}
   shouldAnimate: 0

@@ -1530,7 +1530,7 @@ PrefabInstance:
       objectReference: {fileID: 688131157}
     - target: {fileID: 6189675861376172836, guid: 25133931ee337874298707ba3b62c017, type: 3}
       propertyPath: weight
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25133931ee337874298707ba3b62c017, type: 3}
@@ -3158,7 +3158,7 @@ PrefabInstance:
       objectReference: {fileID: 1016866103}
     - target: {fileID: 6189675861376172836, guid: 25133931ee337874298707ba3b62c017, type: 3}
       propertyPath: weight
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25133931ee337874298707ba3b62c017, type: 3}
@@ -3345,7 +3345,7 @@ PrefabInstance:
       objectReference: {fileID: 1293719292}
     - target: {fileID: 6189675861376172836, guid: 25133931ee337874298707ba3b62c017, type: 3}
       propertyPath: weight
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25133931ee337874298707ba3b62c017, type: 3}
@@ -8398,6 +8398,7 @@ MonoBehaviour:
   edgeTurnChange: 0200000004000000070000000e0000000e000000
   edgeWeightChange: fdffffff04000000f6fffffffdfffffffdffffff
   repeatingChange: 1
+  multiCulprit: 1
 --- !u!4 &1563472839
 Transform:
   m_ObjectHideFlags: 0
@@ -8752,7 +8753,7 @@ PrefabInstance:
       objectReference: {fileID: 2013716835}
     - target: {fileID: 6189675861376172836, guid: 25133931ee337874298707ba3b62c017, type: 3}
       propertyPath: weight
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25133931ee337874298707ba3b62c017, type: 3}

@@ -31,6 +31,7 @@ public class Arch3Manager : MonoBehaviour
     [SerializeField] private List<int> edgeWeightChange = new List<int>();
 
     [SerializeField] private bool repeatingChange = false;
+    [SerializeField] private bool multiCulprit = false;
 
     private bool waitForAnimation;
     public static Arch3Manager GetInstance()
@@ -125,6 +126,9 @@ public class Arch3Manager : MonoBehaviour
 
             if (repeatingChange)
                 RepeatingChange.GetInstance().changeInit(turnCount);
+
+            if (multiCulprit)
+                MultiCulprit.GetInstance().changeInit(curSelectedNode);
         }
     }
 
@@ -136,6 +140,10 @@ public class Arch3Manager : MonoBehaviour
     public void setCulprit(Culprit var)
     {
         culprit = var;
+    }
+    public Culprit getCulprit()
+    {
+        return culprit;
     }
 
     public int weightOfNodes()

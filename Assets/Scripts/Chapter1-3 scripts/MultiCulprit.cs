@@ -4,6 +4,20 @@ using UnityEngine;
 
 public class MultiCulprit : MonoBehaviour
 {
+    private static MultiCulprit instance;
+    public static MultiCulprit GetInstance()
+    {
+        return instance;
+    }
+
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+            GameObject.Destroy(gameObject);
+    }
+
     [SerializeField] Camera mainCamera;
     [SerializeField] Vector3 movement;
     [SerializeField] private List<Culprit> culprits = new List<Culprit>();
@@ -19,15 +33,22 @@ public class MultiCulprit : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        for(int i = 0; i < nodeCheckPoints.Count; i++)
+       
+    }
+
+    public void changeInit(Arch3Node node)
+    {
+        for (int i = 0; i < nodeCheckPoints.Count; i++)
         {
-            if(Arch3Manager.GetInstance().getCurNode() == nodeCheckPoints[i])
+            if (node == nodeCheckPoints[i])
             {
+                Arch3Manager.GetInstance().getCulprit().setSquare(false);
                 Arch3Manager.GetInstance().setCulprit(culprits[i]);
+                Arch3Manager.GetInstance().getCulprit().setSquare(true);
                 anim.Play(animation[i]);
                 Arch3Manager.GetInstance().setStepCount(0);
             }
         }
     }
-       
+
 }

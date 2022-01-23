@@ -7,6 +7,7 @@ public class Culprit : MonoBehaviour
     [SerializeField] Arch3Node source;
     [SerializeField] Arch3Node goal;
     [SerializeField] Arch3Edge path;
+    [SerializeField] GameObject square;
 
     [SerializeField] private bool shouldAnimate;
 
@@ -55,6 +56,11 @@ public class Culprit : MonoBehaviour
                 animator.Play("CulpritMove");
             }
         }
+    }
+
+    public void setSquare(bool state)
+    {
+        square.SetActive(state);
     }
 
     // Update is called once per frame  
