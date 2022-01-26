@@ -21,7 +21,7 @@ public class SceneLoader : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame
@@ -30,14 +30,14 @@ public class SceneLoader : MonoBehaviour
         
     }
 
-    public void loadScene(int id)
+    public void loadSceneID(int id)
     {
-        switch (id)
-        {
-            case 1: SceneManager.LoadScene(1); break;
-            case 2: SceneManager.LoadScene(2); break;
-            case 3: SceneManager.LoadScene(3); break;           
-        }
+        SceneManager.LoadScene(id);
+    }
+
+    public void loadSceneString(string name)
+    {
+        SceneManager.LoadScene(name);
     }
 
     public void returnToOverworld()
@@ -48,5 +48,15 @@ public class SceneLoader : MonoBehaviour
     public void reloadScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void SavePlayer(int level)
+    {
+        SaveSystem.SavePlayer(level);
+    }
+
+    public void deleteSave()
+    {
+        SaveSystem.deleteSave();
     }
 }

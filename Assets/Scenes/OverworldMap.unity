@@ -142,6 +142,10 @@ PrefabInstance:
       propertyPath: locName
       value: '3-1: Factory'
       objectReference: {fileID: 0}
+    - target: {fileID: 8907563045690859488, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
+      propertyPath: sceneName
+      value: Chapter 3-1
+      objectReference: {fileID: 0}
     - target: {fileID: 8907563045690859489, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -245,6 +249,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8907563045690859489, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
   m_PrefabInstance: {fileID: 292058861}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &292058864 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8907563045690859488, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
+  m_PrefabInstance: {fileID: 292058861}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb2efcf906c6d174a95d0b027bc5f12d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &307469034
 GameObject:
   m_ObjectHideFlags: 0
@@ -319,6 +334,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1112681411}
     m_Modifications:
+    - target: {fileID: 2277369530354533301, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3189260210727897100, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
       propertyPath: m_Name
       value: Agency
@@ -330,6 +349,10 @@ PrefabInstance:
     - target: {fileID: 8907563045690859488, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
       propertyPath: locName
       value: '(#)-Cutscene: Detective Agency'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8907563045690859488, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
+      propertyPath: sceneName
+      value: 1-1
       objectReference: {fileID: 0}
     - target: {fileID: 8907563045690859489, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
       propertyPath: m_Pivot.x
@@ -434,6 +457,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8907563045690859489, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
   m_PrefabInstance: {fileID: 376557760}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &376557762 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8907563045690859488, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
+  m_PrefabInstance: {fileID: 376557760}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb2efcf906c6d174a95d0b027bc5f12d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &431322169
 GameObject:
   m_ObjectHideFlags: 0
@@ -991,6 +1025,10 @@ PrefabInstance:
       propertyPath: locName
       value: '3-2: Factory'
       objectReference: {fileID: 0}
+    - target: {fileID: 8907563045690859488, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
+      propertyPath: sceneName
+      value: Chapter 3-2
+      objectReference: {fileID: 0}
     - target: {fileID: 8907563045690859489, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1248,6 +1286,10 @@ PrefabInstance:
       propertyPath: locName
       value: '1-2: Bakery'
       objectReference: {fileID: 0}
+    - target: {fileID: 8907563045690859488, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
+      propertyPath: sceneName
+      value: Chapter 1-2
+      objectReference: {fileID: 0}
     - target: {fileID: 8907563045690859489, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1351,6 +1393,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8907563045690859489, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
   m_PrefabInstance: {fileID: 791991510}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &791991513 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8907563045690859488, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
+  m_PrefabInstance: {fileID: 791991510}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb2efcf906c6d174a95d0b027bc5f12d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &854360099
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1369,6 +1422,10 @@ PrefabInstance:
     - target: {fileID: 8907563045690859488, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
       propertyPath: locName
       value: '1-3: Park'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8907563045690859488, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
+      propertyPath: sceneName
+      value: Chapter 1-3
       objectReference: {fileID: 0}
     - target: {fileID: 8907563045690859489, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
       propertyPath: m_Pivot.x
@@ -1473,6 +1530,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8907563045690859489, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
   m_PrefabInstance: {fileID: 854360099}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &854360102 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8907563045690859488, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
+  m_PrefabInstance: {fileID: 854360099}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb2efcf906c6d174a95d0b027bc5f12d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &922040416
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1491,6 +1559,10 @@ PrefabInstance:
     - target: {fileID: 8907563045690859488, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
       propertyPath: locName
       value: '1-1: Suburbs'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8907563045690859488, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
+      propertyPath: sceneName
+      value: Chapter 1-1
       objectReference: {fileID: 0}
     - target: {fileID: 8907563045690859488, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
       propertyPath: description
@@ -1694,6 +1766,10 @@ PrefabInstance:
       propertyPath: locName
       value: '2-2: Police'
       objectReference: {fileID: 0}
+    - target: {fileID: 8907563045690859488, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
+      propertyPath: sceneName
+      value: Chapter 2-2
+      objectReference: {fileID: 0}
     - target: {fileID: 8907563045690859489, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1797,6 +1873,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8907563045690859489, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
   m_PrefabInstance: {fileID: 1106340338}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1106340341 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8907563045690859488, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
+  m_PrefabInstance: {fileID: 1106340338}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb2efcf906c6d174a95d0b027bc5f12d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1112681405
 GameObject:
   m_ObjectHideFlags: 0
@@ -2189,6 +2276,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8907563045690859489, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
   m_PrefabInstance: {fileID: 1339713653}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1339713655 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8907563045690859488, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
+  m_PrefabInstance: {fileID: 1339713653}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb2efcf906c6d174a95d0b027bc5f12d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1429361670
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2207,6 +2305,10 @@ PrefabInstance:
     - target: {fileID: 8907563045690859488, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
       propertyPath: locName
       value: '2-3: Hotel'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8907563045690859488, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
+      propertyPath: sceneName
+      value: Chapter 2-3
       objectReference: {fileID: 0}
     - target: {fileID: 8907563045690859489, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
       propertyPath: m_Pivot.x
@@ -2311,6 +2413,28 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8907563045690859489, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
   m_PrefabInstance: {fileID: 1429361670}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1429361673 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8907563045690859488, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
+  m_PrefabInstance: {fileID: 1429361670}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb2efcf906c6d174a95d0b027bc5f12d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1627608744 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8907563045690859488, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
+  m_PrefabInstance: {fileID: 922040416}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb2efcf906c6d174a95d0b027bc5f12d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1797603947
 GameObject:
   m_ObjectHideFlags: 0
@@ -2408,6 +2532,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1264924135}
+        m_TargetAssemblyTypeName: OverlayCanvas, Assembly-CSharp
+        m_MethodName: goBtnClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1797603950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2484,6 +2620,10 @@ PrefabInstance:
     - target: {fileID: 8907563045690859488, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
       propertyPath: locName
       value: '3-3: Wharf'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8907563045690859488, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
+      propertyPath: sceneName
+      value: Chapter 3-3
       objectReference: {fileID: 0}
     - target: {fileID: 8907563045690859489, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
       propertyPath: m_Pivot.x
@@ -2588,6 +2728,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8907563045690859489, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
   m_PrefabInstance: {fileID: 1823969094}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1823969097 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8907563045690859488, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
+  m_PrefabInstance: {fileID: 1823969094}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb2efcf906c6d174a95d0b027bc5f12d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1943032656
 GameObject:
   m_ObjectHideFlags: 0
@@ -2722,6 +2873,86 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1943032656}
   m_CullTransparentMesh: 1
+--- !u!1 &1995415827
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1995415829}
+  - component: {fileID: 1995415828}
+  - component: {fileID: 1995415830}
+  m_Layer: 0
+  m_Name: SceneLoader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1995415828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995415827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6ef0a6d36b51184c8a523c708b14a2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1995415829
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995415827}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.191235, y: 0.8437004, z: -0.6095677}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1995415830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995415827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5d54ca05835d2b46b194070b73e1c2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icons:
+  - {fileID: 376557762}
+  - {fileID: 1627608744}
+  - {fileID: 791991513}
+  - {fileID: 854360102}
+  - {fileID: 2108583388}
+  - {fileID: 1106340341}
+  - {fileID: 1429361673}
+  - {fileID: 292058864}
+  - {fileID: 2054898846}
+  - {fileID: 1823969097}
+  - {fileID: 1339713655}
+--- !u!114 &2054898846 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8907563045690859488, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
+  m_PrefabInstance: {fileID: 606800403}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb2efcf906c6d174a95d0b027bc5f12d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2101387018
 GameObject:
   m_ObjectHideFlags: 0
@@ -2897,6 +3128,10 @@ PrefabInstance:
       propertyPath: locName
       value: '2-1: Forest'
       objectReference: {fileID: 0}
+    - target: {fileID: 8907563045690859488, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
+      propertyPath: sceneName
+      value: Chapter 2-1
+      objectReference: {fileID: 0}
     - target: {fileID: 8907563045690859489, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3000,3 +3235,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8907563045690859489, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
   m_PrefabInstance: {fileID: 2108583385}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2108583388 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8907563045690859488, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
+  m_PrefabInstance: {fileID: 2108583385}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb2efcf906c6d174a95d0b027bc5f12d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

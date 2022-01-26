@@ -23,7 +23,7 @@ public class MultiCulprit : MonoBehaviour
     [SerializeField] private List<Culprit> culprits = new List<Culprit>();
     [SerializeField] private List<Arch3Node> nodeCheckPoints = new List<Arch3Node>();
     [SerializeField] private Animator anim;
-    [SerializeField] private List<string> animation = new List<string>();
+    [SerializeField] private List<string> animationName = new List<string>();
     // Start is called before the first frame update
     void Start()
     {
@@ -45,7 +45,7 @@ public class MultiCulprit : MonoBehaviour
                 Arch3Manager.GetInstance().getCulprit().setSquare(false);
                 Arch3Manager.GetInstance().setCulprit(culprits[i]);
                 Arch3Manager.GetInstance().getCulprit().setSquare(true);
-                anim.Play(animation[i]);
+                anim.Play(animationName[i]);
                 Arch3Manager.GetInstance().setStepCount(0);
             }
         }

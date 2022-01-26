@@ -31,7 +31,7 @@ public class GraphGameEventNames
     public const string NPCS_MOVED = "NPCS_MOVED";
     public const string TIMELINE_PREVNODE_CLICKED = "TIMELINE_PREVNODE_CLICKED";
     public const string TIMELINE_CURNODE_CLICKED = "TIMELINE_CURNODE_CLICKED";
-    public const string OVERWORLD_NODE_CLICKED = "OVERWORLD_NODE_CLICKED";
+    public const string OVERWORLD_NODE_CLICKED = "OVERWORLD_NODE_CLICKED";    
 
     //Archetype1 Actions
     public const string TILE_SELECT = "TILE_SELECT";

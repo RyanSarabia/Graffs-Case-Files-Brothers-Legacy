@@ -5,16 +5,16 @@ using Naninovel.Commands;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-[CommandAlias("changeScene")]
+[CommandAlias("saveLevel")]
 public class Commands : Command
 {
-    public StringParameter Name;
+    public IntegerParameter num;
 
     public override UniTask ExecuteAsync(AsyncToken asyncToken = default)
     {
-        if (Assigned(Name))
+        if (Assigned(num))
         {
-            SceneManager.LoadScene(Name);
+            SaveSystem.SavePlayer(num);
         }
         else
         {

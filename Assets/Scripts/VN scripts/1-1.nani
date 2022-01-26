@@ -114,7 +114,6 @@ I'll give this thing a run tomorrow. After my report to the master, I'll get a g
 Alright. Today's task should still be the same. Find clues on where the cat may be located. 
 Time to try out the Graph Device. Let's see what this thing can do for me.
 
-@loadscene "Overworld Map"
+@saveLevel num:1
+@loadscene OverworldMap
 @stop
-
-

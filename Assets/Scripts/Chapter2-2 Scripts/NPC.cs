@@ -21,13 +21,13 @@ public class NPC : MonoBehaviour
     [SerializeField] private GameObject rightReadyPosition;
     private Vector2 prevPos;
 
-    [SerializeField] private BoxCollider2D collider;
+    [SerializeField] private BoxCollider2D colliderComponent;
     //private new SpriteRenderer renderer;
 
     // Start is called before the first frame update
     void Start()
     {
-        collider = GetComponent<BoxCollider2D>();
+        colliderComponent = GetComponent<BoxCollider2D>();
         //renderer = GetComponent<SpriteRenderer>();
         speedText.SetText(speed.ToString());
         prevPos = leftIdlePosition.transform.position;
@@ -52,7 +52,7 @@ public class NPC : MonoBehaviour
         //}
 
         if (BridgeGameManager.GetInstance().getPanelFocus())
-            collider.enabled = false;
+            colliderComponent.enabled = false;
     }
     public bool isLeftSide()
     {
@@ -147,16 +147,16 @@ public class NPC : MonoBehaviour
         if (BridgeGameManager.GetInstance().getIsLanternLeft())
         {
             if (leftSide)
-                collider.enabled = true;
+                colliderComponent.enabled = true;
             else
-                collider.enabled = false;
+                colliderComponent.enabled = false;
         }
         else
         {
             if (leftSide)
-                collider.enabled = false;
+                colliderComponent.enabled = false;
             else
-                collider.enabled = true;
+                colliderComponent.enabled = true;
         }
     }
 
