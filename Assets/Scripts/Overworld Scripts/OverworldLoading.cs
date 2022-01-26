@@ -19,8 +19,19 @@ public class OverworldLoading : MonoBehaviour
         {
             n = data.currentLevel;
 
-            icons[n].exclamationState(true);
-            icons[n].setCollider(true);
+            if(n != 100)
+            {
+                icons[n].exclamationState(true);
+                icons[n].setCollider(true);
+            }
+            else
+            {
+                foreach(var icon in icons)
+                {
+                    icon.exclamationState(true);
+                    icon.setCollider(true);
+                }
+            }
         }
         
     }
