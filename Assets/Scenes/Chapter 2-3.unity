@@ -2432,7 +2432,8 @@ MonoBehaviour:
   nodeCheckPoints:
   - {fileID: 1822759202}
   anim: {fileID: 1794437088}
-  animationName: []
+  animationName:
+  - 2-3 Cam to the right
 --- !u!4 &465201607
 Transform:
   m_ObjectHideFlags: 0
