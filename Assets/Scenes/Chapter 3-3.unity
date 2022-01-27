@@ -3603,7 +3603,9 @@ MonoBehaviour:
   - {fileID: 875657653}
   - {fileID: 1520054435}
   anim: {fileID: 1794437088}
-  animationName: []
+  animationName:
+  - 3-3 2nd Phase
+  - 3-3 3rd Phase
 --- !u!4 &465201607
 Transform:
   m_ObjectHideFlags: 0
