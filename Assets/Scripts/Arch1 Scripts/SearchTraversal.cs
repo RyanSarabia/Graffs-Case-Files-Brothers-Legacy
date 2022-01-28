@@ -76,7 +76,10 @@ public class SearchTraversal : MonoBehaviour
     public void addEnergy(int num)
     {
         nEnergy += num;
-        
+        Parameters par = new Parameters();
+        par.PutExtra(EnergyBar.ENERGY_INT, nEnergy);
+        EventBroadcaster.Instance.PostEvent(GraphGameEventNames.ARCH1_ENERGY_ADDED, par);
+        Debug.Log("Hello add energy");
     }
 
     public void BFS2()
