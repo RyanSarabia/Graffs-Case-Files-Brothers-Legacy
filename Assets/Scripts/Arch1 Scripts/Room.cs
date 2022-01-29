@@ -20,10 +20,10 @@ public class Room : MonoBehaviour, IPointerClickHandler
     [SerializeField] private Room leftNeighbor;
     [SerializeField] private Room downNeighbor;
 
-    [SerializeField] private bool hasUpWall = false;
-    [SerializeField] private bool hasRightWall = false;
-    [SerializeField] private bool hasLeftWall = false;
-    [SerializeField] private bool hasDownWall = false;
+    //[SerializeField] private bool hasUpWall = false;
+    //[SerializeField] private bool hasRightWall = false;
+    //[SerializeField] private bool hasLeftWall = false;
+    //[SerializeField] private bool hasDownWall = false;
     [SerializeField] private bool hasWall = false;
     [SerializeField] private GameObject wallSprite;
 

@@ -32,6 +32,7 @@ public class Arch3Manager : MonoBehaviour
 
     [SerializeField] private bool repeatingChange = false;
     [SerializeField] private bool multiCulprit = false;
+    [SerializeField] private bool crosshair = false;
 
     private bool waitForAnimation;
     public static Arch3Manager GetInstance()
@@ -95,7 +96,7 @@ public class Arch3Manager : MonoBehaviour
             //player.gameObject.transform.position = new Vector3(curSelectedNode.transform.position.x, curSelectedNode.transform.position.y + 0.3f, 0);
        
             int weight = weightOfNodes();
-            Debug.Log(weight.ToString());
+            //Debug.Log(weight.ToString());
             if(weight > 0)
             {
                 player.move(weight, curSelectedNode);
@@ -113,6 +114,9 @@ public class Arch3Manager : MonoBehaviour
                     {
                         varEdges[i].addWeight(edgeWeightChange[i]);
                     }
+
+                    if (crosshair)
+                        ObjectAppear.GetInstance().objectAppear(edgeTurnChange[i], turnCount, i);
                 }            
             }
             if(curSelectedNode == finalNode && stepCount < finalEdgeWeight)

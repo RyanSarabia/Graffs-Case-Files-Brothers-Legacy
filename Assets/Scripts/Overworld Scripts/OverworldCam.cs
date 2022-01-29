@@ -19,7 +19,7 @@ public class OverworldCam : MonoBehaviour
     [SerializeField] private Vector3 CurMaxBounds;
     [SerializeField] private Vector3 CurMinBounds;
 
-    [SerializeField] private float zoomSpeed = 2f;
+    //[SerializeField] private float zoomSpeed = 2f;
 
     [SerializeField] Vector3 movement;
 

@@ -15,8 +15,8 @@ public class OverworldIcons : MonoBehaviour
     [SerializeField] private string description;
     [SerializeField] private string sceneName;
 
-    [SerializeField] private bool mainIconEnabled = true;
-    [SerializeField] private bool exclamationEnabled = true;
+    //[SerializeField] private bool mainIconEnabled = true;
+    //[SerializeField] private bool exclamationEnabled = true;
     [SerializeField] private UnityEngine.UI.RawImage mainIcon;
     [SerializeField] private UnityEngine.UI.RawImage nodeBase;
     [SerializeField] private UnityEngine.UI.RawImage exclamationPoint;

@@ -26,7 +26,7 @@ public class DialGameManager : MonoBehaviour
 
     [SerializeField] private GameObject victoryCard;    
     [SerializeField] private GameObject clickBlocker;
-    private bool panelFocus;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -83,7 +83,7 @@ public class DialGameManager : MonoBehaviour
             if (litUp == targetCount)
             {
                 victoryCard.SetActive(true);
-                panelFocus = true;
+                
                 clickBlocker.gameObject.SetActive(true);
             }
         }

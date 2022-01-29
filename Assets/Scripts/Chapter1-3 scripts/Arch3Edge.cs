@@ -10,7 +10,7 @@ public class Arch3Edge : MonoBehaviour
     [SerializeField] int weight;
     [SerializeField] TextMeshProUGUI weightText;
 
-    bool isCulpritPath = false;
+    //bool isCulpritPath = false;
 
     public void reveal()
     {
@@ -22,7 +22,7 @@ public class Arch3Edge : MonoBehaviour
 
     public void setCulpritPath()
     {
-        isCulpritPath = true;
+        //isCulpritPath = true;
     }
 
     private void Awake()
