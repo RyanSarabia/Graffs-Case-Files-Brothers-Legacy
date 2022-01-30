@@ -347,7 +347,7 @@ MonoBehaviour:
   leftReadyPosition: {fileID: 0}
   rightIdlePosition: {fileID: 0}
   rightReadyPosition: {fileID: 0}
-  collider: {fileID: 3758659436579864814}
+  colliderComponent: {fileID: 3758659436579864814}
 --- !u!61 &3758659436579864814
 BoxCollider2D:
   m_ObjectHideFlags: 0
