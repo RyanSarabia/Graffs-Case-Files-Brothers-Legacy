@@ -109,7 +109,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 959.99994, y: -810.48364}
+  m_AnchoredPosition: {x: 964.99994, y: -819.23364}
   m_SizeDelta: {x: 1034.15, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &565915751394712032
@@ -461,7 +461,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 10, y: 10.000004}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &565915751729534189
 CanvasRenderer:
@@ -655,7 +655,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 959.99994, y: -509.56802}
+  m_AnchoredPosition: {x: 964.99994, y: -513.318}
   m_SizeDelta: {x: 757.15, y: 111.95}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &565915751841998008
@@ -775,7 +775,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 960, y: -329.29767}
+  m_AnchoredPosition: {x: 965, y: -330.54767}
   m_SizeDelta: {x: 746.58, y: 140.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &565915752128584759
@@ -830,7 +830,7 @@ Canvas:
   m_GameObject: {fileID: 565915752128584759}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -840,7 +840,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 1871612589
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_TargetDisplay: 0
 --- !u!114 &565915752128584753
 MonoBehaviour:
@@ -935,7 +935,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 959.99994, y: -675.5133}
+  m_AnchoredPosition: {x: 964.99994, y: -681.7633}
   m_SizeDelta: {x: 757.15, y: 111.95}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &565915752216860377

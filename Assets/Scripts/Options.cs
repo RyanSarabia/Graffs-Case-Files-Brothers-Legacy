@@ -14,7 +14,10 @@ public class Options : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        volumeSlider.value = soundManager.volume;
+        if (soundManager)
+        {
+            volumeSlider.value = soundManager.volume;
+        }
         
         sceneLoader = SceneLoader.GetInstance();
         volumeSlider.onValueChanged.AddListener(delegate { changeVolume(); } );
