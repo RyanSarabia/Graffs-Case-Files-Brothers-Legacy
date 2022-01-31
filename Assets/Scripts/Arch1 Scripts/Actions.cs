@@ -30,6 +30,7 @@ public class Actions : MonoBehaviour
 
     private bool midLightingUp;
 
+    
 
     public static Actions GetInstance()
     {
@@ -38,6 +39,7 @@ public class Actions : MonoBehaviour
 
     private void Awake()
     {
+        
         if (instance == null)
             instance = this;
         else
@@ -52,10 +54,11 @@ public class Actions : MonoBehaviour
 
         clueRoomIDs = new List<int>();
         pickUpRoomIDs = new List<int>();
-
+        
         this.clueTotalText.SetText(totalClues.ToString());
         if (firstScene)
-            firstScene = false;
+            firstScene = false;        
+                 
         else
             SFXScript.GetInstance().PlayResetAnySFX();
         

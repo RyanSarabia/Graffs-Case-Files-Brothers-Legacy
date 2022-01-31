@@ -24,6 +24,8 @@ public class SearchTraversal : MonoBehaviour
     
 
     [SerializeField] private bool isChapter3;
+    [SerializeField] private bool isChapter2;
+    [SerializeField] private bool isChapter1;
     private bool hasChosenLight = false;
 
     private int energyHolder = 1;
@@ -54,6 +56,13 @@ public class SearchTraversal : MonoBehaviour
         EventBroadcaster.Instance.AddObserver(GraphGameEventNames.ARCH1_CONFIRM_BUTTON_CLICK, this.confirmLighting);
         EventBroadcaster.Instance.AddObserver(GraphGameEventNames.ARCH1_PLAYER_MOVED, this.PlayerMoved);
         EventBroadcaster.Instance.AddObserver(GraphGameEventNames.ARCH1_WALLS_EVENT, this.ResetQueueAndCounter);
+
+        if (isChapter1)
+            MusicScript.GetInstance().PlayCh1_1Music();
+        else if (isChapter2)
+            MusicScript.GetInstance().PlayCh2_1Music();
+        else if (isChapter3)
+            MusicScript.GetInstance().PlayCh3_1Music();
     }
 
     // Update is called once per frame

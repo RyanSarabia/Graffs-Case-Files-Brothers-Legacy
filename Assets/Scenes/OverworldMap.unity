@@ -123,6 +123,67 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &42851839
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1336133277340906675, guid: bc7cf524c694bc2498a80199068fc992, type: 3}
+      propertyPath: overworldMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 88f1169411894c347ac5bb8cce2c6dd3, type: 3}
+    - target: {fileID: 1336133277340906677, guid: bc7cf524c694bc2498a80199068fc992, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1336133277340906677, guid: bc7cf524c694bc2498a80199068fc992, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 24.2619
+      objectReference: {fileID: 0}
+    - target: {fileID: 1336133277340906677, guid: bc7cf524c694bc2498a80199068fc992, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.2120008
+      objectReference: {fileID: 0}
+    - target: {fileID: 1336133277340906677, guid: bc7cf524c694bc2498a80199068fc992, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.2810132
+      objectReference: {fileID: 0}
+    - target: {fileID: 1336133277340906677, guid: bc7cf524c694bc2498a80199068fc992, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1336133277340906677, guid: bc7cf524c694bc2498a80199068fc992, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1336133277340906677, guid: bc7cf524c694bc2498a80199068fc992, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1336133277340906677, guid: bc7cf524c694bc2498a80199068fc992, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1336133277340906677, guid: bc7cf524c694bc2498a80199068fc992, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1336133277340906677, guid: bc7cf524c694bc2498a80199068fc992, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1336133277340906677, guid: bc7cf524c694bc2498a80199068fc992, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1336133277340906826, guid: bc7cf524c694bc2498a80199068fc992, type: 3}
+      propertyPath: m_Name
+      value: MusicManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bc7cf524c694bc2498a80199068fc992, type: 3}
 --- !u!1001 &292058861
 PrefabInstance:
   m_ObjectHideFlags: 0

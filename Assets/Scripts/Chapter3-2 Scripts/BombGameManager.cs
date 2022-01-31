@@ -59,6 +59,7 @@ public class BombGameManager : MonoBehaviour, GMInterface
     // Start is called before the first frame update
     void Start()
     {
+        MusicScript.GetInstance().PlayCh3_2Music();
         timelineNodes.Add(curTimelineNode);
         curState = newState();
         curState.setCurState(dials[0].getState(), dials[1].getState(), dials[2].getState(), turnsLeft);

@@ -55,6 +55,7 @@ public class PitcherActionManager : MonoBehaviour, GMInterface
     // Start is called before the first frame update
     void Start()
     {
+        MusicScript.GetInstance().PlayCh1_2Music();
         pitcherIDs = new List<int>();
         pitcherList = new List<Pitcher>();
         

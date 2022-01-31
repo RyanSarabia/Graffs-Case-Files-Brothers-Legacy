@@ -34,6 +34,11 @@ public class Arch3Manager : MonoBehaviour
     [SerializeField] private bool multiCulprit = false;
     [SerializeField] private bool crosshair = false;
 
+    [SerializeField] private bool isChapter1;
+    [SerializeField] private bool isChapter2;
+    [SerializeField] private bool isChapter3;
+
+
     private bool waitForAnimation;
     public static Arch3Manager GetInstance()
     {
@@ -52,7 +57,14 @@ public class Arch3Manager : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {      
+    {
+        if (isChapter1)
+            MusicScript.GetInstance().PlayCh1_3Music();
+        else if (isChapter2)
+            MusicScript.GetInstance().PlayCh2_3Music();
+        else if (isChapter3)
+            MusicScript.GetInstance().PlayCh3_3Music();
+
         startingNode.revealEdges();
         startingNode.disableClick();
         selection = new List<Arch3Node>();

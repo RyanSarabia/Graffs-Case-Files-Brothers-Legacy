@@ -65,6 +65,7 @@ public class BridgeGameManager : MonoBehaviour
 
     void Start()
     {
+        MusicScript.GetInstance().PlayCh2_2Music();
         SetGoTextRed();
 
         NPC.Add(child);
