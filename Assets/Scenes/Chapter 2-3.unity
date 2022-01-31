@@ -8548,6 +8548,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 565915751394712038, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -838.97754
+      objectReference: {fileID: 0}
     - target: {fileID: 565915752128584752, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
       propertyPath: m_Camera
       value: 
@@ -8684,6 +8688,25 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3838455840445511533, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: m_text
+      value: "Infiltrate the enemy network and intercept the message containing clues
+        about the criminal\u2019s whereabouts. Head to the first star before security
+        locks you out. Take note of the changing path values due to glitches, viruses,
+        and security mechanisms."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3838455840445511533, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: m_fontSize
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 3838455840445511533, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 6055947791814479958, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: m_text
+      value: 'Chapter 2-3: Hotel'
+      objectReference: {fileID: 0}
     - target: {fileID: 6082449768769365359, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -8700,6 +8723,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6761502743816390030, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e3386a3184543f147b2a317b8ba487dd, type: 3}
     - target: {fileID: 8373512599106140005, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

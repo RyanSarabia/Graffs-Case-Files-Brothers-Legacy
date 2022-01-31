@@ -487,6 +487,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 965
       objectReference: {fileID: 0}
+    - target: {fileID: 565915751394712038, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -838.97754
+      objectReference: {fileID: 0}
     - target: {fileID: 565915751841998015, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 965
@@ -631,6 +635,25 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3838455840445511533, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: m_text
+      value: Place walls in dark nodes to block off light from entering. Remove walls
+        by clicking them again. A maximum of 3 walls can be placed at a time. Use
+        walls wisely to reserve energy and prevent light from going to an unwanted
+        direction.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3838455840445511533, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: m_fontSize
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 3838455840445511533, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 6055947791814479958, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: m_text
+      value: 'Chapter 2-1: Forest'
+      objectReference: {fileID: 0}
     - target: {fileID: 6082449768769365359, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -647,6 +670,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6761502743816390030, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 767a9e00c6a92d84bb5b56094263c833, type: 3}
     - target: {fileID: 8373512599106140005, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
