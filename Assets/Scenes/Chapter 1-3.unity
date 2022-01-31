@@ -2459,6 +2459,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1794437085}
     - target: {fileID: 565915752128584754, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: level
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 565915752128584754, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
       propertyPath: SFXManager
       value: 
       objectReference: {fileID: 1808761706}

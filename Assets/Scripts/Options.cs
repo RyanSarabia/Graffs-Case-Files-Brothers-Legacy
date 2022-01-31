@@ -13,6 +13,8 @@ public class Options : MonoBehaviour
     [SerializeField] private Slider SFXVolumeSlider;
     [SerializeField] private Slider musicVolumeSlider;
     [SerializeField] private Toggle dontRemind;
+    [SerializeField] private int level;
+    [SerializeField] private GameObject instructPanel;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +33,15 @@ public class Options : MonoBehaviour
         musicVolumeSlider.onValueChanged.AddListener(delegate { changeVolume(musicManager, musicVolumeSlider); });
         overworldBtn.onClick.AddListener(delegate { sceneLoader.returnToOverworld(); } );
         titleScreenBtn.onClick.AddListener(delegate { sceneLoader.loadSceneString("TitleScreen"); } );
+                       
+        if (PlayerPrefs.GetInt("lvl" + level) == 1)
+        {
+            instructPanel.SetActive(false);
+            dontRemind.isOn = true;
+        }
+        else
+            instructPanel.SetActive(true);
+
     }
 
     // Update is called once per frame
@@ -45,5 +56,13 @@ public class Options : MonoBehaviour
         {
             source.volume = slider.value;
         }
+    }
+    public void remindTick()
+    {
+        Debug.Log("check mark" + dontRemind.isOn + " lvl" + level);
+        if(dontRemind.isOn)
+            PlayerPrefs.SetInt("lvl" + level, 1);
+        else
+            PlayerPrefs.SetInt("lvl" + level, 0);
     }
 }
