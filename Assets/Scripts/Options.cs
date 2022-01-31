@@ -10,6 +10,7 @@ public class Options : MonoBehaviour
     [SerializeField] private Button overworldBtn;
     [SerializeField] private Button titleScreenBtn;
     [SerializeField] private Slider volumeSlider;
+    [SerializeField] private Toggle dontRemind;
 
     // Start is called before the first frame update
     void Start()
