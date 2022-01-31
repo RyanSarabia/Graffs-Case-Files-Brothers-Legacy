@@ -130,10 +130,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1336133277340906675, guid: bc7cf524c694bc2498a80199068fc992, type: 3}
-      propertyPath: overworldMusic
-      value: 
-      objectReference: {fileID: 8300000, guid: 88f1169411894c347ac5bb8cce2c6dd3, type: 3}
     - target: {fileID: 1336133277340906677, guid: bc7cf524c694bc2498a80199068fc992, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -3190,6 +3186,10 @@ PrefabInstance:
     - target: {fileID: 565915751394712038, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 965
+      objectReference: {fileID: 0}
+    - target: {fileID: 565915751394712038, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -838.97766
       objectReference: {fileID: 0}
     - target: {fileID: 565915751841998012, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
       propertyPath: m_IsActive
