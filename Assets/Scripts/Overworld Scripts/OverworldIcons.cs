@@ -12,6 +12,7 @@ public class OverworldIcons : MonoBehaviour
     public static readonly string SCENE = "SCENE";
 
     [SerializeField] private string locName;
+    [TextArea(5, 12)]
     [SerializeField] private string description;
     [SerializeField] private string sceneName;
 

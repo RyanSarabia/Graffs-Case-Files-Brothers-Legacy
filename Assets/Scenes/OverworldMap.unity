@@ -556,11 +556,16 @@ PrefabInstance:
       objectReference: {fileID: 2800000, guid: f99e25eaecf523d46bcdd3f9d4a03c5e, type: 3}
     - target: {fileID: 8907563045690859488, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
       propertyPath: locName
-      value: '(#)-Cutscene: Detective Agency'
+      value: Warshall Detective Agency
       objectReference: {fileID: 0}
     - target: {fileID: 8907563045690859488, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
       propertyPath: sceneName
       value: 1-1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8907563045690859488, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
+      propertyPath: description
+      value: Edmond Warshall's base of operations. Widely acknowledged as the best
+        detective of this generation. Nicknamed "The Master" much to his annoyance.
       objectReference: {fileID: 0}
     - target: {fileID: 8907563045690859489, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
       propertyPath: m_Pivot.x
@@ -1497,6 +1502,12 @@ PrefabInstance:
       propertyPath: sceneName
       value: Chapter 1-2
       objectReference: {fileID: 0}
+    - target: {fileID: 8907563045690859488, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
+      propertyPath: description
+      value: Nothings beats the smell of freshly baked bread. Lately, the baker is
+        thinking of hiring part timers, the job has grown too tiring for his back
+        and knees.
+      objectReference: {fileID: 0}
     - target: {fileID: 8907563045690859489, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1773,7 +1784,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8907563045690859488, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
       propertyPath: description
-      value: sample descrition
+      value: Evergreen suburbs is known for its friendly and welcoming residents.
+        Miss Donna is actually a local celebrity around here, a goodhearted woman
+        but can be quite a chatterbox.
       objectReference: {fileID: 0}
     - target: {fileID: 8907563045690859489, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
       propertyPath: m_Pivot.x
@@ -2458,7 +2471,13 @@ PrefabInstance:
       objectReference: {fileID: 2800000, guid: e92200eb6f3d6554c9102d14e2ffd465, type: 3}
     - target: {fileID: 8907563045690859488, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
       propertyPath: locName
-      value: '(#)-Cutscene: Museum'
+      value: Borukva Museum
+      objectReference: {fileID: 0}
+    - target: {fileID: 8907563045690859488, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
+      propertyPath: description
+      value: 'The Borukva Musuem houses several antiques of varying values. The curator
+        here is also known for his unique eye in paintings, accruing guests far and
+        wide of similar eccentricity. '
       objectReference: {fileID: 0}
     - target: {fileID: 8907563045690859489, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
       propertyPath: m_Pivot.x
