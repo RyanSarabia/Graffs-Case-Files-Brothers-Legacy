@@ -5470,6 +5470,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 565915751394712038, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -838.97766
+      objectReference: {fileID: 0}
     - target: {fileID: 565915752128584752, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
       propertyPath: m_Camera
       value: 
@@ -5606,6 +5610,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3838455840445511533, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: m_text
+      value: The culprit has left a bomb to slow you down! There are dials on the
+        bomb that seem to be designed for diffusing it. Figure out the mechanism
+        before the bomb goes off.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6055947791814479958, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: m_text
+      value: 'Chapter 3-2: Warehouse'
+      objectReference: {fileID: 0}
     - target: {fileID: 6082449768769365359, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -5622,6 +5636,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6761502743816390030, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4b02f3784f8d25c44b9015df7d309529, type: 3}
     - target: {fileID: 8373512599106140005, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

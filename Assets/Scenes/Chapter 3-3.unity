@@ -6441,6 +6441,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 565915751394712038, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -838.97766
+      objectReference: {fileID: 0}
     - target: {fileID: 565915752128584752, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
       propertyPath: m_Camera
       value: 
@@ -6577,6 +6581,15 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3838455840445511533, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: m_text
+      value: "Catch the culprit before they get away. Navigate through the thief\u2019s
+        traps and obstacles and avoid being slowed down by the ebbing tides."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6055947791814479958, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: m_text
+      value: 'Chapter 3-3: Wharf'
+      objectReference: {fileID: 0}
     - target: {fileID: 6082449768769365359, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -6593,6 +6606,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6761502743816390030, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 719f388f761607d40866aaf909047e4a, type: 3}
     - target: {fileID: 8373512599106140005, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

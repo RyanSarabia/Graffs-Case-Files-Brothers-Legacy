@@ -281,6 +281,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 565915751394712038, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -838.97754
+      objectReference: {fileID: 0}
     - target: {fileID: 565915752128584752, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
       propertyPath: m_Camera
       value: 
@@ -417,6 +421,15 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3838455840445511533, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: m_text
+      value: The graph device has been damaged from traversing through the network.
+        Choosing a light will no longer indicate its projected path.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6055947791814479958, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: m_text
+      value: 'Chapter 3-1: Abandoned Factory'
+      objectReference: {fileID: 0}
     - target: {fileID: 6082449768769365359, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -433,6 +446,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6761502743816390030, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b3f118b045c08224c8fc382bb4026122, type: 3}
     - target: {fileID: 8373512599106140005, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -456,6 +473,14 @@ PrefabInstance:
     - target: {fileID: 9114301168444706068, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9114301168444706068, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 759.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9114301168444706068, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 67.37
       objectReference: {fileID: 0}
     - target: {fileID: 9114301168444706068, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
       propertyPath: m_AnchoredPosition.x
