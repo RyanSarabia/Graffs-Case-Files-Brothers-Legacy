@@ -1,0 +1,58 @@
+@back sky
+The Borukva museum has come into view of the party. The municipal museum houses multiple artifacts of various historical significance. 
+One of which was stolen before the opening hours of the museum. 
+Several policemen are seen around the museum investigating the premises.
+As they were approaching the main entrance, the museum curator appeared to greet them.
+
+@char NpcMale
+Detective Warshall, I'm glad you are here. Please proceed further inside.
+
+@char NpcMale visible:false
+@back sky
+The master and Leo were led into the western wing of the building. The hall they are walking down in hangs various paintings of different subjects.
+Some featured landscapes such as mountains and fields of wheat. While others had people in them, some poised in a neutral position as if they were looking at the viewer.
+Other paintings feature more of an abstract concept rather than something grounded in reality. One of them you could slightly see a face at the right angle, while others had a myriad of colors clashing with each other.
+Many of the paintings had striking visuals and deep symbolism that could leave a lasting impression on many visitors.
+Unfortunately, all of it is lost on Leonhardt Graff. Whose only impression when looking at the paintings were "Wow, the colors look nice." "Cool, the man looks realistic." and, "I don't really get it, but it's not bad."
+As they approached the room at the end of the hall, the curator began to talk about the circumstances of the crime.
+
+@char NpcMale
+The museum staff were doing routine checks about 2 hours before the opening time.
+It was when one of the staff reported that there were also signs of tampering on the glass pedestal. And that the Kruskal Diamond we were hosting was swapped out to a counterfeit.
+The security last night reported a power outage around 3 in the morning. The lights came back on within 5 minutes so they didn't think much of it at that time.
+Regrettably, that must have been the moment the thief took the opportunity to whisk his prize away.
+I've heard rumors far and wide that you are an extremely skilled detective, and this type of case should be one that is up your wheelhouse. 
+I certainly hope you can prove that the rumors were not exaggerated at all.
+@char Master
+You can leave this case to me. I'll see to it that the truth comes to light. And that the diamond shall return to its right place.
+Alright, just ask a nearby staff if you need me for anything. I wish both of you good luck.
+Thank you.
+
+@char NpcMale visible:false
+The curator leaves the room.
+
+Now then, it's time to get the investigation started. Leo, I want to hear your thoughts on this matter.
+@char Graff
+Ok sir, to start with, looking at the state of the room nothing was necessarily disturbed other than the glass case that was holding the diamond.
+Another thing to note is that there are only two ways for the thief to get in, either through the door or through the windows.
+So which one do you think the thief chose?
+
+@choice Door goto:.Door
+@choice Window goto:.Window
+@stop
+# Door
+Hmm, is that really so?
+@goto .cont
+# Window
+That would be the correct assumption.
+
+#cont
+As mentioned by the curator, the power returned within 5 minutes of its outage. If the thief were to use the door, he would surely be hard pressed trying to avoid  the cameras lying around.
+Beyond the windows of this room lies a dense forest, surely a great escape path for a thief. 
+But sir, there's a parking lot just outside the window. The thief can't just run through the lot, steal the diamond, run through it again all in the span of 5 minutes?
+Compared to the number of cameras in the museum, there are only a few of them outside.
+And through right positioning, they would only need to fool one camera before and after the power outage, before escaping to the forest.
+Leo, I want you to investigate the forest for any relevant clues. I'll be taking a look at the security recordings for any signs of tampering.
+Leave it to me sir!
+
+@stop

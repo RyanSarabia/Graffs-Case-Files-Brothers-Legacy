@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Naninovel;
+using UnityEngine.SceneManagement;
 
 public class VNInitialization : MonoBehaviour
 {
@@ -28,6 +29,6 @@ public class VNInitialization : MonoBehaviour
     {
         // Engine is initialized here, it's safe to use the APIs.
         var scriptPlayer = Engine.GetService<IScriptPlayer>();
-        await scriptPlayer.PreloadAndPlayAsync(scriptName);
+        await scriptPlayer.PreloadAndPlayAsync(SceneManager.GetActiveScene().name);
     }
 }

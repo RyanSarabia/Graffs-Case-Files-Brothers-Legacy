@@ -1,0 +1,38 @@
+@back streets
+@char Graff
+Excuse me, have you seen this cat?
+@char NpcMale
+Oh, I've seen it around south of the evergreen district.
+Thank you!
+@char NpcMale visible:false
+
+Excuse me, have you seen this cat?
+@char NpcFemale
+Hmm, I might have seen a similar one walk by the alleyway one time, I'll point it at your map.
+Thanks!
+@char NpcFemale visible:false
+
+Excuse me, have you seen this cat?
+@char NpcMale
+Oh, I believe I saw the baker feed a litter of kittens some time ago, and this kitten should be one of them.
+That's very helpful, thank you!
+@char NpcMale visible:false
+Whew, I've managed to narrow down the general location of the cat pretty significantly.
+The Graph Device certainly made things much more efficient in finding the clues I needed.
+All I need to do now is to talk to this baker about what he knows about the cat. Hopefully it leads me to where it's staying for the night.
+This.. must be the bakery where he's working at.
+*Door chime rings*
+Excuse me, I just would like to inquire about a missing cat that has been spotted nearby. Hello?
+No one responded. You hear sounds of work deeper inside the store.
+Umm, excuse me?
+@char Baker
+Oh, are you a customer? I sincerely apologize, there was a sudden rush of orders to be delivered soon.
+I've been terribly busy at the moment, that I had no time to man the register at the front.
+Hm, you seem like an able young man yourself. Would you like to help out for an hour? I'll pay you as well as offer you a batch of freshly baked dough from the oven.
+How does that sound?
+Oh, as long as it's not anything too complicated I'll like to give it a try.
+Great! That would help out a ton. Let's have you begin with some measurements, and we'll move on to the other stuff later.
+Understood.
+
+@loadscene "Chapter 1-2"
+@stop
