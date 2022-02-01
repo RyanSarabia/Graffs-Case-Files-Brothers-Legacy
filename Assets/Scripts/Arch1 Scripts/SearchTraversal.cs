@@ -331,7 +331,7 @@ public class SearchTraversal : MonoBehaviour
         lightUpRoom.setIsLightOn(true);
         lightUpRoom.lightOn();
         n++;
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.7f);
 
         if(searchQueue.Count > 0)
             searchQueue.RemoveAt(0);

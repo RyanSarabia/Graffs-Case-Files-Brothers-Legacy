@@ -21,7 +21,7 @@ public class TitleScreenInit : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        MusicScript.GetInstance().PlayTitle();
     }
 
     // Update is called once per frame
