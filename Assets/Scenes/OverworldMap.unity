@@ -206,7 +206,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8907563045690859488, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
       propertyPath: sceneName
-      value: Chapter 3-1
+      value: 3-1
       objectReference: {fileID: 0}
     - target: {fileID: 8907563045690859489, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
       propertyPath: m_Pivot.x
@@ -1500,7 +1500,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8907563045690859488, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
       propertyPath: sceneName
-      value: Chapter 1-2
+      value: 1-2.5
       objectReference: {fileID: 0}
     - target: {fileID: 8907563045690859488, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
       propertyPath: description
@@ -1643,7 +1643,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8907563045690859488, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
       propertyPath: sceneName
-      value: Chapter 1-3
+      value: 1-4
       objectReference: {fileID: 0}
     - target: {fileID: 8907563045690859489, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
       propertyPath: m_Pivot.x
@@ -2068,7 +2068,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8907563045690859488, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
       propertyPath: sceneName
-      value: Chapter 2-2
+      value: 2-4
       objectReference: {fileID: 0}
     - target: {fileID: 8907563045690859489, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
       propertyPath: m_Pivot.x
@@ -2474,6 +2474,10 @@ PrefabInstance:
       value: Borukva Museum
       objectReference: {fileID: 0}
     - target: {fileID: 8907563045690859488, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
+      propertyPath: sceneName
+      value: 2-2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8907563045690859488, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
       propertyPath: description
       value: 'The Borukva Musuem houses several antiques of varying values. The curator
         here is also known for his unique eye in paintings, accruing guests far and
@@ -2614,7 +2618,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8907563045690859488, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
       propertyPath: sceneName
-      value: Chapter 2-3
+      value: 2-5
       objectReference: {fileID: 0}
     - target: {fileID: 8907563045690859489, guid: a26e4f1616f12834c840cd41b25f5cef, type: 3}
       propertyPath: m_Pivot.x

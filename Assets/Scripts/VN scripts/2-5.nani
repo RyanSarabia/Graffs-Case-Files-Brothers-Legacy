@@ -1,33 +1,17 @@
-@back sky
-@char Police
-Alright the information is here, stored in this USB drive. 
-@char Master
-Thank you Prim, I'll make sure to repay you sometime.
-Fine fine, just take it and leave already. Wrap this up nice and clean like the master you are.
-Haha sure. See you around.
-@char Police visible:false
-
-The duo left the police station. As they were going back in the vehicle, Leo asked the master.
-
-@char Graff
-We now have the list of visitors from the museum and their personal information from the police database.
-But there is just way too much information for us to check one by one. By the time we finish it, the thief would have found a way to escape the city already.
-That is certainly true, this is why we will employ the help of someone who is an expert at this kind of task.
-We are going to visit the suite of one of my rivals in this industry. He goes by the name of Detective Bellford. 
-While I find his personality irksome, I would have to admit that his skill with computers is second to none. 
-(That was the detective that was visiting sir Warshall a week ago. He was the one that invented the Graph Device afterall, no wonder he'll be good with this stuff.)
+@bgm chill3
 
 @char Graff visible:false
+@back lobby
 The pair walked into the hotel Bellford is staying at. They were strolling down the decadent lobby where the master walked up to the receptionist.
 
-We're going up to room 3723, tell him that Edmond Warshall is here.
+Warshall: We're going up to room 3723, tell him that Edmond Warshall is here.
 @char NpcFemale
-Acknowledged sir, give me a moment.
+Receptionist: Acknowledged sir, one moment please.
 
 The lady called the phone beside her, after a brief back and forth she puts down the phone and looks up.
 
-Sir Bellford is awaiting your visit sir, take the elevator to the right and it should bring you to his residence.
-Thank you.
+Receptionist: Sir Bellford is awaiting your visit sir, take the elevator to the right and it should bring you to his residence.
+Warshall: Thank you.
 @char NpcFemale visible:false
 @char Master visible:false
 
@@ -35,90 +19,94 @@ As they leave the reception area they hear a quick ping from the elevator, the d
 The pair did a quick jog to the elevator, managing to catch it before it closed. 
 The ride up was quicker than anticipated, the master had his eyes closed, possibly pondering about the case, while Leo had a curious gaze in his eyes.
 
-(I wonder what the residence of Sir Bellford is like? Looking at his ruffled appearance, the place must be quite disorganized.)
+Leo: (I wonder what the residence of Sir Bellford is like? Looking at his ruffled appearance, the place must be quite disorganized.)
 
 The monitor displayed 37 when the elevator pinged and announced their arrival at their destination.
 They walked down the southern hall until they stopped at the room labeled 3723. The master knocked on the door thrice and after a few moments it was unlocked from the inside.
 
+@back penthouse
 @char Rival
-To think you would come to me for help, you must have been truly desperate huh?
+Bellford: To think you would come to me for help, you must have been truly desperate huh?
 @char Master
-Shut your blabbering mouth, this sort of thing is your specialty aint it? 
-Ooooh Eddie here is being a bit grouchy today, isn't it tough having this sort of detective as your teacher Leo?
+Warshall: Shut your blabbering mouth, this sort of thing is your specialty aint it? 
+Bellford: Ooooh Eddie here is being a bit grouchy today, isn't it tough having this sort of detective as your teacher Leo?
 @char Graff
-Oh, uhh..
+Leo: Oh, uhh..
 
 Leo stammered a bit in his words, surprised by the rowdy interaction between the two detectives. 
 He knew that both of them were familiar with each other, but from how they bicker with each other, they must be close friends.
 @char Graff visible:false
 
-Enough of that, here catch.
+Warshall: Enough of that, here catch.
 
 The master tosses the usb drive to the Bellford.
 
-That drive has surveillance camera recordings from the streets near the museum. I also have the list of visitors to that place, go and match the face and profiles up.
-After all, don't we both know what that sly fox looks like don't we, Will?
+Warshall: That drive has surveillance camera recordings from the streets near the museum. I also have the list of visitors to that place, go and match the face and profiles up.
+Warshall: After all, don't we both know what that sly fox looks like don't we, Will?
 
 The slovenly detective heaves a deep sigh.
 
-Fine fine, aren't you quite the slave driver? Grab yourselves a seat somewhere, though it shouldn't take too long matching the info that we have already.
+Bellford: Fine fine, aren't you quite the slave driver? Grab yourselves a seat somewhere, though it shouldn't take too long matching the info that we have already.
 @char Rival visible:false
 
 Leo raises his head in shock, his gaze almost bored a hole into the figure of the master.
 
 @char Graff
-Sir Warshall, you knew who the perpetrator was?
-I had an inkling on who it was, seeing the evidence surrounding the case made me sure on who that person was.
+Leo: Sir Warshall, you knew who the perpetrator was?
+Warshall: I had an inkling on who it was, seeing the evidence surrounding the case made me sure on who that person was.
 
-Bellford snickered softly as he went into his room to process the given data.
+Bellford gave a side eye as he went into his room to process the given data.
 
-As I've mentioned before, the fact that the diamond was stolen within a 5 minute blackout, as well as the lack of breakin traces in and out of the museum, shows that the thief has a considerable amount of skill.
-Me and Will... -iam, that Bellford dude, have been trying to capture this figure for a very long time. They go by the moniker, "The Illusory Phantom".
+Warshall: As I've mentioned before, the fact that the diamond was stolen within a 5 minute blackout, as well as the lack of breakin traces in and out of the museum, shows that the thief has a considerable amount of skill.
+Warshall: Me and Will... -iam, that Bellford dude, have been trying to capture this figure for a very long time. They go by the moniker, "The Illusory Phantom".
 
 As Warshall narrates the profile of the culprit, Leo felt the cold rage behind the calm demeanor of his teacher. 
 While his face remained the same, the voice had seemed to be a tad bit lower. Unnoticeable, if it weren't for the time that Leo had spent working with him.
 Yet, all of it vanished as the master returned back to his inflectionless voice.
 
-No matter, our preparations are nearly complete. Wherever the mouse goes it would surely be caught in the end..
+Warshall: No matter, our preparations are nearly complete. Wherever the mouse goes it would surely be caught in the end..
 
 The master mutters as he rummages through a nearby cupboard.
 @char Graff visible:false
 
-Hey Will! Don't you have some bag of tea here somewhere? I'm getting a bit parched.
-Hell if I know, why not just brew some coffee while you're waiting? Oh wait, your highness can't stand the bitterness can't he?
+Warshall: Hey Will! Don't you have some bag of tea here somewhere? I'm getting a bit parched.
+Bellford: Hell if I know, why not just brew some coffee while you're waiting? Oh wait, your highness can't stand the bitterness can't he?
 Bellford immediately answered from the room over.
-My tongue would rot and fall off if I were to drink that muddy liquid. Why can't you appreciate the clarity and fragrance of tea instead you monkey?
+Warshall: My tongue would rot and fall off if I were to drink that muddy liquid. Why can't you appreciate the clarity and fragrance of tea instead you monkey?
 Leo could only laugh dryly as he witnessed two adults, two detectives he admired bicker like children over their beverage preferences.
-(Well, they must be rather close to openly badmouth each other like this..)
+Leo: (Well, they must be rather close to openly badmouth each other like this..)
 The master returned from the kitchen with fresh cup tea in his hands.
-Found a box of unopened tea bags tucked somewhere *sips. Hm, it definitely tastes a bit stale but eh that's good enough.. 
+Warshall: Found a box of unopened tea bags tucked somewhere *sips. Hm, it definitely tastes a bit stale but eh that's good enough.. 
 The master then waltzed into the room Bellford is in.
-So? How's the progress?
+
+@back techRoom
+Warshall: So? How's the progress?
 @char Rival
-The program still needs to go through a few hours of footage, it shouldn't take too long after that.
-..Hey Ed.
-Hm?
-Do you really have to go this far?
-..I have to, at this point the die has been cast. What kind of person can I be if I can't see this through.
-I see... Well, just know that I'm also here, I have been your accomplice so far. If the boat sinks I'm here with you.
-...Thanks.
-Anyways, it's just a matter of time we pinpoint the identity of the phantom, but at the end of the day we still need to know where to find him.
-Hmm, I have a few places in mind on where that person could be hiding. But, going through each of them might let him escape, and we don't want to risk that.
-I do have a suggestion in mind if you don't mind hearing me out, it might be a tad risky though.
-Oh? I would love your idea, a risk might be what we need to get the reward we want.
-We can hack into the communication channels of a few criminal organizations, no doubt they will be the ones who are knowledgeable of rats running in their turf.
-Hmm, fight fire with fire huh..
-Then again this is the best option we have at the moment, alright let's give the plan a go. We just use one of your so-called computer machines to do this right?
-Hold up there boomer don't touch anything, I would rather not have a tech illiterate person working these delicate machines. 
-I know a person more fit for this job.
+Bellford: The program still needs to go through a few hours of footage, it shouldn't take too long after that.
+Bellford: ..Hey Ed.
+Warshall: Hm?
+Bellford: Do you really have to go this far?
+Warshall: ..I have to, at this point the die has been cast. What kind of person can I be if I can't see this through.
+Bellford: I see... Well, just know that I'm also here, I have been your accomplice so far. If the boat sinks I'm here with you.
+Warshall: ...Thanks.
+Bellford: Anyways, it's just a matter of time we pinpoint the identity of the phantom, but at the end of the day we still need to know where to find him.
+Warshall: Hmm, I have a few places in mind on where that person could be hiding. But, going through each of them might let him escape, and we don't want to risk that.
+Bellford: I do have a suggestion in mind if you don't mind hearing me out, it might be a tad risky though.
+Warshall: Oh? I would love your idea, a risk might be what we need to get the reward we want.
+Bellford: We can hack into the communication channels of a few criminal organizations, no doubt they will be the ones who are knowledgeable of rats running in their turf.
+Warshall: Hmm, fight fire with fire huh..
+Warshall: Then again this is the best option we have at the moment, alright let's give the plan a go. We just use one of your so-called computer machines to do this right?
+Bellford: Hold up there boomer don't touch anything, I would rather not have a tech illiterate person working these delicate machines. 
+Bellford: I know a person more fit for this job.
 @char Master visible:false
 Bellford looks at the young man listening intently between their conversation. Leo noticed his gaze and showed a confused reaction.
 @char Graff
-Uhh, me?
-Yeap, Leo I'll leave the navigation part up to you. I'll do the necessary legwork to get you connected to their channel and keep it running.
-Listen to me carefully, I'll only be able to keep their security open for a moment at most, I want you to get in before it closes, then grab the message logs. Got that?
-Oh uhh, yes! I'll do my best.
-Just don't panic and you'll be fine, the Graph Device shall aid you in your task. 
-Alright, time to get this started!
+Leo: Uhh, me?
+Bellford: Yeap, Leo I'll leave the navigation part up to you. I'll do the necessary legwork to get you connected to their channel and keep it running.
+Bellford: Listen to me carefully, I'll only be able to keep their security open for a moment at most, I want you to get in before it closes, then grab the message logs. Got that?
+Leo: Oh uhh, yes! I'll do my best.
+Bellford: Just don't panic and you'll be fine, the Graph Device shall aid you in your task. 
+Bellford: Alright, time to get this started!
 
+@loadscene "Chapter 2-3"
 @stop

@@ -1,26 +1,29 @@
-@back sky
+@bgm drama2
+@back inFactory
 There were traces of activity within the abandoned factory, people going in and out of the place, as well as a room containing various equipment for thievery.  
 Before they managed to look further into the possible hideout of the thief, they heard Bellford being assaulted from their earphones.
 As the master raised his voice asking about the situation of Bellford, an unknown voice began speaking to the duo.
 
 @char Phantom
-Edmond, to think you would be the one to out me like this, I must have been getting old then.
-No matter, I prepared a special gift for you to celebrate our reunion. 
-I'm sure your keen eyes have already noticed what it is I'm building in that abandoned factory you're at. 
-And I've stashed this gift in the 4th warehouse of Bayview, come get it for me would you?
+Phantom: Edmond, to think you would be the one to out me like this, I must have been getting old then.
+Phantom: No matter, I prepared a special gift for you to celebrate our reunion. 
+Phantom: I'm sure your keen eyes have already noticed what it is I'm building in that abandoned factory you're at. 
+Phantom: And I've stashed this gift in the 4th warehouse of Bayview, come get it for me would you?
 @char Master
-I've seen from the message logs that there was a recent purchase of explosive chemicals, to think it was you...
-Kukuku, now then my dear detective. Are you willing to sacrifice innocent lives in order to take me down? It's time for our awaited showdown.
+Warshall: I've seen from the message logs that there was a recent purchase of explosive chemicals, to think it was you...
+Phantom: Kukuku, now then my dear detective. Are you willing to sacrifice innocent lives in order to take me down? It's time for our awaited showdown.
 @char Phantom visible:false
 And the call cuts off.
 It was at this moment when Leo made up his mind on what he was going to do, and faced his teacher resolutely.
 @char Graff
-Sir, leave the bomb to me. I'll be able to defuse it or in the worst case bring it somewhere secluded where it will affect no one.
-Also, I'm worried about Sir Bellford, he might need medical treatment. I don't think I'll be able to handle the phantom in a fight if I were to go there.
+Leo: Sir, leave the bomb to me. I'll be able to defuse it or in the worst case bring it somewhere secluded where it will affect no one.
+Leo: Also, I'm worried about Sir Bellford, he might need medical treatment. I don't think I'll be able to handle the phantom in a fight if I were to go there.
 The master looks at this apprentice in the eye and sees his resolution from his choice.
 @char Master
-Alright, I trust you on this. Leave William to me, I'll make sure he's safe, and also
-Make sure you keep yourself safe, I don't want to lose someone dear to me again.
-Roger that sir! I'll be on my way.
+Warshall: Alright, I trust you on this. Leave William to me, I'll make sure he's safe, and also
+Warshall: Make sure you keep yourself safe, I don't want to lose someone dear to me again.
+Leo: Roger that sir! I'll be on my way.
 
+@saveLevel num:8
+@loadscene OverworldMap
 @stop

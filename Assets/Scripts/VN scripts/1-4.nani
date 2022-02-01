@@ -1,10 +1,13 @@
-@back sky
+@bgm chill3
+@back park
 @char Graff
-Now, I wonder where the cat could be hiding...
+Leo: Now, I wonder where the cat could be hiding...
 Leo surveys the park for the tiny creature. Red leaves are scattered around the grass as the autumn air breezes on his skin.
-Hm? I think I see something over there.
+Leo: Hm? I think I see something over there.
 From the north entrance, Leo manages to spot an orange Tabby trotting on the park path.
-That... must be the missing cat, however how do I catch it? Rushing in from the front would just scare it away.
-Judging from it's walking path it appears to be going to the south exit, if I can't catch it by then it would lead to bigger problems finding it in the city.
-I would have to intercept its path sneakily and capture it. Time to execute this plan of action.
+Leo: That... must be the missing cat, however how do I catch it? Rushing in from the front would just scare it away.
+Leo: Judging from it's walking path it appears to be going to the south exit, if I can't catch it by then it would lead to bigger problems finding it in the city.
+Leo: I would have to intercept its path sneakily and capture it. Time to execute this plan of action.
+
+@loadscene "Chapter 1-3"
 @stop

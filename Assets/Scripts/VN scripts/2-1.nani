@@ -1,3 +1,4 @@
+@bgm chill1
 @back sky
 A few days have passed since the entry test was given to me by the master detective. 
 Cases we've been tackling can get quite hectic at times. And while I never thought that this profession would be easy, I had to put my nose on the grinder sometimes.
@@ -13,32 +14,34 @@ I noticed that the master's coat was already on the coat hanger as I stamped my 
 A few ashen leaves were lying on the ground by the coat hanger. He must have been out doing some investigations again.
 
 @char Graff
-Good day sir, have new cases come by? Oh, give me a moment I'll brew a fresh batch of tea.
+Leo: Good day sir, have new cases come by? Oh, give me a moment I'll brew a fresh batch of tea.
 @char Master
-Good day to you too Leo, no new cases have come so far. So for the rest of the day we'll just be handling paperwork.
-Here is some freshly brewed tea sir. 
+Warshall: Good day to you too Leo, no new cases have come so far. So for the rest of the day we'll just be handling paperwork.
+Leo: Here is some freshly brewed tea sir. 
 As I was pouring the tea in the master's cup I noticed that his signature glove on his left hand was nowhere to be seen.
-Are you not wearing your glove today sir?
-Ahh, I accidentally got it dirty so it's in the cleaners for a moment. Hmm, this tea is good, did you change the tea leaves?
-Yes, the tea shop had some new leaves in stock so I got those alongside the ones we usually have.
-The fragrance is light and soothing, and the aftertaste lingers after you sip.
-I'm glad you like it sir.
+Leo: Are you not wearing your glove today sir?
+Warshall: Ahh, I accidentally got it dirty so it's in the cleaners for a moment. Hmm, this tea is good, did you change the tea leaves?
+Leo: Yes, the tea shop had some new leaves in stock so I got those alongside the ones we usually have.
+Warshall: The fragrance is light and soothing, and the aftertaste lingers after you sip.
+Leo: I'm glad you like it sir.
 
 We had some small talk before we eventually settled down on our paperwork.
 
-Hopefully when a new case comes we can just take it easy.
-Well, if you hope for too much you might accidentally jinx yourself instead I say.
+Leo: Hopefully when a new case comes we can just take it easy.
+Warshall: Well, if you hope for too much you might accidentally jinx yourself instead I say.
 
 The telephone rings in the office. The master picks it up after two rings.
-Hello, this is Warshall detective agency at your service. How may I help you?
-The Kruskal Diamond has been stolen?
-I see.
+Warshall: Hello, this is Warshall detective agency at your service. How may I help you?
+Warshall: The Kruskal Diamond has been stolen?
+Warshall: I see.
 The master's face grimaced.
-Alright, I'll be there in an hour.
-Sir, is it a new case?
-Indeed, not just any normal one though. This one may seem like a tough case to crack. 
-Prepare to set out for the museum. It appears that an important artifact was stolen past midnight. 
-We shall go to investigate more about this case.
-Yes sir!
+Warshall: Alright, I'll be there in an hour.
+Leo: Sir, is it a new case?
+Warshall: Indeed, not just any normal one though. This one may seem like a tough case to crack. 
+Warshall: Prepare to set out for the museum. It appears that an important artifact was stolen past midnight. 
+Warshall: We shall go to investigate more about this case.
+Leo: Yes sir!
 
+@saveLevel num:10
+@loadscene OverworldMap
 @stop

@@ -1,8 +1,11 @@
-@back sky
+@bgm drama3
+@back warehouse
 Leo managed to defuse the bomb device in his hands. He wonders of the possibility of it taking his life with it if things went wrong. 
 The master then enters the warehouse with Bellford hanging on his shoulder seemingly injured.
 The master scrutinized the bomb held in Leo's hands and wondered about the simplicity of its defusion. He claims that the sly fox would never make a bomb this easy.
 In the middle of this reverie the thought finally struck him. The bomb was simply a ruse to distract the team from the phantom.
 And from a distance they hear the rumbling of a motorcycle, the master urges Leo to go out and give chase to the thief, before he manages to escape them.
 
+@saveLevel num:9
+@loadscene OverworldMap
 @stop

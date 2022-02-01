@@ -1,37 +1,40 @@
-@back sky
+@bgm drama4
+@back techRoom
 @char Graff
-I got the logs!
+Leo: I got the logs!
 @char Rival
-Alright! Eject the device immediately!
-Roger that.
+Bellford: Alright! Eject the device immediately!
+Leo: Roger that.
 
 Despite currently being in a state of half-panic half-excitement, they managed to accomplish their task of extracting the message logs.
 
-Damn, that was closer than I expected. A little bit more and we might have bitten more than we could chew. Is the Graph Device still functioning?
-I think I managed to eject in time, but a few features are malfunctioning, if we stayed a bit longer this might have exploded.
-Alright give a moment to go through these logs, I would be damned if we did not find anything useful at this point. Why don't you take a quick break Leo, you are the man of the hour after all.
-Ah, I'll do that thanks.
+Bellford: Damn, that was closer than I expected. A little bit more and we might have bitten more than we could chew. Is the Graph Device still functioning?
+Bellford: I think I managed to eject in time, but a few features are malfunctioning, if we stayed a bit longer this might have exploded.
+Bellford: Alright give a moment to go through these logs, I would be damned if we did not find anything useful at this point. Why don't you take a quick break Leo, you are the man of the hour after all.
+Leo: Ah, I'll do that thanks.
 
 Leo slumped on a nearby chair, trying to relieve the tension on his shoulders. He stares at the master and his rival scrolling through various messages.
 @char Graff visible:false
 
 @char Master
-Hmm, do you think we can sell this to the police?
-Dumbass they would question where we got this information to begin with. What we did was a crime you know?
-Too bad, the data here is worth a fortune you know?
+Warshall: Hmm, do you think we can sell this to the police?
+Bellford: Dumbass they would question where we got this information to begin with. What we did was a crime you know?
+Warshall: Too bad, the data here is worth a fortune you know?
 
 They bicker with one another. It was until a few minutes later that they found relevant information from one of the logs.
 
-A suspicious person was seen lurking around the Relabel Factory in the Bayview area. An older gentleman with a cane and a monocle in his right eye.
-Ed, this is..?
-Bingo, we finally caught on his trail. That damn Graham...
+Bellford: A suspicious person was seen lurking around the Relabel Factory in the Bayview area. An older gentleman with a cane and a monocle in his right eye.
+Bellford: Ed, this is..?
+Warshall: Bingo, we finally caught on his trail. That damn Graham...
 @char Rival visible:false
 @char Master visible:false
 @char Master
 A vicious grin appeared in the face of the master, a sharp contrast to his elegant looks, a smile of a predator finding its prey.
 
 
-Bellford, go contact the police force, tell them we have found the thief and are beginning to pursue them. Have them prepare a capture net around the Bayview area.
-It is time for us to go visit the phantom, less he vanishes like an illusion once more.
+Warshall: Bellford, go contact the police force, tell them we have found the thief and are beginning to pursue them. Have them prepare a capture net around the Bayview area.
+Warshall: It is time for us to go visit the phantom, less he vanishes like an illusion once more.
 
+@saveLevel num:7
+@loadscene OverworldMap
 @stop

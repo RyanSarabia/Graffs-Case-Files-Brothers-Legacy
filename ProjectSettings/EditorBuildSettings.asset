@@ -39,9 +39,57 @@ EditorBuildSettings:
     path: Assets/Scenes/Chapter 3-3.unity
     guid: 24f8d9b0612a545499f523648b4fad03
   - enabled: 1
-    path: Assets/Scenes/Cutscenes/[Prologue].unity
+    path: Assets/Scenes/Cutscenes/0-0.unity
     guid: 75827f42966b9f44697e7541449f482c
   - enabled: 1
     path: Assets/Scenes/Cutscenes/1-1.unity
     guid: 5a391ab7ee800fa4488939372dfde1f1
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/1-2.unity
+    guid: 43b36e0546d8f984cbba8c6f648aeed9
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/1-2.5.unity
+    guid: 5571572b4ed19bd41911ab67c91238e2
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/1-3.unity
+    guid: ac8e6e2949c552c40857357f995e807f
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/1-4.unity
+    guid: 269ca7b7d606d2949a03a801dd5bc3c9
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/1-5.unity
+    guid: 85bcd7a3512ff444eb04397d5e495400
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/2-1.unity
+    guid: 9a84fa37ad452584abc88961734d6548
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/2-2.unity
+    guid: c78e6f499f786aa49a0a961dece266d9
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/2-3.unity
+    guid: 95a5c2633f29ccb47a1995bf63479979
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/2-4.unity
+    guid: 41e201c2d45d8464e8d5be8aebb4531d
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/2-4.5.unity
+    guid: 0dcd9de2d725f964da59179b6dc34e01
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/2-5.unity
+    guid: 3b9adfe201e00cc4a8c720fba0e06cb9
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/2-6.unity
+    guid: d7e9496f156f98b4caff9dac0ff47eb3
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/3-1.unity
+    guid: 4c39869b90bb1ef4891158e3177ff4e9
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/3-2.unity
+    guid: accc83950d2cc8643bab38f9dc901abf
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/3-3.unity
+    guid: c1bb4363f341a80428d5de163d8628cc
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/3-4.unity
+    guid: 8a262c9db5a697247b4906241ec0df14
   m_configObjects: {}

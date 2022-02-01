@@ -211,6 +211,12 @@ MonoBehaviour:
     - name: 3-4
       pathPrefix: Scripts
       guid: 8282c53738c03d145bb28858b125edcd
+    - name: 2-4.5
+      pathPrefix: Scripts
+      guid: 61459649f180a1c4e86a54efb59f0baa
+    - name: 1-2.5
+      pathPrefix: Scripts
+      guid: e825a96f5b65fa344a3881b11a682a45
   - Id: Characters/76ba2845-2c2c-4f01-a206-22cea9a17e63
     Resources:
     - name: default
@@ -260,6 +266,48 @@ MonoBehaviour:
     - name: sky
       pathPrefix: Backgrounds/MainBackground
       guid: 93f9926dd51703940a58a2dda190160c
+    - name: forest
+      pathPrefix: Backgrounds/MainBackground
+      guid: f8e5bb9a471d4014eb1d596195c1b9c9
+    - name: lobby
+      pathPrefix: Backgrounds/MainBackground
+      guid: 4a83f22dd15098140bcb960a2ca20e87
+    - name: inMuseum
+      pathPrefix: Backgrounds/MainBackground
+      guid: 2a0529e62cf3ca04da853fe591ff1b6a
+    - name: inFactory
+      pathPrefix: Backgrounds/MainBackground
+      guid: c7b488843915b7b4bab82e85dce7898c
+    - name: inBakery
+      pathPrefix: Backgrounds/MainBackground
+      guid: 52a2a558a7f0bc241b7165811e495f61
+    - name: nearWharf
+      pathPrefix: Backgrounds/MainBackground
+      guid: c4f3ca06ced098f4ca80345f275c6666
+    - name: outMuseum
+      pathPrefix: Backgrounds/MainBackground
+      guid: fc00c7a1cf5021d43aeea22770941803
+    - name: outsideFactory
+      pathPrefix: Backgrounds/MainBackground
+      guid: 05c657e2924fccb4db59ce34a57f9de4
+    - name: park
+      pathPrefix: Backgrounds/MainBackground
+      guid: d98327b7514e8aa47bc163d53307195a
+    - name: penthouse
+      pathPrefix: Backgrounds/MainBackground
+      guid: 72c58f8c6c7e92b4f81dccb37c6d9b49
+    - name: policeStation
+      pathPrefix: Backgrounds/MainBackground
+      guid: acaf3bcb46e49264f9a91e1158229b75
+    - name: techRoom
+      pathPrefix: Backgrounds/MainBackground
+      guid: 241f6b20447377a4a93eb1575dc2dabb
+    - name: boat
+      pathPrefix: Backgrounds/MainBackground
+      guid: 23a8cf9b3be6d7f46b7f3773b01aa514
+    - name: warehouse
+      pathPrefix: Backgrounds/MainBackground
+      guid: fd5785fdfbd3df0498763f33f81e320e
   - Id: Characters/469a9921-be28-48ce-ad1d-98acc396b5b8
     Resources:
     - name: Frame 14
@@ -286,4 +334,28 @@ MonoBehaviour:
       pathPrefix: Characters/Baker
       guid: 99accb06aff0ee4419dfadae6ecdf9df
   - Id: Audio
-    Resources: []
+    Resources:
+    - name: intro
+      pathPrefix: Audio
+      guid: 1555836638cd34283a3780a19b58d4c6
+    - name: chill1
+      pathPrefix: Audio
+      guid: a749de50ef21bb74dbe43ddb44475d9c
+    - name: chill2
+      pathPrefix: Audio
+      guid: 8905190013ba144498cdfaa64de4dd3e
+    - name: chill3
+      pathPrefix: Audio
+      guid: a257136d6553bf342a7a87e3ffa5fc81
+    - name: drama1
+      pathPrefix: Audio
+      guid: 69eb05f89de649146b59f76cde39f1a4
+    - name: drama2
+      pathPrefix: Audio
+      guid: 05c4a170fbf98f6478991768a05b3915
+    - name: drama3
+      pathPrefix: Audio
+      guid: bcb7ef9721fb6f548b8e4a6201d08df8
+    - name: drama4
+      pathPrefix: Audio
+      guid: c93259b9add0ef24a9f5dba92e91a975

@@ -1,15 +1,16 @@
+@bgm chill1
 @back office
 @char Lady
-Please, I beg you! My dear Sam has been missing for 2 days already!
-I can't imagine how the poor thing can survive outside of my mansion without its favourite food and treats.
-I can give you as much money as you need, just bring my lovely kitten back home mister detective.
+Donna: Please, I beg you! My dear Sam has been missing for 2 days already!
+Donna: I can't imagine how the poor thing can survive outside of my mansion without its favourite food and treats.
+Donna: I can give you as much money as you need, just bring my lovely kitten back home mister detective.
 
 @char Master
-Alright, alright. Just calm down for a moment Ma'am.
-If you can provide me with the necessary description about your cat as well as the circumstances behind its escape.
-I believe I can bring your lovely pet back to you safe and sound.
+Warshall: Alright, alright. Just calm down for a moment Ma'am.
+Warshall: If you can provide me with the necessary description about your cat as well as the circumstances behind its escape.
+Warshall: I believe I can bring your lovely pet back to you safe and sound.
 
-Oh thank you mister detective! I know I can rely on the greatest detective of our time! 
+Donna: Oh thank you mister detective! I know I can rely on the greatest detective of our time! 
 
 
 I happen to overhear a conversation as I visit the detective agency on the flyer that I'm holding.
@@ -17,49 +18,49 @@ I happen to overhear a conversation as I visit the detective agency on the flyer
 The door in front of me opens and a plump wealthy looking lady leaves.
 As I took a glance at the passing figure, a baritone voice called out to me from the room.
 
-Oh are you another customer? Come inside if you are in need of my services.
-Just fill your name and information on that form beside the bookshelf on the right.
+Warshall: Oh are you another customer? Come inside if you are in need of my services.
+Warshall: Just fill your name and information on that form beside the bookshelf on the right.
 
 He beckons me over
 
 @char Graff
-Oh umm, excuse me then!
+Leo:Oh umm, excuse me then!
 
 As I proceed inside the room.
 The room is quite clean and organized. The bookshelves by the wall contain various books and file cases lined up beside each other.
 The carpet I'm standing on is pretty soft and feels nice to step on.
 
-So young lad, what is it that you have troubles on?
-Umm, I just would like to inquire if you are taking any apprentices at this moment!
-Hmmm, I don't really have apprentices at the moment...
-Lad, what is your name?
-I'm Leonhardt Graff sir! You can just call me Leo.
-Graff huh..
-Please take me as your apprentice!
+Warshall: So young lad, what is it that you have troubles on?
+Leo: Umm, I just would like to inquire if you are taking any apprentices at this moment!
+Warshall: Hmmm, I don't really have apprentices at the moment...
+Warshall: Lad, what is your name?
+Leo: I'm Leonhardt Graff sir! You can just call me Leo.
+Warshall: Graff huh..
+Leo: Please take me as your apprentice!
 
 As I proceed to bow my head before the desk of the detective.
 I did not notice at that time due to my nervousness but he appeared to scrutinize my face quite a bit
 
-Hmm, either way you need skill in order to be my apprentice Leo.
-I don't just accept half baked people out there.
-They need to have endurance and wits for a lot of cases. But the most important aspect of all..
-Is that they need the heart to see everything through.
-Are you able to do that?
-I don't really have the best stamina nor do I think I'm the smartest person, but believe me Sir that I'll never give up!
-*Chuckles* Well at least you are honest. Fortunately I've just accepted a request that I think you could accomplish.
-Think of this as an entrance test of sorts. 
-And show me what you've got Leo.
-I'll do you proud sir!
-Here are the minute details regarding the case. 
-Sam the Tabby cat was missing from their owner's home around 3 days ago. Begin investigating around the Evergreen district. 
-And report what you've gotten by sundown, it's just your first after all.
-Okay sir. I'll be on my way.
-Good luck.
+Warshall: Hmm, either way you need skill in order to be my apprentice Leo.
+Warshall: I don't just accept half baked people out there.
+Warshall: They need to have endurance and wits for a lot of cases. But the most important aspect of all..
+Warshall: Is that they need the heart to see everything through.
+Warshall: Are you able to do that?
+Leo: I don't really have the best stamina nor do I think I'm the smartest person, but believe me Sir that I'll never give up!
+Warshall: *Chuckles* Well at least you are honest. Fortunately I've just accepted a request that I think you could accomplish.
+Warshall: Think of this as an entrance test of sorts. 
+Warshall: And show me what you've got Leo.
+Leo: I'll do you proud sir!
+Warshall: Here are the minute details regarding the case. 
+Warshall: Sam the Tabby cat was missing from their owner's home around 3 days ago. Begin investigating around the Evergreen district. 
+Warshall: And report what you've gotten by sundown, it's just your first after all.
+Leo: Okay sir. I'll be on my way.
+Warshall: Good luck.
 
 @char Graff visible:false
 @back office_zoom
-(I did not think I would hear that name again...)
-(I wonder if fate had a hand to play, well let's just see how far he goes for now.)
+Warshall: (I did not think I would hear that name again...)
+Warshall: (I wonder if fate had a hand to play, well let's just see how far he goes for now.)
 
 @char Master visible:false
 @back black
@@ -67,52 +68,52 @@ Good luck.
 
 @back streets
 @char Graff
-To think that finding a simple cat...
-Would be this difficult!
-The missing Sam isn't the only cat roaming around the area. And half of the people I talked to only knew vague details. 
-And the other half have no knowledge at all!
-I guess it's just the first day. Time to report back to the master.
+Leo: To think that finding a simple cat...
+Leo: Would be this difficult!
+Leo: The missing Sam isn't the only cat roaming around the area. And half of the people I talked to only knew vague details. 
+Leo: And the other half have no knowledge at all!
+Leo: I guess it's just the first day. Time to report back to the master.
 
 @char Graff visible:false
 @back office_outside.LineReveal
 As Graff is approaching the agency, a figure is seen leaving the building.
 
 @char Rival
-Oh? I heard from the grapevine that my good friend had taken in an apprentice for himself. May I ask for your name?
+Bellford: Oh? I heard from the grapevine that my good friend had taken in an apprentice for himself. May I ask for your name?
 @char Graff
-Nice to meet you, I'm Leonhardt Graff, Leo for short. I was given an entry test by the master so I'm not really his apprentice yet.
-Hm, is that so? Then again it's rarer for that guy to offer you one to begin with, he usually turns people so he must see some promise in you.
-Oh forgive me, I have gotten a little sidetracked. Here is my calling card, my name is William BellFord and I also run a detective agency on the other side of town.
-Me and this master of yours have some long standing rivalry going on. Mainly due to differing philosophies in the way we solve our cases.
-Mind if I ask you a quick question? 
-If there is an omnipotent device that could detect, analyze, and solve all the problems in the world, would you use it?
-Or would you rather insist that problems that occur are for humans to figure out and conquer on their own?
-Hmm, that is quite a philosophical question.
-...Is there a reason why we can't apply both?
-I mean a machine is a machine, it doesn't really understand human hearts and emotions.
-And on the side of the humans, we aren't logical at all times and err quite a bit.  So having such devices can fill in the gaps we have.
-...is that answer alright?
-So you answer the same way as him huh..
-Huh?
-You pass with flying colors! For such a great answer, I have a gift for you.
-This is called the Graph Device, it is capable of displaying the physical plane in a Graph like structure.
-In simple words, it makes tasks ahead of you a bit easier by presenting it in a more digestible way.
-I was only able to actualize this prototype from a dear friend of mine recently. And I see no better way for this to be used than to hand it down to you.
-Oh um, thank you! I don't know how to repay you for this.
-Then how about you handle some cases in my agency in the future? I also would like to hear how you handle the device and whatnot.
-I think it's time for me to leave, come visit me sometime. I believe I'll be able to give you some tips a certain hard headed fool may fail to deliver.
-Thank you! I'll try to visit soon.
+Leo: Nice to meet you, I'm Leonhardt Graff, Leo for short. I was given an entry test by the master so I'm not really his apprentice yet.
+Bellford: Hm, is that so? Then again it's rarer for that guy to offer you one to begin with, he usually turns people so he must see some promise in you.
+Bellford: Oh forgive me, I have gotten a little sidetracked. Here is my calling card, my name is William BellFord and I also run a detective agency on the other side of town.
+Bellford: Me and this master of yours have some long standing rivalry going on. Mainly due to differing philosophies in the way we solve our cases.
+Bellford: Mind if I ask you a quick question? 
+Bellford: If there is an omnipotent device that could detect, analyze, and solve all the problems in the world, would you use it?
+Bellford: Or would you rather insist that problems that occur are for humans to figure out and conquer on their own?
+Leo: Hmm, that is quite a philosophical question.
+Leo: ...Is there a reason why we can't apply both?
+Leo: I mean a machine is a machine, it doesn't really understand human hearts and emotions.
+Leo: And on the side of the humans, we aren't logical at all times and err quite a bit.  So having such devices can fill in the gaps we have.
+Leo: ...is that answer alright?
+Bellford: So you answer the same way as him huh..
+Leo: Huh?
+Bellford: You pass with flying colors! For such a great answer, I have a gift for you.
+Bellford: This is called the Graph Device, it is capable of displaying the physical plane in a Graph like structure.
+Bellford: In simple words, it makes tasks ahead of you a bit easier by presenting it in a more digestible way.
+Bellford: I was only able to actualize this prototype from a dear friend of mine recently. And I see no better way for this to be used than to hand it down to you.
+Leo: Oh um, thank you! I don't know how to repay you for this.
+Bellford: Then how about you handle some cases in my agency in the future? I also would like to hear how you handle the device and whatnot.
+Bellford: I think it's time for me to leave, come visit me sometime. I believe I'll be able to give you some tips a certain hard headed fool may fail to deliver.
+Leo: Thank you! I'll try to visit soon.
 @char Rival visible:false
-I'll give this thing a run tomorrow. After my report to the master, I'll get a good night's sleep to prepare.
+Leo: I'll give this thing a run tomorrow. After my report to the master, I'll get a good night's sleep to prepare.
 
 @char Graff visible:false
-@back office
+@back black
 ~7:34 am~
 
 @back streets
 @char Graff
-Alright. Today's task should still be the same. Find clues on where the cat may be located. 
-Time to try out the Graph Device. Let's see what this thing can do for me.
+Leo: Alright. Today's task should still be the same. Find clues on where the cat may be located. 
+Leo: Time to try out the Graph Device. Let's see what this thing can do for me.
 
 @saveLevel num:1
 @loadscene OverworldMap

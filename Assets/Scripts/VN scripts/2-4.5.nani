@@ -1,0 +1,24 @@
+@bgm chill2
+@back policeStation
+@char Police
+Prim: Alright the information is here, stored in this USB drive. 
+@char Master
+Warshall: Thank you Prim, I'll make sure to repay you sometime.
+Prim: Fine fine, just take it and leave already. Wrap this up nice and clean like the master you are.
+Warshall: Haha sure. See you around.
+@char Police visible:false
+
+@back sky
+The duo left the police station. As they were going back in the vehicle, Leo asked the master.
+
+@char Graff
+Warshall: We now have the list of visitors from the museum and their personal information from the police database.
+Leo: But there is just way too much information for us to check one by one. By the time we finish it, the thief would have found a way to escape the city already.
+Warshall: That is certainly true, this is why we will employ the help of someone who is an expert at this kind of task.
+Warshall: We are going to visit the suite of one of my rivals in this industry. He goes by the name of Detective Bellford. 
+Warshall: While I find his personality irksome, I would have to admit that his skill with computers is second to none. 
+Leo: (That was the detective that was visiting sir Warshall a week ago. He was the one that invented the Graph Device afterall, no wonder he'll be good with this stuff.)
+
+@saveLevel num:6
+@loadscene OverworldMap
+@stop

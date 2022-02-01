@@ -1,19 +1,24 @@
-@back sky
+@bgm chill3
+@back inBakery
 @char Graff
-(The device was certainly useful for the measurements, but the rest of the work was just pure muscle work kneading the doughs and moving things over.)
-Ughh, my arms feel so sore.
+Leo: (The device was certainly useful for the measurements, but the rest of the work was just pure muscle work kneading the doughs and moving things over.)
+Leo: Ughh, my arms feel so sore.
 @char Baker
-Gahaha, great work!
-*pats Graff at the back*
-Here is pay for the day, also take these fresh loaves of bread home with you. 
-You did a swell job here today lad. Just talk to me if you ever want to work here, I'll be glad to have you for part time work.
-Thanks! I appreciate the thought. Oh waitÅc It almost slipped my mind! I'm here to ask you about something!
-Have you seen an orange Tabby cat? Short whiskers, pudgy legs, and a bushy tail?
-Now that you've said it, I've seen that cat around the park before. I've fed it a few times in between deliveries if I remember correctly.
-It was oddly skittish for a stray cat so it stuck in my memory.
-Thank you so much for that information! I'll come buy some bread in the future!
-Alright see you!
+Baker: Gahaha, great work!
+Baker: *pats Graff at the back*
+Baker: Here is pay for the day, also take these fresh loaves of bread home with you. 
+Baker: You did a swell job here today lad. Just talk to me if you ever want to work here, I'll be glad to have you for part time work.
+Leo: Thanks! I appreciate the thought. Oh wait... It almost slipped my mind! I'm here to ask you about something!
+Leo: Have you seen an orange Tabby cat? Short whiskers, pudgy legs, and a bushy tail?
+Baker: Now that you've said it, I've seen that cat around the park before. I've fed it a few times in between deliveries if I remember correctly.
+Baker: It was oddly skittish for a stray cat so it stuck in my memory.
+Leo: Thank you so much for that information! I'll come buy some bread in the future!
+Baker: Alright see you!
 @char Baker visible:false
-Ok next stop, to the park!
+@char Graff visible:false
+@char Graff 
+Leo: Ok next stop, to the park!
 
+@saveLevel num:3
+@loadscene OverworldMap
 @stop

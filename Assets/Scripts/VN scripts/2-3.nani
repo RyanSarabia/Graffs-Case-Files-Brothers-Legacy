@@ -1,15 +1,18 @@
-@back sky
+@bgm drama1
+@back forest
 Within the pristine forest, there was a clear trail of someone here very recently. A set of footprints could be found leading away from the museum, judging from the map they must have escaped through crossing the river.
 Leo returns to the museum to report his findings.
 
-@back sky
+@back outMuseum
 @char Graff
-...So that's what I found within the forest.
+Leo: ...So that's what I found within the forest.
 @char Master
-I see... It is still good that we know which way the thief went after he stole the diamond, but we need more information.
-I was told that the Kruskal diamond was hosted in this museum for only 2 weeks, I was then given the list of visitors within that time period for us to check out.
-While the numbers may be daunting at first, it is definitely a lead to go by.
-We still need a way to track these people down, and fortunately I have some connections we can use.
-Let us proceed to the police station, hopefully we get access to their database for some matters.
+Warshall: I see... It is still good that we know which way the thief went after he stole the diamond, but we need more information.
+Warshall: I was told that the Kruskal diamond was hosted in this museum for only 2 weeks, I was then given the list of visitors within that time period for us to check out.
+Warshall: While the numbers may be daunting at first, it is definitely a lead to go by.
+Warshall: We still need a way to track these people down, and fortunately I have some connections we can use.
+Warshall: Let us proceed to the police station, hopefully we get access to their database for some matters.
 
+@saveLevel num:5
+@loadscene OverworldMap
 @stop

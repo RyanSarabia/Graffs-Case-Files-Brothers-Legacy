@@ -1,0 +1,19 @@
+@bgm chill3
+@back sky
+Leo: This.. must be the bakery where he's working at.
+*Door chime rings*
+@back inBakery
+Leo: Excuse me, I just would like to inquire about a missing cat that has been spotted nearby. Hello?
+No one responded. You hear sounds of work deeper inside the store.
+Leo: Umm, excuse me?
+@char Baker
+Baker: Oh, are you a customer? I sincerely apologize, there was a sudden rush of orders to be delivered soon.
+Baker: I've been terribly busy at the moment, that I had no time to man the register at the front.
+Baker: Hm, you seem like an able young man yourself. Would you like to help out for an hour? I'll pay you as well as offer you a batch of freshly baked dough from the oven.
+Baker: How does that sound?
+Leo: Oh, as long as it's not anything too complicated I'll like to give it a try.
+Baker: Great! That would help out a ton. Let's have you begin with some measurements, and we'll move on to the other stuff later.
+Leo: Understood.
+
+@loadscene "Chapter 1-2"
+@stop
