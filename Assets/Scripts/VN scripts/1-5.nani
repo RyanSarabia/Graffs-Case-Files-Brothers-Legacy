@@ -1,0 +1,43 @@
+@back sky
+@char Graff
+There, there. Calm down for a bit Sam, I'm not trying to hurt you okay? Your owner is worried sick about you, it's about time you returned home.
+Leo cradles the cat in his arms, it was quite feisty at the beginning but managed to settle down after a bit.
+Here, take a bite at this fish sausage. You must be quite hungry staying out in the wild these past few days.
+As the cat nibbles on the sausage, Leo contacts the master on the success of the case.
+Alright, now that the master is informed let's bring you back to the agency. The owner should be arriving soon to pick you up.
+@char Graff visible:false
+
+@back office
+@char Lady
+Sam, Sam! My lovely kitty. Your mommy has been terribly lonely since you were missing!
+You have become so much more scraggly than before. Look at how damaged your beautiful fur has become!
+And that smell! Good horror, you will be taking a bath with me whether you like it or not.
+The cat was snatched up as soon as the lady arrived and held in a tight embrace.
+Its uncomfortable meows fell on deaf ears from the excitement of its owner, and may seem to pitter out at any moment.
+@char Master
+Now now miss I want you to relax, I am certainly glad Sam was returned to you safe and sound. 
+Oh my apologies, seeing my dear Sam again made me lose restraint all of a sudden.
+You have my sincerest gratitude for bringing Sam back to me. 
+Well, you have my apprentice Leo here to thank for that. It seems that he spared no effort in this case of yours.
+Oh hoh hoh, I see. Thank you so much young man.
+@char Graff
+Ah, it is my pleasure to see the both of you reunited. Right Sam?
+*meows*
+Feeling of accomplishment and elation rises from the depths of Leo. Being thanked by the client of the case made him proud of what he has done.
+As promised, here is the payment settled for the case.
+Let's go home Sam, we still need to prepare a warm bath for you.
+@char Lady visible:false
+And the lady leaves the room with Sam snuggled tightly in her arms
+@char Master visible:false
+@char Master
+I see that you have done great work on this case Leo, certainly a great start for your detective portfolio.
+Thank you so much sir! And... does that mean?
+Yes, as I promised, you are now officially my apprentice. We'll sort out the official documents at a later date, but for now congratulations.
+Cases brought to us may vary quite a bit, some may have us do simple tasks such as this one. And some happen at a much bigger scale.
+We may even have to work with various organizations for those. All in all though, as long as you put in the effort and heart to see things through.
+There is no case that you can not solve.
+Leo, I'm glad to have you on board.
+Thank you sir! I will make you proud!
+And so here begins Leo's story in the path of detectives.
+
+@stop

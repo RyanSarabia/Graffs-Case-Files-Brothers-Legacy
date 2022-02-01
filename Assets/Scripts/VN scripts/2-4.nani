@@ -1,0 +1,48 @@
+@back black
+
+Warshall: We have arrived at the police station. 
+
+@back sky
+The master and apprentice duo stepped in the building. The interior is well lit, floor polished, and furnished enough to entertain a few guests with.
+The master approached the clerk at the counter. The lady briefly smiled as she recognized the unexpected visitors.
+
+@char Master
+Excuse me, is officer Prim around?
+@char NpcFemale
+Yes, he should be in the east department.
+Alright, thank you.
+@char NpcFemale visible:false
+@char Master visible:false
+
+The master then walked down the eastern hallway. They passed several policemen along the way who gave a brief greeting to the passing figures.
+The master walked at a steady pace, navigating the various corners of the department showing his familiarity with the place.
+They stopped in front of a door before the master knocked twice then invited himself in, the befuddled apprentice briefly followed him in.
+
+@char Police
+I was wondering who would visit at this time of day, it's you Warshall. Seeing as you are here, you are bringing trouble in again aren't you?
+@char Master
+Now ain't that a bit rude? I'm just visiting a friend for a bit, did you miss me?
+Prim scoffs at his attempted flattery before giving a brief glance at Leo.
+
+@char Master visible:false
+Now who is this twerp that you bought with you?
+@char Graff 
+Oh hello sir! I'm Leonhardt Graff and we are here to investigate the theft of the Kruskal Diamond in the museum. 
+Ahh, the one at the Borukva museum ey? I heard some guys being dispatched there this morning. Seems like a case up your wheelhouse ain't it Warshall?
+@char Graff visible:false
+@char Master
+Well we had found ourselves at an impasse during our investigation, so we sought to use the police database for more information.
+..You know you aren't supposed to get access to this thing willy-nilly right?
+Just think of it as a favor to a buddy, besides sometimes I do some free labor tackling investigation cases for the police don't I?
+It's how the saying does, you scratch my back I scratch yours.
+Alright alright, give me a moment to gather the necessary information from the police database. It might take a while so find yourselves comfortable somewhere.
+Thank you.
+
+@char Police visible:false
+The duo took a seat at the sofa nearby, the master even took the liberty to brew two cups of tea while waiting for the data.
+
+Since pulling the data is going to take a few moments, how about you try to solve this puzzle for me Leo?
+@char Graff
+Alright, I'll give it a try.
+
+@stop

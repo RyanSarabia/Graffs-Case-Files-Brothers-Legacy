@@ -169,6 +169,48 @@ MonoBehaviour:
     - name: 0-0
       pathPrefix: Scripts
       guid: d89debec9eb9c0849923201ea2be4b82
+    - name: 1-2
+      pathPrefix: Scripts
+      guid: 97ad5128cd1f0ca4f89ce16de8a031bc
+    - name: 1-3
+      pathPrefix: Scripts
+      guid: f827285263ffe3543b3403bb60469515
+    - name: 1-4
+      pathPrefix: Scripts
+      guid: 6953930fb366bcc4a842a0c28b70c4a9
+    - name: 1-5
+      pathPrefix: Scripts
+      guid: e63afd90e7de827448477a0f5d25be62
+    - name: 2-1
+      pathPrefix: Scripts
+      guid: 6fb21bc147c97074e97335ad7954edb9
+    - name: 2-2
+      pathPrefix: Scripts
+      guid: 23afa6a1833e9b247a7dee7e55b9c5ce
+    - name: 2-3
+      pathPrefix: Scripts
+      guid: 9fc81843e512da44e9359b141c67dceb
+    - name: 2-4
+      pathPrefix: Scripts
+      guid: e10b9812d2023d3409e52bb507bcd8f2
+    - name: 2-5
+      pathPrefix: Scripts
+      guid: a97e67e6e5d7ca84c82003ead849cc56
+    - name: 2-6
+      pathPrefix: Scripts
+      guid: bd548c1035fecc344bc011f12396ca33
+    - name: 3-1
+      pathPrefix: Scripts
+      guid: 966600c18f5e7ff47a12dff0df67da2d
+    - name: 3-2
+      pathPrefix: Scripts
+      guid: 7c8c2f4bf827436409728beb9068d0e6
+    - name: 3-3
+      pathPrefix: Scripts
+      guid: 99159eb11c2dcd143b7d49a259a80b7c
+    - name: 3-4
+      pathPrefix: Scripts
+      guid: 8282c53738c03d145bb28858b125edcd
   - Id: Characters/76ba2845-2c2c-4f01-a206-22cea9a17e63
     Resources:
     - name: default
@@ -215,3 +257,33 @@ MonoBehaviour:
     - name: black
       pathPrefix: Backgrounds/MainBackground
       guid: 7aeaecc0640f78c42932abe6646418c6
+    - name: sky
+      pathPrefix: Backgrounds/MainBackground
+      guid: 93f9926dd51703940a58a2dda190160c
+  - Id: Characters/469a9921-be28-48ce-ad1d-98acc396b5b8
+    Resources:
+    - name: Frame 14
+      pathPrefix: Characters/NpcMale
+      guid: 61ffa06756d417e47b7957396d4ea4fd
+  - Id: Characters/37d03ebd-d4f6-42c3-a861-422385d31d40
+    Resources:
+    - name: Frame 15
+      pathPrefix: Characters/NpcFemale
+      guid: 0f4646004ced98644abfb9a80edc0344
+  - Id: Characters/7c10afb7-4f92-49b5-aa4c-28b879236e4d
+    Resources:
+    - name: Frame 13
+      pathPrefix: Characters/Police
+      guid: 03fb18a05a6d30647b3022248eff45d4
+  - Id: Characters/e06cc51a-4e80-4c0f-9a66-b807870efe7c
+    Resources:
+    - name: placeholderVillain
+      pathPrefix: Characters/Phantom
+      guid: c76408f90a11ef146a86f1655cb89a7f
+  - Id: Characters/648686c2-aa5c-4f69-9cf2-37b534fa4e59
+    Resources:
+    - name: Frame 12
+      pathPrefix: Characters/Baker
+      guid: 99accb06aff0ee4419dfadae6ecdf9df
+  - Id: Audio
+    Resources: []
