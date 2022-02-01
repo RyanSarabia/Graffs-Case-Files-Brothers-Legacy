@@ -27,6 +27,7 @@ public class Actions : MonoBehaviour
 
     [SerializeField] SearchTraversal traversalManager;
     private static bool firstScene = true;
+    [SerializeField] private bool isChapter1 = false;
 
     private bool midLightingUp;
 
@@ -164,27 +165,35 @@ public class Actions : MonoBehaviour
 
     public void AddWallToRoom(Room roomToAddWall)
     {
-        if(getWallCount() < 3)
+        if (!isChapter1)
         {
-            SFXScript.GetInstance().CreateWallSFX();
-            roomToAddWall.ToggleHasWall();
-            roomToAddWall.EnableWallSprite();
-            setWallCount(getWallCount() + 1);
+            if (getWallCount() < 3)
+            {
+                SFXScript.GetInstance().CreateWallSFX();
+                roomToAddWall.ToggleHasWall();
+                roomToAddWall.EnableWallSprite();
+                setWallCount(getWallCount() + 1);
+            }
+            else
+            {
+                briefTextMaxWalls.Play("BriefText");
+                Debug.Log("Max walls reached");
+                //Max walls reached
+            }
+            EventBroadcaster.Instance.PostEvent(GraphGameEventNames.ARCH1_WALLS_EVENT);
         }
-        else
-        {
-            briefTextMaxWalls.Play("BriefText");
-            Debug.Log("Max walls reached");
-            //Max walls reached
-        }
-        EventBroadcaster.Instance.PostEvent(GraphGameEventNames.ARCH1_WALLS_EVENT);
+        
     }
 
     public void RemoveWallFromRoom(Room roomToRemoveWall)
     {
-        roomToRemoveWall.ToggleHasWall();
-        roomToRemoveWall.DisableWallSprite();
-        setWallCount(getWallCount() - 1);
-        EventBroadcaster.Instance.PostEvent(GraphGameEventNames.ARCH1_WALLS_EVENT);
+        if (!isChapter1)
+        {
+            roomToRemoveWall.ToggleHasWall();
+            roomToRemoveWall.DisableWallSprite();
+            setWallCount(getWallCount() - 1);
+            EventBroadcaster.Instance.PostEvent(GraphGameEventNames.ARCH1_WALLS_EVENT);
+        }
+        
     }
 }
