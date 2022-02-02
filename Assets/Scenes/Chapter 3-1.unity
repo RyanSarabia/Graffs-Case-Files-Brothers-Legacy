@@ -1548,6 +1548,7 @@ MonoBehaviour:
   clueTotalText: {fileID: 25998318}
   briefTextMaxWalls: {fileID: 0}
   traversalManager: {fileID: 1374130735}
+  isChapter1: 0
 --- !u!1001 &701689627
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3213,7 +3214,7 @@ MonoBehaviour:
   graphContainer: {fileID: 1040286163}
   energyBar: {fileID: 644365027}
   nRooms: 5
-  nEnergy: 22
+  nEnergy: 25
   nLightUses: 15
   lightUsesText: {fileID: 644365026}
   energyText: {fileID: 644365025}
