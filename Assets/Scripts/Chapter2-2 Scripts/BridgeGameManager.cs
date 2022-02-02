@@ -161,7 +161,11 @@ public class BridgeGameManager : MonoBehaviour
         int tempTimeElapsed = curState.getTimeElapsed();
         bool isLanternLeft = curState.getIsLanternLeft();
 
-        if (selectedNPC[0].isLeftSide() && selectedNPC.Count < 2)
+        if(selectedNPC.Count == 0)
+        {
+            Debug.Log("No selected NPC");
+        }
+        else if (selectedNPC[0].isLeftSide() && selectedNPC.Count < 2)
         {
             Debug.Log("You are only sending one at the left");
         }
@@ -190,11 +194,12 @@ public class BridgeGameManager : MonoBehaviour
             this.SetState(curState);
 
             checkVictoryOrFail();
+
+            SFXScript.GetInstance().ClickGoSignSFX();
+            EventBroadcaster.Instance.PostEvent(GraphGameEventNames.NPCS_MOVED);
+            SetGoTextRed();
+            this.ToggleLanterns();
         }
-        SFXScript.GetInstance().ClickGoSignSFX();
-        EventBroadcaster.Instance.PostEvent(GraphGameEventNames.NPCS_MOVED);
-        SetGoTextRed();
-        this.ToggleLanterns();
     }
 
     private State_Bridge newState()

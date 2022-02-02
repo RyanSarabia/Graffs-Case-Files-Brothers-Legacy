@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.EventSystems;
 
-public class NPC : MonoBehaviour
+public class NPC : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] private int ID;
     [SerializeField] private GameObject npc;
@@ -79,20 +80,6 @@ public class NPC : MonoBehaviour
     public void setNPCActive(bool state)
     {
         npc.SetActive(state);
-    }
-
-    private void OnMouseDown()
-    {
-        this.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
-        if (leftSide)
-        {          
-            BridgeGameManager.GetInstance().leftSelectNPC(ID, readyToLeave);
-        }
-        else
-        {            
-            BridgeGameManager.GetInstance().rightSelectNPC(ID, readyToLeave);
-        }
-            
     }
 
     public void move()
@@ -173,12 +160,26 @@ public class NPC : MonoBehaviour
         leftSide = true;
     }
 
-    private void OnMouseEnter()
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        this.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
+        if (leftSide)
+        {
+            BridgeGameManager.GetInstance().leftSelectNPC(ID, readyToLeave);
+        }
+        else
+        {
+            BridgeGameManager.GetInstance().rightSelectNPC(ID, readyToLeave);
+        }
+
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
     {
         this.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, .5f);
     }
 
-    private void OnMouseExit()
+    public void OnPointerExit(PointerEventData eventData)
     {
         this.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
     }

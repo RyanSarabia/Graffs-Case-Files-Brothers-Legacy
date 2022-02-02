@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class SignpostSend : MonoBehaviour
+public class SignpostSend : MonoBehaviour, IPointerClickHandler
 {
     private new BoxCollider2D collider;
     // Start is called before the first frame update
@@ -14,13 +15,13 @@ public class SignpostSend : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(BridgeGameManager.GetInstance().getPanelFocus())
-            collider.enabled = false;
+        //if(BridgeGameManager.GetInstance().getPanelFocus())
+        //    collider.enabled = false;
     }
 
-    private void OnMouseDown()
+    public void OnPointerClick(PointerEventData eventData)
     {
+        Debug.Log("sign click");
         BridgeGameManager.GetInstance().sendNPC();
-        SFXScript.GetInstance().ClickGoSignSFX();
     }
 }
