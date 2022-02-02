@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class OverworldIcons : MonoBehaviour
+public class OverworldIcons : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     public static readonly string VECTOR_X = "VECTOR_X";
     public static readonly string VECTOR_Y = "VECTOR_Y";
@@ -43,16 +44,16 @@ public class OverworldIcons : MonoBehaviour
         
     }
 
-    private void OnMouseEnter()
+    public void OnPointerEnter(PointerEventData eventData)
     {
         nodeBase.color = Color.cyan;
     }
-    private void OnMouseExit()
+    public void OnPointerExit(PointerEventData eventData)
     {
         nodeBase.color = Color.white;
     }
 
-    private void OnMouseDown()
+    public void OnPointerClick(PointerEventData eventData)
     {
         //SceneLoader.GetInstance().loadScene(id);
         Parameters par = new Parameters();
