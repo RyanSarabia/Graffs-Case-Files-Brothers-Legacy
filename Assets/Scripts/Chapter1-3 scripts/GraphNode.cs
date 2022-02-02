@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class GraphNode : MonoBehaviour
+public class GraphNode : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler,IPointerExitHandler
 {
     // Start is called before the first frame update
     [SerializeField] GameObject highlight;
@@ -23,16 +24,6 @@ public class GraphNode : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    private void OnMouseDown()
-    {
-        if (!Arch3Manager.GetInstance().getPanelFocus())
-        {
-            isClickSource = true;
-            EventBroadcaster.Instance.PostEvent(GraphGameEventNames.ARCH3_NODECLICKED);
-        }
         
     }
 
@@ -67,13 +58,22 @@ public class GraphNode : MonoBehaviour
         highlight.SetActive(false);
     }
 
-    private void OnMouseEnter()
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (!Arch3Manager.GetInstance().getPanelFocus())
+        {
+            isClickSource = true;
+            EventBroadcaster.Instance.PostEvent(GraphGameEventNames.ARCH3_NODECLICKED);
+        }
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
     {
         if (!selected)
             highlight.SetActive(true);
     }
 
-    private void OnMouseExit()
+    public void OnPointerExit(PointerEventData eventData)
     {
         if (!selected)
             highlight.SetActive(false);
