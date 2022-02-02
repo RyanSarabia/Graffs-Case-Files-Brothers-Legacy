@@ -36,8 +36,12 @@ public class RepeatingChange : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        c1 = color1.GetComponent<SpriteRenderer>().color;
-        c2 = color2.GetComponent<SpriteRenderer>().color;
+        if (ch2)
+        {
+            c1 = color1.GetComponent<SpriteRenderer>().color;
+            c2 = color2.GetComponent<SpriteRenderer>().color;
+        }
+        
     }
 
     // Update is called once per frame
