@@ -152,6 +152,7 @@ MonoBehaviour:
   ch3_2Music: {fileID: 8300000, guid: 7b0d094325cdb4541b62d73e630e720a, type: 3}
   ch3_3Music: {fileID: 8300000, guid: fcec7648eb6f34447813ff2e201e9baf, type: 3}
   overworldMusic: {fileID: 8300000, guid: 88f1169411894c347ac5bb8cce2c6dd3, type: 3}
+  overworldMusicChill: {fileID: 8300000, guid: 74e804106d0a28d408d5bd5fe8e72d3f, type: 3}
   chillMusic1: {fileID: 8300000, guid: d43951c38b0ca4b329acb90471f6368f, type: 3}
   chillMusic2: {fileID: 8300000, guid: 5524ea0b3856f0641aeb5d1945e763c8, type: 3}
   chillMusic3: {fileID: 8300000, guid: 8208074a9e832b24a8ba2f1580b482e0, type: 3}

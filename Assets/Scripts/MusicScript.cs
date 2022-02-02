@@ -19,6 +19,7 @@ public class MusicScript : MonoBehaviour
     [SerializeField] private AudioClip ch3_2Music;
     [SerializeField] private AudioClip ch3_3Music;
     [SerializeField] private AudioClip overworldMusic;
+    [SerializeField] private AudioClip overworldMusicChill;
 
     [SerializeField] private AudioClip chillMusic1;
     [SerializeField] private AudioClip chillMusic2;
@@ -100,6 +101,12 @@ public class MusicScript : MonoBehaviour
     {
         StopMusic();
         audioSource.clip = overworldMusic;
+        audioSource.Play();
+    }
+    public void PlayOverworldMusicChill()
+    {
+        StopMusic();
+        audioSource.clip = overworldMusicChill;
         audioSource.Play();
     }
 
