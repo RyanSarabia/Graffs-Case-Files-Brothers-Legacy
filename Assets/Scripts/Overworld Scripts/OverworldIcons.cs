@@ -24,6 +24,7 @@ public class OverworldIcons : MonoBehaviour, IPointerClickHandler, IPointerEnter
     [SerializeField] private UnityEngine.UI.RawImage exclamationPoint;
     [SerializeField] private int id;
 
+    private bool enableState = false;
     private new BoxCollider2D collider;
 
     private void Awake()
@@ -46,32 +47,43 @@ public class OverworldIcons : MonoBehaviour, IPointerClickHandler, IPointerEnter
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        nodeBase.color = Color.cyan;
+        if (enableState)
+        {
+            nodeBase.color = Color.cyan;
+        }
     }
     public void OnPointerExit(PointerEventData eventData)
     {
-        nodeBase.color = Color.white;
+        if (enableState)
+        {
+            nodeBase.color = Color.white;
+        }
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        //SceneLoader.GetInstance().loadScene(id);
-        Parameters par = new Parameters();
-        par.PutExtra(VECTOR_X, this.gameObject.transform.position.x);
-        par.PutExtra(VECTOR_Y, this.gameObject.transform.position.y);
-        par.PutExtra(LOC_NAME, locName);
-        par.PutExtra(DESC, description);
-        par.PutExtra(SCENE, sceneName);
-        EventBroadcaster.Instance.PostEvent(GraphGameEventNames.OVERWORLD_NODE_CLICKED, par);
+        if (enableState)
+        {
+            //SceneLoader.GetInstance().loadScene(id);
+            Parameters par = new Parameters();
+            par.PutExtra(VECTOR_X, this.gameObject.transform.position.x);
+            par.PutExtra(VECTOR_Y, this.gameObject.transform.position.y);
+            par.PutExtra(LOC_NAME, locName);
+            par.PutExtra(DESC, description);
+            par.PutExtra(SCENE, sceneName);
+            EventBroadcaster.Instance.PostEvent(GraphGameEventNames.OVERWORLD_NODE_CLICKED, par);
+        }
     }
 
     public void exclamationState(bool state)
     {
         exclamationPoint.gameObject.SetActive(state);
+        enableState = state;
     }
 
     public void setCollider(bool state)
     {
         collider.enabled = state;
+        enableState = state;
     }
 }
