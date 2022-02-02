@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class Dial : MonoBehaviour
+public class Dial : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     private bool selected;
     [SerializeField] private GameObject highlight;
@@ -20,9 +21,14 @@ public class Dial : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
-    private void OnMouseDown()
+    public void unSelect()
+    {
+        selected = false;
+        highlight.SetActive(false);
+    }
+    public void OnPointerClick(PointerEventData eventData)
     {
         if (!selected)
         {
@@ -36,23 +42,19 @@ public class Dial : MonoBehaviour
             highlight.SetActive(false);
             BombGameManager.GetInstance().unSelect();
         }
-              
+
     }
-    public void unSelect()
-    {
-        selected = false;
-        highlight.SetActive(false);
-    }
-    private void OnMouseEnter()
+    public void OnPointerEnter(PointerEventData eventData)
     {
         if (!selected)
             highlight.SetActive(true);
     }
-    private void OnMouseExit()
+    public void OnPointerExit(PointerEventData eventData)
     {
         if (!selected)
             highlight.SetActive(false);
     }
+
     public void rotateCW()
     {
         this.transform.Rotate(0, 0, -120);
