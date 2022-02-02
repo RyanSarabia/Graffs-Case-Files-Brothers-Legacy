@@ -23,6 +23,13 @@ public class OverworldLoading : MonoBehaviour
             {
                 icons[n].exclamationState(true);
                 icons[n].setCollider(true);
+
+                if (n <= 3)
+                    MusicScript.GetInstance().PlayOverworldMusicChill();
+                if (n <= 6 || n == 10)
+                    MusicScript.GetInstance().PlayOverworldMusic();
+                if (n <= 9)
+                    MusicScript.GetInstance().PlayOverworldMusicRising();
             }
             else
             {
@@ -31,6 +38,7 @@ public class OverworldLoading : MonoBehaviour
                     icon.exclamationState(true);
                     icon.setCollider(true);
                 }
+                MusicScript.GetInstance().PlayOverworldMusicChill();
             }
         }
         
