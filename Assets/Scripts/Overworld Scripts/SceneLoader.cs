@@ -59,4 +59,20 @@ public class SceneLoader : MonoBehaviour
     {
         SaveSystem.deleteSave();
     }
+
+    public void overWorldDev()
+    {
+        if (PlayerPrefs.GetInt("devMode") == 1)
+            devMode(false);
+        else
+            devMode(true);
+    }
+
+    public void devMode(bool state)
+    {
+        if(state)
+            PlayerPrefs.SetInt("devMode" , 1);
+        else
+            PlayerPrefs.SetInt("devMode", 0);
+    }
 }

@@ -734,7 +734,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!223 &453388193
 Canvas:
   m_ObjectHideFlags: 0
@@ -1913,8 +1913,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1995415828}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: SavePlayer
-        m_Mode: 3
+        m_MethodName: overWorldDev
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

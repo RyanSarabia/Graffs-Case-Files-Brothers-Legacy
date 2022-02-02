@@ -19,7 +19,7 @@ public class OverworldLoading : MonoBehaviour
         {
             n = data.currentLevel;
 
-            if(n != 100)
+            if(PlayerPrefs.GetInt("devMode") != 1)
             {
                 icons[n].exclamationState(true);
                 icons[n].setCollider(true);
