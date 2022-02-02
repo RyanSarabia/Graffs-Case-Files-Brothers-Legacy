@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class Sink : MonoBehaviour
+public class Sink : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] private GameObject highlight;
 
@@ -22,26 +23,26 @@ public class Sink : MonoBehaviour
         
     }
 
-    private void OnMouseDown()
-    {
-        selected = true;
-        highlight.SetActive(true);
-        PitcherActionManager.GetInstance().interact(id);
-    }
-
     public void unSelect()
     {
         selected = false;
         highlight.SetActive(false);
     }
 
-    private void OnMouseEnter()
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        selected = true;
+        highlight.SetActive(true);
+        PitcherActionManager.GetInstance().interact(id);
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
     {
         if (!selected)
             highlight.SetActive(true);
     }
 
-    private void OnMouseExit()
+    public void OnPointerExit(PointerEventData eventData)
     {
         if (!selected)
             highlight.SetActive(false);

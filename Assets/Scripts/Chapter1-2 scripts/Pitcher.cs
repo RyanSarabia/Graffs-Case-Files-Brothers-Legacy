@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class Pitcher : MonoBehaviour
+public class Pitcher : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     // Start is called before the first frame update
     [SerializeField] private int waterAmount;
@@ -46,26 +47,26 @@ public class Pitcher : MonoBehaviour
         return waterAmount;
     }
 
-    private void OnMouseDown()
-    {
-        selected = true;
-        highlight.SetActive(true);
-        PitcherActionManager.GetInstance().interact(id);
-    }
-
     public void unSelect()
     {
         selected = false;
         highlight.SetActive(false);
     }
 
-    private void OnMouseEnter()
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        selected = true;
+        highlight.SetActive(true);
+        PitcherActionManager.GetInstance().interact(id);
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
     {
         if(!selected)
             highlight.SetActive(true);
     }
 
-    private void OnMouseExit()
+    public void OnPointerExit(PointerEventData eventData)
     {
         if (!selected)
             highlight.SetActive(false);
