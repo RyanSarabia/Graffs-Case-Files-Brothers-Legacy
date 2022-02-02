@@ -222,25 +222,16 @@ MonoBehaviour:
     - name: default
       pathPrefix: Characters/Graff
       guid: 91e02c386cf10a9448c1d6f9c6cabff4
-    - name: color
-      pathPrefix: Characters/Graff
-      guid: 34b84eabca5d91c41aa2bd26286a6ca6
   - Id: Characters/154dfdbf-41bb-4203-ae00-8cbdc4d211b6
     Resources:
     - name: default
       pathPrefix: Characters/Master
       guid: 7a9f87e521843a944b30733508685bd2
-    - name: color
-      pathPrefix: Characters/Master
-      guid: c3ee66e165fb73043a0fe9c2f60e9709
   - Id: Characters/8ecc7e46-93c0-445e-a88e-11163c309925
     Resources:
     - name: default
       pathPrefix: Characters/Rival
       guid: 3b7fddf138ed04648a07a6368ae7806d
-    - name: color
-      pathPrefix: Characters/Rival
-      guid: 549c8923af1e90343a66a45c71618fed
   - Id: Characters/2c45708d-562c-4116-bc06-9dd0e2e70c02
     Resources:
     - name: default
