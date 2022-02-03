@@ -16,6 +16,8 @@ public class TitleScreenInit : MonoBehaviour
         else
         {
             cont.interactable = false;
+            PlayerPrefs.SetFloat("music", 0.2f);
+            PlayerPrefs.SetFloat("sfx", 0.2f);
         }
     }
     // Start is called before the first frame update

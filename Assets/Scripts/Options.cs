@@ -19,6 +19,12 @@ public class Options : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
+            changeVolume(musicManager, PlayerPrefs.GetFloat("music"));        
+        
+            changeVolume(SFXManager, PlayerPrefs.GetFloat("sfx"));
+        
+
         if (SFXManager)
         {
             SFXVolumeSlider.value = SFXManager.volume;
@@ -56,7 +62,26 @@ public class Options : MonoBehaviour
         {
             source.volume = slider.value;
         }
+
+        if (source == musicManager)
+            PlayerPrefs.SetFloat("music", slider.value);
+        else if (source == SFXManager)
+            PlayerPrefs.SetFloat("sfx", slider.value);
     }
+
+    private void changeVolume(AudioSource source, float num)
+    {
+        if (source)
+        {
+            source.volume = num;
+        }
+
+        if(source == musicManager)
+            PlayerPrefs.SetFloat("music", num);
+        else if(source == SFXManager)
+            PlayerPrefs.SetFloat("sfx", num);
+    }
+
     public void remindTick()
     {
         Debug.Log("check mark" + dontRemind.isOn + " lvl" + level);
