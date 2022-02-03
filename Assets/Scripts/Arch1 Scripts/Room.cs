@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-
+using UnityEngine.Rendering.Universal;
 public class Room : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private GameObject roomLight;
@@ -62,6 +62,7 @@ public class Room : MonoBehaviour, IPointerClickHandler
         //}
         //else
         //    collider.enabled = false;
+        
     }
 
 
