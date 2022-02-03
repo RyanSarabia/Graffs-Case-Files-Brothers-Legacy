@@ -26,7 +26,6 @@ public class Actions : MonoBehaviour
     [SerializeField] private Animator briefTextMaxWalls;
 
     [SerializeField] SearchTraversal traversalManager;
-    private static bool firstScene = true;
     [SerializeField] private bool isChapter1 = false;
 
     private bool midLightingUp;
@@ -57,13 +56,6 @@ public class Actions : MonoBehaviour
         pickUpRoomIDs = new List<int>();
         
         this.clueTotalText.SetText(totalClues.ToString());
-        if (firstScene)
-            firstScene = false;        
-                 
-        else
-            SFXScript.GetInstance().PlayResetAnySFX();
-        
-              
     }
 
     // Update is called once per frame
