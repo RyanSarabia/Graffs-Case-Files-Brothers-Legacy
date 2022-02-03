@@ -16,7 +16,7 @@ They truly managed to capture the culprit.
 Congratulations for finishing our game!
 Dev mode has been enabled. You can now freely visit all the previous nodes.
 Retry some old levels, view some cutscenes, and what not, go wild.
-You can turn this off and on by finding the hidden cat in the overworld map. Good luck!
+You can turn this off and on by finding the hidden cat in the overworld map while the options menu is up. Good luck!
 @saveLevel num:9
 @loadscene OverworldMap
 @stop
