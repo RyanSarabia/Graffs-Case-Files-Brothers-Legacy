@@ -221,7 +221,7 @@ MonoBehaviour:
     Resources:
     - name: default
       pathPrefix: Characters/Graff
-      guid: 91e02c386cf10a9448c1d6f9c6cabff4
+      guid: f34848275fac61b42b4b404dbeba57c8
   - Id: Characters/154dfdbf-41bb-4203-ae00-8cbdc4d211b6
     Resources:
     - name: default
@@ -231,7 +231,7 @@ MonoBehaviour:
     Resources:
     - name: default
       pathPrefix: Characters/Rival
-      guid: 3b7fddf138ed04648a07a6368ae7806d
+      guid: 6643a4895a435e84bbc03dadd25c8023
   - Id: Characters/2c45708d-562c-4116-bc06-9dd0e2e70c02
     Resources:
     - name: default
