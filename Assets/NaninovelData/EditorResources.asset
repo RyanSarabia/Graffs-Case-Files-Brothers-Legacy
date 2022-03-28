@@ -244,10 +244,10 @@ MonoBehaviour:
       guid: ed09f63b57c2db54d93b49f7ed9c69af
     - name: office_outside
       pathPrefix: Backgrounds/MainBackground
-      guid: 2933e3d4314eb70489a392599fbd2a67
+      guid: be75b7e4295be3e4aa82e0204178a9e5
     - name: streets
       pathPrefix: Backgrounds/MainBackground
-      guid: 449e8e05a247c904ba3d8c7a95933590
+      guid: f7eff2ae1572d8446b94591cc6feeaa3
     - name: office_zoom
       pathPrefix: Backgrounds/MainBackground
       guid: 7643d797052b5d746bf13c986896a9a0
@@ -256,7 +256,7 @@ MonoBehaviour:
       guid: 7aeaecc0640f78c42932abe6646418c6
     - name: sky
       pathPrefix: Backgrounds/MainBackground
-      guid: 93f9926dd51703940a58a2dda190160c
+      guid: 19220c04aa5396548817f1818a95f188
     - name: forest
       pathPrefix: Backgrounds/MainBackground
       guid: f8e5bb9a471d4014eb1d596195c1b9c9
