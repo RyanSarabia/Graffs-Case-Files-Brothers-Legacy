@@ -8,6 +8,7 @@ using UnityEngine.EventSystems;
 public class Pitcher : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     // Start is called before the first frame update
+    [SerializeField] private bool interactable = true;
     [SerializeField] private int waterAmount;
     [SerializeField] private int waterCap;
     [SerializeField] TextMeshProUGUI waterAmountText;
@@ -55,21 +56,30 @@ public class Pitcher : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        selected = true;
-        highlight.SetActive(true);
-        PitcherActionManager.GetInstance().interact(id);
+        if (interactable)
+        {
+            selected = true;
+            highlight.SetActive(true);
+            PitcherActionManager.GetInstance().interact(id);
+        }
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if(!selected)
-            highlight.SetActive(true);
+        if (interactable)
+        {
+            if (!selected)
+                highlight.SetActive(true);
+        }
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        if (!selected)
-            highlight.SetActive(false);
+        if (interactable)
+        {
+            if (!selected)
+                highlight.SetActive(false);
+        }
     }
 
     public int fillWater(int water)
@@ -100,6 +110,8 @@ public class Pitcher : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler
         Debug.Log("SUMET WATER!!! = " + water);
         waterAmount = water;
     }
+
+    // deprecated
     public void colliderOff()
     {
         collider.enabled = false;

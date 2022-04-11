@@ -199,6 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0def1180698564a4dabf106270604656, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactable: 1
   waterAmount: 0
   waterCap: 7
   waterAmountText: {fileID: 7093137405667012620}
@@ -1096,6 +1097,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0def1180698564a4dabf106270604656, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactable: 1
   waterAmount: 0
   waterCap: 9
   waterAmountText: {fileID: 8915973878778836897}
@@ -1935,6 +1937,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0def1180698564a4dabf106270604656, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactable: 1
   waterAmount: 0
   waterCap: 16
   waterAmountText: {fileID: 7164257918813816581}
@@ -2285,7 +2288,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3271822792813980386, guid: 329985f04eb07db4c988d7ab68bf8154, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.069
+      value: -0.09
       objectReference: {fileID: 0}
     - target: {fileID: 3271822792813980386, guid: 329985f04eb07db4c988d7ab68bf8154, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2333,6 +2336,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3545450412642517028, guid: 329985f04eb07db4c988d7ab68bf8154, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5960946056236389970, guid: 329985f04eb07db4c988d7ab68bf8154, type: 3}
+      propertyPath: interactable
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6057781751772049561, guid: 329985f04eb07db4c988d7ab68bf8154, type: 3}
@@ -2520,6 +2527,10 @@ PrefabInstance:
       propertyPath: waterCap
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 5960946056236389970, guid: 329985f04eb07db4c988d7ab68bf8154, type: 3}
+      propertyPath: interactable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6057781751772049561, guid: 329985f04eb07db4c988d7ab68bf8154, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2700,6 +2711,10 @@ PrefabInstance:
     - target: {fileID: 5960946056236389970, guid: 329985f04eb07db4c988d7ab68bf8154, type: 3}
       propertyPath: waterCap
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5960946056236389970, guid: 329985f04eb07db4c988d7ab68bf8154, type: 3}
+      propertyPath: interactable
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6057781751772049561, guid: 329985f04eb07db4c988d7ab68bf8154, type: 3}
       propertyPath: m_AnchorMax.y

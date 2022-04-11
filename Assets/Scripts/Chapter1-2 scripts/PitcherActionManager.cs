@@ -256,6 +256,7 @@ public class PitcherActionManager : MonoBehaviour, GMInterface
     {
         foreach (Pitcher pitcher in pitcherList)
         {
+            //deprecated
             pitcher.colliderOff();
         }
         sink.colliderOff();
