@@ -16,6 +16,10 @@ public class OverworldCam : MonoBehaviour
     [SerializeField] private Vector3 ZoomMinVector;
     [SerializeField] private Vector3 UnzoomMaxVector;
     [SerializeField] private Vector3 UnzoomMinVector;
+    [SerializeField] private Vector3 Unzoom2MaxVector;
+    [SerializeField] private Vector3 Unzoom2MinVector;
+    [SerializeField] private Vector3 CurMaxUnzoom;
+    [SerializeField] private Vector3 CurMinUnzoom;
     [SerializeField] private Vector3 CurMaxBounds;
     [SerializeField] private Vector3 CurMinBounds;
 
@@ -24,10 +28,14 @@ public class OverworldCam : MonoBehaviour
     [SerializeField] Vector3 movement;
 
     private bool isTargeting = false;
+    private bool isChangingZoom = false;
 
     private static float defaultZoom = 5;
+    private static float fullscreen = 10;
     private float zoomInVal = 3; // used for zooming in
+    private float curZoomSize = defaultZoom;
     private bool isZoomedIn = false;
+    private bool isDefaultZoom = true;
 
     private float lerpPercent = 0.0f;
     private bool shouldLerp = false;
@@ -74,6 +82,30 @@ public class OverworldCam : MonoBehaviour
         updateLerper();
     }
 
+    public void SetZoomToDefault(bool shouldDefault)
+    {
+        if (shouldDefault)
+        {
+            isDefaultZoom = true;
+            curZoomSize = defaultZoom;
+            CurMaxUnzoom = UnzoomMaxVector;
+            CurMinUnzoom = UnzoomMinVector;
+        } else
+        {
+            isDefaultZoom = false;
+            curZoomSize = fullscreen;
+            CurMaxUnzoom = Unzoom2MaxVector;
+            CurMinUnzoom = Unzoom2MinVector;
+        }
+
+        if (!isZoomedIn)
+        {
+            isChangingZoom = true;
+            lerpPercent = 0.0f;
+            shouldLerp = true;
+        }
+    }
+
     private void ToggleTargetOn(Parameters par)
     {
         if (!isZoomedIn && !shouldLerp)
@@ -118,22 +150,6 @@ public class OverworldCam : MonoBehaviour
     {
         Vector3 newPosition = mainCamera.transform.position + movement;
 
-        //if (isZoomedIn)
-        //{
-        //    newPosition = new Vector3(
-        //        Mathf.Clamp(newPosition.x, ZoomMinVector.x, ZoomMaxVector.x),
-        //        Mathf.Clamp(newPosition.y, ZoomMinVector.y, ZoomMaxVector.y),
-        //        Mathf.Clamp(newPosition.z, ZoomMinVector.z, ZoomMaxVector.z)
-        //        );
-        //} else
-        //{
-        //    newPosition = new Vector3(
-        //        Mathf.Clamp(newPosition.x, UnzoomMinVector.x, UnzoomMaxVector.x),
-        //        Mathf.Clamp(newPosition.y, UnzoomMinVector.y, UnzoomMaxVector.y),
-        //        Mathf.Clamp(newPosition.z, UnzoomMinVector.z, UnzoomMaxVector.z)
-        //        );
-        //}
-
         newPosition = new Vector3(
             Mathf.Clamp(newPosition.x, CurMinBounds.x, CurMaxBounds.x),
             Mathf.Clamp(newPosition.y, CurMinBounds.y, CurMaxBounds.y),
@@ -147,34 +163,64 @@ public class OverworldCam : MonoBehaviour
     {
         if (shouldLerp)
         {
+            Vector3 curMaxVecA;
+            Vector3 curMaxVecB;
+            Vector3 curMinVecA;
+            Vector3 curMinVecB;
+            float zoomSizeA;
+            float zoomSizeB;
+
             if (isTargeting)
             {
-                CurMaxBounds = new Vector3(
-                    Mathf.Lerp(UnzoomMaxVector.x, ZoomMaxVector.x, lerpPercent),
-                    Mathf.Lerp(UnzoomMaxVector.y, ZoomMaxVector.y, lerpPercent),
-                    Mathf.Lerp(UnzoomMaxVector.z, ZoomMaxVector.z, lerpPercent)
-                );
-                CurMinBounds = new Vector3(
-                    Mathf.Lerp(UnzoomMinVector.x, ZoomMinVector.x, lerpPercent),
-                    Mathf.Lerp(UnzoomMinVector.y, ZoomMinVector.y, lerpPercent),
-                    Mathf.Lerp(UnzoomMinVector.z, ZoomMinVector.z, lerpPercent)
-                );
-                mainCamera.orthographicSize = Mathf.Lerp(defaultZoom, zoomInVal, lerpPercent);
+                curMaxVecA = CurMaxUnzoom;
+                curMaxVecB = ZoomMaxVector;
+                curMinVecA = CurMinUnzoom;
+                curMinVecB = ZoomMinVector;
+                zoomSizeA = curZoomSize;
+                zoomSizeB = zoomInVal;
+            }
+            else if (isChangingZoom)
+            {
+                if (isDefaultZoom)
+                {
+                    curMaxVecA = Unzoom2MaxVector;
+                    curMaxVecB = CurMaxUnzoom;
+                    curMinVecA = Unzoom2MinVector;
+                    curMinVecB = CurMinUnzoom;
+                    zoomSizeA = fullscreen;
+                    zoomSizeB = curZoomSize;
+                }
+                else
+                {
+                    curMaxVecA = UnzoomMaxVector;
+                    curMaxVecB = CurMaxUnzoom;
+                    curMinVecA = UnzoomMinVector;
+                    curMinVecB = CurMaxUnzoom;
+                    zoomSizeA = defaultZoom;
+                    zoomSizeB = curZoomSize;
+                }
             }
             else
             {
-                CurMaxBounds = new Vector3(
-                    Mathf.Lerp(ZoomMaxVector.x, UnzoomMaxVector.x, lerpPercent),
-                    Mathf.Lerp(ZoomMaxVector.y, UnzoomMaxVector.y, lerpPercent),
-                    Mathf.Lerp(ZoomMaxVector.z, UnzoomMaxVector.z, lerpPercent)
-                );
-                CurMinBounds = new Vector3(
-                    Mathf.Lerp(ZoomMinVector.x, UnzoomMinVector.x, lerpPercent),
-                    Mathf.Lerp(ZoomMinVector.y, UnzoomMinVector.y, lerpPercent),
-                    Mathf.Lerp(ZoomMinVector.z, UnzoomMinVector.z, lerpPercent)
-                );
-                mainCamera.orthographicSize = Mathf.Lerp(zoomInVal, defaultZoom, lerpPercent);
+                curMaxVecA = ZoomMaxVector;
+                curMaxVecB = CurMaxUnzoom;
+                curMinVecA = ZoomMinVector;
+                curMinVecB = CurMinUnzoom;
+                zoomSizeA = zoomInVal;
+                zoomSizeB = curZoomSize;
             }
+
+            CurMaxBounds = new Vector3(
+                Mathf.Lerp(curMaxVecA.x, curMaxVecB.x, lerpPercent),
+                Mathf.Lerp(curMaxVecA.y, curMaxVecB.y, lerpPercent),
+                Mathf.Lerp(curMaxVecA.z, curMaxVecB.z, lerpPercent)
+            );
+            CurMinBounds = new Vector3(
+                Mathf.Lerp(curMinVecA.x, curMinVecB.x, lerpPercent),
+                Mathf.Lerp(curMinVecA.y, curMinVecB.y, lerpPercent),
+                Mathf.Lerp(curMinVecA.z, curMinVecB.z, lerpPercent)
+            );
+            mainCamera.orthographicSize = Mathf.Lerp(zoomSizeA, zoomSizeB, lerpPercent);
         }
     }
 
@@ -186,6 +232,7 @@ public class OverworldCam : MonoBehaviour
             {
                 shouldLerp = false;
                 isTargeting = false;
+                isChangingZoom = false;
             } else
             {
                 lerpPercent += 0.025f;
