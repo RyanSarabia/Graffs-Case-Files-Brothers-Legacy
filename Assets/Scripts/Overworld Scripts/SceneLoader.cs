@@ -75,4 +75,9 @@ public class SceneLoader : MonoBehaviour
         else
             PlayerPrefs.SetInt("devMode", 0);
     }
+
+    public void quitGame()
+    {
+        Application.Quit();
+    }
 }
