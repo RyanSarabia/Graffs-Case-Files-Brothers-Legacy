@@ -766,7 +766,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1184,6 +1184,30 @@ PrefabInstance:
     - target: {fileID: 2438471478222996986, guid: c59f0cfb936e6f94baa64e7727a7ea8c, type: 3}
       propertyPath: m_Name
       value: UI Panel Arch 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2438471478222996988, guid: c59f0cfb936e6f94baa64e7727a7ea8c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2438471478222996988, guid: c59f0cfb936e6f94baa64e7727a7ea8c, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2438471478222996988, guid: c59f0cfb936e6f94baa64e7727a7ea8c, type: 3}
+      propertyPath: m_Color.b
+      value: 0.21960786
+      objectReference: {fileID: 0}
+    - target: {fileID: 2438471478222996988, guid: c59f0cfb936e6f94baa64e7727a7ea8c, type: 3}
+      propertyPath: m_Color.g
+      value: 0.21960786
+      objectReference: {fileID: 0}
+    - target: {fileID: 2438471478222996988, guid: c59f0cfb936e6f94baa64e7727a7ea8c, type: 3}
+      propertyPath: m_Color.r
+      value: 0.21960786
+      objectReference: {fileID: 0}
+    - target: {fileID: 2438471478222996988, guid: c59f0cfb936e6f94baa64e7727a7ea8c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2438471478222996989, guid: c59f0cfb936e6f94baa64e7727a7ea8c, type: 3}
       propertyPath: m_Pivot.x
@@ -1921,7 +1945,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -2799,7 +2823,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
