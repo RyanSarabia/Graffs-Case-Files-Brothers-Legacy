@@ -632,7 +632,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 40, y: -29}
-  m_SizeDelta: {x: 381.15, y: 83.85}
+  m_SizeDelta: {x: 261.1, y: 83.85}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &148230151
 MonoBehaviour:
@@ -6017,6 +6017,10 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 32.46
       objectReference: {fileID: 0}
+    - target: {fileID: 4249088307327098467, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4586848090350221585, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -8586,8 +8590,8 @@ MonoBehaviour:
 
     45 min'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 23906e004e74bc042b41c58d17ce9ba3, type: 2}
-  m_sharedMaterial: {fileID: -8949862941976766893, guid: 23906e004e74bc042b41c58d17ce9ba3, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d35cea407595f3543b500ab271c35cc8, type: 2}
+  m_sharedMaterial: {fileID: 1044269562307976373, guid: d35cea407595f3543b500ab271c35cc8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8611,8 +8615,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 27.38
-  m_fontSizeBase: 27.38
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -8623,7 +8627,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 36.4
+  m_lineSpacing: -27.9
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
