@@ -4047,6 +4047,89 @@ PrefabInstance:
         go back to previous states using the Timeline. You can also view and select
         the next possible moves from the latest node.
       objectReference: {fileID: 0}
+    - target: {fileID: 4586848090350221585, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586848090350221585, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586848090350221585, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586848090350221585, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6021380307554499266, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: pics.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6021380307554499266, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: texts.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6021380307554499266, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: pics.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: de52d7570ddf7874680725aad673ef93, type: 3}
+    - target: {fileID: 6021380307554499266, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: pics.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 3b29c6de72f767d4087885215ef4bb43, type: 3}
+    - target: {fileID: 6021380307554499266, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: pics.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 57425503c261bab40afa5cccb142415b, type: 3}
+    - target: {fileID: 6021380307554499266, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: pics.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 7202b180351b4164e8bcc9851d194921, type: 3}
+    - target: {fileID: 6021380307554499266, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: pics.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: d454daa8007eb30429e531b775d74c59, type: 3}
+    - target: {fileID: 6021380307554499266, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: pics.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: b9340894c1d581340bbce4ce1869cda0, type: 3}
+    - target: {fileID: 6021380307554499266, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: texts.Array.data[0]
+      value: Help the baker get exactly 8 liters of water. You can solve the puzzle
+        manually by interacting with the obejcts, or use the Graph Device to assist
+        you in solving the puzzle.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6021380307554499266, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: texts.Array.data[1]
+      value: Select the sink and then a pitcher to fill the selected pitcher. You
+        can also select the pitcher first and then the sink to empty the selected
+        pitcher.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6021380307554499266, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: texts.Array.data[2]
+      value: Select two pitchers to transfer the contents of the first selected pitcher
+        to the second selected pitcher.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6021380307554499266, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: texts.Array.data[3]
+      value: Click on the Graph Device to show the Timeline View, where you can see
+        a graph representation of your moves. You can click the nodes in the timeline
+        to switch to Node View.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6021380307554499266, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: texts.Array.data[4]
+      value: In Node View, you can see the state of the puzzle based on the previous
+        moves you have made and how many possible moves you can do from that state.
+        You can choose to revert the puzzle back to a previous state from here.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6021380307554499266, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: texts.Array.data[5]
+      value: When viewing the final node of the timeline, you will see the current
+        state and the next possible states. You can select a state in the Possible
+        Moves and confirm it as your next move.
+      objectReference: {fileID: 0}
     - target: {fileID: 6055947791814479958, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
       propertyPath: m_text
       value: 'Chapter 1-2: Bakery'

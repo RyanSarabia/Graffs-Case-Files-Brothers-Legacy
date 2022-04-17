@@ -3094,6 +3094,52 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6021380307554499266, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: pics.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6021380307554499266, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: texts.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6021380307554499266, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: pics.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 2d55d9cdffa8cfb4d9c4483651e1d0b3, type: 3}
+    - target: {fileID: 6021380307554499266, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: pics.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: ced11595e643bef4287197e6b6ed4490, type: 3}
+    - target: {fileID: 6021380307554499266, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: pics.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 682b6ed58054c43448c0d833b092a769, type: 3}
+    - target: {fileID: 6021380307554499266, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: pics.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: b75460456a94bae408008d9d83bc2956, type: 3}
+    - target: {fileID: 6021380307554499266, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: texts.Array.data[0]
+      value: The graph device has constructed an unexplored graph-like map with nodes
+        to assist you in looking for clues. Use the WASD keys to move the camera
+        around.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6021380307554499266, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: texts.Array.data[1]
+      value: Find 3 clues hidden in different nodes of this map to complete the level.
+        Select either Light of Breadth or Light of Depth and press Light Up! to light
+        up map nodes and reveal their contents.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6021380307554499266, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: texts.Array.data[2]
+      value: Take note of the Light Uses Left and Remaining Energy. Light Up! has
+        a limited number of uses and 1 energy is consumed per node that is lit up.
+        Make sure to use them wisely.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6021380307554499266, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: texts.Array.data[3]
+      value: Use the compass to figure out which rooms are lit up first.
+      objectReference: {fileID: 0}
     - target: {fileID: 6082449768769365359, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
