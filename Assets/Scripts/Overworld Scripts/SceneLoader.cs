@@ -48,6 +48,7 @@ public class SceneLoader : MonoBehaviour
     public void reloadScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        HintSystem.GetInstance().hintUp();
     }
 
     public void SavePlayer(int level)
