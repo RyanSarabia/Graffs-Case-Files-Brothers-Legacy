@@ -5632,6 +5632,24 @@ PrefabInstance:
         bomb that seem to be designed for diffusing it. Figure out the mechanism
         before the bomb goes off.
       objectReference: {fileID: 0}
+    - target: {fileID: 6021380307554499266, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: pics.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6021380307554499266, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: texts.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6021380307554499266, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: pics.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 4b02f3784f8d25c44b9015df7d309529, type: 3}
+    - target: {fileID: 6021380307554499266, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: texts.Array.data[0]
+      value: The culprit has left a bomb to slow you down! There are dials on the
+        bomb that seem to be designed for diffusing it. Figure out the mechanism
+        before the bomb goes off.
+      objectReference: {fileID: 0}
     - target: {fileID: 6055947791814479958, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
       propertyPath: m_text
       value: 'Chapter 3-2: Warehouse'

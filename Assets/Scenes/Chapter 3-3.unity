@@ -6664,6 +6664,63 @@ PrefabInstance:
       value: "Catch the culprit before they get away. Navigate through the thief\u2019s
         traps and obstacles and avoid being slowed down by the ebbing tides."
       objectReference: {fileID: 0}
+    - target: {fileID: 4098813506159980840, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4098813506159980840, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4098813506159980840, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4098813506159980840, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586848090350221585, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586848090350221585, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586848090350221585, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586848090350221585, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6021380307554499266, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: pics.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6021380307554499266, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: texts.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6021380307554499266, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: pics.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 9d14fd4c516354541a0bc8ee09fbaae3, type: 3}
+    - target: {fileID: 6021380307554499266, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: pics.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: cf0635712a906284caf4f41932d1fa06, type: 3}
+    - target: {fileID: 6021380307554499266, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: texts.Array.data[0]
+      value: Catch the culprit before they get away!
+      objectReference: {fileID: 0}
+    - target: {fileID: 6021380307554499266, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: texts.Array.data[1]
+      value: "Navigate through the thief\u2019s traps and obstacles and avoid being
+        slowed down by the ebbing tides."
+      objectReference: {fileID: 0}
     - target: {fileID: 6055947791814479958, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
       propertyPath: m_text
       value: 'Chapter 3-3: Wharf'
@@ -6681,6 +6738,22 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6082449768769365359, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6631002144421526358, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6631002144421526358, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6631002144421526358, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6631002144421526358, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}

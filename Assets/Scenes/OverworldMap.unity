@@ -3514,6 +3514,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OptionsCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 565915752128584759, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 565915752216860380, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -3620,11 +3624,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 937760351635745408, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 965
+      value: 385
       objectReference: {fileID: 0}
     - target: {fileID: 937760351635745408, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -930.3374
+      value: -37.9425
       objectReference: {fileID: 0}
     - target: {fileID: 1454977826251706361, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
       propertyPath: m_AnchorMax.x
@@ -3658,6 +3662,22 @@ PrefabInstance:
     - target: {fileID: 4249088307327098467, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586848090350221585, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586848090350221585, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586848090350221585, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 965
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586848090350221585, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -930.33746
       objectReference: {fileID: 0}
     - target: {fileID: 5759622562207972257, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
       propertyPath: m_AnchorMax.y
@@ -3762,6 +3782,19 @@ PrefabInstance:
     - target: {fileID: 6013508357883737903, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6021380307554499266, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: pics.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6021380307554499266, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: texts.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6021380307554499266, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: texts.Array.data[0]
+      value: Use WASD keys to move the camera and click on locations with the exclamation
+        point      to zoom in and interact.
       objectReference: {fileID: 0}
     - target: {fileID: 6055947791814479958, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
       propertyPath: m_text

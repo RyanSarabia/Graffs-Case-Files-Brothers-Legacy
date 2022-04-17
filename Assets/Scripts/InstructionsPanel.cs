@@ -31,22 +31,27 @@ public class InstructionsPanel : MonoBehaviour
 
     private void changeContent(int idx)
     {
-        img.sprite = pics[idx];
-        textBox.text = texts[idx];
+        if(pics.Count>0 && texts.Count > 0)
+        {
+            img.sprite = pics[idx];
+            textBox.text = texts[idx];
 
-        if (idx == pics.Count - 1)
-        {
-            prevBtn.SetActive(false);
-            prevNextBox.SetActive(false);
-            doneBtn.SetActive(true);
-        } else
-        {
-            doneBtn.SetActive(false);
-            prevNextBox.SetActive(true);
+            if (idx == pics.Count - 1)
+            {
+                nextBtn.SetActive(false);
+                doneBtn.SetActive(true);
+            }
+            else
+            {
+                nextBtn.SetActive(true);
+                doneBtn.SetActive(false);
+            }
+
             if (idx == 0)
             {
                 prevBtn.SetActive(false);
-            } else
+            }
+            else
             {
                 prevBtn.SetActive(true);
             }
