@@ -52,9 +52,15 @@ public class HintSystem : MonoBehaviour
     void Start()
     {
         this.gameObject.SetActive(false);
+        changeContent(0);
+
+        if (hintLvl > 0)
+        {
+            hintBtn.gameObject.SetActive(true);
+        }
         if (newHint)
         {
-            triggerNewHint();
+            hintBtn.GetComponent<Image>().sprite = hintBtnAlt;
         }
     }
 
@@ -62,16 +68,6 @@ public class HintSystem : MonoBehaviour
     void Update()
     {
         
-    }
-
-    private void triggerNewHint()
-    {
-        if(hintLvl == 1)
-        {
-            hintBtn.gameObject.SetActive(true);
-        }
-        hintBtn.GetComponent<Image>().sprite = hintBtnAlt;
-
     }
 
     public void newHintOpened()
@@ -108,7 +104,8 @@ public class HintSystem : MonoBehaviour
             img.sprite = pics[idx];
             textBox.text = texts[idx];
 
-            if (idx == hintLvl -1)
+            Debug.Log(idx);
+            if (idx == hintLvl-1 || idx >= 2)
             {
                 nextBtn.SetActive(false);
                 doneBtn.SetActive(true);
