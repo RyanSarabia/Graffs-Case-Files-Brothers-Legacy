@@ -226,7 +226,7 @@ MonoBehaviour:
     Resources:
     - name: default
       pathPrefix: Characters/Master
-      guid: 7a9f87e521843a944b30733508685bd2
+      guid: ebf3d919b3da1c5418011f84873c9029
   - Id: Characters/8ecc7e46-93c0-445e-a88e-11163c309925
     Resources:
     - name: default
@@ -318,7 +318,7 @@ MonoBehaviour:
     Resources:
     - name: placeholderVillain
       pathPrefix: Characters/Phantom
-      guid: c76408f90a11ef146a86f1655cb89a7f
+      guid: cd975a72d5733ec419a6bd47f31361c7
   - Id: Characters/648686c2-aa5c-4f69-9cf2-37b534fa4e59
     Resources:
     - name: Frame 12
