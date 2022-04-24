@@ -1,10 +1,23 @@
 @bgm drama3
 @back warehouse
+
+@char Graff
+Leo: ...Did that do it?
+The clock on the device stops ticking down, internal activity within it seems to have stopped working.
 Leo managed to defuse the bomb device in his hands. He wonders of the possibility of it taking his life with it if things went wrong. 
-The master then enters the warehouse with Bellford hanging on his shoulder seemingly injured.
-The master scrutinized the bomb held in Leo's hands and wondered about the simplicity of its defusion. He claims that the sly fox would never make a bomb this easy.
-In the middle of this reverie the thought finally struck him. The bomb was simply a ruse to distract the team from the phantom.
+The master then enters the warehouse with Bellford hanging on his shoulder unconscious.
+
+@char Master
+Warshall: Leo! How's the defuse going?
+Leo: It took a bit but I managed to puzzle this out, it stopped ticking and the hardware seemed inactive at the moment.
+The master scrutinized the bomb held in Leo's hands and wondered about the simplicity of its defusion. 
+
+Warshall: Now that's strange, no simpleton would make a bomb like a Layton puzzle. And knowing that sly fox he would rig it to explode no matter what.
+In the middle of this reverie the thought finally struck him.
+Warshall: Damn it! He got us, the bomb was simply a ruse to distract the team from the phantom. He bought precious time with a cheap gimmick like this.
 And from a distance they hear the rumbling of a motorcycle, the master urges Leo to go out and give chase to the thief, before he manages to escape them.
+Warshall: It's probably our last chance to apprehend the thief. Leo, I'm counting on you!
+Leo: Leave it to me!
 
 @saveLevel num:9
 @loadscene OverworldMap

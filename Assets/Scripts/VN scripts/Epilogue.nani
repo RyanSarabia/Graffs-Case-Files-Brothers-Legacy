@@ -1,0 +1,64 @@
+
+
+@back black
+
+@char Police
+Prim: I know you had a past with this person before but asking me to keep everything off the record is a bit too much don't you think?
+Unknown: I know, it's a big favor from me but I do need to talk to him. It's probably the only time I can get closure.
+Prim: *Sighs* Fine, don't take too long alright?
+Unknown: Thank you, I'll repay this someday.
+
+@char Police visible:false
+After his remark, the gentleman walked down the hallway. He passed by several nondescript rooms as well as personnel who greeted him with respect.
+He stopped before a particular door, after checking it was one housing the man he wanted to meet, he tightened up his left glove. Before turning the doorknob and letting himself in.
+
+@bgm drama2
+@back meeting
+An older looking gentleman was sitting by the table, his left hand was holding a small book, while he rested his chin on his gloved right hand. Without bothering to look up, he began to talk.
+
+@char Phantom
+Phantom: When I heard that I had a guest today I knew that you would be visiting me for answers. I'll admit that I did terrible things in my time, but-
+Phantom: To have my disciple, the one I took in order to pass time, be the very person to capture me. Truly the epitome of irony. A cruel joke by fate perhaps.
+He set down the book he was reading, and peered into the eyes of his new visitor.
+Phantom: Wouldn't you agree with me, Edmond?
+
+@char Master
+Warshall: The disciple has to surpass their master one day. This was also my way of getting back at you. And I'm now here to wring out the truth from your mouth.
+Phantom: Now now don't be hasty, and it's not fair to be the only one speaking here today. An answer begets another one, a fair deal wouldn't you say?
+Warshall: Fine, but don't try to weasel out of this one. 
+Phantom: No worries, you got me fair and square, I still have my pride and manners here. To begin with I'll ask, since when have you been planning this out?
+Warshall: ...I've started laying out groundwork when I got the info that you've been staying at a nearby city. You've been visiting the Borukva museum haven't you?
+Warshall: You've always been fond of classical art, so it was the perfect mouse trap. But to be fair it was all preparation, the more I planned things out, the harder it seemed to corner you.
+Warshall: ...But then an apprentice came knocking on my door, it was like looking in a mirror to the past. Gears started turning at that point, and the plan was set to action.
+Phantom: I see, someone to serve as a facade to the unscrupulous things you've been working on.
+Warshall: I needed someone to serve as a bright light, so that it could cast a large shadow and hide things in the dark. 
+Phantom: You were always more cunning than the rest of your peers, like a sponge you quickly absorbed every single thieving skill I taught you. Now that I think of it-
+Phantom: Your agency handles a lot of cases regarding theft doesn't it? Now that's just humorous, were you trying to atone for something? 
+Phantom: Going back to your roots for the diamond must have been a slap in the face hasn't it? Though at your skill level it must have been a cakewalk.
+Warshall: ..Hmph, I know a guy who's skill with technology is second to none. Video spoofing as well as a timely interruption is all I needed to get things done. And with that-
+Warshall: -A justifiable reason to capture a notorious thief has been made available. A motive and a crime is all we needed to get the dice rolling.
+Phantom: And indeed all my escape plans were accounted for, no wonder things went south so quick for me. Thank you, now my suspicions have been cleared.
+Warshall: Now it's my turn for questions. Give me all the information you have about the criminal organization Serpent Crest.
+Phantom: The Crest huh... now that's a name I didn't think I would hear from your mouth. Ahhh, if I remember correctly you had an encounter with them didn't you?
+Phantom: Back when you decided to rebel against me and joined the police at your own will. You and your merry team of three were called the aces of your generation right?
+Phantom: Hehehe, no wonder the young lad looked so familiar, he was the sole sibling of your team captain wasn't he? The very one that perished from the SS Brightwell hostage incident?
+Phantom: Missing your past so much that you had dragged that young lad to your vengeance as well?
+
+Warshall slams the table hard in rage.
+
+Warshall: Don't bring Leo up in this!
+Phantom: Yet he's been instrumental in your plans so far hasn't he?
+Warshall: That's... because...
+Phantom: A leopard can't change its spots as they say. No matter, I dabbled with the Crest a little bit, worked with them for a few possessions and what not.
+Phantom: This might be the best chance you got for your vengeance mission isn't it? How about it my gifted disciple, do you want to strike a deal?
+
+It was as if the devil had manifested in this room, striking an accord to the bewitched, before giving out a tempting offer.
+
+Warshall: ...The moment I've been concocting this plan, I've been prepared to stain my hands in pure darkness. Your capture was a mere stepping stone to bringing the crest down.
+Warshall: (As well as a valuable lesson for my dear apprentice. I'm sorry Leo, you have to be prepared to take the mantle from me, since I'm about to do what I wished I'd done back when your brother was alive.)
+Warshall: I'll be working you to your bones my old master.
+
+Phantom: As you wish. Hah, things are definitely going to get interesting from now on.
+
+@loadscene OverworldMap
+@stop

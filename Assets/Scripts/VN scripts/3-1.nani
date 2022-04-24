@@ -1,7 +1,17 @@
 @bgm drama2
 @back outsideFactory
 The trio drove to the Bayview area, parking in a spot near the Relabel Factory. Bellford opted to stay behind at the car while Leo and Warshall investigate the factory for the presence of the thief.
+
+@char Rival
+Bellford: Take this.
 Bellford handed out wireless earphones to maintain communication between the parties, serving as the commanding outpost for their operations.
+Bellford: I'll begin initiating contact with the police, I need you guys to go in and gather more evidence.
+@char Master
+Warshall: Roger that. Leo, begin scouting the west ground floor for clues to his hideout. I'll begin with the east side before moving to the upper hangar.
+@char Graff
+Leo: Understood!
+Bellford: Alright then, let the operation begin!
+
 
 @loadscene "Chapter 3-1"
 @stop
