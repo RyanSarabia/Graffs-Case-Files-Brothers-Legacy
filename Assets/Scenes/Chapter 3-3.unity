@@ -6708,6 +6708,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3410397220864148059, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: disabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3410397220864148059, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
       propertyPath: pics.Array.data[0]
       value: 
       objectReference: {fileID: 21300000, guid: 40b304c2cc25ba944aad7a9b6536d8ae, type: 3}
@@ -6868,6 +6872,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 719f388f761607d40866aaf909047e4a, type: 3}
+    - target: {fileID: 6841076784661311670, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.00012207031
+      objectReference: {fileID: 0}
     - target: {fileID: 8257850840566827391, guid: a71fd9cb0375dd14888a3c9a5017c74a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
