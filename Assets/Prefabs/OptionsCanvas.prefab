@@ -3270,6 +3270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hintLvl: 0
+  disabled: 1
   hintBtn: {fileID: 8083897603888308539}
   hintBtnDefault: {fileID: 21300000, guid: 3db7612f5e6d4d04db532adf4e3e3106, type: 3}
   hintBtnAlt: {fileID: 21300000, guid: 35a515392f74dca45b47d4d3eb4d3736, type: 3}

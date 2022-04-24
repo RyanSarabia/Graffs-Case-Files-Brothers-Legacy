@@ -15,6 +15,7 @@ public class HintSystem : MonoBehaviour
     }
 
     [SerializeField] private int hintLvl;
+    [SerializeField] private bool disabled = true;
     [SerializeField] private Button hintBtn;
     [SerializeField] private Sprite hintBtnDefault;
     [SerializeField] private Sprite hintBtnAlt;
@@ -54,7 +55,7 @@ public class HintSystem : MonoBehaviour
         this.gameObject.SetActive(false);
         changeContent(0);
 
-        if (hintLvl > 0)
+        if (hintLvl > 0 && !disabled)
         {
             hintBtn.gameObject.SetActive(true);
         }
@@ -81,7 +82,7 @@ public class HintSystem : MonoBehaviour
     {
         Debug.Log("Hint Level: "+ hintLvl);
         PlayerPrefs.SetInt(hintString, PlayerPrefs.GetInt(hintString) + 1);
-        if (PlayerPrefs.GetInt(hintString) + 1 <= 3)
+        if (PlayerPrefs.GetInt(hintString) <= 3)
         {
             PlayerPrefs.SetInt(newHintString, 1);
         }

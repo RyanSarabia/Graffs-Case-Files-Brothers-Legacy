@@ -7,6 +7,7 @@ using UnityEditor;
 public class HintSystemEditor : Editor
 {
     SerializedProperty hintLvl;
+    SerializedProperty disabled;
     SerializedProperty hintBtn;
     SerializedProperty hintBtnDefault;
     SerializedProperty hintBtnAlt;
@@ -21,6 +22,7 @@ public class HintSystemEditor : Editor
     void OnEnable()
     {
         hintLvl = serializedObject.FindProperty("hintLvl");
+        disabled = serializedObject.FindProperty("disabled");
         hintBtn = serializedObject.FindProperty("hintBtn");
         hintBtnDefault = serializedObject.FindProperty("hintBtnDefault");
         hintBtnAlt = serializedObject.FindProperty("hintBtnAlt");
@@ -37,6 +39,7 @@ public class HintSystemEditor : Editor
     {
         serializedObject.Update();
         EditorGUILayout.PropertyField(hintLvl);
+        EditorGUILayout.PropertyField(disabled);
         EditorGUILayout.PropertyField(hintBtn);
         EditorGUILayout.PropertyField(hintBtnDefault);
         EditorGUILayout.PropertyField(hintBtnAlt);
