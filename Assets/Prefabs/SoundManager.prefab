@@ -154,4 +154,4 @@ MonoBehaviour:
   clickGraphDeviceSound: {fileID: 8300000, guid: 1e486df098bcdff47a30fd049093e507, type: 3}
   clickConfirmGraphDeviceSound: {fileID: 8300000, guid: dc12865704a91384cbf8bd50600bc3aa, type: 3}
   clickArch3NodeSound: {fileID: 8300000, guid: 7aaf2baa50ce35545ad7cb623a61f8af, type: 3}
-  resetAnySound: {fileID: 8300000, guid: c31fa610edfc03c449ade1cec5133b43, type: 3}
+  resetAnySound: {fileID: 0}
