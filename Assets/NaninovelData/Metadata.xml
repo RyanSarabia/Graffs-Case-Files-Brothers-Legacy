@@ -20,6 +20,7 @@
           &lt;string&gt;inMuseum&lt;/string&gt;
           &lt;string&gt;inFactory&lt;/string&gt;
           &lt;string&gt;inBakery&lt;/string&gt;
+          &lt;string&gt;meeting&lt;/string&gt;
           &lt;string&gt;nearWharf&lt;/string&gt;
           &lt;string&gt;outMuseum&lt;/string&gt;
           &lt;string&gt;outsideFactory&lt;/string&gt;
@@ -417,6 +418,10 @@
       &lt;/Resource&gt;
       &lt;Resource&gt;
         &lt;Path&gt;inBakery&lt;/Path&gt;
+        &lt;Type&gt;Backgrounds/MainBackground&lt;/Type&gt;
+      &lt;/Resource&gt;
+      &lt;Resource&gt;
+        &lt;Path&gt;meeting&lt;/Path&gt;
         &lt;Type&gt;Backgrounds/MainBackground&lt;/Type&gt;
       &lt;/Resource&gt;
       &lt;Resource&gt;
