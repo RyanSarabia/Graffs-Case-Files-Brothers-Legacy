@@ -275,6 +275,9 @@ MonoBehaviour:
     - name: inBakery
       pathPrefix: Backgrounds/MainBackground
       guid: 52a2a558a7f0bc241b7165811e495f61
+    - name: meeting
+      pathPrefix: Backgrounds/MainBackground
+      guid: 8913711658bbabb4c949834ed296e005
     - name: nearWharf
       pathPrefix: Backgrounds/MainBackground
       guid: c4f3ca06ced098f4ca80345f275c6666

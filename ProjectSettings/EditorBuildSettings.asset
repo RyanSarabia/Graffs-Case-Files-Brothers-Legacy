@@ -92,4 +92,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Cutscenes/3-4.unity
     guid: 8a262c9db5a697247b4906241ec0df14
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/Epilogue.unity
+    guid: e656ddc435ad9974ba21dd3edc27ec10
   m_configObjects: {}
