@@ -1,0 +1,53 @@
+@back sky
+
+--Credits--
+
+Developers: Mark Cai, Ryan Sarabia, Brian So
+Lead_Artist: Brian So
+Character_Artist: Charlene Chua
+Sound_Artist: Ryan Sarabia
+Scriptwriter: Mark Cai
+
+Special Thanks To:
+
+Testers: Carlo Santos, Charlene Ang, Kenneth Loquinte
+Thesis_Adviser: Ryan Dimaunahan
+Love_and_Support: Family and Friends
+
+Last but certainly not the least
+You, the player for completing this game
+
+@back sky
+Congratulations for finishing our game!
+Dev mode has been enabled. You can now freely visit all the previous nodes.
+Retry some old levels, view some cutscenes, and what not, go wild.
+You can turn this off and on by finding the hidden cat in the overworld map while the options menu is up. Good luck!
+
+And if you are interested in learning more about the subject of Graph Theory, you can check out these online resources:
+@char QR.VAlgo pos:50,30,10 visible:true
+@char VAlgo.qr pos:50,30,1 visible:true
+visualgo: Visit https://visualgo.net/en, [char VAlgo.main pos:50,10] a visualization tool for students to better understand data structures and algorithms.
+@char VAlgo.main visible:false
+@char VAlgo.dfs pos:50,5
+visualgo: You can see in depth how various traversals work such Depth First Search and Breadth First Search
+@char VAlgo.ssp pos:50,5
+visualgo: As well as single source shortest path algorithms.
+@char VAlgo.ssp pos:50,5 visible:false
+@char QR.VAlgo pos:50,30,10 visible:true
+visualgo: https://visualgo.net/en to know more
+
+@choice "Visit Site" goto:.VAlgoSite
+@choice "On my own time" goto:.Cont
+@stop
+# VAlgoSite
+@openURL "https://visualgo.net/en"
+@goto .Cont
+# Cont
+
+@char QR.VAlgo pos:50,30,10 visible:false
+
+This time check
+
+
+@loadscene Epilogue
+@stop
