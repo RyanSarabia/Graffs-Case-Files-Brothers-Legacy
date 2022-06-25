@@ -359,3 +359,22 @@ MonoBehaviour:
     - name: drama4
       pathPrefix: Audio
       guid: c93259b9add0ef24a9f5dba92e91a975
+  - Id: Characters/1fc28df0-ff2e-46eb-8c43-9ec164553cad
+    Resources:
+    - name: qr
+      pathPrefix: Characters/VAlgo
+      guid: ce5b12a14cf041545a4eb3e9bec0e813
+    - name: main
+      pathPrefix: Characters/VAlgo
+      guid: cb04459881c8ee444bb19a2e6099450d
+    - name: dfs
+      pathPrefix: Characters/VAlgo
+      guid: 612dc74f01877404287889e839c62691
+    - name: ssp
+      pathPrefix: Characters/VAlgo
+      guid: ed0ee5b672829a9418484d0bf2b1137b
+  - Id: Characters/80b04a69-a0ce-4596-a314-a4953d6dd006
+    Resources:
+    - name: VAlgo
+      pathPrefix: Characters/QR
+      guid: ce5b12a14cf041545a4eb3e9bec0e813
