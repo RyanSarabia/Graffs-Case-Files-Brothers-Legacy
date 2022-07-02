@@ -378,3 +378,37 @@ MonoBehaviour:
     - name: VAlgo
       pathPrefix: Characters/QR
       guid: ce5b12a14cf041545a4eb3e9bec0e813
+    - name: puzz
+      pathPrefix: Characters/QR
+      guid: ca5a48cb3b43a924387e440930c6f9cc
+    - name: yt
+      pathPrefix: Characters/QR
+      guid: fae2e93f9fdf1e4449bd200cc7e45a8f
+  - Id: Characters/8cda88ad-07c1-4a3a-8ff0-2087c6dee811
+    Resources:
+    - name: 1
+      pathPrefix: Characters/yt
+      guid: ac13d86fee4faa842b7323b96cf41d18
+    - name: 2
+      pathPrefix: Characters/yt
+      guid: a6e0310fb15bb674a94a07c5fd04777e
+    - name: 3
+      pathPrefix: Characters/yt
+      guid: f195f06537cbfd5458245a679dad3d64
+    - name: qr
+      pathPrefix: Characters/yt
+      guid: fae2e93f9fdf1e4449bd200cc7e45a8f
+  - Id: Characters/8b25503a-3953-451c-ac01-467274f14dae
+    Resources:
+    - name: 1
+      pathPrefix: Characters/puzz
+      guid: 6a515ea3678ea29409e387c734427b1d
+    - name: 2
+      pathPrefix: Characters/puzz
+      guid: 225aaa5cbb96d284cb48306278442210
+    - name: 3
+      pathPrefix: Characters/puzz
+      guid: b75938b6c2310df40818831988aba3d6
+    - name: qr
+      pathPrefix: Characters/puzz
+      guid: ca5a48cb3b43a924387e440930c6f9cc

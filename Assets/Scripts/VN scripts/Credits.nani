@@ -1,5 +1,6 @@
 @back sky
 
+@bgm intro
 --Credits--
 
 Developers: Mark Cai, Ryan Sarabia, Brian So
@@ -44,10 +45,64 @@ visualgo: https://visualgo.net/en to know more
 @goto .Cont
 # Cont
 
-@char QR.VAlgo pos:50,30,10 visible:false
+@char QR.VAlgo pos:200,30,10
+@char QR.VAlgo pos:200,30,10 visible:false
 
-This time check
+@char QR.puzz pos:50,30,10 visible:true
+@char puzz.qr pos:50,30,1 visible:true
+This time check out https://www.tes.com/teaching-resource/graph-theory-puzzles-and-games-12164908 for more Graph Theory puzzles and problems you can try solving.
 
+@char puzz.1 pos:50,10 scale:1.5
+It contains several resources for learning the subject in a fun manner.
+
+@char puzz.2 pos:50,15
+And the problems are mapped to real life too.
+
+@char puzz.3 pos:50,10
+It even has party games centered around Graph Theory for you to try it out with your friends.
+
+@char puzz.3 pos:50,5 visible:false
+https://www.tes.com/teaching-resource/graph-theory-puzzles-and-games-12164908 to know more.
+
+@choice "Visit Site" goto:.VAlgoSite
+@choice "On my own time" goto:.Cont2
+@stop
+# PuzzSite
+@openURL "https://www.tes.com/teaching-resource/graph-theory-puzzles-and-games-12164908"
+@goto .Cont2
+# Cont2
+
+@char QR.puzz pos:200,30,10
+@char QR.puzz pos:200,30,10 visible:false
+
+
+@char QR.yt pos:50,30,10 visible:true
+@char yt.qr pos:50,30,1 visible:true
+And if you prefer videos to aid your learning, check this playlist [char yt.1 pos:50,10 scale:1.3] by the Numberphile channel.
+
+@char yt.2 pos:50,5
+
+They discuss several interesting topics in Graph Theory and how they are applied in our daily lives.
+
+@char yt.3 pos:50,5
+And some of them are brain worms to make your head spin.
+
+@char yt.3 pos:50,5 visible:false
+https://www.youtube.com/playlist?list=PLt5AfwLFPxWIO0rkWl44MhS_PLLqu3Kvr to know more.
+
+@choice "Visit Site" goto:.ytSite
+@choice "On my own time" goto:.Cont3
+@stop
+# ytSite
+@openURL "https://www.youtube.com/playlist?list=PLt5AfwLFPxWIO0rkWl44MhS_PLLqu3Kvr"
+@goto .Cont3
+# Cont3
+
+@char QR.yt pos:200,30,10
+@char QR.yt pos:200,30,10 visible:false
+
+Don't limit yourself to what we have now. With the power of the internet, information is right at the tip of your fingers. Feel free to find on your own the knowledge that interests you and satiates your curiosity.
+And until then, see you!
 
 @loadscene Epilogue
 @stop
